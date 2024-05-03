@@ -6,6 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "build-prod": "ng build --configuration production",
+    "install2": "npm install --force",
     "test": "ng test",
     "lint": "ng lint"
   },
