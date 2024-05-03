@@ -1,0 +1,25 @@
+div {
+  span {
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  p {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    margin: 4px 0 0;
+    padding: 4px 6px;
+    color: #43B748;
+    background-color: #E4FFEB;
+    border-radius: 14px;
+  }
+
+  &.clear {
+    p {
+      padding: 0;
+      background-color: white;
+      justify-content: normal !important;
+    }
+  }
+}

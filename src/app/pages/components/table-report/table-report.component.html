@@ -1,0 +1,28 @@
+<div class="my-table-report">
+  <div class="my-table-report__wrapper d-flex gap-2" [ngClass]="{'w-100': isFullSize}">
+    @for (h of headers; track h) {
+    <div class="table-column">
+      <div class="table-header">
+        <div class="table-header__item">
+          <span>{{h}}</span>
+        </div>
+      </div>
+
+      <div class="table-content">
+        @for (i of values; track i) {
+        <div class="table-content__row">
+          <span>{{i}}</span>
+        </div>
+        }
+      </div>
+    </div>
+    }
+  </div>
+
+  <div class="my-table-report__seemore d-flex justify-content-center position-absolute bottom-0 w-100">
+    <button class="border-0 bg-white" type="button">
+      Ver Más
+      <img src="../../../../assets/icons/see-more.svg" alt="">
+    </button>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.my-table-report {
+  height: 109px;
+  border-radius: 8px;
+  border: 1px solid var(--Grey-4, #d9dde3);
+  background: var(--White, #fff);
+  position: relative;
+  padding: 16px 10px 0;
+  width: 100%;
+  height: 220px;
+  .table-header {
+    &__item {
+      background-color: #ddf4ff;
+      color: #0050f5;
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 5px;
+    }
+  }
+
+  .table-content {
+    &__row {
+      font-size: 12px;
+      font-weight: 600;
+      color: #8F959D;
+      padding: 6px 5px;
+      &:hover {
+        color: #606469;
+      }
+    }
+  }
+
+  &__seemore {
+    button {
+      color: #0050F5;
+      font-size: 12px;
+      font-weight: 800;
+    }
+  }
+}
