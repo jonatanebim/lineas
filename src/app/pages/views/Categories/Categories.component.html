@@ -1,5 +1,5 @@
-<div class="my-home-page">
-  <div class="my-home-page__header">
+<div class="my-categories-page">
+  <div class="my-categories-page__header">
     <div class="d-flex gap-2">
       <app-card-filter></app-card-filter>
       <app-card-report></app-card-report>
@@ -8,7 +8,19 @@
     </div>
 
     <div class="d-flex gap-2 mt-2">
-      <app-dimension-graph></app-dimension-graph>
+      <div class="my-categories-page__stacked">
+        <app-doughnut-vertical></app-doughnut-vertical>
+      </div>
+
+      <div class="w-100">
+        <app-dimension-graph></app-dimension-graph>
+      </div>
+    </div>
+
+
+    <div class="d-flex gap-2 mt-2">
+      <app-table-report  [headers]="headers" [values]="values"></app-table-report>
+      <app-table-report class="table-small"  [headers]="headers2" [values]="values2"></app-table-report>
     </div>
   </div>
 </div>

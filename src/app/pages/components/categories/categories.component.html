@@ -1,0 +1,14 @@
+<div class="labels">
+  <ul class="list-unstyled">
+    @for (i of categories; track i.label) {
+    <li class="d-flex align-items-center">
+      <span [style.backgroundColor]="i.color"></span>
+      <p> {{i.label}} </p>
+    </li>
+    }
+  </ul>
+
+  @if (categories.length > 4) {
+    <app-see-more [centered]="false"></app-see-more>
+  }
+</div>

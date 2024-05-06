@@ -7,44 +7,8 @@
   padding: 16px 10px 0;
   width: 100%;
 
-  h2 {
-    color: #3a5369;
-    font-size: 16px;
-    font-weight: 400;
-  }
-
-  .graph {
-    width: 150px;
-    max-width: 150px;
-    position: relative;
-    top: -25px;
-  }
-
-  .labels {
-    li {
-      line-height: 1;
-      margin-bottom: 10px;
-      gap: 3px;
-      p {
-        margin: 0;
-        font-size: 13px;
-        color: #314561;
-        font-weight: 600;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        width: 110px;
-      }
-      span {
-        background-color: rgb(0, 176, 255);
-        min-width: 10px;
-        min-height: 10px;
-        border-radius: 3px;
-        display: block;
-        position: relative;
-        top: -1px;
-      }
-    }
+  app-categories {
+    width: 120px;
   }
 
   .stacked-graph {

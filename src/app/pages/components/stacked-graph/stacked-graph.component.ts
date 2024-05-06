@@ -1,24 +1,17 @@
 import { CommonModule } from '@angular/common';
-import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  ViewChild,
-} from '@angular/core';
-import Chart from 'chart.js/auto';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CategoriesComponent } from '../categories/categories.component';
+import { DoughnutChartComponent } from '../doughnut-chart/doughnut-chart.component';
 
 @Component({
   selector: 'app-stacked-graph',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CategoriesComponent, DoughnutChartComponent],
   templateUrl: './stacked-graph.component.html',
   styleUrl: './stacked-graph.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StackedGraphComponent implements AfterViewInit {
-  @ViewChild('graph') graph!: ElementRef<any>;
-
+export class StackedGraphComponent {
   variants = ['#D9DDE3', '#B3B8BF', '#8F959D'];
   doughnutChart = [
     {
@@ -69,60 +62,4 @@ export class StackedGraphComponent implements AfterViewInit {
       color: '#D9DDE3',
     },
   ];
-
-  ngAfterViewInit(): void {
-    new Chart(this.graph.nativeElement, {
-      type: 'doughnut',
-      data: {
-        datasets: [
-          {
-            data: this.values,
-            backgroundColor: this.colors,
-          },
-        ],
-      },
-      plugins: [this.customDataLabelPlugin],
-      options: {
-        maintainAspectRatio: false,
-        aspectRatio: 2,
-        events: [],
-      },
-    });
-  }
-
-  get values() {
-    return this.doughnutChart.map((i) => i.value);
-  }
-
-  get colors() {
-    return this.doughnutChart.map((i) => i.color);
-  }
-
-  get customDataLabelPlugin() {
-    const $this = this;
-    return {
-      id: 'customDatalabels',
-      afterDatasetsDraw(chart: any) {
-        const { ctx, data } = chart;
-        data.datasets[0].data.forEach((dataPoint: any, index: number) => {
-          const { x, y } = chart
-            .getDatasetMeta(0)
-            .data[index].tooltipPosition();
-          const color = $this.colors[index];
-
-          ctx.font = '10px "Nunito Sans", Helvetica, Arial, sans-serif';
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
-
-          if ($this.variants.find((variant: string) => variant === color)) {
-            ctx.fillStyle = '#000';
-          } else {
-            ctx.fillStyle = '#ffff';
-          }
-
-          ctx.fillText(`${dataPoint}%`, x, y);
-        });
-      },
-    };
-  }
 }

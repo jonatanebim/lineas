@@ -19,10 +19,190 @@ import { StackedGraphComponent } from '../../components/stacked-graph/stacked-gr
     DimensionGraphComponent,
     CountryGraphComponent,
     EvolutionChartComponent,
-    StackedGraphComponent
+    StackedGraphComponent,
   ],
   templateUrl: './Home.component.html',
   styleUrl: './Home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent {}
+export class HomeComponent {
+  headers = [
+    {
+      label: 'DPTO/CIUDAD',
+      type: '',
+    },
+    {
+      label: 'Venta MQ',
+      type: '',
+    },
+    {
+      label: 'M Share',
+      type: '',
+    },
+    {
+      label: '%Dist Num',
+      type: '',
+    },
+    {
+      label: 'Vs Ma',
+      type: '',
+    },
+    {
+      label: 'vs maa',
+      type: '',
+    },
+  ];
+
+  values = [
+    {
+      columns: [
+        {
+          value: 'Desodorantes y antitraspirantes',
+          type: '',
+        },
+        {
+          value: 'alta',
+          type: 'status',
+          color: '',
+        },
+        {
+          value: 'Muy atractivo',
+          type: '',
+        },
+        {
+          value: '8/13 SKUs',
+          type: 'badge',
+          color: '',
+        },
+        {
+          value: 'Ver detalle de SKU',
+          type: '',
+        },
+        {
+          value: '',
+          type: 'indicator',
+        },
+      ],
+    },
+    {
+      columns: [
+        {
+          value: 'Desodorantes y antitraspirantes',
+          type: '',
+        },
+        {
+          value: 'alta',
+          type: 'status',
+          color: '',
+        },
+        {
+          value: 'Muy atractivo',
+          type: '',
+        },
+        {
+          value: '8/13 SKUs',
+          type: 'badge',
+          color: '',
+        },
+        {
+          value: 'Ver detalle de SKU',
+          type: '',
+        },
+        {
+          value: '',
+          type: 'indicator',
+        },
+      ],
+    },
+    {
+      columns: [
+        {
+          value: 'Desodorantes y antitraspirantes',
+          type: '',
+        },
+        {
+          value: 'alta',
+          type: 'status',
+          color: '',
+        },
+        {
+          value: 'Muy atractivo',
+          type: '',
+        },
+        {
+          value: '8/13 SKUs',
+          type: 'badge',
+          color: '',
+        },
+        {
+          value: 'Ver detalle de SKU',
+          type: '',
+        },
+        {
+          value: '',
+          type: 'indicator',
+        },
+      ],
+    },
+    {
+      columns: [
+        {
+          value: 'Desodorantes y antitraspirantes',
+          type: '',
+        },
+        {
+          value: 'alta',
+          type: 'status',
+          color: '',
+        },
+        {
+          value: 'Muy atractivo',
+          type: '',
+        },
+        {
+          value: '8/13 SKUs',
+          type: 'badge',
+          color: '',
+        },
+        {
+          value: 'Ver detalle de SKU',
+          type: '',
+        },
+        {
+          value: '',
+          type: 'indicator',
+        },
+      ],
+    },
+    {
+      columns: [
+        {
+          value: 'Desodorantes y antitraspirantes',
+          type: '',
+        },
+        {
+          value: 'alta',
+          type: 'status',
+          color: '',
+        },
+        {
+          value: 'Muy atractivo',
+          type: '',
+        },
+        {
+          value: '8/13 SKUs',
+          type: 'badge',
+          color: '',
+        },
+        {
+          value: 'Ver detalle de SKU',
+          type: '',
+        },
+        {
+          value: '',
+          type: 'indicator',
+        },
+      ],
+    },
+  ];
+}

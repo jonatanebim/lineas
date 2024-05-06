@@ -1,24 +1,13 @@
 <div class="my-stacked-graph d-flex flex-wrap h-100">
-  <h2>% Participación Facturación por categoría</h2>
-  <div class="h-100 d-flex flex-column justify-content-center">
-    <div class="doughnut-graph d-flex pt-4">
-      <div class="graph">
-        <canvas class="graph-content" #graph> </canvas>
-      </div>
+  <h2 class="sectionTitle m-0">% Participación Facturación por categoría</h2>
+  <div class="d-flex flex-column justify-content-center">
+    <div class="doughnut-graph d-flex mb-4">
 
-      <div class="labels">
-        <ul class="list-unstyled">
-          @for (i of doughnutChart; track i.label) {
-          <li class="d-flex align-items-center">
-            <span [style.backgroundColor]="i.color"></span>
-            <p> {{i.label}} </p>
-          </li>
-          }
-        </ul>
-      </div>
+      <app-doughnut-chart></app-doughnut-chart>
+      <app-categories></app-categories>
     </div>
 
-    <div class="stacked-graph">
+    <div class="stacked-graph mb-3">
       @for (i of stackedChart; track i.label) {
       <div class="stacked-graph__item d-flex mb-1">
         <div class="stack d-flex justify-content-center">
