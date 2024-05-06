@@ -4,6 +4,9 @@ import { CardReportComponent } from '../../components/card-report/card-report.co
 import { CardFilterComponent } from '../../components/card-filter/card-filter.component';
 import { TableReportComponent } from '../../components/table-report/table-report.component';
 import { DimensionGraphComponent } from '../../components/dimension-graph/dimension-graph.component';
+import { CountryGraphComponent } from '../../components/country-graph/country-graph.component';
+import { EvolutionChartComponent } from '../../components/evolution-chart/evolution-chart.component';
+import { StackedGraphComponent } from '../../components/stacked-graph/stacked-graph.component';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +16,10 @@ import { DimensionGraphComponent } from '../../components/dimension-graph/dimens
     CardReportComponent,
     CardFilterComponent,
     TableReportComponent,
-    DimensionGraphComponent
+    DimensionGraphComponent,
+    CountryGraphComponent,
+    EvolutionChartComponent,
+    StackedGraphComponent
   ],
   templateUrl: './Home.component.html',
   styleUrl: './Home.component.scss',

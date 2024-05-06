@@ -29,6 +29,11 @@ export const routes: Routes = [
     component: ContentComponent,
     children: [
       {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: `${Paths.dashboard.childrens.home}`,
+      },
+      {
         path: Paths.dashboard.childrens.home,
         component: HomeComponent,
       },

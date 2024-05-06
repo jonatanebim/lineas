@@ -1,3 +1,12 @@
 :host {
   display: block;
 }
+
+app-evolution-chart,
+app-country-graph {
+  width: 35%;
+}
+
+app-stacked-graph {
+  width: 30%;
+}

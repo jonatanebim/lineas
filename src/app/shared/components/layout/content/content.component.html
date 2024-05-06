@@ -7,10 +7,8 @@
     <div class="my-sidebar__navbar pt-5">
       <ul class="list-unstyled m-0">
         @for ( i of navBarItems; track i) {
-        <li
-          class="action d-flex gap-1 mb-3 pb-1 align-items-center"
-          [ngClass]="{ inactive: i.pro }"
-        >
+        <li class="action d-flex gap-1 mb-3 pb-1 align-items-center position-relative" [ngClass]="{ inactive: i.pro }"
+          [routerLink]="['/dashboard/' + i.path]" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{ exact: true }">
           <img [src]="'../../../../../assets/icons/' + i.icon" alt="" />
           <span class="fs-x2"> {{ i.label }}</span>
           @if (i.pro) {

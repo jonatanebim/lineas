@@ -1,0 +1,162 @@
+.my-stacked-graph {
+  min-height: 458px;
+  border-radius: 8px;
+  border: 1px solid var(--Grey-4, #d9dde3);
+  background: var(--White, #fff);
+  position: relative;
+  padding: 16px 10px 0;
+  width: 100%;
+
+  h2 {
+    color: #3a5369;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .graph {
+    width: 150px;
+    max-width: 150px;
+    position: relative;
+    top: -25px;
+  }
+
+  .labels {
+    li {
+      line-height: 1;
+      margin-bottom: 10px;
+      gap: 3px;
+      p {
+        margin: 0;
+        font-size: 13px;
+        color: #314561;
+        font-weight: 600;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 110px;
+      }
+      span {
+        background-color: rgb(0, 176, 255);
+        min-width: 10px;
+        min-height: 10px;
+        border-radius: 3px;
+        display: block;
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+
+  .stacked-graph {
+    &__item {
+      display: none;
+      &:nth-child(1) {
+        .stack {
+          padding: 0;
+          &__value {
+            width: 100%;
+            &::after {
+              right: -4px;
+            }
+            &::before {
+              left: -6px;
+            }
+          }
+        }
+      }
+      &:nth-child(2) {
+        .stack {
+          &__value {
+            width: 90%;
+            &::after {
+              right: -14px;
+              transform: rotate(16deg);
+            }
+            &::before {
+              left: -14px;
+              transform: rotate(-16deg);
+            }
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        .stack {
+          &__value {
+            width: 80%;
+            &::after {
+              right: -10px;
+            }
+            &::before {
+              left: -10px;
+            }
+          }
+        }
+      }
+      &:last-child {
+        .stack {
+          &__value {
+            width: 55%;
+            &::after,
+            &::before {
+              display: none;
+              width: 0px;
+              height: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .stack {
+    width: 150px;
+    max-width: 150px;
+    height: 32px;
+    padding: 0 1rem;
+    &__value {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+
+      p {
+        font-size: 12px;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 40px;
+        background-color: #fff;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        left: -10px;
+        transform: rotate(-18deg);
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 40px;
+        background-color: #fff;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        right: -10px;
+        transform: rotate(18deg);
+      }
+    }
+    &__label {
+      p {
+        margin: 0;
+        font-size: 13px;
+        color: #314561;
+        font-weight: 600;
+      }
+    }
+  }
+}
