@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     CommonModule,
   ],
   templateUrl: './department-graph.component.html',
-  styleUrl: './department-graph.component.css',
+  styleUrl: './department-graph.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DepartmentGraphComponent { }

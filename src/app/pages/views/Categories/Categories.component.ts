@@ -5,6 +5,7 @@ import { CardReportComponent } from '../../components/card-report/card-report.co
 import { DimensionGraphComponent } from '../../components/dimension-graph/dimension-graph.component';
 import { TableReportComponent } from '../../components/table-report/table-report.component';
 import { DoughnutVerticalComponent } from '../../components/doughnut-vertical/doughnut-vertical.component';
+import { ParticipationComponent } from '../../components/participation/participation.component';
 
 @Component({
   selector: 'app-categories',
@@ -15,7 +16,8 @@ import { DoughnutVerticalComponent } from '../../components/doughnut-vertical/do
     CardFilterComponent,
     TableReportComponent,
     DimensionGraphComponent,
-    DoughnutVerticalComponent
+    DoughnutVerticalComponent,
+    ParticipationComponent
   ],
   templateUrl: './Categories.component.html',
   styleUrl: './Categories.component.scss',

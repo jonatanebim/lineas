@@ -4,7 +4,11 @@
       <div class="col-7 graph">
         <div class="w-100 d-flex justify-content-between h-100">
           <div class="my-dimension-report__bubbles">
-
+            <!-- <highcharts-chart
+              [Highcharts]="Highcharts"
+              [options]="chartOptions"
+            >
+            </highcharts-chart> -->
           </div>
           <div class="my-dimension-report__categories">
             <h3 class="sectionTitle">% Participación por SKUs Pareto</h3>
@@ -15,17 +19,16 @@
       <div class="col-5 ps-3">
         <h3 class="sectionTitle">Top SKU - Cuidado Facial</h3>
         <div class="report-top d-flex">
-          <img src="../../../../assets/images/logo-top.png" alt="">
+          <img src="../../../../assets/images/logo-top.png" alt="" />
           <div class="report-top__detail w-100">
-            <h2 class="d-flex  align-items-center gap-1"> 1
+            <h2 class="d-flex align-items-center gap-1">
+              1
               <span>en ranking</span>
             </h2>
             <p class="product m-0">Nivea crema 30ml</p>
             <div class="report-top__table">
               <div class="item w-100">
-                <div>
-
-                </div>
+                <div></div>
                 <div class="indicators">
                   <div>
                     <span>Vs MA</span>
@@ -41,10 +44,16 @@
                 </div>
                 <div class="indicators">
                   <div>
-                    <app-rank-indicator [withHeader]=false [clear]=true></app-rank-indicator>
+                    <app-rank-indicator
+                      [withHeader]="false"
+                      [clear]="true"
+                    ></app-rank-indicator>
                   </div>
                   <div>
-                    <app-rank-indicator [withHeader]=false [clear]=true></app-rank-indicator>
+                    <app-rank-indicator
+                      [withHeader]="false"
+                      [clear]="true"
+                    ></app-rank-indicator>
                   </div>
                 </div>
               </div>
@@ -55,10 +64,16 @@
                 </div>
                 <div class="indicators">
                   <div>
-                    <app-rank-indicator [withHeader]=false [clear]=true></app-rank-indicator>
+                    <app-rank-indicator
+                      [withHeader]="false"
+                      [clear]="true"
+                    ></app-rank-indicator>
                   </div>
                   <div>
-                    <app-rank-indicator [withHeader]=false [clear]=true></app-rank-indicator>
+                    <app-rank-indicator
+                      [withHeader]="false"
+                      [clear]="true"
+                    ></app-rank-indicator>
                   </div>
                 </div>
               </div>

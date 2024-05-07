@@ -1,3 +1,20 @@
-:host {
-  display: block;
+.my-region-page {
+  &__stacked {
+    width: 220px;
+  }
+}
+
+app-evolution-chart {
+  width: 500px;
+}
+
+app-table-report  {
+  width: 60%;
+  &.table-small {
+    width: 40%;
+  }
+}
+
+app-department-graph {
+  width: 100%;
 }
