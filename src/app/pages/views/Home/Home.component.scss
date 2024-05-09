@@ -1,5 +1,11 @@
 :host {
   display: block;
+
+  ::ng-deep {
+    .my-evolution-chart__chart {
+      height: 370px !important;
+    }
+  }
 }
 
 app-evolution-chart,

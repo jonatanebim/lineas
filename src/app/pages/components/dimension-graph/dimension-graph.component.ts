@@ -35,24 +35,44 @@ export class DimensionGraphComponent {
   Highcharts: typeof Highcharts = Highcharts;
 
   chartOptions: Highcharts.Options = {
+    title: {
+      text: '',
+    },
+    chart: {
+      width: 200,
+      height: 200,
+      spacing: [0, 0, 0, 0],
+    },
+    xAxis: {
+      visible: false,
+    },
+    legend: {
+      enabled: false,
+    },
     plotOptions: {
       series: {
+        pointPlacement: -10,
         animation: false,
+        label: {
+          enabled: false,
+        },
+        stacking: 'stream',
       },
       packedbubble: {
-        minSize: "30%",
-        maxSize: "80%",
+        minSize: '40%',
+        maxSize: '100%',
         animation: false,
-        tooltip: {
-          
-        },
+        stacking: 'stream',
+
+        tooltip: {},
         dataLabels: {
           enabled: true,
-          format: '{point.name}%',
+          format: '{point.value}%',
           style: {
-            color: 'black',
+            color: '#fff',
             textOutline: 'none',
-            fontWeight: 'normal',
+            fontWeight: '800',
+            fontSize: '15px',
           },
         },
       },
@@ -63,22 +83,39 @@ export class DimensionGraphComponent {
         animation: false,
         allowPointSelect: false,
         draggable: false,
+        stacking: 'stream',
+        marker: {
+          lineWidth: 2,
+          fillOpacity: 1,
+        },
         data: [
           {
             name: 'India',
-            value: 2341.9,
+            value: 70,
+            color: '#0050F5',
+            fillColor: '#D9DDE3',
+            pointPlacement: -10,
           },
           {
             name: 'Russia',
-            value: 1766.4,
+            value: 25,
+            color: '#8F959D',
+            fillColor: '#D9DDE3',
+            pointPlacement: -10,
           },
           {
             name: 'Iran',
-            value: 618.2,
+            value: 5,
+            color: '#B3B8BF',
+            fillColor: '#D9DDE3',
+            pointPlacement: -10,
           },
           {
             name: 'Korea',
-            value: 610.1,
+            value: 0,
+            color: '#D9DDE3',
+            fillColor: '#D9DDE3',
+            pointPlacement: -10,
           },
         ],
       },

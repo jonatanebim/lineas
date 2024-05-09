@@ -6,9 +6,15 @@
       <app-graph-indicator></app-graph-indicator>
     </div>
   </div>
-  <div class="my-evolution-chart__chart" [ngClass]="{'border-0': !withFooter}">
+  <div
+    class="my-evolution-chart__chart"
+    [ngClass]="{ 'border-0': !withFooter }"
+    #chartContainer
+  >
+    @if(onChart()) {
     <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions">
     </highcharts-chart>
+    }
   </div>
   <div class="my-evolution-chart__table d-flex gap-3 w-100" *ngIf="withFooter">
     <div class="stacked">

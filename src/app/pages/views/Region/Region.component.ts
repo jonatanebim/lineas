@@ -27,6 +27,53 @@ import { DepartmentGraphComponent } from '../../components/department-graph/depa
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegionComponent {
+  categories = [
+    'ENE',
+    'FEB',
+    'MAR',
+    'ABR',
+    'MAY',
+    'JUN',
+    'JUL',
+    'AGO',
+    'SEP',
+    'OCT',
+    'NOV',
+    'DIC',
+  ];
+
+  series = [
+    {
+      type: 'column',
+      allowPointSelect: false,
+      enableMouseTracking: false,
+      pointWidth: 29,
+      color: '#0050F5',
+      data: [
+        106.0, 108.2, 203.1, 207.9, 302.2, 306.4, 106.0, 108.2, 203.1, 207.9,
+        302.2, 306.4,
+      ],
+    },
+    {
+      type: 'spline',
+      dashStyle: 'Dot',
+      color: '#314561',
+      data: [
+        126.0, 128.2, 223.1, 227.9, 322.2, 326.4, 126.0, 128.2, 223.1, 227.9,
+        322.2, 326.4,
+      ],
+    },
+
+    {
+      type: 'spline',
+      color: '#8F959D',
+      data: [
+        116.0, 118.2, 233.1, 237.9, 332.2, 336.4, 116.0, 118.2, 233.1, 237.9,
+        332.2, 336.4,
+      ],
+    },
+  ];
+
   headers = [
     {
       label: 'Producto',

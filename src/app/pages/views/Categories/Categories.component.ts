@@ -6,6 +6,7 @@ import { DimensionGraphComponent } from '../../components/dimension-graph/dimens
 import { TableReportComponent } from '../../components/table-report/table-report.component';
 import { DoughnutVerticalComponent } from '../../components/doughnut-vertical/doughnut-vertical.component';
 import { ParticipationComponent } from '../../components/participation/participation.component';
+import { EvolutionLineComponent } from '../../components/evolution-line/evolution-line.component';
 
 @Component({
   selector: 'app-categories',
@@ -17,7 +18,8 @@ import { ParticipationComponent } from '../../components/participation/participa
     TableReportComponent,
     DimensionGraphComponent,
     DoughnutVerticalComponent,
-    ParticipationComponent
+    ParticipationComponent,
+    EvolutionLineComponent
   ],
   templateUrl: './Categories.component.html',
   styleUrl: './Categories.component.scss',

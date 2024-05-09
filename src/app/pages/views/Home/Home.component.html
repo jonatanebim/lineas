@@ -8,7 +8,8 @@
     </div>
 
     <div class="d-flex w-100 gap-2 my-3">
-      <app-evolution-chart></app-evolution-chart>
+      <app-evolution-chart [categories]="categories"
+      [series]="series"></app-evolution-chart>
       <app-stacked-graph></app-stacked-graph>
       <app-country-graph></app-country-graph>
     </div>

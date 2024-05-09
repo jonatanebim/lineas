@@ -1,4 +1,11 @@
-import { Component, Input } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+  signal,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableReportComponent } from '../table-report/table-report.component';
 import { HighchartsChartModule } from 'highcharts-angular';
@@ -12,11 +19,20 @@ import { GraphIndicatorComponent } from '../graph-indicator/graph-indicator.comp
   templateUrl: './evolution-chart.component.html',
   styleUrls: ['./evolution-chart.component.scss'],
   standalone: true,
-  imports: [CommonModule, TableReportComponent, HighchartsChartModule, GraphIndicatorComponent],
+  imports: [
+    CommonModule,
+    TableReportComponent,
+    HighchartsChartModule,
+    GraphIndicatorComponent,
+  ],
 })
-export class EvolutionChartComponent {
+export class EvolutionChartComponent implements AfterViewInit {
   @Input() withFooter = false;
+  @Input() categories: any = null;
+  @Input() series: any = [];
+  @ViewChild('chartContainer') chartContainer!: ElementRef<any>;
 
+  onChart = signal(false);
   indicators = [
     {
       label: 'Far indep periferia',
@@ -117,76 +133,84 @@ export class EvolutionChartComponent {
     },
   ];
 
-
   Highcharts: typeof Highcharts = Highcharts;
-  chartOptions: Highcharts.Options = {
-    chart: {
-      width: 430,
-      height: 160,
-      spacing: [0, 0, 0, 0],
-    },
+  chartOptions: Highcharts.Options = {};
 
-    title: {
-      text: '',
-    },
-    legend: {
-      enabled: false,
-    },
+  ngAfterViewInit(): void {
+    this.chartOptions = {
+      chart: {
+        width: this.chartContainer.nativeElement.clientWidth,
+        height: this.chartContainer.nativeElement.clientHeight,
+        spacing: [0, 0, 0, 0],
+      },
 
-    responsive: {
-      rules: [
-        {
-          condition: {
-            maxWidth: 500,
-          },
-          chartOptions: {
-            legend: {
-              align: 'center',
-              verticalAlign: 'bottom',
-              layout: 'horizontal',
+      title: {
+        text: '',
+      },
+      legend: {
+        enabled: false,
+      },
+
+      responsive: {
+        rules: [
+          {
+            condition: {
+              maxWidth: 500,
             },
-            yAxis: {
-              labels: {
+            chartOptions: {
+              legend: {
+                align: 'center',
+                verticalAlign: 'bottom',
+                layout: 'horizontal',
+              },
+              yAxis: {
+                labels: {
+                  enabled: false,
+                },
+                title: {
+                  text: null,
+                },
+              },
+              subtitle: {
+                text: '',
+              },
+              credits: {
                 enabled: false,
               },
-              title: {
-                text: null,
-              },
-            },
-            xAxis: {
-              labels: {
-                enabled: false,
-              },
-            },
-            subtitle: {
-              text: '',
-            },
-            credits: {
-              enabled: false,
             },
           },
+        ],
+      },
+      xAxis: {
+        offset: 0,
+        labels: {
+          rotation: 0,
+          style: {
+            fontSize: '12px',
+            fontWeight: 'bold',
+            color: '#8F959D',
+          },
         },
-      ],
-    },
-    plotOptions: {
-      series: {
-        animation: false,
+        categories: this.categories,
       },
-      column: {
-        colors: ['#B3B8BF', '#0050F5'],
-        dataLabels: {
-          enabled: false,
+      plotOptions: {
+        series: {
+          enableMouseTracking: false,
+          marker: {
+            enabled: false,
+          },
+        },
+        column: {
+          colors: ['#B3B8BF', '#0050F5'],
+          dataLabels: {
+            enabled: false,
+          },
         },
       },
-    },
-    series: [
-      {
-        type: 'column',
-        animation: false,
-        allowPointSelect: false,
-        enableMouseTracking: false,
-        data: [406292, 314500,406292, 314500,406292, 314500,406292, 314500,406292, 314500,406292, 14500],
-      },
-    ],
-  };
+      series: this.series,
+    };
+    setTimeout(() => {
+      this.onChart.set(true);
+    }, 1500);
+  }
 }

@@ -26,6 +26,31 @@ import { StackedGraphComponent } from '../../components/stacked-graph/stacked-gr
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
+  categories = ['JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
+
+  series = [
+    {
+      type: 'column',
+      allowPointSelect: false,
+      enableMouseTracking: false,
+      pointWidth: 38,
+      color: '#0050F5',
+      data: [106.0, 108.2, 203.1, 207.9, 302.2, 306.4],
+    },
+    {
+      type: 'spline',
+      dashStyle: 'Dot',
+      color: '#314561',
+      data: [226.0, 228.2, 283.1, 300.9, 322.2, 326.4],
+    },
+
+    {
+      type: 'spline',
+      color: '#8F959D',
+      data: [230.0, 278.2, 290.1, 280.9, 332.2, 336.4],
+    },
+  ];
+
   headers = [
     {
       label: 'DPTO/CIUDAD',

@@ -9,7 +9,11 @@
 
     <div class="d-flex w-100 gap-2 my-3">
       <app-department-graph></app-department-graph>
-      <app-evolution-chart [withFooter]="true"></app-evolution-chart>
+      <app-evolution-chart
+        [categories]="categories"
+        [series]="series"
+        [withFooter]="true"
+      ></app-evolution-chart>
       <div class="my-region-page__stacked">
         <app-doughnut-vertical></app-doughnut-vertical>
       </div>
