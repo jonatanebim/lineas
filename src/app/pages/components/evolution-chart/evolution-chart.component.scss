@@ -12,6 +12,10 @@
     height: 160px;
     border-bottom: 1px solid #d9dde3;
     margin-bottom: 10px;
+    padding-bottom: 10px;
+    .chart {
+      height: 350px;
+    }
   }
 
   app-table-report {

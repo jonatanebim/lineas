@@ -2,8 +2,10 @@
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h2 class="sectionTitle m-0">Evolución MQ</h2>
     <div class="d-flex gap-2">
+      @if (withTopLabels) {
       <app-graph-indicator></app-graph-indicator>
       <app-graph-indicator></app-graph-indicator>
+      }
     </div>
   </div>
   <div
@@ -11,12 +13,25 @@
     [ngClass]="{ 'border-0': !withFooter }"
     #chartContainer
   >
-    @if(onChart()) {
-    <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions">
-    </highcharts-chart>
-    }
+    <div class="chart w-100">
+      @if(onChart()) {
+      <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions">
+      </highcharts-chart>
+      }
+    </div>
+
+    <div class="d-flex gap-2 pt-3">
+      @if (!withTopLabels) {
+      <app-graph-indicator></app-graph-indicator>
+      <app-graph-indicator></app-graph-indicator>
+      }
+    </div>
   </div>
-  <div class="my-evolution-chart__table d-flex gap-3 w-100" *ngIf="withFooter">
+
+  @if (withFooter) {
+  <div
+    class="my-evolution-chart__table d-flex justify-content-between gap-3 w-100"
+  >
     <div class="stacked">
       <h2 class="sectionTitle">% Participación facturación</h2>
       <div class="stacked__indicators">
@@ -47,4 +62,5 @@
       [values]="values"
     ></app-table-report>
   </div>
+  }
 </div>

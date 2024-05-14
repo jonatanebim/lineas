@@ -5,10 +5,11 @@
       <app-card-report></app-card-report>
       <app-card-report></app-card-report>
       <app-card-report></app-card-report>
+      <app-card-report></app-card-report>
     </div>
 
     <div class="d-flex w-100 gap-2 my-3">
-      <app-evolution-chart [categories]="categories"
+      <app-evolution-chart [withTopLabels]="false" [categories]="categories"
       [series]="series"></app-evolution-chart>
       <app-stacked-graph></app-stacked-graph>
       <app-country-graph></app-country-graph>

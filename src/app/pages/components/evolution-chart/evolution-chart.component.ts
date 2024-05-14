@@ -28,6 +28,7 @@ import { GraphIndicatorComponent } from '../graph-indicator/graph-indicator.comp
 })
 export class EvolutionChartComponent implements AfterViewInit {
   @Input() withFooter = false;
+  @Input() withTopLabels = true;
   @Input() categories: any = null;
   @Input() series: any = [];
   @ViewChild('chartContainer') chartContainer!: ElementRef<any>;
@@ -140,7 +141,7 @@ export class EvolutionChartComponent implements AfterViewInit {
     this.chartOptions = {
       chart: {
         width: this.chartContainer.nativeElement.clientWidth,
-        height: this.chartContainer.nativeElement.clientHeight,
+        height: this.chartContainer.nativeElement.clientHeight - 10,
         spacing: [0, 0, 0, 0],
       },
 
@@ -163,14 +164,6 @@ export class EvolutionChartComponent implements AfterViewInit {
                 verticalAlign: 'bottom',
                 layout: 'horizontal',
               },
-              yAxis: {
-                labels: {
-                  enabled: false,
-                },
-                title: {
-                  text: null,
-                },
-              },
               subtitle: {
                 text: '',
               },
@@ -181,12 +174,21 @@ export class EvolutionChartComponent implements AfterViewInit {
           },
         ],
       },
+      yAxis: {
+        labels: {
+          enabled: false,
+        },
+        title: {
+          text: null,
+        },
+      },
       xAxis: {
         offset: 0,
         labels: {
+          distance: 8,
           rotation: 0,
           style: {
-            fontSize: '12px',
+            fontSize: '11px',
             fontWeight: 'bold',
             color: '#8F959D',
           },

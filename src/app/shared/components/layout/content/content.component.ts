@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './content.component.scss',
 })
 export class ContentComponent {
+  isOpen = false;
   navBarItems = [
     {
       icon: 'icon-chart.svg',
@@ -30,7 +31,11 @@ export class ContentComponent {
       icon: 'icon-location.svg',
       path: '',
       label: 'Oportunidad de Competencia',
-      pro: true
+      pro: true,
     },
   ];
+
+  toggleSidebar() {
+    this.isOpen = !this.isOpen
+  }
 }
