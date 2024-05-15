@@ -1,0 +1,102 @@
+{
+  "cards": [
+    {
+      "label": "Facturación total",
+      "amount": 314.99,
+      "indicators": [
+        {
+          "label": "",
+          "value": 10
+        }
+      ]
+    }
+  ],
+  "categoryParticipation": {
+    "label": "% Participación Facturación por categoría",
+    "categories": [
+      {
+        "label": "",
+        "value": 10,
+        "percentage": 0
+      }
+    ]
+  },
+  "bdfCategoryParticipation": {
+    "category": "Cuidado Facial",
+    "total": {
+      "value": 0,
+      "percentage": 0
+    },
+    "bdf": {
+      "value": 0,
+      "percentage": 0
+    }
+  },
+  "productTable": {
+    "columns": [
+      {
+        "column": "",
+        "label": ""
+      }
+    ],
+    "values": [
+      {
+        "product": "",
+        "mq": 0,
+        "vsma": 0,
+        "vs3um": 0,
+        "vs6um": 0,
+        "vsmaa": 0
+      }
+    ]
+  },
+  "cobTable": {
+    "columns": [
+      {
+        "column": "",
+        "label": ""
+      }
+    ],
+    "values": [
+      {
+        "cobmq": "",
+        "vsma": 0,
+        "vs3um": 0,
+        "vs6um": 0,
+        "vsmaa": 0
+      }
+    ]
+  },
+  "evolutiveMq": {
+    "columns": ["ABR"],
+    "values": {
+      "totalBdf": [0],
+      "totalMarket": [0],
+      "coverageBdf": [0],
+      "salesBdf": [0]
+    }
+  },
+  "topSku": {
+    "logo": "",
+    "productName": "",
+    "facture": {
+      "vsma": 0,
+      "vs3um": 0
+    },
+    "ranking": {
+      "vsma": 0,
+      "vs3um": 0
+    }
+  },
+  "participationSkuBubble": {
+    "title": "% Participación por SKUs Pareto",
+    "bubbles": [0, 0, 0, 0],
+    "categories": [
+      {
+        "label": "",
+        "value": 10,
+        "percentage": 0
+      }
+    ]
+  }
+}

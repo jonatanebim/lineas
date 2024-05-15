@@ -30,7 +30,6 @@ export const appConfig: ApplicationConfig = {
     ),
     DatePipe,
     { provide: LOCALE_ID, useValue: 'es-PE' },
-    { provide: LOCALE_ID, useValue: 'es-US' },
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),
       registrationStrategy: 'registerWhenStable:30000',

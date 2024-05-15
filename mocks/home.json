@@ -1,0 +1,31 @@
+{
+  "cards": [
+    {
+      "label": "Facturación total",
+      "amount": 314.99,
+      "indicators": [
+        {
+          "label": "",
+          "value": 10
+        }
+      ]
+    }
+  ],
+  "categoriesTable": {
+    "columns": [
+      {
+        "column": "",
+        "label": ""
+      }
+    ],
+    "values": [
+      {
+        "categories": "",
+        "oportunity": 0,
+        "scenary": 0,
+        "level": 0,
+        "skus": 0
+      }
+    ]
+  }
+}
