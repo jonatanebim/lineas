@@ -1,7 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { CategoriesComponent } from '../categories/categories.component';
 import { DoughnutChartComponent } from '../doughnut-chart/doughnut-chart.component';
+import { COLORS } from '../../../shared/constants/global.constants';
 
 @Component({
   selector: 'app-stacked-graph',
@@ -11,55 +18,44 @@ import { DoughnutChartComponent } from '../doughnut-chart/doughnut-chart.compone
   styleUrl: './stacked-graph.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StackedGraphComponent {
+export class StackedGraphComponent implements OnInit {
+  @Input() data: any;
+  
+  doughnutChart: any;
+  stackedChart: any;
+
+  ngOnInit(): void {
+    console.log(this.data);
+
+    this.doughnutChart = this.data.doughnut.map((item: any, key: number) => ({
+      label: item.label,
+      value: item.value,
+      color: COLORS[key],
+    }));
+
+    this.stackedChart = [
+      {
+        label: 'Sesiones MQ',
+        value: `${this.data.totalSessions.value} (${this.data.totalSessions.percentage}%)`,
+        color: '#0050F5',
+      },
+      {
+        label: 'Interacción Clientes',
+        value: `${this.data.clientsInteraction.value} (${this.data.clientsInteraction.percentage}%)`,
+        color: '#00B0FF',
+      },
+      {
+        label: 'Clic en categorías',
+        value: `${this.data.categoryClicks.value} (${this.data.categoryClicks.percentage}%)`,
+        color: '#B3B8BF',
+      },
+      {
+        label: 'Compra',
+        value: `${this.data.sales.value} (${this.data.sales.percentage}%)`,
+        color: '#D9DDE3',
+      },
+    ];
+  }
+
   variants = ['#D9DDE3', '#B3B8BF', '#8F959D'];
-  doughnutChart = [
-    {
-      label: 'Desodorante y antitranspirantes',
-      value: 20,
-      color: '#0050F5',
-    },
-    {
-      label: 'Cuidado facial',
-      value: 20,
-      color: '#00B0FF',
-    },
-    {
-      label: 'Jabón gel y de manos',
-      value: 20,
-      color: '#D9DDE3',
-    },
-    {
-      label: 'Cuidado personal',
-      value: 20,
-      color: '#B3B8BF',
-    },
-    {
-      label: 'Otros',
-      value: 20,
-      color: '#8F959D',
-    },
-  ];
-  stackedChart = [
-    {
-      label: 'Sesiones MQ',
-      value: '1,483 (32%)',
-      color: '#0050F5',
-    },
-    {
-      label: 'Interacción Clientes',
-      value: '891 (60%)',
-      color: '#00B0FF',
-    },
-    {
-      label: 'Clic en categorías',
-      value: '874 (98%)',
-      color: '#B3B8BF',
-    },
-    {
-      label: 'Compra',
-      value: '126 (14%)',
-      color: '#D9DDE3',
-    },
-  ];
 }

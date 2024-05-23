@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { RankIndicatorComponent } from '../rank-indicator/rank-indicator.component';
 
 @Component({
@@ -10,4 +10,6 @@ import { RankIndicatorComponent } from '../rank-indicator/rank-indicator.compone
   styleUrl: './card-report.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CardReportComponent {}
+export class CardReportComponent {
+  @Input() data: any;
+}

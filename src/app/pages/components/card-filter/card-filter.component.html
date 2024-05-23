@@ -1,5 +1,7 @@
 <div class="my-cc-card">
-  <div class="my-cc-card__wrapper h-100 d-flex flex-wrap align-content-center px-3">
+  <div
+    class="my-cc-card__wrapper h-100 d-flex flex-wrap align-content-center px-3"
+  >
     <div class="d-flex flex-column">
       <img src="../../../../assets/images/logo-2.png" alt="" />
       <select name="" id="">
@@ -9,9 +11,12 @@
     </div>
   </div>
 
-  <div class="toggle">
-    Ver al día
-    <img src="../../../../assets/icons/toggle.svg" alt="">
+  <div class="toggle" (click)="toggle()">
+    Ver al día @if (isOnCurrent) {
+    <i class="icon icon-toggle-on">&#xf205;</i>
+    } @else {
+    <i class="icon icon-toggle-off">&#xf204;</i>
+    }
     <!-- <div class="control">
       <div>
         <div class="dot"></div>

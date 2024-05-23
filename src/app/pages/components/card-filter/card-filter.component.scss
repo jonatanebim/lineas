@@ -35,19 +35,21 @@
 
   .toggle {
     border-radius: 20px;
-    background-color: #DDF4FF;
+    background-color: #ddf4ff;
+    border: 1px solid #ddf4ff;
     position: absolute;
     top: 10px;
     right: 10px;
     padding: 3px 7px;
-    color: var(--Blue, #0050F5);
+    color: var(--Blue, #0050f5);
     font-size: 11px;
     font-weight: 400;
     line-height: 16px;
     letter-spacing: 0.2px;
     display: flex;
     align-items: center;
-    img {
+    cursor: pointer;
+    i {
       margin-left: 5px;
     }
     .control {
@@ -66,10 +68,16 @@
           border-radius: 20px;
           position: relative;
           top: -3.7px;
-          background: #DDF4FF;
+          background: #ddf4ff;
           left: -2px;
         }
       }
+    }
+
+    &:hover {
+      border-color: #0050f5;
+      background-color: transparent;
+      font-weight: 500;
     }
   }
 }

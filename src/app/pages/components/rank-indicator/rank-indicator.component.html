@@ -1,8 +1,15 @@
-<div [ngClass]="{'clear': clear}">
+<div [ngClass]="{ clear: clear }">
   @if (withHeader) {
-  <span>VS MA</span>
+  <span>{{ data?.label }}</span>
   }
-  <p class="d-flex justify-content-center align-items-center">
-    22% <img src="../../../../assets/icons/icon-up.svg" alt="" />
+  <p
+    class="d-flex justify-content-center align-items-center"
+    [ngClass]="{ isYellow: data?.value == 0, isRed: data?.value < 0 }"
+  >
+    {{ data?.value }}% @if(data?.value >= 0) {
+    <i class="icon icon-up">&#xe801;</i>
+    } @else {
+    <i class="icon icon-down">&#xe801;</i>
+    }
   </p>
 </div>

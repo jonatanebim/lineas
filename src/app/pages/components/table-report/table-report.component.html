@@ -1,26 +1,43 @@
-<div class="my-table-report" [ngStyle]="{'height': values.length > 4 && '240px'}">
-  <div class="my-table-report__wrapper d-flex gap-1" [ngClass]="{'w-100': isFullSize}">
+<div
+  class="my-table-report"
+  [ngStyle]="{ height: values.length > 4 && '240px' }"
+>
+  <div
+    class="my-table-report__wrapper d-flex gap-1"
+    [ngClass]="{ 'w-100': isFullSize }"
+  >
     <table class="w-100">
       <thead>
         <tr>
           @for (h of headers; track h) {
-          <th>{{h.label}}</th>
+          <th>{{ h.label }}</th>
           }
         </tr>
       </thead>
       <tbody>
         @for (i of values; track i) {
         <tr>
-          @for (c of i.columns; track c) {
+          @for (c of headers; track c) {
           <td>
-            @if (c.type ==='indicator') {
+            @if (isIndicator(c.columnName)) {
             <app-rank-indicator [withHeader]="false"></app-rank-indicator>
+            } @else { @if (c.columnName === 'skus') {
+            <a [routerLink]="['/path']"
+              >Ver detalle de SKU <i class="icon icon-right">&#xe803;</i>
+            </a>
             } @else {
-            <p class="m-0" [class]="'item__'+ c.type">
+            <p
+              class="m-0"
+              [class]="'item__' + i[c.columnName]"
+              [ngClass]="{
+                item__status: isStatus(c.columnName),
+                item__badge: isBadge(c.columnName)
+              }"
+            >
               <span></span>
-              {{c.value}}
+              {{ i[c.columnName] }}
             </p>
-            }
+            } }
           </td>
           }
         </tr>

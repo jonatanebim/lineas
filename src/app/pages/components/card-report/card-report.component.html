@@ -1,13 +1,15 @@
 <div class="my-cc-card">
-  <div class="my-cc-card__wrapper h-100 d-flex flex-wrap align-content-center px-2">
+  <div
+    class="my-cc-card__wrapper h-100 d-flex flex-wrap align-content-center px-2"
+  >
     <div>
-      <span>Facturación total</span>
-      <h2 class="m-0 pt-2">S/ 314,993</h2>
+      <span>{{ data.label }}</span>
+      <h2 class="m-0 pt-2">{{ data.amount }}</h2>
     </div>
 
     <div class="indicators d-flex gap-3">
-      @for (i of [1,2,3]; track i) {
-      <app-rank-indicator></app-rank-indicator>
+      @for (i of data.indicators; track i.value) {
+      <app-rank-indicator [data]="i"></app-rank-indicator>
       }
     </div>
   </div>

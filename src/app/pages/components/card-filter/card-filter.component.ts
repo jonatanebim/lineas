@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-card-filter',
@@ -9,4 +9,14 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './card-filter.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CardFilterComponent {}
+export class CardFilterComponent {
+  showCurrent = signal(false)
+
+  get isOnCurrent(): boolean {
+    return this.showCurrent()
+  }
+
+  toggle() {
+    this.showCurrent.update(() => !this.isOnCurrent)
+  }
+}

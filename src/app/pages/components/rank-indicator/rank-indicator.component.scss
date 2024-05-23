@@ -10,9 +10,26 @@ div {
     font-weight: 700;
     margin: 4px 0 0;
     padding: 4px 6px;
-    color: #43B748;
-    background-color: #E4FFEB;
+    color: #43b748;
+    background-color: #e4ffeb;
     border-radius: 14px;
+    i {
+      transform: rotate(45deg);
+    }
+    &.isYellow {
+      color: #fc9700;
+      background-color: #fef4e2;
+      i {
+        transform: rotate(45deg);
+      }
+    }
+    &.isRed {
+      color: #e72e49;
+      background-color: #ffedf2;
+      i {
+        transform: rotate(125deg);
+      }
+    }
   }
 
   &.clear {

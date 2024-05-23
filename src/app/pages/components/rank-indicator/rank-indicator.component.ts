@@ -11,4 +11,5 @@ import { Component, Input } from '@angular/core';
 export class RankIndicatorComponent {
   @Input() withHeader = true
   @Input() clear = false
+  @Input() data: any
 }

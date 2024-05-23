@@ -5,8 +5,70 @@
       "amount": 314.99,
       "indicators": [
         {
-          "label": "",
+          "label": "VS MA",
           "value": 10
+        },
+        {
+          "label": "VS 3UM",
+          "value": 33
+        },
+        {
+          "label": "VS 6UM",
+          "value": 26
+        }
+      ]
+    },
+    {
+      "label": "Cobertura total",
+      "amount": 314.99,
+      "indicators": [
+        {
+          "label": "VS MA",
+          "value": 10
+        },
+        {
+          "label": "VS 3UM",
+          "value": 33
+        },
+        {
+          "label": "VS 6UM",
+          "value": 26
+        }
+      ]
+    },
+    {
+      "label": "Ticket promedio total",
+      "amount": 314.99,
+      "indicators": [
+        {
+          "label": "VS MA",
+          "value": 10
+        },
+        {
+          "label": "VS 3UM",
+          "value": 33
+        },
+        {
+          "label": "VS 6UM",
+          "value": 26
+        }
+      ]
+    },
+    {
+      "label": "SKU promedio total",
+      "amount": 314.99,
+      "indicators": [
+        {
+          "label": "VS MA",
+          "value": 10
+        },
+        {
+          "label": "VS 3UM",
+          "value": 33
+        },
+        {
+          "label": "VS 6UM",
+          "value": 26
         }
       ]
     }
@@ -15,9 +77,29 @@
     "label": "% Participación Facturación por categoría",
     "categories": [
       {
-        "label": "",
+        "label": "Desodorante y antitranspirantes",
         "value": 10,
-        "percentage": 0
+        "percentage": 30
+      },
+      {
+        "label": "Cuidado facial",
+        "value": 10,
+        "percentage": 30
+      },
+      {
+        "label": "Jabón gel y de manos",
+        "value": 10,
+        "percentage": 30
+      },
+      {
+        "label": "Cuidado personal",
+        "value": 10,
+        "percentage": 30
+      },
+      {
+        "label": "Otros",
+        "value": 10,
+        "percentage": 30
       }
     ]
   },

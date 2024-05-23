@@ -1,31 +1,187 @@
 {
-  "cards": [
-    {
-      "label": "Facturación total",
-      "amount": 314.99,
-      "indicators": [
-        {
-          "label": "",
-          "value": 10
-        }
-      ]
-    }
-  ],
-  "categoriesTable": {
-    "columns": [
+  "home": {
+    "cards": [
       {
-        "column": "",
-        "label": ""
+        "label": "Facturación total",
+        "amount": "S/ 114,512.72",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 21
+          },
+          {
+            "label": "Vs MA",
+            "value": 5
+          },
+          {
+            "label": "Vs MA",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "label": "Cobertura total",
+        "amount": "S/ 267.00",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 5
+          },
+          {
+            "label": "Vs MA",
+            "value": 8
+          },
+          {
+            "label": "Vs MA",
+            "value": 13
+          }
+        ]
+      },
+      {
+        "label": "Ticket promedio total",
+        "amount": "S/ 428.89",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 15
+          },
+          {
+            "label": "Vs MA",
+            "value": -4
+          },
+          {
+            "label": "Vs MA",
+            "value": -11
+          }
+        ]
+      },
+      {
+        "label": "SKU promedio total",
+        "amount": "S/ 2.02",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 7
+          },
+          {
+            "label": "Vs MA",
+            "value": 7
+          },
+          {
+            "label": "Vs MA",
+            "value": 11
+          }
+        ]
       }
     ],
-    "values": [
-      {
-        "categories": "",
-        "oportunity": 0,
-        "scenary": 0,
-        "level": 0,
-        "skus": 0
+    "categoriesTable": {
+      "columns": [
+        {
+          "columnName": "categories",
+          "label": "Categorías"
+        },
+        {
+          "columnName": "oportunity",
+          "label": "Oportunidad"
+        },
+        {
+          "columnName": "scenary",
+          "label": "Escenario"
+        },
+        {
+          "columnName": "level",
+          "label": "nivel de crecimiento"
+        },
+        {
+          "columnName": "skus",
+          "label": "Detalle SKUs"
+        }
+      ],
+      "values": [
+        {
+          "categories": "Desodorantes y antitraspirantes",
+          "oportunity": "baja",
+          "scenary": "Muy atractivo",
+          "level": "8/13 SKUs",
+          "levelColor": "",
+          "skus": 0
+        },
+        {
+          "categories": "Jabón y Gel de manos",
+          "oportunity": "alta",
+          "scenary": "Competitivo",
+          "level": "8/13 SKUs",
+          "levelColor": "",
+          "skus": 0
+        },
+        {
+          "categories": "Cuidado Corporal",
+          "oportunity": "baja",
+          "scenary": "Poco atractivo",
+          "level": "8/13 SKUs",
+          "levelColor": "",
+          "skus": 0
+        },
+        {
+          "categories": "Desodorantes y antitraspirantes",
+          "oportunity": "media",
+          "scenary": "Muy atractivo",
+          "level": "8/13 SKUs",
+          "levelColor": "",
+          "skus": 0
+        }
+      ]
+    },
+    "categoryParticipation": {
+      "doughnut": [
+        {
+          "label": "Desodorante y antitranspirantes",
+          "value": 10,
+          "percentage": 34
+        },
+        {
+          "label": "Desodorante y antitranspirantes",
+          "value": 20,
+          "percentage": 34
+        },
+        {
+          "label": "Jabón gel y de manos",
+          "value": 10,
+          "percentage": 20
+        },
+        {
+          "label": "Cuidado personal",
+          "value": 3,
+          "percentage": 39
+        },
+        {
+          "label": "Otros",
+          "value": 1,
+          "percentage": 20
+        }
+      ],
+      "totalSessions": {
+        "value": 6,
+        "percentage": 20
+      },
+      "clientsInteraction": {
+        "value": 40,
+        "percentage": 30
+      },
+      "categoryClicks": {
+        "value": 10,
+        "percentage": 10
+      },
+      "sales": {
+        "value": 2,
+        "percentage": 30
       }
-    ]
+    },
+    "evolutionMq": {
+      "labels": ["OCT 23", "NOV 23", "DIC 23", "ENE 24", "FEB 24", "MAR 24"],
+      "columns": [100, 100, 100, 100, 100, 100],
+      "sales": [50, 50, 50, 50, 50, 50],
+      "coverage": [30, 30, 30, 30, 30, 30]
+    }
   }
 }

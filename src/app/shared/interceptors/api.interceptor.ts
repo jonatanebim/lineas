@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 export class ApiInterceptorRequest implements HttpInterceptor {
   haveError!: boolean;
 
-  constructor() {}
+  constructor() { }
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
