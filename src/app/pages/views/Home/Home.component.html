@@ -14,7 +14,10 @@
         [categories]="categories"
         [series]="series"
       ></app-evolution-chart>
-      <app-stacked-graph [data]="participation()"></app-stacked-graph>
+      <div class="my-home-page__stacked d-flex flex-column gap-2">
+        <app-stacked-graph [data]="participation()"></app-stacked-graph>
+        <app-funnel-graph [data]="participation()"></app-funnel-graph>
+      </div>
       <app-country-graph></app-country-graph>
     </div>
     }

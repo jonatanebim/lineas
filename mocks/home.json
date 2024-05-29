@@ -20,8 +20,8 @@
         ]
       },
       {
-        "label": "Cobertura total",
-        "amount": "S/ 267.00",
+        "label": "Volumen (und) total",
+        "amount": "267,32",
         "indicators": [
           {
             "label": "Vs MA",
@@ -38,8 +38,8 @@
         ]
       },
       {
-        "label": "Ticket promedio total",
-        "amount": "S/ 428.89",
+        "label": "Cobertura total",
+        "amount": "428.89",
         "indicators": [
           {
             "label": "Vs MA",
@@ -56,7 +56,7 @@
         ]
       },
       {
-        "label": "SKU promedio total",
+        "label": "Ticket promedio total",
         "amount": "S/ 2.02",
         "indicators": [
           {
@@ -85,50 +85,80 @@
           "label": "Oportunidad"
         },
         {
-          "columnName": "scenary",
-          "label": "Escenario"
+          "columnName": "facturation",
+          "label": "FACTURACIÓN  MDO"
         },
         {
-          "columnName": "level",
-          "label": "nivel de crecimiento"
+          "columnName": "bdfCateg",
+          "label": "%SH. BDF CATEG."
         },
         {
-          "columnName": "skus",
-          "label": "Detalle SKUs"
+          "columnName": "competitiveBrands",
+          "label": "# MARCAS compETIDORAS"
+        },
+        {
+          "columnName": "paretoBrands",
+          "label": "# MARCAS pareto"
+        },
+        {
+          "columnName": "pareto",
+          "label": "¿ESTAS EN EL PARETO?"
         }
       ],
       "values": [
         {
           "categories": "Desodorantes y antitraspirantes",
-          "oportunity": "baja",
-          "scenary": "Muy atractivo",
-          "level": "8/13 SKUs",
-          "levelColor": "",
-          "skus": 0
+          "oportunity": "alta",
+          "facturation": "S/. 3,459,692",
+          "bdfCateg": "14%",
+          "competitiveBrands": "16  MARCAS",
+          "paretoBrands": "5 MARCas",
+          "pareto": "si"
+        },
+        {
+          "categories": "Cuidado facial",
+          "oportunity": "alta",
+          "facturation": "S/. 3,459,692",
+          "bdfCateg": "14%",
+          "competitiveBrands": "16  MARCAS",
+          "paretoBrands": "5 MARCas",
+          "pareto": "si"
         },
         {
           "categories": "Jabón y Gel de manos",
           "oportunity": "alta",
-          "scenary": "Competitivo",
-          "level": "8/13 SKUs",
-          "levelColor": "",
-          "skus": 0
+          "facturation": "S/. 3,459,692",
+          "bdfCateg": "14%",
+          "competitiveBrands": "16  MARCAS",
+          "paretoBrands": "5 MARCas",
+          "pareto": "no"
         },
         {
           "categories": "Cuidado Corporal",
           "oportunity": "baja",
-          "scenary": "Poco atractivo",
-          "level": "8/13 SKUs",
-          "levelColor": "",
-          "skus": 0
+          "facturation": "S/. 3,459,692",
+          "bdfCateg": "14%",
+          "competitiveBrands": "16  MARCAS",
+          "paretoBrands": "5 MARCas",
+          "pareto": "si"
         },
         {
-          "categories": "Desodorantes y antitraspirantes",
-          "oportunity": "media",
-          "scenary": "Muy atractivo",
-          "level": "8/13 SKUs",
-          "levelColor": "",
-          "skus": 0
+          "categories": "Cuidado Corporal",
+          "oportunity": "baja",
+          "facturation": "S/. 3,459,692",
+          "bdfCateg": "14%",
+          "competitiveBrands": "16  MARCAS",
+          "paretoBrands": "5 MARCas",
+          "pareto": "si"
+        },
+        {
+          "categories": "Cuidado Corporal",
+          "oportunity": "baja",
+          "facturation": "S/. 3,459,692",
+          "bdfCateg": "14%",
+          "competitiveBrands": "16  MARCAS",
+          "paretoBrands": "5 MARCas",
+          "pareto": "si"
         }
       ]
     },
@@ -179,9 +209,9 @@
     },
     "evolutionMq": {
       "labels": ["OCT 23", "NOV 23", "DIC 23", "ENE 24", "FEB 24", "MAR 24"],
-      "columns": [100, 100, 100, 100, 100, 100],
-      "sales": [50, 50, 50, 50, 50, 50],
-      "coverage": [30, 30, 30, 30, 30, 30]
+      "columns": [27032, 29032, 27032, 28032, 29032, 31454],
+      "sales": [900, 1010, 1010, 1000, 1010, 1021],
+      "coverage": [780, 810, 800, 810, 820, 808]
     }
   }
 }

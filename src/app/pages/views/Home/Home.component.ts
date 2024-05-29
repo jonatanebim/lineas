@@ -17,6 +17,7 @@ import { EvolutionChartComponent } from '../../components/evolution-chart/evolut
 import { StackedGraphComponent } from '../../components/stacked-graph/stacked-graph.component';
 import { HomeRequestsService } from '../../../shared/requests/home.requests';
 import { Observable } from 'rxjs';
+import { FunnelGraphComponent } from '../../components/funnel-graph/funnel-graph.component';
 
 @Component({
   selector: 'app-home',
@@ -30,6 +31,7 @@ import { Observable } from 'rxjs';
     CountryGraphComponent,
     EvolutionChartComponent,
     StackedGraphComponent,
+    FunnelGraphComponent
   ],
   providers: [HomeRequestsService],
   templateUrl: './Home.component.html',
@@ -52,7 +54,15 @@ export class HomeComponent implements AfterViewInit {
       type: 'status',
     },
     {
-      columnName: 'level',
+      columnName: 'competitiveBrands',
+      type: 'badge',
+    },
+    {
+      columnName: 'paretoBrands',
+      type: 'badge',
+    },
+    {
+      columnName: 'pareto',
       type: 'badge',
     },
   ];

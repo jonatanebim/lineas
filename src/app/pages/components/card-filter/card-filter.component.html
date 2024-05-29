@@ -7,7 +7,9 @@
       <select name="" id="">
         <option value="">Diciembre 2024</option>
       </select>
+      @if (isOnCurrent) {
       <p class="m-0">Información hasta el día 19/12/2024</p>
+      }
     </div>
   </div>
 
@@ -17,10 +19,5 @@
     } @else {
     <i class="icon icon-toggle-off">&#xf204;</i>
     }
-    <!-- <div class="control">
-      <div>
-        <div class="dot"></div>
-      </div>
-    </div> -->
   </div>
 </div>

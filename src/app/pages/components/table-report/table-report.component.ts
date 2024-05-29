@@ -17,6 +17,8 @@ export class TableReportComponent {
   @Input() headers: any;
   @Input() values: any;
   @Input() types: any = [];
+  
+  quantity = 3;
 
   isStatus(columnName: string) {
     return (

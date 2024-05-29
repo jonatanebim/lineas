@@ -71,13 +71,16 @@ export class DoughnutChartComponent implements AfterViewInit {
           {
             data: this.values,
             backgroundColor: this.colors,
+            borderWidth: 0,
           },
         ],
       },
       plugins: [this.customDataLabelPlugin],
+      
       options: {
+
         maintainAspectRatio: false,
-        aspectRatio: 2,
+        aspectRatio: 1.8,
         events: [],
       },
     });
@@ -119,4 +122,3 @@ export class DoughnutChartComponent implements AfterViewInit {
     };
   }
 }
-

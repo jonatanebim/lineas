@@ -1,0 +1,29 @@
+<div class="my-stacked-graph d-flex flex-wrap h-100">
+  <h2 class="sectionTitle m-0">Funnel de ventas</h2>
+  <div
+    class="d-flex flex-column justify-content-center w-100 align-items-center"
+  >
+    <div class="stacked-graph mb-3">
+      @for (i of stackedChart; track i.label) {
+      <div class="stacked-graph__item d-flex mb-1">
+        <div class="stack d-flex justify-content-center">
+          <div
+            class="stack__value d-flex align-items-center justify-content-center"
+            [style.background]="i.color"
+          >
+            <p
+              class="text-center m-0 fw-bold"
+              [style.color]="(i.color === '#00B0FF' || i.color === '#0050F5' ) && '#fff !important'"
+            >
+              {{ i.value }}
+            </p>
+          </div>
+        </div>
+        <div class="stack__label d-flex align-items-center">
+          <p>{{ i.label }}</p>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

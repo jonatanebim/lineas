@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  signal,
+} from '@angular/core';
 import { CardFilterComponent } from '../../components/card-filter/card-filter.component';
 import { CardReportComponent } from '../../components/card-report/card-report.component';
 import { DimensionGraphComponent } from '../../components/dimension-graph/dimension-graph.component';
@@ -7,6 +13,7 @@ import { TableReportComponent } from '../../components/table-report/table-report
 import { DoughnutVerticalComponent } from '../../components/doughnut-vertical/doughnut-vertical.component';
 import { ParticipationComponent } from '../../components/participation/participation.component';
 import { EvolutionLineComponent } from '../../components/evolution-line/evolution-line.component';
+import { CategoriesRequestsService } from '../../../shared/requests/categories.requests';
 
 @Component({
   selector: 'app-categories',
@@ -19,279 +26,24 @@ import { EvolutionLineComponent } from '../../components/evolution-line/evolutio
     DimensionGraphComponent,
     DoughnutVerticalComponent,
     ParticipationComponent,
-    EvolutionLineComponent
+    EvolutionLineComponent,
   ],
   templateUrl: './Categories.component.html',
   styleUrl: './Categories.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CategoriesComponent {
-  headers = [
-    {
-      label: 'Producto',
-      type: '',
-    },
-    {
-      label: 'Venta MQ',
-      type: '',
-    },
-    {
-      label: 'Vs Ma',
-      type: '',
-    },
-    {
-      label: 'Vs 3um',
-      type: '',
-    },
-    {
-      label: 'vs 6um',
-      type: '',
-    },
-    {
-      label: 'vs maa',
-      type: '',
-    },
-  ];
+export class CategoriesComponent implements AfterViewInit {
+  service = inject(CategoriesRequestsService);
+  cards: any = signal([]);
+  headers: Array<any> = [];
+  values: Array<any> = [];
 
-  values = [
-    {
-      columns: [
-        {
-          value: 'Desodorantes y antitraspirantes',
-          type: '',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-      ],
-    },
-    {
-      columns: [
-        {
-          value: 'Desodorantes y antitraspirantes',
-          type: '',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-      ],
-    },
-    {
-      columns: [
-        {
-          value: 'Desodorantes y antitraspirantes',
-          type: '',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-      ],
-    },
-    {
-      columns: [
-        {
-          value: 'Desodorantes y antitraspirantes',
-          type: '',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-      ],
-    },
-    {
-      columns: [
-        {
-          value: 'Desodorantes y antitraspirantes',
-          type: '',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-      ],
-    },
-  ];
+  headersCob: Array<any> = [];
+  valuesCob: Array<any> = [];
 
-
-  headers2 = [
-    {
-      label: 'Cob. MQ',
-      type: '',
-    },
-    {
-      label: 'Vs Ma',
-      type: '',
-    },
-    {
-      label: 'Vs 3um',
-      type: '',
-    },
-    {
-      label: 'vs 6um',
-      type: '',
-    },
-    {
-      label: 'vs maa',
-      type: '',
-    },
-  ];
-
-  values2 = [
-    {
-      columns: [
-        {
-          value: '110',
-          type: '',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-      ],
-    },
-    {
-      columns: [
-        {
-          value: '110',
-          type: '',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-      ],
-    },
-    {
-      columns: [
-        {
-          value: '110',
-          type: '',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-      ],
-    },
-  ];
+  ngAfterViewInit(): void {
+    this.service.getCategoriesReport().subscribe((data: any) => {
+      this.cards.update(() => data?.cards);
+    });
+  }
 }

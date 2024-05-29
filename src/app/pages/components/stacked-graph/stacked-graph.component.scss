@@ -1,5 +1,5 @@
 .my-stacked-graph {
-  min-height: 458px;
+  min-height: 244px;
   border-radius: 8px;
   border: 1px solid var(--Grey-4, #d9dde3);
   background: var(--White, #fff);
@@ -11,6 +11,10 @@
     width: 120px;
   }
 
+  .doughnut-graph {
+    height: 145px;
+  }
+  
   .stacked-graph {
     &__item {
       display: none;
@@ -69,57 +73,6 @@
             }
           }
         }
-      }
-    }
-  }
-
-  .stack {
-    width: 150px;
-    max-width: 150px;
-    height: 32px;
-    padding: 0 1rem;
-    &__value {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
-
-      p {
-        font-size: 12px;
-      }
-
-      &::before {
-        content: "";
-        display: block;
-        width: 20px;
-        height: 40px;
-        background-color: #fff;
-        padding: 10px;
-        position: absolute;
-        top: 0;
-        left: -10px;
-        transform: rotate(-18deg);
-      }
-
-      &::after {
-        content: "";
-        display: block;
-        width: 20px;
-        height: 40px;
-        background-color: #fff;
-        padding: 10px;
-        position: absolute;
-        top: 0;
-        right: -10px;
-        transform: rotate(18deg);
-      }
-    }
-    &__label {
-      p {
-        margin: 0;
-        font-size: 13px;
-        color: #314561;
-        font-weight: 600;
       }
     }
   }

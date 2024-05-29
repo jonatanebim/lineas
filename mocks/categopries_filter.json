@@ -2,7 +2,7 @@
   "category": {
     "cards": [
       {
-        "label": "Facturación total",
+        "label": "Facturación total Cuidado Facial",
         "amount": "S/ 114,512.72",
         "indicators": [
           {
@@ -20,7 +20,7 @@
         ]
       },
       {
-        "label": "Volumen (und) total",
+        "label": "Volumen (und) total Cuidado Fac",
         "amount": "267,32",
         "indicators": [
           {
@@ -38,7 +38,7 @@
         ]
       },
       {
-        "label": "Cobertura total",
+        "label": "Cobertura total Cuidado Facial",
         "amount": "428.89",
         "indicators": [
           {
@@ -56,7 +56,7 @@
         ]
       },
       {
-        "label": "Ticket promedio total",
+        "label": "Ticket promedio total Cuidado Fac",
         "amount": "S/ 2.02",
         "indicators": [
           {
@@ -137,60 +137,6 @@
         }
       ]
     },
-    "categoryParticipation": {
-      "doughnut": [
-        {
-          "label": "Desodorante y antitranspirantes",
-          "value": 10,
-          "percentage": 34
-        },
-        {
-          "label": "Desodorante y antitranspirantes",
-          "value": 20,
-          "percentage": 34
-        },
-        {
-          "label": "Jabón gel y de manos",
-          "value": 10,
-          "percentage": 20
-        },
-        {
-          "label": "Cuidado personal",
-          "value": 3,
-          "percentage": 39
-        },
-        {
-          "label": "Afeitado y Post afeitado",
-          "value": 1,
-          "percentage": 20
-        },
-        {
-          "label": "Desodorante y antitranspirantes",
-          "value": 10,
-          "percentage": 34
-        },
-        {
-          "label": "Desodorante y antitranspirantes",
-          "value": 20,
-          "percentage": 34
-        },
-        {
-          "label": "Jabón gel y de manos",
-          "value": 10,
-          "percentage": 20
-        },
-        {
-          "label": "Cuidado personal",
-          "value": 3,
-          "percentage": 39
-        },
-        {
-          "label": "Afeitado y Post afeitado",
-          "value": 1,
-          "percentage": 20
-        }
-      ]
-    },
     "evolutionMq": {
       "labels": [
         "ENE 23",
@@ -212,30 +158,14 @@
       ],
       "totalBdf": [
         900, 1010, 1010, 1000, 900, 1010, 1010, 1000, 1010, 1021, 1010, 1021
+      ],
+      "coverageBdf": [
+        900, 1010, 1010, 1000, 900, 1010, 1010, 1000, 1010, 1021, 1010, 1021
+      ],
+      "coverageMdo": [
+        900, 1010, 1010, 1000, 900, 1010, 1010, 1000, 1010, 1021, 1010, 1021
       ]
     },
-    "principalCategories": [
-      {
-        "category": "Desodorante y antitranspirante",
-        "totalPercentage": 10,
-        "columns": [927.266, 104.057]
-      },
-      {
-        "category": "Cuidado facial",
-        "totalPercentage": 4,
-        "columns": [927.266, 104.057]
-      },
-      {
-        "category": "Jabón y gel de manos",
-        "totalPercentage": 60,
-        "columns": [927.266, 104.057]
-      },
-      {
-        "category": "cuidado corporal",
-        "totalPercentage": 80,
-        "columns": [927.266, 104.057]
-      }
-    ],
     "participationPareto": {
       "categories": [
         {

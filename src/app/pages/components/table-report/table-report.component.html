@@ -1,9 +1,9 @@
 <div
   class="my-table-report"
-  [ngStyle]="{ height: values.length > 4 && '240px' }"
+  [ngStyle]="{ height: quantity > 4 && '100%' }"
 >
   <div
-    class="my-table-report__wrapper d-flex gap-1"
+    class="my-table-report__wrapper d-flex gap-1 mb-3"
     [ngClass]="{ 'w-100': isFullSize }"
   >
     <table class="w-100">
@@ -16,31 +16,33 @@
       </thead>
       <tbody>
         @for (i of values; track i) {
-        <tr>
-          @for (c of headers; track c) {
-          <td>
-            @if (isIndicator(c.columnName)) {
-            <app-rank-indicator [withHeader]="false"></app-rank-indicator>
-            } @else { @if (c.columnName === 'skus') {
-            <a [routerLink]="['/path']"
-              >Ver detalle de SKU <i class="icon icon-right">&#xe803;</i>
-            </a>
-            } @else {
-            <p
-              class="m-0"
-              [class]="'item__' + i[c.columnName]"
-              [ngClass]="{
-                item__status: isStatus(c.columnName),
-                item__badge: isBadge(c.columnName)
-              }"
-            >
-              <span></span>
-              {{ i[c.columnName] }}
-            </p>
-            } }
-          </td>
+          @if($index <= quantity) {
+            <tr>
+              @for (c of headers; track c) {
+              <td>
+                @if (isIndicator(c.columnName)) {
+                <app-rank-indicator [withHeader]="false"></app-rank-indicator>
+                } @else { @if (c.columnName === 'skus') {
+                <a [routerLink]="['/path']"
+                  >Ver detalle de SKU <i class="icon icon-right">&#xe803;</i>
+                </a>
+                } @else {
+                <p
+                  class="m-0"
+                  [class]="'item__' + i[c.columnName]"
+                  [ngClass]="{
+                    item__status: isStatus(c.columnName),
+                    item__badge: isBadge(c.columnName)
+                  }"
+                >
+                  <span></span>
+                  {{ i[c.columnName] }}
+                </p>
+                } }
+              </td>
+              }
+            </tr>
           }
-        </tr>
         }
       </tbody>
     </table>

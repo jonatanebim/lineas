@@ -13,6 +13,10 @@ app-country-graph {
   width: 35%;
 }
 
-app-stacked-graph {
-  width: 30%;
+.my-home-page {
+  &__stacked {
+    width: 30%;
+    height: 200px;
+    margin-bottom: 1rem;
+  }
 }
