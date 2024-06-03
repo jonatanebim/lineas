@@ -18,7 +18,8 @@ export class DepartmentGraphComponent implements OnChanges {
   department = DEPARTMENTS[0].value
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.department = changes['selected'].currentValue
+    const cValue = changes['selected'].currentValue;
+    if (cValue) this.department = cValue
   }
 
   get current() {

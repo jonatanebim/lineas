@@ -60,7 +60,7 @@ export class RegionComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.route.queryParamMap.subscribe((params: any) => {
       this.department = DEPARTMENTS.find((department: any) => department.name === params?.params.department)
-      this.service.getRegionReport(this.department.name).subscribe((data: any) => {
+      this.service.getRegionReport(this.department?.name).subscribe((data: any) => {
         this.categories = data.evolutionMq?.labels
         this.series = [
           {
