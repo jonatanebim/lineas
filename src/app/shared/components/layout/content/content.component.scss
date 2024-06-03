@@ -75,22 +75,12 @@
           line-height: 14px;
           letter-spacing: 0.7px;
           text-transform: uppercase;
+          font-style: normal;
           padding: 2px 4px;
+          padding-right: 10px;
           position: absolute;
           bottom: -15px;
           left: 25px;
-          padding-left: 1rem;
-          &::before {
-            content: "";
-            display: block;
-            width: 5px;
-            height: 5px;
-            background-color: white;
-            position: absolute;
-            left: 7px;
-            top: 6px;
-            border-radius: 50%;
-          }
         }
         &.inactive {
           border-bottom: none !important;

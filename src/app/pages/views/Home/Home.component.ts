@@ -31,7 +31,7 @@ import { FunnelGraphComponent } from '../../components/funnel-graph/funnel-graph
     CountryGraphComponent,
     EvolutionChartComponent,
     StackedGraphComponent,
-    FunnelGraphComponent
+    FunnelGraphComponent,
   ],
   providers: [HomeRequestsService],
   templateUrl: './Home.component.html',
@@ -40,7 +40,6 @@ import { FunnelGraphComponent } from '../../components/funnel-graph/funnel-graph
 })
 export class HomeComponent implements AfterViewInit {
   service = inject(HomeRequestsService);
-  // cards: Observable<Array<any>> = new Observable();
   cards: any = signal([]);
   participation: any = signal(null);
   evolution: any = signal(null);
@@ -79,19 +78,21 @@ export class HomeComponent implements AfterViewInit {
           allowPointSelect: false,
           enableMouseTracking: false,
           pointWidth: 38,
-          color: '#0050F5',
+          color: '#B6E7FF',
           data: data.evolutionMq?.columns,
         },
         {
           type: 'spline',
           dashStyle: 'Dot',
-          color: '#314561',
+          color: '#0D3B9B',
           data: data.evolutionMq?.sales,
+          yAxis: 2,
         },
         {
           type: 'spline',
-          color: '#8F959D',
+          color: '#00B0FF',
           data: data.evolutionMq?.coverage,
+          yAxis: 1,
         },
       ];
 

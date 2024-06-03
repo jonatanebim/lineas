@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,5 +9,12 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
 })
 export class SeeMoreComponent {
-  @Input() centered = true
+  @Input() centered = true;
+  @Input() isActive = false;
+
+  @Output() toggle: EventEmitter<boolean> = new EventEmitter();
+
+  doToggle() {
+    this.toggle.emit(!this.isActive);
+  }
 }

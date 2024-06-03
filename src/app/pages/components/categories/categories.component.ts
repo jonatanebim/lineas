@@ -1,6 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SeeMoreComponent } from '../see-more/see-more.component';
+import { Indicator } from '../../../shared/interfaces';
+import {
+  MAX_CATEGORIES_VIEW,
+  MIN_CATEGORIES_VIEW,
+} from '../../../shared/constants/global.constants';
 
 @Component({
   selector: 'app-categories',
@@ -10,32 +15,14 @@ import { SeeMoreComponent } from '../see-more/see-more.component';
   imports: [CommonModule, SeeMoreComponent],
 })
 export class CategoriesComponent {
+  @Input() data!: Array<Partial<Indicator>>;
+  @Input() showAll = false;
 
-  categories = [
-    {
-      label: 'Desodorante y antitranspirantes',
-      value: 20,
-      color: '#0050F5',
-    },
-    {
-      label: 'Cuidado facial',
-      value: 20,
-      color: '#00B0FF',
-    },
-    {
-      label: 'Jabón gel y de manos',
-      value: 20,
-      color: '#D9DDE3',
-    },
-    {
-      label: 'Cuidado personal',
-      value: 20,
-      color: '#B3B8BF',
-    },
-    {
-      label: 'Otros',
-      value: 20,
-      color: '#8F959D',
-    },
-  ];
+  isActiveShowAll = false;
+  viewQuantity = MIN_CATEGORIES_VIEW;
+
+  doToggle($ev: boolean) {
+    this.isActiveShowAll = $ev;
+    this.viewQuantity = $ev ? MAX_CATEGORIES_VIEW : MIN_CATEGORIES_VIEW;
+  }
 }

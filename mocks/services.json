@@ -1,0 +1,1210 @@
+{
+  "home": {
+    "cards": [
+      {
+        "label": "Facturación total",
+        "amount": "S/ 114,512.72",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 21
+          },
+          {
+            "label": "Vs MA",
+            "value": 5
+          },
+          {
+            "label": "Vs MA",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "label": "Volumen (und) total",
+        "amount": "267,32",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 5
+          },
+          {
+            "label": "Vs MA",
+            "value": 8
+          },
+          {
+            "label": "Vs MA",
+            "value": 13
+          }
+        ]
+      },
+      {
+        "label": "Cobertura total",
+        "amount": "428.89",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 15
+          },
+          {
+            "label": "Vs MA",
+            "value": -4
+          },
+          {
+            "label": "Vs MA",
+            "value": -11
+          }
+        ]
+      },
+      {
+        "label": "Ticket promedio total",
+        "amount": "S/ 2.02",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 7
+          },
+          {
+            "label": "Vs MA",
+            "value": 7
+          },
+          {
+            "label": "Vs MA",
+            "value": 11
+          }
+        ]
+      }
+    ],
+    "regionOportunity": [
+      {
+        "department": "lambayeque",
+        "label": "Lambayeque",
+        "coverage": 172,
+        "bdf": "21%",
+        "billing": "S/ 87,122",
+        "oportunity": "bajo"
+      },
+      {
+        "department": "apurimac",
+        "label": "Apurímac",
+        "coverage": 172,
+        "bdf": "21%",
+        "billing": "S/ 87,122",
+        "oportunity": "alto"
+      }
+    ],
+    "categoriesTable": {
+      "columns": [
+        {
+          "columnName": "categories",
+          "label": "Categorías"
+        },
+        {
+          "columnName": "oportunity",
+          "label": "Oportunidad"
+        },
+        {
+          "columnName": "facturation",
+          "label": "FACTURACIÓN  MDO"
+        },
+        {
+          "columnName": "bdfCateg",
+          "label": "%SH. BDF CATEG."
+        },
+        {
+          "columnName": "competitiveBrands",
+          "label": "# MARCAS compETIDORAS"
+        },
+        {
+          "columnName": "paretoBrands",
+          "label": "# MARCAS pareto"
+        },
+        {
+          "columnName": "pareto",
+          "label": "¿ESTAS EN EL PARETO?"
+        }
+      ],
+      "values": [
+        {
+          "categories": "Desodorantes y antitraspirantes",
+          "oportunity": "alta",
+          "facturation": "S/. 3,459,692",
+          "bdfCateg": "14%",
+          "competitiveBrands": "16  MARCAS",
+          "paretoBrands": "5 MARCas",
+          "pareto": "si"
+        },
+        {
+          "categories": "Cuidado facial",
+          "oportunity": "alta",
+          "facturation": "S/. 3,459,692",
+          "bdfCateg": "14%",
+          "competitiveBrands": "16  MARCAS",
+          "paretoBrands": "5 MARCas",
+          "pareto": "si"
+        },
+        {
+          "categories": "Jabón y Gel de manos",
+          "oportunity": "alta",
+          "facturation": "S/. 3,459,692",
+          "bdfCateg": "14%",
+          "competitiveBrands": "16  MARCAS",
+          "paretoBrands": "5 MARCas",
+          "pareto": "no"
+        },
+        {
+          "categories": "Cuidado Corporal",
+          "oportunity": "baja",
+          "facturation": "S/. 3,459,692",
+          "bdfCateg": "14%",
+          "competitiveBrands": "16  MARCAS",
+          "paretoBrands": "5 MARCas",
+          "pareto": "si"
+        },
+        {
+          "categories": "Cuidado Corporal",
+          "oportunity": "baja",
+          "facturation": "S/. 3,459,692",
+          "bdfCateg": "14%",
+          "competitiveBrands": "16  MARCAS",
+          "paretoBrands": "5 MARCas",
+          "pareto": "si"
+        },
+        {
+          "categories": "Cuidado Corporal",
+          "oportunity": "baja",
+          "facturation": "S/. 3,459,692",
+          "bdfCateg": "14%",
+          "competitiveBrands": "16  MARCAS",
+          "paretoBrands": "5 MARCas",
+          "pareto": "si"
+        }
+      ]
+    },
+    "categoryParticipation": {
+      "doughnut": [
+        {
+          "label": "Desodorante y antitranspirantes",
+          "value": 30
+        },
+        {
+          "label": "Desodorante y antitranspirantes",
+          "value": 20
+        },
+        {
+          "label": "Jabón gel y de manos",
+          "value": 20
+        },
+        {
+          "label": "Cuidado personal",
+          "value": 10
+        },
+        {
+          "label": "Otros",
+          "value": 20
+        }
+      ],
+      "totalSessions": {
+        "value": 5483,
+        "percentage": 32
+      },
+      "clientsInteraction": {
+        "value": 2987,
+        "percentage": 60
+      },
+      "categoryClicks": {
+        "value": 2874,
+        "percentage": 96
+      },
+      "sales": {
+        "value": 1126,
+        "percentage": 10
+      }
+    },
+    "evolutionMq": {
+      "labels": ["OCT 23", "NOV 23", "DIC 23", "ENE 24", "FEB 24", "MAR 24"],
+      "columns": [27032, 29032, 27032, 28032, 29032, 31454],
+      "sales": [1000, 1010, 1010, 1000, 1010, 1021],
+      "coverage": [780, 810, 800, 810, 820, 808]
+    }
+  },
+  "categories": {
+    "cards": [
+      {
+        "label": "Facturación total",
+        "amount": "S/ 114,512.72",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 21
+          },
+          {
+            "label": "Vs MA",
+            "value": 5
+          },
+          {
+            "label": "Vs MA",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "label": "Volumen (und) total",
+        "amount": "267,32",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 5
+          },
+          {
+            "label": "Vs MA",
+            "value": 8
+          },
+          {
+            "label": "Vs MA",
+            "value": 13
+          }
+        ]
+      },
+      {
+        "label": "Cobertura total",
+        "amount": "428.89",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 15
+          },
+          {
+            "label": "Vs MA",
+            "value": -4
+          },
+          {
+            "label": "Vs MA",
+            "value": -11
+          }
+        ]
+      },
+      {
+        "label": "Ticket promedio total",
+        "amount": "S/ 2.02",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 7
+          },
+          {
+            "label": "Vs MA",
+            "value": 7
+          },
+          {
+            "label": "Vs MA",
+            "value": 11
+          }
+        ]
+      }
+    ],
+    "productsTable": {
+      "columns": [
+        {
+          "columnName": "product",
+          "label": "Producto"
+        },
+        {
+          "columnName": "mqSale",
+          "label": "Venta MQ"
+        },
+        {
+          "columnName": "vsma",
+          "label": "Vs Ma"
+        },
+        {
+          "columnName": "vs3um",
+          "label": "Vs 3um"
+        },
+        {
+          "columnName": "vs6um",
+          "label": "vs 6um"
+        },
+        {
+          "columnName": "vsmaa",
+          "label": "vs maa"
+        },
+        {
+          "columnName": "cobmq",
+          "label": "Cob. MQ"
+        },
+        {
+          "columnName": "vsmacob",
+          "label": "Vs Ma"
+        },
+        {
+          "columnName": "vs3umcob",
+          "label": "Vs 3um"
+        },
+        {
+          "columnName": "vs6umcob",
+          "label": "Vs 6um"
+        },
+        {
+          "columnName": "vsmaacob",
+          "label": "Vs maa"
+        }
+      ],
+      "values": [
+        {
+          "product": "Nivea Crema 30ml",
+          "mqSale": "S/102,279",
+          "vsma": 58,
+          "vs3um": 102,
+          "vs6um": 99,
+          "vsmaa": 154,
+          "cobmq": 110,
+          "vsma": -19,
+          "vs3um": 8,
+          "vs6um": 2,
+          "vsmaa": 25
+        },
+        {
+          "product": "Nivea Crema 30ml",
+          "mqSale": "S/102,279",
+          "vsma": 58,
+          "vs3um": 102,
+          "vs6um": 99,
+          "vsmaa": 154,
+          "cobmq": 110,
+          "vsma": -19,
+          "vs3um": 8,
+          "vs6um": 2,
+          "vsmaa": 25
+        },
+        {
+          "product": "Nivea Crema 30ml",
+          "mqSale": "S/102,279",
+          "vsma": 58,
+          "vs3um": 102,
+          "vs6um": 99,
+          "vsmaa": 154,
+          "cobmq": 110,
+          "vsma": -19,
+          "vs3um": 8,
+          "vs6um": 2,
+          "vsmaa": 25
+        },
+        {
+          "product": "Nivea Crema 30ml",
+          "mqSale": "S/102,279",
+          "vsma": 58,
+          "vs3um": 102,
+          "vs6um": 99,
+          "vsmaa": 154,
+          "cobmq": 110,
+          "vsma": -19,
+          "vs3um": 8,
+          "vs6um": 2,
+          "vsmaa": 25
+        },
+        {
+          "product": "Nivea Crema 30ml",
+          "mqSale": "S/102,279",
+          "vsma": 58,
+          "vs3um": 102,
+          "vs6um": 99,
+          "vsmaa": 154,
+          "cobmq": 110,
+          "vsma": -19,
+          "vs3um": 8,
+          "vs6um": 2,
+          "vsmaa": 25
+        },
+        {
+          "product": "Nivea Crema 30ml",
+          "mqSale": "S/102,279",
+          "vsma": 58,
+          "vs3um": 102,
+          "vs6um": 99,
+          "vsmaa": 154,
+          "cobmq": 110,
+          "vsma": -19,
+          "vs3um": 8,
+          "vs6um": 2,
+          "vsmaa": 25
+        },
+        {
+          "product": "Nivea Crema 30ml",
+          "mqSale": "S/102,279",
+          "vsma": 58,
+          "vs3um": 102,
+          "vs6um": 99,
+          "vsmaa": 154,
+          "cobmq": 110,
+          "vsma": -19,
+          "vs3um": 8,
+          "vs6um": 2,
+          "vsmaa": 25
+        }
+      ]
+    },
+    "categoryParticipation": {
+      "doughnut": [
+        {
+          "label": "Cuidado Facial",
+          "value": 30
+        },
+        {
+          "label": "Desodorante y antitranspirantes",
+          "value": 20
+        },
+        {
+          "label": "Jabón gel y de manos",
+          "value": 15
+        },
+        {
+          "label": "Cuidado personal",
+          "value": 20
+        },
+        {
+          "label": "Afeitado y Post afeitado",
+          "value": 15
+        },
+        {
+          "label": "Otros",
+          "value": 1
+        }
+      ]
+    },
+    "evolutionMq": {
+      "labels": [
+        "ENE 23",
+        "FEB 23",
+        "MAR 23",
+        "ABR 24",
+        "MAY 23",
+        "JUN 23",
+        "JUL 23",
+        "AGO 24",
+        "SET 24",
+        "OCT 24",
+        "NOV 24",
+        "DIC 24"
+      ],
+      "totalMarket": [
+        27032, 29032, 27032, 28032, 27032, 29032, 27032, 28032, 29032, 31454,
+        29032, 31454
+      ],
+      "totalBdf": [
+        900, 1010, 1010, 1000, 900, 1010, 1010, 1000, 1010, 1021, 1010, 1021
+      ]
+    },
+    "principalCategories": [
+      {
+        "category": "Desodorante y antitranspirante",
+        "totalPercentage": 10,
+        "columns": [927.266, 104.057]
+      },
+      {
+        "category": "Cuidado facial",
+        "totalPercentage": 4,
+        "columns": [927.266, 104.057]
+      },
+      {
+        "category": "Jabón y gel de manos",
+        "totalPercentage": 60,
+        "columns": [927.266, 104.057]
+      },
+      {
+        "category": "cuidado corporal",
+        "totalPercentage": 80,
+        "columns": [927.266, 104.057]
+      }
+    ],
+    "participationPareto": {
+      "categories": [
+        {
+          "category": "Nivea crema 30ml",
+          "value": 34
+        },
+        {
+          "category": "Nivea crema 60ml",
+          "value": 23
+        },
+        {
+          "category": "Nivea crema Cuidado Aclarante 100ml",
+          "value": 14
+        },
+        {
+          "category": "Nivea crema 30ml",
+          "value": 10
+        },
+        {
+          "category": "Nivea crema 30ml",
+          "value": 34
+        },
+        {
+          "category": "Nivea crema 60ml",
+          "value": 23
+        },
+        {
+          "category": "Nivea crema Cuidado Aclarante 100ml",
+          "value": 14
+        },
+        {
+          "category": "Nivea crema 30ml",
+          "value": 10
+        },
+        {
+          "category": "Otros",
+          "value": 5
+        }
+      ]
+    },
+    "topSKu": {
+      "productLogo": "",
+      "product": "Nivea crema 30ml",
+      "billing": {
+        "vsma": 10,
+        "vs3um": -23
+      },
+      "ranking": {
+        "vsma": 10,
+        "vs3um": 1
+      }
+    }
+  },
+  "region": {
+    "cards": [
+      {
+        "label": "Facturación total Lambayeque",
+        "amount": "S/ 32,512.72",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 21
+          },
+          {
+            "label": "Vs MA",
+            "value": 5
+          },
+          {
+            "label": "Vs MA",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "label": "Volumen (und) total Lambayeque",
+        "amount": "267",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": -23
+          },
+          {
+            "label": "Vs MA",
+            "value": -3
+          },
+          {
+            "label": "Vs MA",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "label": "Cobertura total Lambayeque",
+        "amount": "428",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 15
+          },
+          {
+            "label": "Vs MA",
+            "value": -4
+          },
+          {
+            "label": "Vs MA",
+            "value": -11
+          }
+        ]
+      },
+      {
+        "label": "Ticket promedio total Lambayeque",
+        "amount": "S/ 2.02",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 7
+          },
+          {
+            "label": "Vs MA",
+            "value": 7
+          },
+          {
+            "label": "Vs MA",
+            "value": 11
+          }
+        ]
+      }
+    ],
+    "regionOportunity": [
+      {
+        "department": "lambayeque",
+        "label": "Lambayeque",
+        "coverage": 172,
+        "bdf": "21%",
+        "billing": "S/ 87,122",
+        "oportunity": "bajo"
+      },
+      {
+        "department": "apurimac",
+        "label": "Apurímac",
+        "coverage": 172,
+        "bdf": "21%",
+        "billing": "S/ 87,122",
+        "oportunity": "alto"
+      }
+    ],
+    "provincesTable": {
+      "columns": [
+        {
+          "columnName": "province",
+          "label": "Dpto/provincias"
+        },
+        {
+          "columnName": "salemq",
+          "label": "Venta MQ"
+        },
+        {
+          "columnName": "share",
+          "label": "%Share"
+        },
+        {
+          "columnName": "distnum",
+          "label": "%Dist Num"
+        },
+        {
+          "columnName": "distpond",
+          "label": "%Dist pond"
+        },
+        {
+          "columnName": "vs3um",
+          "label": "Vs 3UM"
+        },
+        {
+          "columnName": "vs6um",
+          "label": "vs 6UM"
+        },
+        {
+          "columnName": "vsmaa",
+          "label": "vs maa"
+        },
+        {
+          "columnName": "cobmq",
+          "label": "Cob. MQ"
+        },
+        {
+          "columnName": "vs3umcob",
+          "label": "Vs 3um"
+        },
+        {
+          "columnName": "vs6umcob",
+          "label": "vs 6um"
+        },
+        {
+          "columnName": "vsmaacob",
+          "label": "vs maa"
+        }
+      ],
+      "values": [
+        {
+          "province": "Desodorantes y antitraspirantes",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "province": "Desodorantes y antitraspirantes",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "province": "Desodorantes y antitraspirantes",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "province": "Desodorantes y antitraspirantes",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "province": "Desodorantes y antitraspirantes",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "province": "Desodorantes y antitraspirantes",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "province": "Desodorantes y antitraspirantes",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "province": "Desodorantes y antitraspirantes",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "province": "Desodorantes y antitraspirantes",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        }
+      ]
+    },
+    "channelsTable": {
+      "columns": [
+        {
+          "columnName": "channel",
+          "label": "CANALES"
+        },
+        {
+          "columnName": "salemq",
+          "label": "Venta MQ"
+        },
+        {
+          "columnName": "share",
+          "label": "%Share"
+        },
+        {
+          "columnName": "distnum",
+          "label": "%Dist Num"
+        },
+        {
+          "columnName": "distpond",
+          "label": "%Dist pond"
+        },
+        {
+          "columnName": "vs3um",
+          "label": "Vs 3UM"
+        },
+        {
+          "columnName": "vs6um",
+          "label": "vs 6UM"
+        },
+        {
+          "columnName": "vsmaa",
+          "label": "vs maa"
+        },
+        {
+          "columnName": "cobmq",
+          "label": "Cob. MQ"
+        },
+        {
+          "columnName": "vs3umcob",
+          "label": "Vs 3um"
+        },
+        {
+          "columnName": "vs6umcob",
+          "label": "vs 6um"
+        },
+        {
+          "columnName": "vsmaacob",
+          "label": "vs maa"
+        }
+      ],
+      "values": [
+        {
+          "channel": "Farmacia Independiente",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "channel": "Farmacia Independiente",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "channel": "Farmacia Independiente",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "channel": "Farmacia Independiente",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "channel": "Farmacia Independiente",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "channel": "Farmacia Independiente",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "channel": "Farmacia Independiente",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "channel": "Farmacia Independiente",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "channel": "Farmacia Independiente",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        }
+      ]
+    },
+    "categoriesTable": {
+      "columns": [
+        {
+          "columnName": "category",
+          "label": "Categorías"
+        },
+        {
+          "columnName": "salemq",
+          "label": "Venta MQ"
+        },
+        {
+          "columnName": "share",
+          "label": "%Share"
+        },
+        {
+          "columnName": "distnum",
+          "label": "%Dist Num"
+        },
+        {
+          "columnName": "distpond",
+          "label": "%Dist pond"
+        },
+        {
+          "columnName": "vs3um",
+          "label": "Vs 3UM"
+        },
+        {
+          "columnName": "vs6um",
+          "label": "vs 6UM"
+        },
+        {
+          "columnName": "vsmaa",
+          "label": "vs maa"
+        },
+        {
+          "columnName": "cobmq",
+          "label": "Cob. MQ"
+        },
+        {
+          "columnName": "vs3umcob",
+          "label": "Vs 3um"
+        },
+        {
+          "columnName": "vs6umcob",
+          "label": "vs 6um"
+        },
+        {
+          "columnName": "vsmaacob",
+          "label": "vs maa"
+        }
+      ],
+      "values": [
+        {
+          "category": "Desodorantes y antitranspirantes",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "category": "Desodorantes y antitranspirantes",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "category": "Desodorantes y antitranspirantes",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "category": "Desodorantes y antitranspirantes",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "category": "Desodorantes y antitranspirantes",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        },
+        {
+          "category": "Desodorantes y antitranspirantes",
+          "salemq": "S/ 87,122",
+          "share": "80%",
+          "distnum": "14%",
+          "distpond": "16%",
+          "vs3um": "5",
+          "vs6um": "5",
+          "vsmaa": "5",
+          "cobmq": "5",
+          "vs3umcob": "5",
+          "vs6umcob": "5",
+          "vsmaacob": "5"
+        }
+      ]
+    },
+    "categoryParticipation": {
+      "doughnut": [
+        {
+          "label": "Chocope",
+          "value": 30
+        },
+        {
+          "label": "Motupe",
+          "value": 20
+        },
+        {
+          "label": "Jayanca",
+          "value": 20
+        },
+        {
+          "label": "Mórrope",
+          "value": 10
+        },
+        {
+          "label": "Chiclayo",
+          "value": 20
+        }
+      ],
+      "totalSessions": {
+        "value": 5483,
+        "percentage": 32
+      },
+      "clientsInteraction": {
+        "value": 2987,
+        "percentage": 60
+      },
+      "categoryClicks": {
+        "value": 2874,
+        "percentage": 96
+      },
+      "sales": {
+        "value": 1126,
+        "percentage": 10
+      }
+    },
+    "evolutionMq": {
+      "labels": ["OCT 23", "NOV 23", "DIC 23", "ENE 24", "FEB 24", "MAR 24"],
+      "columns": [27032, 29032, 27032, 28032, 29032, 31454],
+      "sales": [1000, 1010, 1010, 1000, 1010, 1021],
+      "coverage": [780, 810, 800, 810, 820, 808]
+    }
+  }
+}

@@ -2,33 +2,52 @@
   <div class="my-region-page__header">
     <div class="d-flex gap-2">
       <app-card-filter></app-card-filter>
-      <app-card-report></app-card-report>
-      <app-card-report></app-card-report>
-      <app-card-report></app-card-report>
-      <app-card-report></app-card-report>
+      @for(card of cards(); track card.id) {
+      <app-card-report [data]="card"></app-card-report>
+      }
     </div>
 
+    @if (cards().length) {
     <div class="d-flex w-100 gap-2 my-3">
-      <app-department-graph></app-department-graph>
+      <app-department-graph [selected]="this.department?.value"></app-department-graph>
       <app-evolution-chart
+        [withTopLabels]="false"
         [categories]="categories"
         [series]="series"
-        [withFooter]="true"
       ></app-evolution-chart>
       <div class="my-region-page__stacked">
-        <app-doughnut-vertical></app-doughnut-vertical>
+        <app-doughnut-vertical
+          [data]="doughnutData()"
+          class="d-block"
+        ></app-doughnut-vertical>
       </div>
+    </div>
+    }
+
+    <div class="d-flex gap-2 mt-2">
+      <app-table-report
+        class="w-100"
+        [headers]="provincesTable.headers"
+        [values]="provincesTable.values"
+        [types]="provincesTable.tableIndicators"
+      ></app-table-report>
     </div>
 
     <div class="d-flex gap-2 mt-2">
       <app-table-report
-        [headers]="headers"
-        [values]="values"
+        class="w-100"
+        [headers]="channelsTable.headers"
+        [values]="channelsTable.values"
+        [types]="channelsTable.tableIndicators"
       ></app-table-report>
+    </div>
+
+    <div class="d-flex gap-2 mt-2">
       <app-table-report
-        class="table-small"
-        [headers]="headers2"
-        [values]="values2"
+        class="w-100"
+        [headers]="categoriesTable.headers"
+        [values]="categoriesTable.values"
+        [types]="categoriesTable.tableIndicators"
       ></app-table-report>
     </div>
   </div>

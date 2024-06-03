@@ -12,20 +12,20 @@
           </div>
           <div class="my-dimension-report__categories">
             <h3 class="sectionTitle">% Participación por SKUs Pareto</h3>
-            <app-categories></app-categories>
+            <app-categories [data]="paretoCategories"></app-categories>
           </div>
         </div>
       </div>
       <div class="col-5 ps-3">
         <h3 class="sectionTitle">Top SKU - Cuidado Facial</h3>
         <div class="report-top d-flex">
-          <img src="../../../../assets/images/logo-top.png" alt="" />
+          <img [src]="topSkuImage" [attr.alt]="topSku.product" />
           <div class="report-top__detail w-100">
             <h2 class="d-flex align-items-center gap-1">
               1
               <span>en ranking</span>
             </h2>
-            <p class="product m-0">Nivea crema 30ml</p>
+            <p class="product m-0">{{ topSku.product }}</p>
             <div class="report-top__table">
               <div class="item w-100">
                 <div></div>
@@ -47,12 +47,14 @@
                     <app-rank-indicator
                       [withHeader]="false"
                       [clear]="true"
+                      [data]="{ value: topSku.billing.vsma }"
                     ></app-rank-indicator>
                   </div>
                   <div>
                     <app-rank-indicator
                       [withHeader]="false"
                       [clear]="true"
+                      [data]="{ value: topSku.billing.vs3um }"
                     ></app-rank-indicator>
                   </div>
                 </div>
@@ -67,12 +69,14 @@
                     <app-rank-indicator
                       [withHeader]="false"
                       [clear]="true"
+                      [data]="{ value: topSku.ranking.vsma }"
                     ></app-rank-indicator>
                   </div>
                   <div>
                     <app-rank-indicator
                       [withHeader]="false"
                       [clear]="true"
+                      [data]="{ value: topSku.ranking.vs3um }"
                     ></app-rank-indicator>
                   </div>
                 </div>

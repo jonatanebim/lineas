@@ -1,14 +1,19 @@
 <div class="labels">
   <ul class="list-unstyled">
-    @for (i of categories; track i.label) {
+    @for (i of data; track i.label) { @if ($index <
+    viewQuantity) {
     <li class="d-flex align-items-center">
       <span [style.backgroundColor]="i.color"></span>
-      <p> {{i.label}} </p>
+      <p>{{ i.label }}</p>
     </li>
-    }
+    } }
   </ul>
 
-  @if (categories.length > 5) {
-    <app-see-more [centered]="false"></app-see-more>
+  @if (data.length > viewQuantity && !showAll) {
+  <app-see-more
+    (toggle)="doToggle($event)"
+    [isActive]="isActiveShowAll"
+    [centered]="false"
+  ></app-see-more>
   }
 </div>

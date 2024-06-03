@@ -9,8 +9,8 @@
   width: 100%;
   select {
     border-radius: 12px;
-    border: 1px solid var(--Blue, #0050f5);
-    color: var(--Grey-2, #8f959d);
+    border: 1px solid var(--Grey-2, #8f959d);
+    color: var(--Grey-2, #343a40);
     font-size: 11px;
     font-weight: 600;
     line-height: 16px;
@@ -32,14 +32,50 @@
 
       &__content {
         .labels {
-          width: 90px;
-          p {
-            color: #8f959d;
-            font-size: 10px;
-            font-weight: 800;
+          width: 250px;
+          .level {
+            color: var(--Grey-2, #212529);
+            font-size: 8px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 16px;
+            letter-spacing: 0.7px;
+            text-transform: uppercase;
             span {
-              color: #0050f5;
-              font-size: 20px;
+              border-radius: 40px;
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 16px;
+              letter-spacing: 0.6px;
+              text-transform: uppercase;
+              padding: 4px 11px;
+              margin-left: 6px;
+              img {
+                width: 7px;
+                margin-right: 3px;
+              }
+              &.alta {
+                background: #e4ffeb;
+                color: var(--Green-2, #43b748);
+              }
+            }
+          }
+          div {
+            p {
+              color: var(--Grey_2, #8f959d);
+              font-size: 10px;
+              font-weight: 800;
+              line-height: 14px; /* 140% */
+              letter-spacing: 0.2px;
+              text-transform: uppercase;
+              margin-top: 0.4rem;
+              span {
+                color: #0050f5;
+                font-size: 28px;
+                font-weight: 400;
+                padding-top: 20px;
+              }
             }
           }
         }

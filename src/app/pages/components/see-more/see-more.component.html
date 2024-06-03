@@ -1,6 +1,12 @@
-<div class="my-seemore d-flex w-100" [ngClass]="{'justify-content-center': centered}">
-  <button class="border-0 bg-white" type="button">
-    Ver Más
-    <img src="../../../../assets/icons/see-more.svg" alt="">
+<div
+  class="my-seemore d-flex w-100"
+  [ngClass]="{ 'justify-content-center': centered }"
+>
+  <button class="border-0 bg-white" type="button" (click)="doToggle()">
+    @if(isActive) { Ver Menos
+    <img src="../../../../assets/icons/see-minus.svg" alt="" />
+    } @else { Ver Más
+    <img src="../../../../assets/icons/see-more.svg" alt="" />
+    }
   </button>
 </div>

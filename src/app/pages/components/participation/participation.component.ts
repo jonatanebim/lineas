@@ -23,67 +23,63 @@ export class ParticipationComponent {
       height: 160,
       spacing: [0, 0, 0, 0],
     },
-
     title: {
       text: '',
     },
     legend: {
       enabled: false,
     },
-
-    responsive: {
-      rules: [
-        {
-          condition: {
-            maxWidth: 500,
-          },
-          chartOptions: {
-            legend: {
-              align: 'center',
-              verticalAlign: 'bottom',
-              layout: 'horizontal',
-            },
-            yAxis: {
-              labels: {
-                enabled: false,
-              },
-              title: {
-                text: null,
-              },
-            },
-            xAxis: {
-              labels: {
-                enabled: false,
-              },
-            },
-            subtitle: {
-              text: '',
-            },
-            credits: {
-              enabled: false,
-            },
-          },
+    yAxis: {
+      labels: {
+        enabled: false,
+      },
+      title: {
+        text: null,
+      },
+    },
+    xAxis: {
+      type: 'category',
+      startOnTick: true,
+      gridLineWidth: 1,
+      labels: {
+        distance: 4,
+        rotation: 0,
+        style: {
+          fontSize: '12px',
+          fontWeight: 'bold',
+          color: '#8F959D',
         },
-      ],
+      },
+      categories: ['ENE'],
     },
     plotOptions: {
+      column: {
+        animation: false,
+        // allowPointSelect: false,
+        // pointPlacement: -0.2,
+        enableMouseTracking: false,
+        grouping: false,
+      },
       series: {
         animation: false,
-      },
-      column: {
-        colors: ['#B3B8BF', '#0050F5'],
         dataLabels: {
-          enabled: false,
+          enabled: true,
+          format: 'S/ {point.y:.0f}',
         },
       },
     },
     series: [
       {
         type: 'column',
-        animation: false,
-        allowPointSelect: false,
-        enableMouseTracking: false,
-        data: [406292, 14500],
+        colors: ['#B3B8BF', '#0000'],
+        data: [['2024', 14500]],
+        name: '2016'
+      },
+      {
+        type: 'column',
+        colors: ['#B3B8BF', '#0000'],
+        data: [['2024', 1500]],
+        name: '2016'
       },
     ],
   };

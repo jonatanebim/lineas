@@ -1,13 +1,10 @@
 <div class="my-doughnut-vertical">
-  <h2 class="sectionTitle">
-    % Participación Facturación por categoría
-  </h2>
+  <h2 class="sectionTitle">% Participación Facturación por categoría</h2>
 
   <div class="position-relative">
-    <app-doughnut-chart></app-doughnut-chart>
-    <div class="mt-4">
-      <app-categories></app-categories>
+    <app-doughnut-chart [data]="doughnutChart"></app-doughnut-chart>
+    <div class="mt-4 px-3">
+      <app-categories [showAll]="true" [data]="doughnutChart"></app-categories>
     </div>
   </div>
-
 </div>

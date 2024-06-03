@@ -11,6 +11,8 @@
     height: 200px;
     &-labels {
       padding: 4px;
+      position: relative;
+      top: 7px
     }
   }
 }

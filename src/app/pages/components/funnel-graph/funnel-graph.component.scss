@@ -49,9 +49,10 @@
           &__value {
             width: 75%;
             &::after {
-              right: -10px;    right: -10px;
+              right: -10px;
+              right: -10px;
               transform: rotate(21deg);
-                   }
+            }
             &::before {
               left: -11px;
               transform: rotate(-25deg);
@@ -85,10 +86,9 @@
       height: 100%;
       position: relative;
       overflow: hidden;
-
       p {
-        font-size: 12px;
-        color: #1E2A3A;
+        font-size: 10px;
+        color: #1e2a3a;
       }
 
       &::before {

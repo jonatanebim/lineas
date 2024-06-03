@@ -5,10 +5,10 @@
 }
 
 app-evolution-chart {
-  min-width: 560px;
+  min-width: 400px;
 }
 
-app-table-report  {
+app-table-report {
   width: 60%;
   &.table-small {
     width: 40%;
@@ -17,4 +17,18 @@ app-table-report  {
 
 app-department-graph {
   width: 100%;
+}
+
+:host {
+  ::ng-deep {
+    tr {
+      td {
+        &:nth-child(1) {
+          p {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
 }

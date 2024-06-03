@@ -14,6 +14,8 @@ import { DoughnutVerticalComponent } from '../../components/doughnut-vertical/do
 import { ParticipationComponent } from '../../components/participation/participation.component';
 import { EvolutionLineComponent } from '../../components/evolution-line/evolution-line.component';
 import { CategoriesRequestsService } from '../../../shared/requests/categories.requests';
+import { TopSku } from '../../../shared/interfaces/topSku.interface';
+import { ParetoSkusParticipation } from '../../../shared/interfaces';
 
 @Component({
   selector: 'app-categories',
@@ -37,13 +39,29 @@ export class CategoriesComponent implements AfterViewInit {
   cards: any = signal([]);
   headers: Array<any> = [];
   values: Array<any> = [];
-
   headersCob: Array<any> = [];
   valuesCob: Array<any> = [];
+  topSku!: TopSku;
+  paretoSkus!: ParetoSkusParticipation;
+  doughnutData: any = signal([]);
 
   ngAfterViewInit(): void {
     this.service.getCategoriesReport().subscribe((data: any) => {
       this.cards.update(() => data?.cards);
+      this.doughnutData.update(() => data?.categoryParticipation?.doughnut);
+
+      this.topSku = data?.topSKu;
+      this.paretoSkus = data?.participationPareto;
+      
+      let activeColor = false;
+      this.headers = data.productsTable.columns.map((data: any) => {
+        if (data.columnName === 'cobmq') activeColor = true;
+        return {
+          ...data,
+          color: activeColor && '#00B0FF',
+        };
+      });
+      this.values = data.productsTable.values;
     });
   }
 }

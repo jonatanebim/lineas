@@ -1,4 +1,4 @@
-.my-country-graph {
+.my-country {
   min-height: 458px;
   border-radius: 8px;
   border: 1px solid var(--Grey-4, #d9dde3);
@@ -6,4 +6,14 @@
   position: relative;
   padding: 16px 10px 0;
   width: 100%;
+  &__indicators {
+    bottom: 1.2rem;
+    left: 1.2rem;
+    p {
+      color: #314561;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: .4rem;
+    }
+  }
 }

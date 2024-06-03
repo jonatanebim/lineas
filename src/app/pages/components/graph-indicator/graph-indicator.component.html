@@ -1,7 +1,9 @@
 <div class="graph__indicator">
   <p class="m-0 position-relative d-flex align-items-center gap-1">
     <!-- <span [style.backgroundColor]="i.color"></span> -->
-    <span></span>
-    Facturación Total
+    <span [ngStyle]="{ backgroundColor: color }" [ngClass]="type">
+      <span [ngStyle]="{ backgroundColor: color }"></span>
+    </span>
+    {{ label }}
   </p>
 </div>

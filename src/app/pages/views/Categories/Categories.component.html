@@ -1,4 +1,5 @@
 <div class="my-categories-page">
+  @if (doughnutData()?.length) {
   <div class="my-categories-page__header">
     <div class="d-flex gap-2">
       <app-card-filter></app-card-filter>
@@ -9,7 +10,10 @@
 
     <div class="d-flex gap-2 mt-2">
       <div class="my-categories-page__stacked">
-        <app-doughnut-vertical class="d-block"></app-doughnut-vertical>
+        <app-doughnut-vertical
+          [data]="doughnutData()"
+          class="d-block"
+        ></app-doughnut-vertical>
       </div>
 
       <div class="w-100">
@@ -17,20 +21,21 @@
           <app-evolution-line class="w-100"></app-evolution-line>
           <app-participation></app-participation>
         </div>
-        <app-dimension-graph></app-dimension-graph>
+        <app-dimension-graph
+          [paretoSkus]="paretoSkus"
+          [topSku]="topSku"
+        ></app-dimension-graph>
       </div>
     </div>
 
-    <div class="d-flex gap-2 mt-2">
+    <div class="d-flex mt-2">
       <app-table-report
+        class="w-100"
+        [combined]="true"
         [headers]="headers"
         [values]="values"
       ></app-table-report>
-      <app-table-report
-        class="table-small"
-        [headers]="headersCob"
-        [values]="valuesCob"
-      ></app-table-report>
     </div>
   </div>
+  }
 </div>

@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Chart from 'chart.js/auto';
 
@@ -10,60 +16,15 @@ import Chart from 'chart.js/auto';
   imports: [CommonModule],
 })
 export class DoughnutChartComponent implements AfterViewInit {
+  @Input() data: any;
+
   @ViewChild('graph') graph!: ElementRef<any>;
 
-  variants = ['#D9DDE3', '#B3B8BF', '#8F959D'];
-  doughnutChart = [
-    {
-      label: 'Desodorante y antitranspirantes',
-      value: 20,
-      color: '#0050F5',
-    },
-    {
-      label: 'Cuidado facial',
-      value: 20,
-      color: '#00B0FF',
-    },
-    {
-      label: 'Jabón gel y de manos',
-      value: 20,
-      color: '#D9DDE3',
-    },
-    {
-      label: 'Cuidado personal',
-      value: 20,
-      color: '#B3B8BF',
-    },
-    {
-      label: 'Otros',
-      value: 20,
-      color: '#8F959D',
-    },
-  ];
-  stackedChart = [
-    {
-      label: 'Sesiones MQ',
-      value: '1,483 (32%)',
-      color: '#0050F5',
-    },
-    {
-      label: 'Interacción Clientes',
-      value: '891 (60%)',
-      color: '#00B0FF',
-    },
-    {
-      label: 'Clic en categorías',
-      value: '874 (98%)',
-      color: '#B3B8BF',
-    },
-    {
-      label: 'Compra',
-      value: '126 (14%)',
-      color: '#D9DDE3',
-    },
-  ];
+  variants = ['#DEF2FF', '#B6E7FF', '#8F959D'];
+  doughnutChart!: any[];
 
   ngAfterViewInit(): void {
+    this.doughnutChart = this.data;
     new Chart(this.graph.nativeElement, {
       type: 'doughnut',
       data: {
@@ -76,9 +37,7 @@ export class DoughnutChartComponent implements AfterViewInit {
         ],
       },
       plugins: [this.customDataLabelPlugin],
-      
       options: {
-
         maintainAspectRatio: false,
         aspectRatio: 1.8,
         events: [],

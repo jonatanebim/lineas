@@ -1,11 +1,9 @@
-@import './assets/fonts/nunito.scss';
-
-@import './assets/scss/variables';
-@import './assets/scss/typography';
+@import "./assets/fonts/nunito.scss";
+@import "./assets/scss/variables";
+@import "./assets/scss/typography";
 
 * {
   font-family: "Nunito Sans", sans-serif;
-  transition: all .5s;
 }
 
 .fs-x2 {

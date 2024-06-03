@@ -174,14 +174,14 @@ export class EvolutionChartComponent implements AfterViewInit {
           },
         ],
       },
-      yAxis: {
-        labels: {
-          enabled: false,
-        },
-        title: {
-          text: null,
-        },
-      },
+      // yAxis: {
+      //   labels: {
+      //     enabled: false,
+      //   },
+      //   title: {
+      //     text: null,
+      //   },
+      // },
       xAxis: {
         offset: 0,
         labels: {
@@ -195,6 +195,39 @@ export class EvolutionChartComponent implements AfterViewInit {
         },
         categories: this.categories,
       },
+      yAxis: [
+        {
+          labels: {
+            format: '',
+            enabled: false,
+          },
+          title: {
+            text: '',
+          },
+          opposite: true,
+        },
+        {
+          gridLineWidth: 0,
+          title: {
+            text: '',
+          },
+          labels: {
+            format: '',
+            enabled: false,
+          },
+        },
+        {
+          gridLineWidth: 0,
+          title: {
+            text: '',
+          },
+          labels: {
+            format: '',
+            enabled: false,
+          },
+          opposite: true,
+        },
+      ],
       plotOptions: {
         series: {
           enableMouseTracking: false,
@@ -211,8 +244,7 @@ export class EvolutionChartComponent implements AfterViewInit {
       },
       series: this.series,
     };
-    setTimeout(() => {
-      this.onChart.set(true);
-    }, 1500);
+
+    setTimeout(() => this.onChart.set(true), 500);
   }
 }
