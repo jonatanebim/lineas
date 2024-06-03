@@ -4,9 +4,10 @@ import Highcharts from 'highcharts'
 import { HighchartsChartModule } from 'highcharts-angular'
 import MapModule from 'highcharts/modules/map'
 import { CommonsRequestsService } from '../../../shared/requests/commons.requests'
-import { DEPARTMENTS } from '../../../shared/constants/global.constants'
+import { DEPARTMENTS } from '../../../shared/constants/globals'
 import { Router } from '@angular/router'
-import pathsConstants from '../../../shared/constants/paths.constants'
+import pathsConstants from '../../../shared/constants/paths'
+import { COLORS } from '../../../shared/constants/colors'
 
 MapModule(Highcharts)
 
@@ -40,23 +41,11 @@ export class CountryGraphComponent implements AfterViewInit {
         title: {
           text: '',
         },
-
-        colorAxis: {
-          labels: {
-            format: '{value}%',
-          },
-          stops: [
-            [0.2, '#188e2a'], // Green
-            [0.5, '#fee401'], // Yellow
-            [1, '#df1309'], // Red
-          ],
-          min: 0,
-          max: 8,
-        },
         mapView: {},
         mapNavigation: {
           enabled: true,
           enableButtons: false,
+        
         },
         xAxis: {
           labels: {
@@ -117,6 +106,7 @@ export class CountryGraphComponent implements AfterViewInit {
       lat: d.lat,
       lon: d.lon,
       name: d.name,
+      color: COLORS.Green2,
     }))
   }
 }

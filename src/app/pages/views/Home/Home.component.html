@@ -2,21 +2,17 @@
   <div class="my-home-page__header">
     <div class="d-flex gap-2">
       <app-card-filter></app-card-filter>
-      @for(card of cards(); track card.id) {
+      @for(card of cards; track card.id) {
       <app-card-report [data]="card"></app-card-report>
       }
     </div>
 
-    @if (participation()) {
+    @if (participation) {
     <div class="d-flex w-100 gap-2 my-3">
-      <app-evolution-chart
-        [withTopLabels]="false"
-        [categories]="categories"
-        [series]="series"
-      ></app-evolution-chart>
+      <app-evolution-chart [withTopLabels]="false" [categories]="categories" [series]="series"></app-evolution-chart>
       <div class="my-home-page__stacked d-flex flex-column gap-2">
-        <app-stacked-graph [data]="participation()"></app-stacked-graph>
-        <app-funnel-graph [data]="participation()"></app-funnel-graph>
+        <app-stacked-graph [data]="participation"></app-stacked-graph>
+        <app-funnel-graph [data]="participation"></app-funnel-graph>
       </div>
       <app-country-graph></app-country-graph>
     </div>

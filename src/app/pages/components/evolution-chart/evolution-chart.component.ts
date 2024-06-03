@@ -1,39 +1,26 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  Input,
-  ViewChild,
-  signal,
-} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TableReportComponent } from '../table-report/table-report.component';
-import { HighchartsChartModule } from 'highcharts-angular';
-import * as Highcharts from 'highcharts';
-import variwide from 'highcharts/modules/variwide';
-import HC_more from 'highcharts/highcharts-more';
-import { GraphIndicatorComponent } from '../graph-indicator/graph-indicator.component';
+import { AfterViewInit, Component, ElementRef, Input, ViewChild, signal } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { TableReportComponent } from '../table-report/table-report.component'
+import { HighchartsChartModule } from 'highcharts-angular'
+import * as Highcharts from 'highcharts'
+import { GraphIndicatorComponent } from '../graph-indicator/graph-indicator.component'
 
 @Component({
   selector: 'app-evolution-chart',
   templateUrl: './evolution-chart.component.html',
   styleUrls: ['./evolution-chart.component.scss'],
   standalone: true,
-  imports: [
-    CommonModule,
-    TableReportComponent,
-    HighchartsChartModule,
-    GraphIndicatorComponent,
-  ],
+  imports: [CommonModule, TableReportComponent, HighchartsChartModule, GraphIndicatorComponent],
 })
 export class EvolutionChartComponent implements AfterViewInit {
-  @Input() withFooter = false;
-  @Input() withTopLabels = true;
-  @Input() categories: any = null;
-  @Input() series: any = [];
-  @ViewChild('chartContainer') chartContainer!: ElementRef<any>;
+  @Input() withFooter = false
+  @Input() withTopLabels = true
+  @Input() categories: any = null
+  @Input() series: any = []
 
-  onChart = signal(false);
+  @ViewChild('chartContainer') chartContainer!: ElementRef<any>
+
+  onChart = signal(false)
   indicators = [
     {
       label: 'Far indep periferia',
@@ -51,7 +38,7 @@ export class EvolutionChartComponent implements AfterViewInit {
       label: 'MAyorista consum',
       value: 25,
     },
-  ];
+  ]
   headers = [
     {
       label: 'Canales',
@@ -65,7 +52,7 @@ export class EvolutionChartComponent implements AfterViewInit {
       label: 'Vs 3um',
       type: '',
     },
-  ];
+  ]
 
   values = [
     {
@@ -132,10 +119,10 @@ export class EvolutionChartComponent implements AfterViewInit {
         },
       ],
     },
-  ];
+  ]
 
-  Highcharts: typeof Highcharts = Highcharts;
-  chartOptions: Highcharts.Options = {};
+  Highcharts: typeof Highcharts = Highcharts
+  chartOptions: Highcharts.Options = {}
 
   ngAfterViewInit(): void {
     this.chartOptions = {
@@ -174,14 +161,6 @@ export class EvolutionChartComponent implements AfterViewInit {
           },
         ],
       },
-      // yAxis: {
-      //   labels: {
-      //     enabled: false,
-      //   },
-      //   title: {
-      //     text: null,
-      //   },
-      // },
       xAxis: {
         offset: 0,
         labels: {
@@ -236,15 +215,14 @@ export class EvolutionChartComponent implements AfterViewInit {
           },
         },
         column: {
-          colors: ['#B3B8BF', '#0050F5'],
           dataLabels: {
             enabled: false,
           },
         },
       },
       series: this.series,
-    };
+    }
 
-    setTimeout(() => this.onChart.set(true), 500);
+    this.onChart.set(true)
   }
 }

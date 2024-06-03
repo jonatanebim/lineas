@@ -5,7 +5,7 @@ import { Indicator } from '../../../shared/interfaces';
 import {
   MAX_CATEGORIES_VIEW,
   MIN_CATEGORIES_VIEW,
-} from '../../../shared/constants/global.constants';
+} from '../../../shared/constants/globals';
 
 @Component({
   selector: 'app-categories',

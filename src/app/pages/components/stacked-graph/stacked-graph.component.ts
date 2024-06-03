@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { CategoriesComponent } from '../categories/categories.component';
 import { DoughnutChartComponent } from '../doughnut-chart/doughnut-chart.component';
-import { COLORS } from '../../../shared/constants/global.constants';
+import { COLORS } from '../../../shared/constants/globals';
 
 @Component({
   selector: 'app-stacked-graph',

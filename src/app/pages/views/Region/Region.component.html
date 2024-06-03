@@ -2,24 +2,17 @@
   <div class="my-region-page__header">
     <div class="d-flex gap-2">
       <app-card-filter></app-card-filter>
-      @for(card of cards(); track card.id) {
+      @for(card of cards; track card.id) {
       <app-card-report [data]="card"></app-card-report>
       }
     </div>
 
-    @if (cards().length) {
+    @if (cards.length) {
     <div class="d-flex w-100 gap-2 my-3">
       <app-department-graph [selected]="this.department?.value"></app-department-graph>
-      <app-evolution-chart
-        [withTopLabels]="false"
-        [categories]="categories"
-        [series]="series"
-      ></app-evolution-chart>
+      <app-evolution-chart [withTopLabels]="false" [categories]="categories" [series]="series"></app-evolution-chart>
       <div class="my-region-page__stacked">
-        <app-doughnut-vertical
-          [data]="doughnutData()"
-          class="d-block"
-        ></app-doughnut-vertical>
+        <app-doughnut-vertical [data]="doughnutData" class="d-block"></app-doughnut-vertical>
       </div>
     </div>
     }

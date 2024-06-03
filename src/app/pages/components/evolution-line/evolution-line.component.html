@@ -1,19 +1,15 @@
 <div class="my-evolution-line">
-  <h2 class="sectionTitle m-0">
-    Evolutivo MQ Cuidado Facial (BDF + Mercado total)
-  </h2>
+  <h2 class="sectionTitle m-0">Evolutivo MQ Cuidado Facial (BDF + Mercado total)</h2>
   <div class="chart" #chartContainer>
     @if(onChart()) {
-    <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions">
-    </highcharts-chart>
+    <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"> </highcharts-chart>
     }
   </div>
   <div class="chart-labels">
     <div class="d-flex gap-2">
-      <app-graph-indicator label="Total Facturación BDF" color="#0050F5"></app-graph-indicator>
-      <app-graph-indicator label="Total Facturación Mdo Digital" color="#B3B8BF"></app-graph-indicator>
-      <app-graph-indicator label="Cobertura BDF" color="#43B748"></app-graph-indicator>
-      <app-graph-indicator label="Cobertura Mdo Digital" color="#FC9700"></app-graph-indicator>
+      @for (label of labels.slice(0,2); track $index) {
+      <app-graph-indicator [label]="label.label" [color]="label.color"></app-graph-indicator>
+      }
     </div>
   </div>
 </div>

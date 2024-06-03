@@ -8,7 +8,7 @@ import variwide from 'highcharts/modules/variwide'
 import HC_more from 'highcharts/highcharts-more'
 import { TopSku } from '../../../shared/interfaces/topSku.interface'
 import { ParetoSkusParticipation } from '../../../shared/interfaces'
-import { COLORS, DEFAULT_SKU_IMAGE } from '../../../shared/constants/global.constants'
+import { COLORS, DEFAULT_SKU_IMAGE } from '../../../shared/constants/globals'
 
 variwide(Highcharts)
 HC_more(Highcharts)

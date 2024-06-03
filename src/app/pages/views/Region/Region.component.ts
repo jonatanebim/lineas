@@ -1,15 +1,17 @@
 import { CommonModule } from '@angular/common'
-import { AfterViewInit, ChangeDetectionStrategy, Component, inject, signal } from '@angular/core'
-import { CardFilterComponent } from '../../components/card-filter/card-filter.component'
-import { DoughnutChartComponent } from '../../components/doughnut-chart/doughnut-chart.component'
-import { TableReportComponent } from '../../components/table-report/table-report.component'
-import { CardReportComponent } from '../../components/card-report/card-report.component'
-import { EvolutionChartComponent } from '../../components/evolution-chart/evolution-chart.component'
-import { DoughnutVerticalComponent } from '../../components/doughnut-vertical/doughnut-vertical.component'
-import { DepartmentGraphComponent } from '../../components/department-graph/department-graph.component'
+import { AfterViewInit, Component, inject } from '@angular/core'
 import { RegionRequestsService } from '../../../shared/requests/region.requests'
 import { ActivatedRoute } from '@angular/router'
-import { DEPARTMENTS } from '../../../shared/constants/global.constants'
+import { DEPARTMENTS } from '../../../shared/constants/globals'
+import {
+  CardFilterComponent,
+  CardReportComponent,
+  EvolutionChartComponent,
+  DoughnutVerticalComponent,
+  TableReportComponent,
+  DepartmentGraphComponent,
+  DoughnutChartComponent,
+} from '../../components'
 
 @Component({
   selector: 'app-region',
@@ -27,14 +29,13 @@ import { DEPARTMENTS } from '../../../shared/constants/global.constants'
   ],
   templateUrl: './Region.component.html',
   styleUrl: './Region.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegionComponent implements AfterViewInit {
   service = inject(RegionRequestsService)
-  cards: any = signal([])
+  cards: any = []
   categories: Array<string> = []
   series: Array<any> = []
-  doughnutData: any = signal([])
+  doughnutData: any = []
   tableIndicators = []
   department: any
   provincesTable: any = {
@@ -95,8 +96,8 @@ export class RegionComponent implements AfterViewInit {
         this.provincesTable.headers = this.transformColumns(data?.provincesTable.columns)
 
         this.provincesTable.values = data?.provincesTable.values
-        this.doughnutData.update(() => data?.categoryParticipation?.doughnut)
-        this.cards.update(() => data?.cards)
+        this.doughnutData = data?.categoryParticipation?.doughnut
+        this.cards = data?.cards
       })
     })
   }

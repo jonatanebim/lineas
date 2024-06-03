@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common'
 import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core'
-import { DEPARTMENTS } from '../../../shared/constants/global.constants'
+import { DEPARTMENTS } from '../../../shared/constants/globals'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @Component({

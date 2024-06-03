@@ -5,7 +5,7 @@ import {
   withInMemoryScrolling,
 } from '@angular/router';
 
-import Paths from './shared/constants/paths.constants';
+import Paths from './shared/constants/paths';
 import { LoginComponent } from './pages/views/Login/Login.component';
 import { ContentComponent } from './shared/components/layout';
 import { HomeComponent } from './pages/views/Home/Home.component';

@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DoughnutChartComponent } from '../doughnut-chart/doughnut-chart.component';
 import { CategoriesComponent } from '../categories/categories.component';
-import { COLORS } from '../../../shared/constants/global.constants';
+import { COLORS } from '../../../shared/constants/globals';
 
 @Component({
   selector: 'app-doughnut-vertical',

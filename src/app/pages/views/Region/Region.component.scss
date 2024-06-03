@@ -21,6 +21,15 @@ app-department-graph {
 
 :host {
   ::ng-deep {
+    .my-evolution-chart__chart {
+      height: 320px  !important;
+      .chart {
+        height: 270px !important;
+      }
+    }
+  }
+
+  ::ng-deep {
     tr {
       td {
         &:nth-child(1) {
