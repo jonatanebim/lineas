@@ -13,3 +13,9 @@ export enum COLORS {
 
   Red2 = '#F55',
 }
+
+export enum COLORS_ICONS {
+  green = '../../../../assets/icons/green-dot.svg"',
+  orange = '../../../../assets/icons/orange-dot.svg"',
+  red = '../../../../assets/icons/red-dot.svg"',
+}

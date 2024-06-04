@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common'
-import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core'
+import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges, inject } from '@angular/core'
 import { DEPARTMENTS } from '../../../shared/constants/globals'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { GlobalStoreService } from '../../../shared/stores/global.store'
 
 @Component({
   selector: 'app-department-graph',
@@ -14,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 export class DepartmentGraphComponent implements OnChanges {
   @Input() selected!: string
 
+  globalStore = inject(GlobalStoreService)
   departments: any = DEPARTMENTS
   department = DEPARTMENTS[0].value
 
@@ -27,6 +29,6 @@ export class DepartmentGraphComponent implements OnChanges {
   }
 
   updateView() {
-    console.log(this.department)
+    this.globalStore.reloadRegions.set(this.department)
   }
 }

@@ -41,6 +41,10 @@ export class DoughnutChartComponent implements AfterViewInit {
         maintainAspectRatio: false,
         aspectRatio: 1.8,
         events: [],
+        onClick :  (evt, item)  => {
+          console.log ('legend onClick', evt);
+          console.log('legd item', item);
+      }
       },
     });
   }

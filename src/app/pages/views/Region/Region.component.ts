@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { AfterViewInit, Component, inject } from '@angular/core'
+import { AfterViewInit, Component, effect, inject } from '@angular/core'
 import { RegionRequestsService } from '../../../shared/requests/region.requests'
 import { ActivatedRoute } from '@angular/router'
 import { DEPARTMENTS } from '../../../shared/constants/globals'
@@ -12,6 +12,8 @@ import {
   DepartmentGraphComponent,
   DoughnutChartComponent,
 } from '../../components'
+import { tap } from 'rxjs'
+import { GlobalStoreService } from '../../../shared/stores/global.store'
 
 @Component({
   selector: 'app-region',
@@ -32,6 +34,7 @@ import {
 })
 export class RegionComponent implements AfterViewInit {
   service = inject(RegionRequestsService)
+  globalStore = inject(GlobalStoreService)
   cards: any = []
   categories: Array<string> = []
   series: Array<any> = []
@@ -59,9 +62,22 @@ export class RegionComponent implements AfterViewInit {
   constructor(private route: ActivatedRoute) {}
 
   ngAfterViewInit(): void {
+    this.globalStore.showLoading()
+
     this.route.queryParamMap.subscribe((params: any) => {
       this.department = DEPARTMENTS.find((department: any) => department.name === params?.params.department)
-      this.service.getRegionReport(this.department?.name).subscribe((data: any) => {
+      this.getData().subscribe();
+    })
+
+    this.globalStore.reloadRegions$.subscribe(() => {
+      this.globalStore.showLoading()
+      this.getData().subscribe();
+    })
+  }
+
+  getData() {
+    return this.service.getRegionReport(this.department?.name).pipe(
+      tap((data: any) => {
         this.categories = data.evolutionMq?.labels
         this.series = [
           {
@@ -98,8 +114,10 @@ export class RegionComponent implements AfterViewInit {
         this.provincesTable.values = data?.provincesTable.values
         this.doughnutData = data?.categoryParticipation?.doughnut
         this.cards = data?.cards
+
+        this.globalStore.hideLoading()
       })
-    })
+    )
   }
 
   transformColumns(columns: Array<any>) {

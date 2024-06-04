@@ -7,7 +7,7 @@ import { CommonsRequestsService } from '../../../shared/requests/commons.request
 import { DEPARTMENTS } from '../../../shared/constants/globals'
 import { Router } from '@angular/router'
 import pathsConstants from '../../../shared/constants/paths'
-import { COLORS } from '../../../shared/constants/colors'
+import { COLORS, COLORS_ICONS } from '../../../shared/constants/colors'
 
 MapModule(Highcharts)
 
@@ -31,6 +31,7 @@ export class CountryGraphComponent implements AfterViewInit {
         chart: {
           zooming: {
             mouseWheel: false,
+            singleTouch: false,
           },
           events: {
             click: (event: any) => {
@@ -45,15 +46,39 @@ export class CountryGraphComponent implements AfterViewInit {
         mapNavigation: {
           enabled: true,
           enableButtons: false,
-        
         },
         xAxis: {
           labels: {
-            enabled: true,
+            enabled: false,
           },
         },
         legend: {
           enabled: false,
+        },
+        tooltip: {
+          useHTML: true,
+          backgroundColor: '#000000ab',
+          borderWidth: 0,
+          shadow: false,
+          formatter: function () {
+            const color = this.point.color
+            console.log(color)
+            const department: string = (this.point as any).department as string
+            return `
+            <div class="float-tooltip">
+              <h2>${department} <img src="${
+              color === COLORS.Green2
+                ? COLORS_ICONS['green']
+                : color === COLORS.Orange1
+                ? COLORS_ICONS['orange']
+                : COLORS_ICONS['red']
+            }" alt="" /> </h2>
+              <p>Cobertura: 172</p> 
+              <p>Share cob/Total BDF: 21%</p> 
+              <p>Facturación: S/ 87,122</p>
+            </div>
+            `
+          },
         },
         plotOptions: {
           mappoint: {},
@@ -67,10 +92,6 @@ export class CountryGraphComponent implements AfterViewInit {
             data: [],
             dataLabels: {
               enabled: false,
-              format: '{point.properties.name}',
-              style: {
-                fontSize: '10px',
-              },
             },
             mapData: data,
           },
@@ -87,11 +108,7 @@ export class CountryGraphComponent implements AfterViewInit {
                   })
                 },
                 mouseOut: function () {
-                  this.series.chart.update({
-                    tooltip: {
-                      enabled: false,
-                    },
-                  })
+                  this.series.chart.update({})
                 },
               },
             },
@@ -105,7 +122,7 @@ export class CountryGraphComponent implements AfterViewInit {
     return DEPARTMENTS.map((d: any) => ({
       lat: d.lat,
       lon: d.lon,
-      name: d.name,
+      department: d.name,
       color: COLORS.Green2,
     }))
   }

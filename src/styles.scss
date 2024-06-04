@@ -1,9 +1,14 @@
-@import "./assets/fonts/nunito.scss";
-@import "./assets/scss/variables";
-@import "./assets/scss/typography";
+@import '../node_modules/animate.css/animate.min.css';
+@import './assets/fonts/nunito.scss';
+@import './assets/scss/variables';
+@import './assets/scss/typography';
+
+:root {
+  --animate-delay: 0.5s;
+}
 
 * {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .fs-x2 {

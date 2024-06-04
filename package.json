@@ -23,6 +23,7 @@
     "@angular/router": "^17.1.0",
     "@angular/service-worker": "^17.1.0",
     "@highcharts/map-collection": "^2.1.0",
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.2",
     "highcharts": "^11.4.1",

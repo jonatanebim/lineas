@@ -50,6 +50,9 @@
 
   <div class="my-content py-4">
     <div class="wrapper">
+      @if(globalStore.isLoading()) {
+        <app-loading></app-loading>
+      }
       <router-outlet></router-outlet>
     </div>
   </div>

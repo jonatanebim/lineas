@@ -1,7 +1,7 @@
 <div class="my-categories-page">
   @if (doughnutData?.length) {
   <div class="my-categories-page__header">
-    <div class="d-flex gap-2">
+    <div class="d-flex gap-2 animate__animated animate__fadeInDown">
       <app-card-filter></app-card-filter>
       @for(card of cards; track card.id) {
       <app-card-report [data]="card"></app-card-report>
@@ -10,24 +10,24 @@
 
     <div class="d-flex gap-2 mt-2">
       <div class="my-categories-page__stacked">
-        <app-doughnut-vertical [data]="doughnutData" class="d-block"></app-doughnut-vertical>
+        <app-doughnut-vertical [data]="doughnutData" class="d-block animate__animated animate__fadeInLeft animate__delay"></app-doughnut-vertical>
       </div>
 
       <div class="w-100">
         <div class="evolution d-flex mb-2 gap-2">
           <app-evolution-line
+          class="animate__animated animate__fadeIn animate__delay-1s"
             [labels]="evolutionLabels"
             [dataLabels]="evolutionDataLabels"
             [data]="evolutionData"
-            class="w-100"
           ></app-evolution-line>
-          <app-participation [data]="participationData"></app-participation>
+          <app-participation class="animate__animated animate__fadeIn animate__delay-2s" [data]="participationData"></app-participation>
         </div>
-        <app-dimension-graph [paretoSkus]="paretoSkus" [topSku]="topSku"></app-dimension-graph>
+        <app-dimension-graph class="animate__animated animate__fadeInUp animate__delay-3s"  [paretoSkus]="paretoSkus" [topSku]="topSku"></app-dimension-graph>
       </div>
     </div>
 
-    <div class="d-flex mt-2">
+    <div class="d-flex mt-2 animate__animated animate__fadeInUp animate__delay-2s">
       <app-table-report class="w-100" [combined]="true" [headers]="headers" [values]="values"></app-table-report>
     </div>
   </div>

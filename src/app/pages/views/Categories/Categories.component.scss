@@ -14,7 +14,7 @@ app-table-report  {
 .evolution {
   
   app-evolution-line {
-    width: 50% !important
+    width: calc(100% - 450px) !important
   }
 
   app-participation {

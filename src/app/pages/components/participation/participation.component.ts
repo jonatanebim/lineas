@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core'
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild, signal } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { GraphIndicatorComponent } from '../graph-indicator/graph-indicator.component'
 import { HighchartsChartModule } from 'highcharts-angular'
@@ -15,6 +15,7 @@ HC_more(Highcharts)
   imports: [CommonModule, GraphIndicatorComponent, HighchartsChartModule],
   templateUrl: './participation.component.html',
   styleUrls: ['./participation.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ParticipationComponent implements AfterViewInit {
   @Input() data: any
@@ -23,6 +24,8 @@ export class ParticipationComponent implements AfterViewInit {
 
   Highcharts: typeof Highcharts = Highcharts
   chartOptions!: Highcharts.Options
+
+  onChart = signal(false)
 
   ngAfterViewInit(): void {
     this.chartOptions = {
@@ -63,6 +66,10 @@ export class ParticipationComponent implements AfterViewInit {
         column: {
           pointPadding: 0.2,
           borderWidth: 0,
+          dataLabels: {
+            enabled: true,
+            crop: false,
+          },
         },
       },
       series: [
@@ -75,8 +82,25 @@ export class ParticipationComponent implements AfterViewInit {
           type: 'column',
           color: COLORS.Blue,
           data: this.data.map((e: any) => e.columns[1]),
+          dataLabels: {
+            enabled: true,
+            allowOverlap: true,
+            useHTML: true,
+            formatter: function () {
+              console.log(this)
+              return (
+                '<div class="datalabel" style="position: relative; top: 20px"><b>' +
+                '<p class="percentage">30%</p>' +
+                '</div><br/><div class="datalabelInside" style="position: absolute; top: 35px"><b>' +
+                this.y +
+                '</div>'
+              )
+            },
+          },
         },
       ],
     }
+
+    this.onChart.set(true)
   }
 }

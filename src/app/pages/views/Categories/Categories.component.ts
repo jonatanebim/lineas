@@ -13,6 +13,8 @@ import {
   ParticipationComponent,
   EvolutionLineComponent,
 } from '../../components'
+import { GlobalStoreService } from '../../../shared/stores/global.store'
+import { tap } from 'rxjs'
 
 @Component({
   selector: 'app-categories',
@@ -32,6 +34,8 @@ import {
 })
 export class CategoriesComponent implements AfterViewInit {
   service = inject(CategoriesRequestsService)
+  globalStore = inject(GlobalStoreService)
+
   cards: any = []
   headers: Array<any> = []
   values: Array<any> = []
@@ -46,25 +50,34 @@ export class CategoriesComponent implements AfterViewInit {
   evolutionDataLabels: any
 
   ngAfterViewInit(): void {
-    this.service.getCategoriesReport().subscribe((data: any) => {
-      this.cards = data?.cards
-      this.doughnutData = data?.categoryParticipation?.doughnut
-      this.evolutionData = this.fillEvolutionSeries(data?.evolutionMq)
-      this.evolutionDataLabels = data?.evolutionMq.labels
-      this.topSku = data?.topSKu
-      this.paretoSkus = data?.participationPareto
-      this.participationData = data?.principalCategories
+    this.globalStore.showLoading()
 
-      let activeColor = false
-      this.headers = data.productsTable.columns.map((data: any) => {
-        if (data.columnName === 'cobmq') activeColor = true
-        return {
-          ...data,
-          color: activeColor && '#00B0FF',
-        }
+    this.service
+      .getCategoriesReport()
+      .pipe(
+        tap(() => {
+          this.globalStore.hideLoading()
+        })
+      )
+      .subscribe((data: any) => {
+        this.cards = data?.cards
+        this.doughnutData = data?.categoryParticipation?.doughnut
+        this.evolutionData = this.fillEvolutionSeries(data?.evolutionMq)
+        this.evolutionDataLabels = data?.evolutionMq.labels
+        this.topSku = data?.topSKu
+        this.paretoSkus = data?.participationPareto
+        this.participationData = data?.principalCategories
+
+        let activeColor = false
+        this.headers = data.productsTable.columns.map((data: any) => {
+          if (data.columnName === 'cobmq') activeColor = true
+          return {
+            ...data,
+            color: activeColor && '#00B0FF',
+          }
+        })
+        this.values = data.productsTable.values
       })
-      this.values = data.productsTable.values
-    })
   }
 
   fillEvolutionSeries(evolutionData: any) {

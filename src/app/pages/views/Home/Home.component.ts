@@ -11,6 +11,8 @@ import {
   StackedGraphComponent,
   FunnelGraphComponent,
 } from '../../components'
+import { GlobalStoreService } from '../../../shared/stores/global.store'
+import { tap } from 'rxjs'
 
 @Component({
   selector: 'app-home',
@@ -32,6 +34,7 @@ import {
 })
 export class HomeComponent implements AfterViewInit {
   service = inject(HomeRequestsService)
+  globalStore = inject(GlobalStoreService)
   cards: any = []
   participation: any
   evolution: any
@@ -59,37 +62,46 @@ export class HomeComponent implements AfterViewInit {
   ]
 
   ngAfterViewInit(): void {
-    this.service.getHomeReport().subscribe((data: any) => {
-      this.cards = data?.cards
-      this.participation = data?.categoryParticipation
-      this.evolution = data?.evolutionMq
-      this.categories = data.evolutionMq?.labels
-      this.series = [
-        {
-          type: 'column',
-          allowPointSelect: false,
-          enableMouseTracking: false,
-          pointWidth: 38,
-          color: '#B6E7FF',
-          data: data.evolutionMq?.columns,
-        },
-        {
-          type: 'spline',
-          dashStyle: 'Dot',
-          color: '#0D3B9B',
-          data: data.evolutionMq?.sales,
-          yAxis: 2,
-        },
-        {
-          type: 'spline',
-          color: '#00B0FF',
-          data: data.evolutionMq?.coverage,
-          yAxis: 1,
-        },
-      ]
+    this.globalStore.showLoading()
 
-      this.headers = data.categoriesTable.columns
-      this.values = data.categoriesTable.values
-    })
+    this.service
+      .getHomeReport()
+      .pipe(
+        tap(() => {
+          this.globalStore.hideLoading()
+        })
+      )
+      .subscribe((data: any) => {
+        this.cards = data?.cards
+        this.participation = data?.categoryParticipation
+        this.evolution = data?.evolutionMq
+        this.categories = data.evolutionMq?.labels
+        this.series = [
+          {
+            type: 'column',
+            allowPointSelect: false,
+            enableMouseTracking: false,
+            pointWidth: 38,
+            color: '#B6E7FF',
+            data: data.evolutionMq?.columns,
+          },
+          {
+            type: 'spline',
+            dashStyle: 'Dot',
+            color: '#0D3B9B',
+            data: data.evolutionMq?.sales,
+            yAxis: 2,
+          },
+          {
+            type: 'spline',
+            color: '#00B0FF',
+            data: data.evolutionMq?.coverage,
+            yAxis: 1,
+          },
+        ]
+
+        this.headers = data.categoriesTable.columns
+        this.values = data.categoriesTable.values
+      })
   }
 }

@@ -209,18 +209,21 @@ export class EvolutionChartComponent implements AfterViewInit {
       ],
       plotOptions: {
         series: {
-          enableMouseTracking: false,
+          // enableMouseTracking: false,
           marker: {
             enabled: false,
           },
         },
         column: {
           dataLabels: {
-            enabled: false,
+            // enabled: false,
           },
         },
       },
       series: this.series,
+      tooltip: {
+        enabled: true
+      }
     }
 
     this.onChart.set(true)
