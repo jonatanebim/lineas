@@ -13,22 +13,13 @@ div {
     color: #43b748;
     background-color: #e4ffeb;
     border-radius: 14px;
-    i {
-      transform: rotate(45deg);
-    }
     &.isYellow {
       color: #fc9700;
       background-color: #fef4e2;
-      i {
-        transform: rotate(45deg);
-      }
     }
     &.isRed {
       color: #e72e49;
       background-color: #ffedf2;
-      i {
-        transform: rotate(125deg);
-      }
     }
   }
 

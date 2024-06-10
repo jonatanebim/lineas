@@ -9,10 +9,21 @@
 
     @if (participation) {
     <div class="d-flex w-100 gap-2 my-3">
-      <app-evolution-chart class="animate__animated animate__fadeInLeft animate__delay" [withTopLabels]="false" [categories]="categories" [series]="series"></app-evolution-chart>
+      <app-evolution-chart
+        class="animate__animated animate__fadeInLeft animate__delay"
+        [withTopLabels]="false"
+        [categories]="categories"
+        [series]="series"
+      ></app-evolution-chart>
       <div class="my-home-page__stacked d-flex flex-column gap-2">
-        <app-stacked-graph class="animate__animated animate__fadeIn animate__delay-1s" [data]="participation"></app-stacked-graph>
-        <app-funnel-graph class="animate__animated animate__fadeIn animate__delay-1s" [data]="participation"></app-funnel-graph>
+        <app-stacked-graph
+          class="animate__animated animate__fadeIn animate__delay-1s"
+          [data]="participation"
+        ></app-stacked-graph>
+        <app-funnel-graph
+          class="animate__animated animate__fadeIn animate__delay-1s"
+          [data]="participation"
+        ></app-funnel-graph>
       </div>
       <app-country-graph class="animate__animated animate__fadeInRight animate__delay"></app-country-graph>
     </div>

@@ -1,8 +1,8 @@
-import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { LoadingComponent } from '../../loading/loading.component';
-import { GlobalStoreService } from '../../../stores/global.store';
+import { CommonModule } from '@angular/common'
+import { Component, inject } from '@angular/core'
+import { RouterModule } from '@angular/router'
+import { LoadingComponent } from '../../loading/loading.component'
+import { GlobalStoreService } from '../../../stores/global.store'
 
 @Component({
   selector: 'app-content',
@@ -14,30 +14,30 @@ import { GlobalStoreService } from '../../../stores/global.store';
 export class ContentComponent {
   globalStore = inject(GlobalStoreService)
 
-  isOpen = false;
+  isOpen = false
   navBarItems = [
     {
-      icon: 'icon-chart.svg',
-      path: '',
+      icon: 'icon-incio',
+      path: 'home',
       label: 'Inicio',
     },
     {
-      icon: 'icon-coupon.svg',
+      icon: 'icon-categorias',
       path: 'categorias',
       label: 'Oportunidad de Categorías',
     },
     {
-      icon: 'icon-chart.svg',
+      icon: 'icon-departamentos',
       path: 'regiones',
       label: 'Oportunidad en Regiones',
     },
     {
-      icon: 'icon-location.svg',
+      icon: 'icon-pro',
       path: '',
       label: 'Oportunidad de Competencia',
       pro: true,
     },
-  ];
+  ]
 
   toggleSidebar() {
     this.isOpen = !this.isOpen

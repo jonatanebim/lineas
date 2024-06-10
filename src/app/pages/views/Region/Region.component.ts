@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common'
 import { AfterViewInit, Component, effect, inject } from '@angular/core'
 import { RegionRequestsService } from '../../../shared/requests/region.requests'
 import { ActivatedRoute } from '@angular/router'
-import { DEPARTMENTS } from '../../../shared/constants/globals'
+import { DEPARTMENTS, TABLE_TOOLTIPS } from '../../../shared/constants/globals'
 import {
   CardFilterComponent,
   CardReportComponent,
@@ -124,9 +124,13 @@ export class RegionComponent implements AfterViewInit {
     let activeColor = false
     return columns.map((data: any) => {
       if (data.columnName === 'cobmq') activeColor = true
+
+      const tooltip = TABLE_TOOLTIPS[data.label as keyof typeof  TABLE_TOOLTIPS]
+
       return {
         ...data,
         color: activeColor && '#00B0FF',
+        tooltip
       }
     })
   }

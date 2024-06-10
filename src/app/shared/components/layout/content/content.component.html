@@ -1,17 +1,10 @@
 <div class="wrapper">
-  <div
-    class="my-sidebar"
-    [ngClass]="{ open: isOpen }"
-    (mouseenter)="toggleSidebar()"
-    (mouseleave)="toggleSidebar()"
-  >
+  <div class="my-sidebar" [ngClass]="{ open: isOpen }" (mouseenter)="toggleSidebar()" (mouseleave)="toggleSidebar()">
     <div class="my-sidebar__logo">
       <img src="../../../../../assets/images/logo.png" alt="Mi quimica" />
     </div>
 
-    <div
-      class="my-sidebar__navbar d-flex flex-column justify-content-between pt-5 mt-3"
-    >
+    <div class="my-sidebar__navbar d-flex flex-column justify-content-between pt-5 mt-3">
       <ul class="list-unstyled m-0">
         @for ( i of navBarItems; track i) {
         <li
@@ -21,21 +14,26 @@
           routerLinkActive="router-link-active"
           [routerLinkActiveOptions]="{ exact: true }"
         >
-          <img [src]="'../../../../../assets/icons/' + i.icon" alt="" />
+          <!-- <img [src]="'../../../../../assets/icons/' + i.icon" alt="" /> -->
+          <i [attr.class]="'icon ' + i.icon"></i>
           <ng-container *ngIf="isOpen">
             <span class="fs-x2"> {{ i.label }}</span>
             @if (i.pro) {
-            <em><i class="icon icon-star">&#xe802;</i> PRO</em>
+            <em><i class="icon icon-estrella"></i> PRO</em>
             }
           </ng-container>
         </li>
         }
+
+        <li class="action action-download d-flex gap-1 mt-5 mb-3 pb-1 align-items-center position-relative">
+          <!-- <img [src]="'../../../../../assets/icons/' + i.icon" alt="" /> -->
+          <i class="icon icon-exportar-data"></i>
+          <span class="fs-x2"> exportar data </span>
+        </li>
       </ul>
 
       @if(!true) {
-      <div
-        class="my-sidebar__toggle justify-content-center w-100 pb-4 d-flex justify-content-center"
-      >
+      <div class="my-sidebar__toggle justify-content-center w-100 pb-4 d-flex justify-content-center">
         <button type="button">
           @if (!isOpen) {
           <img src="../../../../../assets/icons/arrow-next.svg" alt="" />
@@ -51,7 +49,7 @@
   <div class="my-content py-4">
     <div class="wrapper">
       @if(globalStore.isLoading()) {
-        <app-loading></app-loading>
+      <app-loading></app-loading>
       }
       <router-outlet></router-outlet>
     </div>

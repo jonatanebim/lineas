@@ -1,15 +1,15 @@
 .wrapper {
   display: flex;
   .my-sidebar {
-    width: 70px;
-    background-color: #f8f9fa;
+    width: 100px;
+    background-color: #fff;
     position: fixed;
     left: 0;
     top: 0;
     height: 100vh;
     padding: 0 1rem;
     z-index: 99;
-    box-shadow: 2px 0px 6px #c2c5cb;
+    // box-shadow: 2px 0px 6px #c2c5cb;
     transition: all 0.3s;
     overflow: hidden;
     &.open {
@@ -28,6 +28,23 @@
             align-items: start;
             span {
               display: block;
+            }
+          }
+
+          .action {
+            &-download {
+              i,
+              span {
+                color: #0050f5 !important;
+              }
+              border: 1px solid #0050f5;
+              width: inherit;
+              display: block;
+              border-radius: 20px;
+              padding-left: 10px;
+              padding-right: 17px;
+              text-transform: uppercase;
+              font-size: 10px;
             }
           }
         }
@@ -60,10 +77,11 @@
         width: max-content;
         max-width: 100%;
         height: 40px;
-        img {
-          width: 25px;
+        i {
+          font-size: 22px;
         }
-        span {
+        span,
+        i {
           color: #b3b8bf;
         }
         em {
@@ -79,8 +97,12 @@
           padding: 2px 4px;
           padding-right: 10px;
           position: absolute;
-          bottom: -15px;
-          left: 25px;
+          bottom: -20px;
+          left: 30px;
+          i {
+            font-size: 12px;
+            color: #fff;
+          }
         }
         &.inactive {
           border-bottom: none !important;
@@ -88,8 +110,7 @@
             span {
               color: #b3b8bf;
             }
-            span,
-            img {
+            span {
               opacity: 0.5;
             }
           }
@@ -97,16 +118,36 @@
 
         &:hover {
           border-bottom: 1px solid var(--Blue, #0050f5);
-          span {
+          span,
+          i {
             color: #0050f5;
           }
         }
 
         &.router-link-active {
-          span {
+          span,
+          i {
             font-weight: 800;
             color: #0050f5;
           }
+        }
+
+        &-download {
+          i,
+          span {
+            color: #0050f5 !important;
+          }
+          span {
+            display: none;
+          }
+          border: 1px solid #0050f5;
+          border-radius: 20px;
+          width: 40px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          text-transform: uppercase;
+          font-size: 10px;
         }
       }
     }

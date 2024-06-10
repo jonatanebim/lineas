@@ -15,6 +15,7 @@ import {
 } from '../../components'
 import { GlobalStoreService } from '../../../shared/stores/global.store'
 import { tap } from 'rxjs'
+import { TABLE_TOOLTIPS } from '../../../shared/constants/globals'
 
 @Component({
   selector: 'app-categories',
@@ -71,9 +72,12 @@ export class CategoriesComponent implements AfterViewInit {
         let activeColor = false
         this.headers = data.productsTable.columns.map((data: any) => {
           if (data.columnName === 'cobmq') activeColor = true
+          const tooltip = TABLE_TOOLTIPS[data.label as keyof typeof  TABLE_TOOLTIPS]
+
           return {
             ...data,
             color: activeColor && '#00B0FF',
+            tooltip
           }
         })
         this.values = data.productsTable.values
