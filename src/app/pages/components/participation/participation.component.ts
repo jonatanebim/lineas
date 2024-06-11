@@ -28,6 +28,7 @@ export class ParticipationComponent implements AfterViewInit {
   onChart = signal(false)
 
   ngAfterViewInit(): void {
+    const _selfData = this.data
     this.chartOptions = {
       chart: {
         width: this.chartContainer.nativeElement.clientWidth,
@@ -55,7 +56,7 @@ export class ParticipationComponent implements AfterViewInit {
           distance: 4,
           rotation: 0,
           style: {
-            fontSize: '11px',
+            fontSize: '10px',
             fontWeight: 'bold',
             color: '#8F959D',
           },
@@ -70,6 +71,7 @@ export class ParticipationComponent implements AfterViewInit {
             enabled: true,
             crop: false,
           },
+          enableMouseTracking: false,
         },
       },
       series: [
@@ -77,6 +79,24 @@ export class ParticipationComponent implements AfterViewInit {
           type: 'column',
           color: COLORS.Grey3,
           data: this.data.map((e: any) => e.columns[0]),
+          dataLabels: {
+            inside: false,
+            enabled: true,
+            y: -20,
+            useHTML: true,
+            formatter: function () {
+              const xData = _selfData[this.point.index].columns[1]
+              const yData = this.y || 0
+              const translate = yData - xData > 100
+              return `
+              <div class="text-center" style="width: 50px;height: 100%;position: relative;${!translate && 'top: -30px;'}">
+                <div class="datalabelInside" style="position: absolute; font-size:10px;color: #606469; font-weight: 400;text-shadow: 0 0 0  #fff;"">
+                   S/ ${this.y}  
+                </div>
+              </div>
+              `
+            },
+          },
         },
         {
           type: 'column',
@@ -84,17 +104,21 @@ export class ParticipationComponent implements AfterViewInit {
           data: this.data.map((e: any) => e.columns[1]),
           dataLabels: {
             enabled: true,
+            inside: false,
             allowOverlap: true,
             useHTML: true,
             formatter: function () {
-              console.log(this)
-              return (
-                '<div class="datalabel" style="position: relative; top: 20px"><b>' +
-                '<p class="percentage">30%</p>' +
-                '</div><br/><div class="datalabelInside" style="position: absolute; top: 35px"><b>' +
-                this.y +
-                '</div>'
-              )
+              return `
+              <div class="text-center" style="width: 50px;position: relative;">
+                <div class="datalabel" style="position: relative; top: 20px">
+                  <p class="percentage text-center" style="text-shadow: 0 0 0  #fff;">30%</p>
+                </div>
+                <br/>
+                <div class="datalabelInside" style="position: absolute; top: 40px; font-size:10px;color: #606469; font-weight: 400;text-shadow: 0 0 0  #fff;"">
+                  S/ ${this.y} 
+                </div>
+              </div>
+              `
             },
           },
         },

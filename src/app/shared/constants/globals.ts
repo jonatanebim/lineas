@@ -51,8 +51,8 @@ export const DEPARTMENTS = [
     name: 'Tumbes',
     value: 'TU',
     vector: '../../../../assets/images/departments/Tumbes.svg',
-    lat: -3.845569131066715,
-    lon: -80.99875022645635,
+    lat: -3.786508721507954,
+    lon: -80.64043921916614,
   },
 
   {
@@ -85,6 +85,102 @@ export const DEPARTMENTS = [
     vector: '../../../../assets/images/departments/Moquegua.svg',
     lat: -16.648038031592524,
     lon: -70.71578699097887,
+  },
+
+  {
+    name: 'Ucayali',
+    value: 'UCA',
+    vector: '../../../../assets/images/departments/Ucayali.svg',
+    lat: -9.662104626256976,
+    lon: -73.4129282067457,
+  },
+
+  {
+    name: 'Madre de Dios',
+    value: 'MDD',
+    vector: '../../../../assets/images/departments/Madre de dios.svg',
+    lat: -11.806240740553376,
+    lon: -71.29847354736263,
+  },
+
+  {
+    name: 'Puno',
+    value: 'PU',
+    vector: '../../../../assets/images/departments/Puno.svg',
+    lat: -14.634318811822352,
+    lon: -70.20720161504548,
+  },
+
+  {
+    name: 'Amazonas',
+    value: 'AMA',
+    vector: '../../../../assets/images/departments/Amazonas.svg',
+    lat: -5.284197098603436,
+    lon: -78.25351103008602,
+  },
+
+  {
+    name: 'Cajamarca',
+    value: 'CAJ',
+    vector: '../../../../assets/images/departments/Cajamarca.svg',
+    lat: -6.947211277724753,
+    lon: -78.66412879949412,
+  },
+
+  {
+    name: 'Arequipa',
+    value: 'ARE',
+    vector: '../../../../assets/images/departments/Arequipa.svg',
+    lat: -15.780263725203865,
+    lon: -72.52292983831543,
+  },
+
+  {
+    name: 'Ica',
+    value: 'ICA',
+    vector: '../../../../assets/images/departments/Ica.svg',
+    lat: -14.420543736765152,
+    lon: -75.6629564318007,
+  },
+
+  {
+    name: 'Tacna',
+    value: 'TAC',
+    vector: '../../../../assets/images/departments/Tacna.svg',
+    lat: -17.755208524763418,
+    lon: -70.36725092471447,
+  },
+
+  {
+    name: 'Ayacucho',
+    value: 'AYA',
+    vector: '../../../../assets/images/departments/Ayacucho.svg',
+    lat: -14.37153540271762,
+    lon: -74.29989564634653,
+  },
+
+  {
+    name: 'Huancavelica',
+    value: 'HUA',
+    vector: '../../../../assets/images/departments/Huancavelica.svg',
+    lat: -12.903632971344374,
+    lon: -75.15744109335733,
+  },
+
+  {
+    name: 'Ancash',
+    value: 'ANC',
+    vector: '../../../../assets/images/departments/Ancash.svg',
+    lat: -9.310865275415251,
+    lon: -77.84274741095572,
+  },
+
+  {
+    name: 'Huanuco',
+    value: 'HUC',
+    vector: '../../../../assets/images/departments/Huanuco.svg',
+    lat: -9.466937010811694,
+    lon: -76.30088713915157,
   },
 ]
 
