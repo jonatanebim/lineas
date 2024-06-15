@@ -79,11 +79,10 @@ export class HomeComponent implements AfterViewInit {
         this.series = [
           {
             type: 'column',
-            allowPointSelect: false,
-            enableMouseTracking: false,
             pointWidth: 38,
             color: '#B6E7FF',
             data: data.evolutionMq?.columns,
+            yAxis: 1,
           },
           {
             type: 'spline',
@@ -96,7 +95,6 @@ export class HomeComponent implements AfterViewInit {
             type: 'spline',
             color: '#00B0FF',
             data: data.evolutionMq?.coverage,
-            yAxis: 1,
           },
         ]
 

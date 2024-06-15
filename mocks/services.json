@@ -3,99 +3,81 @@
     "cards": [
       {
         "label": "Facturación total",
-        "amount": "S/ 114,512.72",
+        "amount": "S/ 403,874.84",
         "indicators": [
           {
             "label": "Vs MA",
-            "value": 21
+            "value": -36
           },
           {
             "label": "Vs MA",
-            "value": 5
+            "value": -24
           },
           {
             "label": "Vs MA",
-            "value": 1
-          }
-        ]
-      },
-      {
-        "label": "Volumen (und) total",
-        "amount": "267,32",
-        "indicators": [
-          {
-            "label": "Vs MA",
-            "value": 5
-          },
-          {
-            "label": "Vs MA",
-            "value": 8
-          },
-          {
-            "label": "Vs MA",
-            "value": 13
+            "value": -49
           }
         ]
       },
       {
         "label": "Cobertura total",
-        "amount": "428.89",
+        "amount": "S/ 622.00",
         "indicators": [
           {
             "label": "Vs MA",
-            "value": 15
+            "value": 0
           },
+          {
+            "label": "Vs MA",
+            "value": -2
+          },
+          {
+            "label": "Vs MA",
+            "value": 17
+          }
+        ]
+      },
+      {
+        "label": "Ticket promedio total",
+        "amount": "S/ 0.00",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 0
+          },
+          {
+            "label": "Vs MA",
+            "value": 0
+          },
+          {
+            "label": "Vs MA",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "label": "SKU promedio total",
+        "amount": "S/ 2.16",
+        "indicators": [
           {
             "label": "Vs MA",
             "value": -4
           },
           {
             "label": "Vs MA",
-            "value": -11
-          }
-        ]
-      },
-      {
-        "label": "Ticket promedio total",
-        "amount": "S/ 2.02",
-        "indicators": [
-          {
-            "label": "Vs MA",
-            "value": 7
+            "value": 0
           },
           {
             "label": "Vs MA",
-            "value": 7
-          },
-          {
-            "label": "Vs MA",
-            "value": 11
+            "value": -3
           }
         ]
-      }
-    ],
-    "regionOportunity": [
-      {
-        "department": "lambayeque",
-        "label": "Lambayeque",
-        "coverage": 172,
-        "bdf": "21%",
-        "billing": "S/ 87,122",
-        "oportunity": "bajo"
-      },
-      {
-        "department": "apurimac",
-        "label": "Apurímac",
-        "coverage": 172,
-        "bdf": "21%",
-        "billing": "S/ 87,122",
-        "oportunity": "alto"
       }
     ],
     "categoriesTable": {
       "columns": [
         {
-          "columnName": "categories",
+          "columnName": "category",
           "label": "Categorías"
         },
         {
@@ -103,201 +85,189 @@
           "label": "Oportunidad"
         },
         {
-          "columnName": "facturation",
-          "label": "FACTURACIÓN  MDO"
+          "columnName": "scenary",
+          "label": "Escenario"
         },
         {
-          "columnName": "bdfCateg",
-          "label": "%SH. BDF CATEG."
+          "columnName": "level",
+          "label": "nivel de crecimiento"
         },
         {
-          "columnName": "competitiveBrands",
-          "label": "# MARCAS compETIDORAS"
-        },
-        {
-          "columnName": "paretoBrands",
-          "label": "# MARCAS pareto"
-        },
-        {
-          "columnName": "pareto",
-          "label": "¿ESTAS EN EL PARETO?"
+          "columnName": "skus",
+          "label": "Detalle SKUs"
         }
       ],
       "values": [
         {
-          "categories": "Desodorantes y antitraspirantes",
-          "oportunity": "alta",
-          "facturation": "S/. 3,459,692",
-          "bdfCateg": "14%",
-          "competitiveBrands": "16  MARCAS",
-          "paretoBrands": "5 MARCas",
-          "pareto": "si"
+          "category": "ALIMENTOS",
+          "oportunity": "ALTO",
+          "facturation": 13174.77,
+          "bdfCateg": 0.4484,
+          "competitiveBrands": 4,
+          "paretoBrands": 1,
+          "pareto": "No"
         },
         {
-          "categories": "Cuidado facial",
-          "oportunity": "alta",
-          "facturation": "S/. 3,459,692",
-          "bdfCateg": "14%",
-          "competitiveBrands": "16  MARCAS",
-          "paretoBrands": "5 MARCas",
-          "pareto": "si"
+          "categories": "FORMULA LACTEA",
+          "oportunity": "ALTO",
+          "facturation": 39147.7,
+          "bdfCateg": 0.5611,
+          "competitiveBrands": 6,
+          "paretoBrands": 1,
+          "pareto": "SÃ­"
         },
         {
-          "categories": "Jabón y Gel de manos",
-          "oportunity": "alta",
-          "facturation": "S/. 3,459,692",
-          "bdfCateg": "14%",
-          "competitiveBrands": "16  MARCAS",
-          "paretoBrands": "5 MARCas",
-          "pareto": "no"
+          "categories": "SUPLEMENTO Y/O COMPLEMENTO ADULTO",
+          "oportunity": "ALTO",
+          "facturation": 35293.33,
+          "bdfCateg": 0.5747,
+          "competitiveBrands": 5,
+          "paretoBrands": 1,
+          "pareto": "SÃ­"
         },
         {
-          "categories": "Cuidado Corporal",
-          "oportunity": "baja",
-          "facturation": "S/. 3,459,692",
-          "bdfCateg": "14%",
-          "competitiveBrands": "16  MARCAS",
-          "paretoBrands": "5 MARCas",
-          "pareto": "si"
+          "categories": "SUPLEMENTO Y/O COMPLEMENTO PEDIATRICO",
+          "oportunity": "ALTO",
+          "facturation": 23698.51,
+          "bdfCateg": 0.7377,
+          "competitiveBrands": 3,
+          "paretoBrands": 1,
+          "pareto": "SÃ­"
         },
         {
-          "categories": "Cuidado Corporal",
-          "oportunity": "baja",
-          "facturation": "S/. 3,459,692",
-          "bdfCateg": "14%",
-          "competitiveBrands": "16  MARCAS",
-          "paretoBrands": "5 MARCas",
-          "pareto": "si"
-        },
-        {
-          "categories": "Cuidado Corporal",
-          "oportunity": "baja",
-          "facturation": "S/. 3,459,692",
-          "bdfCateg": "14%",
-          "competitiveBrands": "16  MARCAS",
-          "paretoBrands": "5 MARCas",
-          "pareto": "si"
+          "categories": "TRACTO ALIMENTARIO Y METABOLISMO",
+          "oportunity": "BAJO",
+          "facturation": 3198.41,
+          "bdfCateg": 0.0023,
+          "competitiveBrands": 57,
+          "paretoBrands": 8,
+          "pareto": "No"
         }
       ]
     },
     "categoryParticipation": {
       "doughnut": [
         {
-          "label": "Desodorante y antitranspirantes",
-          "value": 30
+          "label": "ALIMENTOS",
+          "value": 0,
+          "percentage": 0.1151
         },
         {
-          "label": "Desodorante y antitranspirantes",
-          "value": 20
+          "label": "FORMULA LACTEA",
+          "value": 0,
+          "percentage": 0.3419
         },
         {
-          "label": "Jabón gel y de manos",
-          "value": 20
+          "label": "TRACTO ALIMENTARIO Y METABOLISMO",
+          "value": 0,
+          "percentage": 0.0279
         },
         {
-          "label": "Cuidado personal",
-          "value": 10
+          "label": "SUPLEMENTO Y/O COMPLEMENTO ADULTO",
+          "value": 0,
+          "percentage": 0.3082
         },
         {
-          "label": "Otros",
-          "value": 20
+          "label": "SUPLEMENTO Y/O COMPLEMENTO PEDIATRICO",
+          "value": 0,
+          "percentage": 0.207
         }
       ],
       "totalSessions": {
-        "value": 5483,
-        "percentage": 32
+        "value": 6,
+        "percentage": 20
       },
       "clientsInteraction": {
-        "value": 2987,
-        "percentage": 60
+        "value": 40,
+        "percentage": 30
       },
       "categoryClicks": {
-        "value": 2874,
-        "percentage": 96
+        "value": 10,
+        "percentage": 10
       },
       "sales": {
-        "value": 1126,
-        "percentage": 10
+        "value": 2,
+        "percentage": 30
       }
     },
     "evolutionMq": {
-      "labels": ["OCT 23", "NOV 23", "DIC 23", "ENE 24", "FEB 24", "MAR 24"],
-      "columns": [27032, 29032, 27032, 28032, 29032, 31454],
-      "sales": [1000, 1010, 1010, 1000, 1010, 1021],
-      "coverage": [780, 810, 800, 810, 820, 808]
+      "labels": ["MAY 2024", "ABR 2024", "MAR 2024", "FEB 2024", "ENE 2024", "DIC 2023"],
+      "columns": [403874.84, 631996.35, 337650.59, 622319.68, 477343.18, 396729.37],
+      "sales": [819, 818, 824, 873, 623, 653],
+      "coverage": [622, 624, 616, 670, 490, 545]
     }
   },
   "categories": {
     "cards": [
       {
         "label": "Facturación total",
-        "amount": "S/ 114,512.72",
+        "amount": "S/ 403,874.84",
         "indicators": [
           {
             "label": "Vs MA",
-            "value": 21
+            "value": -36
           },
           {
             "label": "Vs MA",
-            "value": 5
+            "value": -24
           },
           {
             "label": "Vs MA",
-            "value": 1
-          }
-        ]
-      },
-      {
-        "label": "Volumen (und) total",
-        "amount": "267,32",
-        "indicators": [
-          {
-            "label": "Vs MA",
-            "value": 5
-          },
-          {
-            "label": "Vs MA",
-            "value": 8
-          },
-          {
-            "label": "Vs MA",
-            "value": 13
+            "value": -49
           }
         ]
       },
       {
         "label": "Cobertura total",
-        "amount": "428.89",
+        "amount": "S/ 622.00",
         "indicators": [
           {
             "label": "Vs MA",
-            "value": 15
+            "value": 0
           },
+          {
+            "label": "Vs MA",
+            "value": -2
+          },
+          {
+            "label": "Vs MA",
+            "value": 17
+          }
+        ]
+      },
+      {
+        "label": "Ticket promedio total",
+        "amount": "S/ 0.00",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 0
+          },
+          {
+            "label": "Vs MA",
+            "value": 0
+          },
+          {
+            "label": "Vs MA",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "label": "SKU promedio total",
+        "amount": "S/ 2.16",
+        "indicators": [
           {
             "label": "Vs MA",
             "value": -4
           },
           {
             "label": "Vs MA",
-            "value": -11
-          }
-        ]
-      },
-      {
-        "label": "Ticket promedio total",
-        "amount": "S/ 2.02",
-        "indicators": [
-          {
-            "label": "Vs MA",
-            "value": 7
+            "value": 0
           },
           {
             "label": "Vs MA",
-            "value": 7
-          },
-          {
-            "label": "Vs MA",
-            "value": 11
+            "value": -3
           }
         ]
       }
@@ -333,235 +303,703 @@
           "label": "Cob. MQ"
         },
         {
-          "columnName": "vsmacob",
+          "columnName": "vsma",
           "label": "Vs Ma"
         },
         {
-          "columnName": "vs3umcob",
+          "columnName": "vs3um",
           "label": "Vs 3um"
         },
         {
-          "columnName": "vs6umcob",
-          "label": "Vs 6um"
+          "columnName": "vs6um",
+          "label": "vs 6um"
         },
         {
-          "columnName": "vsmaacob",
-          "label": "Vs maa"
+          "columnName": "vsmaa",
+          "label": "vs maa"
         }
       ],
       "values": [
         {
-          "product": "Nivea Crema 30ml",
-          "mqSale": "S/102,279",
-          "vsma": 58,
-          "vs3um": 102,
-          "vs6um": 99,
-          "vsmaa": 154,
-          "cobmq": 110,
-          "vsma": -19,
-          "vs3um": 8,
-          "vs6um": 2,
-          "vsmaa": 25
+          "product": "PEDIASURE TRIPLESURE CHOCO LATAX 900G",
+          "mqSale": 17689.8,
+          "vsma": 1.5984,
+          "vsmacob": 0.15149999999999997,
+          "vs3um": 3.8853,
+          "vs3umcob": 1.0,
+          "vs6um": 2.6057,
+          "vs6umcob": -0.28300000000000003,
+          "vsmaa": 5.8725,
+          "vsmaacob": 2.1667,
+          "cobmq": 38
         },
         {
-          "product": "Nivea Crema 30ml",
-          "mqSale": "S/102,279",
-          "vsma": 58,
-          "vs3um": 102,
-          "vs6um": 99,
-          "vsmaa": 154,
-          "cobmq": 110,
-          "vsma": -19,
-          "vs3um": 8,
-          "vs6um": 2,
-          "vsmaa": 25
+          "product": "SIMILAC 3 X 2.1 KG VIRGO",
+          "mqSale": 32074.73,
+          "vsma": 6.6478,
+          "vsmacob": -0.931,
+          "vs3um": 2.3537,
+          "vs3umcob": -0.907,
+          "vs6um": 4.9135,
+          "vs6umcob": -0.8462000000000001,
+          "vsmaa": -46.0488,
+          "vsmaacob": 0.0,
+          "cobmq": 4
         },
         {
-          "product": "Nivea Crema 30ml",
-          "mqSale": "S/102,279",
-          "vsma": 58,
-          "vs3um": 102,
-          "vs6um": 99,
-          "vsmaa": 154,
-          "cobmq": 110,
-          "vsma": -19,
-          "vs3um": 8,
-          "vs6um": 2,
-          "vsmaa": 25
+          "product": "PEDIASURE TRIPLESURE VAINI.LAT X 400G",
+          "mqSale": 8565.87,
+          "vsma": -0.7329,
+          "vsmacob": 10.0,
+          "vs3um": -0.5237,
+          "vs3umcob": 0.33329999999999993,
+          "vs6um": -0.2072,
+          "vs6umcob": 0.6922999999999999,
+          "vsmaa": 0.1763,
+          "vsmaacob": 3.8888999999999996,
+          "cobmq": 44
         },
         {
-          "product": "Nivea Crema 30ml",
-          "mqSale": "S/102,279",
-          "vsma": 58,
-          "vs3um": 102,
-          "vs6um": 99,
-          "vsmaa": 154,
-          "cobmq": 110,
-          "vsma": -19,
-          "vs3um": 8,
-          "vs6um": 2,
-          "vsmaa": 25
+          "product": "PEDIALYTE 30 NG FCOX500ML, MANZANA",
+          "mqSale": 4030.3,
+          "vsma": -0.5295,
+          "vsmacob": 1.3409,
+          "vs3um": -0.7303,
+          "vs3umcob": 1.9428999999999998,
+          "vs6um": -0.6691,
+          "vs6umcob": 2.1212,
+          "vsmaa": -0.1591,
+          "vsmaacob": 2.1212,
+          "cobmq": 103
         },
         {
-          "product": "Nivea Crema 30ml",
-          "mqSale": "S/102,279",
-          "vsma": 58,
-          "vs3um": 102,
-          "vs6um": 99,
-          "vsmaa": 154,
-          "cobmq": 110,
-          "vsma": -19,
-          "vs3um": 8,
-          "vs6um": 2,
-          "vsmaa": 25
+          "product": "SIMILAC 3 X 350G (etapa 3) VIRGO",
+          "mqSale": 4107.74,
+          "vsma": -0.7094,
+          "vsmacob": -0.31579999999999997,
+          "vs3um": -0.539,
+          "vs3umcob": -0.7636000000000001,
+          "vs6um": -0.6945,
+          "vs6umcob": -0.7045,
+          "vsmaa": -0.706,
+          "vsmaacob": -0.933,
+          "cobmq": 13
         },
         {
-          "product": "Nivea Crema 30ml",
-          "mqSale": "S/102,279",
-          "vsma": 58,
-          "vs3um": 102,
-          "vs6um": 99,
-          "vsmaa": 154,
-          "cobmq": 110,
-          "vsma": -19,
-          "vs3um": 8,
-          "vs6um": 2,
-          "vsmaa": 25
+          "product": "OSMOLITE 1,06 kcal/mL SOL.ORAL 1000ML",
+          "mqSale": 16411.25,
+          "vsma": 2.9949,
+          "vsmacob": 0.2307999999999999,
+          "vs3um": 1.2106,
+          "vs3umcob": -0.6444,
+          "vs6um": 0.4674,
+          "vs6umcob": -0.6,
+          "vsmaa": 2.4176,
+          "vsmaacob": -0.746,
+          "cobmq": 16
         },
         {
-          "product": "Nivea Crema 30ml",
-          "mqSale": "S/102,279",
-          "vsma": 58,
-          "vs3um": 102,
-          "vs6um": 99,
-          "vsmaa": 154,
-          "cobmq": 110,
-          "vsma": -19,
-          "vs3um": 8,
-          "vs6um": 2,
-          "vsmaa": 25
+          "product": "ENSURE ADVANCE VAINILLA LATA X 850G",
+          "mqSale": 59025.17,
+          "vsma": 2.5967,
+          "vsmacob": 6.125,
+          "vs3um": 4.11,
+          "vs3umcob": 6.125,
+          "vs6um": 3.4645,
+          "vs6umcob": 2.4545,
+          "vsmaa": -287.53,
+          "vsmaacob": 56.0,
+          "cobmq": 114
+        },
+        {
+          "product": "PEDIASURE TRIPLESURE CHOCO LATA X400G",
+          "mqSale": 2052.81,
+          "vsma": -0.9652,
+          "vsmacob": -0.7719,
+          "vs3um": -0.9226,
+          "vs3umcob": -0.45830000000000004,
+          "vs6um": -0.8841,
+          "vs6umcob": -0.5,
+          "vsmaa": 5.7085,
+          "vsmaacob": 25.0,
+          "cobmq": 26
+        },
+        {
+          "product": "ENSURE ADVANCE VAINILLA 220 ML",
+          "mqSale": -374.12,
+          "vsma": -1.1822,
+          "vsmacob": -0.7692,
+          "vs3um": -1.0145,
+          "vs3umcob": -0.8846,
+          "vs6um": -1.0225,
+          "vs6umcob": -0.8776,
+          "vsmaa": -1.0998,
+          "vsmaacob": -0.7391,
+          "cobmq": 6
+        },
+        {
+          "product": "ENSURE ADVANCE HMB FRESA PLATANO LTA850G",
+          "mqSale": 4197.37,
+          "vsma": -12.2229,
+          "vsmacob": 0.8332999999999999,
+          "vs3um": -0.7926,
+          "vs3umcob": -0.7755,
+          "vs6um": -0.7359,
+          "vs6umcob": -0.6562,
+          "vsmaa": -0.3835,
+          "vsmaacob": -0.6667000000000001,
+          "cobmq": 11
+        },
+        {
+          "product": "ENSURE ADVANCE CHOCOLATE X 400 GR",
+          "mqSale": 1002.02,
+          "vsma": 7.2133,
+          "vsmacob": 6.0,
+          "vs3um": -0.238,
+          "vs3umcob": 0.16670000000000007,
+          "vs6um": -0.9262,
+          "vs6umcob": -0.7585999999999999,
+          "vsmaa": -0.7611,
+          "vsmaacob": -0.8793,
+          "cobmq": 7
+        },
+        {
+          "product": "SIMILAC RICE X 400 G",
+          "mqSale": 523.1,
+          "vsma": -0.9475,
+          "vsmacob": -0.9733,
+          "vs3um": -0.8585,
+          "vs3umcob": -0.9286,
+          "vs6um": -0.815,
+          "vs6umcob": -0.9048,
+          "vsmaa": -0.9389,
+          "vsmaacob": -0.9545,
+          "cobmq": 2
+        },
+        {
+          "product": "NEPRO AP SUSPENSION ORAL 237ML",
+          "mqSale": 2393.23,
+          "vsma": 3.576,
+          "vsmacob": 2.5,
+          "vs3um": -0.3753,
+          "vs3umcob": -0.75,
+          "vs6um": -0.0699,
+          "vs6umcob": -0.5882000000000001,
+          "vsmaa": -0.4061,
+          "vsmaacob": -0.9319999999999999,
+          "cobmq": 7
+        },
+        {
+          "product": "PEDIASURE TRIPLESURE VAINI.LAT X 900G",
+          "mqSale": 48036.83,
+          "vsma": 19.0739,
+          "vsmacob": 11.1429,
+          "vs3um": 10.187,
+          "vs3umcob": 2.0357,
+          "vs6um": 14.8328,
+          "vs6umcob": 4.0,
+          "vsmaa": 2.3987,
+          "vsmaacob": 3.4737,
+          "cobmq": 85
+        },
+        {
+          "product": "SIMILAC SENSITIVE EYE Q LATA X 375 G",
+          "mqSale": 138.66,
+          "vsma": -0.9971,
+          "vsmacob": -0.9882,
+          "vs3um": -0.9918,
+          "vs3umcob": -0.9677,
+          "vs6um": -0.9866,
+          "vs6umcob": -0.9667,
+          "vsmaa": -0.9662,
+          "vsmaacob": -0.9231,
+          "cobmq": 1
+        },
+        {
+          "product": "SIMILAC TOT.COMFORT PRO SENS CAJA 1.4KG",
+          "mqSale": 1012.91,
+          "vsma": 6.2871,
+          "vsmacob": 0.0,
+          "vs3um": -0.9399,
+          "vs3umcob": -0.9677,
+          "vs6um": -0.9021,
+          "vs6umcob": -0.9667,
+          "vsmaa": -0.9383,
+          "vsmaacob": -0.9375,
+          "cobmq": 1
+        },
+        {
+          "product": "PEDIASURE TRIPLESURE VAINILLA LATA X 1.6",
+          "mqSale": 7597.92,
+          "vsma": 6.5004,
+          "vsmacob": 16.0,
+          "vs3um": -0.5366,
+          "vs3umcob": -0.41379999999999995,
+          "vs6um": -0.2655,
+          "vs6umcob": -0.41379999999999995,
+          "vsmaa": -0.8713,
+          "vsmaacob": -0.8509,
+          "cobmq": 17
+        },
+        {
+          "product": "ENSURE ADVANCE VAINILLA LATA X 400 G",
+          "mqSale": 3511.69,
+          "vsma": -0.5378,
+          "vsmacob": 0.29410000000000003,
+          "vs3um": 0.2043,
+          "vs3umcob": 2.6667,
+          "vs6um": -0.6471,
+          "vs6umcob": 0.15789999999999993,
+          "vsmaa": 0.7105,
+          "vsmaacob": -0.15380000000000005,
+          "cobmq": 22
+        },
+        {
+          "product": "SIMILAC TOTAL COMFORT PRO SENSITIVE 360G",
+          "mqSale": 3982.85,
+          "vsma": 0.1341,
+          "vsmacob": 0.045500000000000096,
+          "vs3um": -0.0144,
+          "vs3umcob": 0.7692000000000001,
+          "vs6um": -0.6188,
+          "vs6umcob": 0.045500000000000096,
+          "vsmaa": -11.6493,
+          "vsmaacob": 2.8333,
+          "cobmq": 23
+        },
+        {
+          "product": "PEDIALYTE 60 NG UVA 500ML OCTO",
+          "mqSale": 5628.41,
+          "vsma": 0.4131,
+          "vsmacob": 2.913,
+          "vs3um": 0.1187,
+          "vs3umcob": 3.2857000000000003,
+          "vs6um": -0.4746,
+          "vs6umcob": 2.6,
+          "vsmaa": 0.3411,
+          "vsmaacob": 7.181800000000001,
+          "cobmq": 90
+        },
+        {
+          "product": "SIMILAC TOTAL COMFORT PRO SENSITIVE 820G",
+          "mqSale": 13660.14,
+          "vsma": 1.4272,
+          "vsmacob": -0.7111000000000001,
+          "vs3um": 2.123,
+          "vs3umcob": -0.4222,
+          "vs6um": 2.7476,
+          "vs6umcob": 0.0,
+          "vsmaa": 110.9684,
+          "vsmaacob": 25.0,
+          "cobmq": 26
+        },
+        {
+          "product": "SIMILAC TOTAL COMFORT KID 820 G",
+          "mqSale": 7922.46,
+          "vsma": -0.42,
+          "vsmacob": -0.6923,
+          "vs3um": 0.0213,
+          "vs3umcob": -0.8261000000000001,
+          "vs6um": 0.343,
+          "vs6umcob": -0.7333000000000001,
+          "vsmaa": 6.9066,
+          "vsmaacob": 0.14290000000000003,
+          "cobmq": 8
+        },
+        {
+          "product": "ENSURE ADVANCE HMB CJA 1.4 KG",
+          "mqSale": 3192.27,
+          "vsma": -0.597,
+          "vsmacob": -0.75,
+          "vs3um": -0.648,
+          "vs3umcob": -0.9512,
+          "vs6um": -0.5473,
+          "vs6umcob": -0.9355,
+          "vsmaa": -0.6797,
+          "vsmaacob": -0.9733,
+          "cobmq": 2
+        },
+        {
+          "product": "ENSURE NG VAINILLA LATA 850 G",
+          "mqSale": 463.49,
+          "vsma": -0.8548,
+          "vsmacob": 1.5,
+          "vs3um": -0.9439,
+          "vs3umcob": -0.5832999999999999,
+          "vs6um": -0.9266,
+          "vs6umcob": -0.8276,
+          "vsmaa": -0.1138,
+          "vsmaacob": 1.5,
+          "cobmq": 5
+        },
+        {
+          "product": "SIMILAC 3 X 800 G (etapa 3) VIRGO",
+          "mqSale": 12126.89,
+          "vsma": 25.192,
+          "vsmacob": 3.2,
+          "vs3um": 2.1425,
+          "vs3umcob": 3.2,
+          "vs6um": 1.088,
+          "vs6umcob": -0.19230000000000003,
+          "vsmaa": 4.0677,
+          "vsmaacob": 2.0,
+          "cobmq": 21
+        },
+        {
+          "product": "SIMILAC 2 X 350G (etapa 2) VIRGO",
+          "mqSale": 1502.36,
+          "vsma": -0.8761,
+          "vsmacob": -0.23809999999999998,
+          "vs3um": -0.7144,
+          "vs3umcob": 0.7778,
+          "vs6um": -0.7903,
+          "vs6umcob": -0.36,
+          "vsmaa": -0.9687,
+          "vsmaacob": -0.8118,
+          "cobmq": 16
+        },
+        {
+          "product": "ENSURE ADVANCE CHOCOLATE X 850 GR",
+          "mqSale": 7517.05,
+          "vsma": 0.2138,
+          "vsmacob": 1.5714000000000001,
+          "vs3um": 0.1377,
+          "vs3umcob": 0.19999999999999996,
+          "vs6um": 0.4365,
+          "vs6umcob": 0.8,
+          "vsmaa": 6.4206,
+          "vsmaacob": 17.0,
+          "cobmq": 18
+        },
+        {
+          "product": "PEDIASURE VAINILLA CJA x 10 SACHET 48.6G",
+          "mqSale": 109.51,
+          "vsma": -0.9854,
+          "vsmacob": -0.9444,
+          "vs3um": -0.9784,
+          "vs3umcob": -0.9286,
+          "vs6um": -0.9788,
+          "vs6umcob": -0.9167,
+          "vsmaa": -0.9856,
+          "vsmaacob": -0.9412,
+          "cobmq": 1
+        },
+        {
+          "product": "SIMILAC MAMA 400G.",
+          "mqSale": 1231.69,
+          "vsma": 10.1972,
+          "vsmacob": 6.0,
+          "vs3um": -0.7326,
+          "vs3umcob": -0.22219999999999995,
+          "vs6um": -0.7352,
+          "vs6umcob": -0.36360000000000003,
+          "vsmaa": -0.6493,
+          "vsmaacob": -0.6818,
+          "cobmq": 7
+        },
+        {
+          "product": "SIMILAC 2 X 800 G (etapa 2) VIRGO",
+          "mqSale": 9505.87,
+          "vsma": 6.7158,
+          "vsmacob": 3.0,
+          "vs3um": 2.2191,
+          "vs3umcob": 2.1111,
+          "vs6um": 0.9887,
+          "vs6umcob": 1.3333,
+          "vsmaa": 1.3866,
+          "vsmaacob": 0.21740000000000004,
+          "cobmq": 28
+        },
+        {
+          "product": "GLUCERNA VAINILLA PVO LTA 400 GR",
+          "mqSale": 4011.69,
+          "vsma": -0.578,
+          "vsmacob": -0.5357000000000001,
+          "vs3um": 0.1094,
+          "vs3umcob": 0.08329999999999993,
+          "vs6um": -0.0763,
+          "vs6umcob": 0.0,
+          "vsmaa": -0.2872,
+          "vsmaacob": -0.8556,
+          "cobmq": 13
+        },
+        {
+          "product": "ENSURE ADVANCE VAIN CJA x10 SACHET 53.5G",
+          "mqSale": 374.83,
+          "vsma": -0.9066,
+          "vsmacob": -0.8462000000000001,
+          "vs3um": -0.9238,
+          "vs3umcob": -0.875,
+          "vs6um": -0.9213,
+          "vs6umcob": -0.8333,
+          "vsmaa": -0.9726,
+          "vsmaacob": -0.9231,
+          "cobmq": 2
+        },
+        {
+          "product": "PROSURE VAINILLA POLVO  LTA 380 GR",
+          "mqSale": 1309.06,
+          "vsma": 2.4908,
+          "vsmacob": -0.5,
+          "vs3um": -0.7173,
+          "vs3umcob": -0.9286,
+          "vs6um": -0.6548,
+          "vs6umcob": -0.9167,
+          "vsmaa": -0.8348,
+          "vsmaacob": -0.875,
+          "cobmq": 1
+        },
+        {
+          "product": "ISOMIL 1+ EYE Q PLUS LATA X 400 G",
+          "mqSale": 183.58,
+          "vsma": -0.8598,
+          "vsmacob": 0.0,
+          "vs3um": -0.9033,
+          "vs3umcob": -0.8,
+          "vs6um": -0.9334,
+          "vs6umcob": -0.8889,
+          "vsmaa": -0.9425,
+          "vsmaacob": -0.5,
+          "cobmq": 1
+        },
+        {
+          "product": "PEDIALYTE 30 NG FCOX500ML, CEREZA",
+          "mqSale": 15106.89,
+          "vsma": 81.1027,
+          "vsmacob": 221.0,
+          "vs3um": 23.2876,
+          "vs3umcob": 221.0,
+          "vs6um": 4.4557,
+          "vs6umcob": 23.6667,
+          "vsmaa": 31.6283,
+          "vsmaacob": 43.4,
+          "cobmq": 222
+        },
+        {
+          "product": "GLUCERNA VAINILLA PVO LTA 850 GR",
+          "mqSale": 40427.19,
+          "vsma": 1.6761,
+          "vsmacob": -0.8964,
+          "vs3um": 6.3066,
+          "vs3umcob": -0.6933,
+          "vs6um": 6.955,
+          "vs6umcob": -0.4889,
+          "vsmaa": 2.3337,
+          "vsmaacob": 0.09519999999999995,
+          "cobmq": 23
+        },
+        {
+          "product": "ENSURE CLINICAL SUSPENSION ORAL 220 ML",
+          "mqSale": 647.14,
+          "vsma": -0.984,
+          "vsmacob": -0.7391,
+          "vs3um": -0.9652,
+          "vs3umcob": -0.9268,
+          "vs6um": -0.9368,
+          "vs6umcob": -0.8636,
+          "vsmaa": -0.5691,
+          "vsmaacob": -0.625,
+          "cobmq": 6
+        },
+        {
+          "product": "PEDIASURE TRIP SURE LIQ VAINIL FCO220ML",
+          "mqSale": 471.97,
+          "vsma": -0.2705,
+          "vsmacob": 1.6667,
+          "vs3um": -0.9748,
+          "vs3umcob": -0.8095,
+          "vs6um": -0.9512,
+          "vs6umcob": -0.6279,
+          "vsmaa": -0.9238,
+          "vsmaacob": 1.2856999999999998,
+          "cobmq": 16
+        },
+        {
+          "product": "ALITRAQ  PVO ORAL CJA x 06 SOBRES x76g",
+          "mqSale": 16988.55,
+          "vsma": 34.9927,
+          "vsmacob": 0.5625,
+          "vs3um": 0.2267,
+          "vs3umcob": 0.6667000000000001,
+          "vs6um": 0.753,
+          "vs6umcob": -0.4444,
+          "vsmaa": 1.26,
+          "vsmaacob": 0.3889,
+          "cobmq": 25
+        },
+        {
+          "product": "GLUCERNA VAINILLA 237 ML",
+          "mqSale": 345.12,
+          "vsma": -0.9797,
+          "vsmacob": -0.84,
+          "vs3um": -0.9428,
+          "vs3umcob": -0.75,
+          "vs6um": -0.972,
+          "vs6umcob": -0.9184,
+          "vsmaa": 2.1375,
+          "vsmaacob": 3.0,
+          "cobmq": 4
+        },
+        {
+          "product": "PEDIASURE CHOCOLATE 1.6KG",
+          "mqSale": 6192.82,
+          "vsma": 3.123,
+          "vsmacob": -0.5625,
+          "vs3um": 0.3182,
+          "vs3umcob": -0.5,
+          "vs6um": -0.044,
+          "vs6umcob": -0.4615,
+          "vsmaa": 43.5527,
+          "vsmaacob": 6.0,
+          "cobmq": 7
+        },
+        {
+          "product": "PEDIALYTE MAX 60 NG FRESA FCO 500 ML",
+          "mqSale": 9967.07,
+          "vsma": 8.9472,
+          "vsmacob": 9.7143,
+          "vs3um": 4.6184,
+          "vs3umcob": 11.5,
+          "vs6um": -0.0942,
+          "vs6umcob": 1.6785999999999999,
+          "vsmaa": -0.6893,
+          "vsmaacob": 17.75,
+          "cobmq": 75
+        },
+        {
+          "product": "SIMILAC 1 X 800 G (etapa 1) VIRGO",
+          "mqSale": 14134.02,
+          "vsma": 2.5072,
+          "vsmacob": -0.8155,
+          "vs3um": -0.0508,
+          "vs3umcob": -0.62,
+          "vs6um": 0.156,
+          "vs6umcob": -0.5957,
+          "vsmaa": 0.1742,
+          "vsmaacob": -0.7323999999999999,
+          "cobmq": 19
+        },
+        {
+          "product": "PEDIALYTE MAX 60 NG MANZANA x 500ML",
+          "mqSale": 4194.04,
+          "vsma": -0.7629,
+          "vsmacob": 0.5263,
+          "vs3um": -0.5546,
+          "vs3umcob": 0.871,
+          "vs6um": -0.2409,
+          "vs6umcob": 1.1481,
+          "vsmaa": 0.0908,
+          "vsmaacob": 3.1429,
+          "cobmq": 58
+        },
+        {
+          "product": "SIMILAC 1 X 350G (etapa 1) VIRGO",
+          "mqSale": 6808.02,
+          "vsma": 0.8155,
+          "vsmacob": 0.4348000000000001,
+          "vs3um": 4.3063,
+          "vs3umcob": 2.6667,
+          "vs6um": 0.1785,
+          "vs6umcob": -0.4407,
+          "vsmaa": -0.129,
+          "vsmaacob": 0.22219999999999995,
+          "cobmq": 33
+        },
+        {
+          "product": "PULMOCARE VAINILLA SUSP ORAL LATA X8 OZ",
+          "mqSale": 3750.41,
+          "vsma": 11.2562,
+          "vsmacob": 22.0,
+          "vs3um": 1.2952,
+          "vs3umcob": 0.045500000000000096,
+          "vs6um": -0.3698,
+          "vs6umcob": -0.623,
+          "vsmaa": -0.9628,
+          "vsmaacob": -0.7089,
+          "cobmq": 23
         }
       ]
     },
     "categoryParticipation": {
       "doughnut": [
         {
-          "label": "Cuidado Facial",
-          "value": 30
+          "label": "ALIMENTOS",
+          "value": 0.1151,
+          "percentage": 0.1151
         },
         {
-          "label": "Desodorante y antitranspirantes",
-          "value": 20
+          "label": "FORMULA LACTEA",
+          "value": 0.3419,
+          "percentage": 0.3419
         },
         {
-          "label": "Jabón gel y de manos",
-          "value": 15
+          "label": "TRACTO ALIMENTARIO Y METABOLISMO",
+          "value": 0.0279,
+          "percentage": 0.0279
         },
         {
-          "label": "Cuidado personal",
-          "value": 20
+          "label": "SUPLEMENTO Y/O COMPLEMENTO ADULTO",
+          "value": 0.3082,
+          "percentage": 0.3082
         },
         {
-          "label": "Afeitado y Post afeitado",
-          "value": 15
-        },
-        {
-          "label": "Otros",
-          "value": 1
+          "label": "SUPLEMENTO Y/O COMPLEMENTO PEDIATRICO",
+          "value": 0.207,
+          "percentage": 0.207
         }
       ]
     },
     "evolutionMq": {
-      "labels": [
-        "ENE 23",
-        "FEB 23",
-        "MAR 23",
-        "ABR 24",
-        "MAY 23",
-        "JUN 23",
-        "JUL 23",
-        "AGO 24",
-        "SET 24",
-        "OCT 24",
-        "NOV 24",
-        "DIC 24"
-      ],
-      "totalMarket": [27032, 29032, 27032, 28032, 27032, 29032, 27032, 28032, 29032, 31454, 29032, 31454],
-      "totalBdf": [2900, 21010, 21010, 21000, 29300, 21010, 21010, 21000, 21010, 13021, 14010, 15021],
-      "coverageBdf": [0, 620, 480, 570, 630, 500, 550, 620, 480, 570, 630, 500],
-      "coverageMdo": [0, 500, 650, 560, 620, 570, 600, 500, 650, 560, 620, 570]
+      "labels": ["MAY 2024", "ABR 2024", "MAR 2024", "FEB 2024", "ENE 2024", "DIC 2023"],
+      "totalMarket": [16200.19, 42742.41, 949459.78, 21529.86, -15.68, 0],
+      "totalBdf": [188, 182, 978, 34, 1, 0],
+      "coverageBdf": [],
+      "coverageMdo": []
     },
     "principalCategories": [
       {
-        "category": "Desodorante y antitranspirante",
-        "totalPercentage": 10,
-        "columns": [927.266, 104.057]
-      },
-      {
-        "category": "Cuidado facial",
-        "totalPercentage": 4,
-        "columns": [154.266, 180.057]
-      },
-      {
-        "category": "Jabón y gel de manos",
-        "totalPercentage": 60,
-        "columns": [927.266, 927.057]
-      },
-      {
-        "category": "cuidado corporal",
-        "totalPercentage": 80,
-        "columns": [927.266, 104.057]
+        "category": "Categorias",
+        "totalPercentage": 0,
+        "columns": [0, 0]
       }
     ],
     "participationPareto": {
       "categories": [
         {
-          "category": "Nivea crema 30ml",
-          "value": 34
+          "category": "",
+          "value": 122.17
         },
         {
-          "category": "Nivea crema 60ml",
-          "value": 23
+          "category": "ALIMENTOS",
+          "value": 38926.71
         },
         {
-          "category": "Nivea crema Cuidado Aclarante 100ml",
-          "value": 14
+          "category": "FORMULA LACTEA",
+          "value": 107160.23
         },
         {
-          "category": "Nivea crema 30ml",
-          "value": 10
+          "category": "SUPLEMENTO Y/O COMPLEMENTO ADULTO",
+          "value": 150013.85
         },
         {
-          "category": "Nivea crema 30ml",
-          "value": 34
+          "category": "SUPLEMENTO Y/O COMPLEMENTO PEDIATRICO",
+          "value": 91240.63
         },
         {
-          "category": "Nivea crema 60ml",
-          "value": 23
-        },
-        {
-          "category": "Nivea crema Cuidado Aclarante 100ml",
-          "value": 14
-        },
-        {
-          "category": "Nivea crema 30ml",
-          "value": 10
-        },
-        {
-          "category": "Otros",
-          "value": 5
+          "category": "TRACTO ALIMENTARIO Y METABOLISMO",
+          "value": 16411.25
         }
       ]
     },
-    "topSKu": {
-      "productLogo": "",
-      "product": "Nivea crema 30ml",
+    "topSku": {
+      "productLogo": "https://extranet.quimicasuiza.com/catalogo/1010/11/-l.jpg",
+      "product": "SIMILAC 3 MEZCLA 5HMOS PVO CJA 1.4 Kg",
       "billing": {
-        "vsma": 10,
-        "vs3um": -23
+        "vsma": 7922.46,
+        "vs3um": 5367.56
       },
       "ranking": {
-        "vsma": 10,
+        "vsma": 1,
         "vs3um": 1
       }
     }
@@ -569,94 +1007,86 @@
   "region": {
     "cards": [
       {
-        "label": "Facturación total Lambayeque",
-        "amount": "S/ 32,512.72",
+        "label": "Facturación total LIMA",
+        "amount": "S/ 505,961.12",
         "indicators": [
           {
             "label": "Vs MA",
-            "value": 21
+            "value": -80
           },
           {
             "label": "Vs MA",
-            "value": 5
+            "value": -66
           },
           {
             "label": "Vs MA",
-            "value": 1
+            "value": -79
           }
         ]
       },
       {
-        "label": "Volumen (und) total Lambayeque",
-        "amount": "267",
+        "label": "Cobertura total LIMA",
+        "amount": "S/ 144.00",
         "indicators": [
           {
             "label": "Vs MA",
-            "value": -23
+            "value": -14
           },
           {
             "label": "Vs MA",
-            "value": -3
+            "value": -14
           },
           {
             "label": "Vs MA",
-            "value": 0
+            "value": 17
           }
         ]
       },
       {
-        "label": "Cobertura total Lambayeque",
-        "amount": "428",
+        "label": "Volumen (und) total LIMA",
+        "amount": "S/ 2.03",
         "indicators": [
           {
             "label": "Vs MA",
-            "value": 15
+            "value": -6
           },
           {
             "label": "Vs MA",
-            "value": -4
+            "value": 4
           },
           {
             "label": "Vs MA",
-            "value": -11
+            "value": -1
           }
         ]
       },
       {
-        "label": "Ticket promedio total Lambayeque",
-        "amount": "S/ 2.02",
+        "label": "Ticket promedio total LIMA",
+        "amount": "S/ 3,513.62",
         "indicators": [
           {
             "label": "Vs MA",
-            "value": 7
+            "value": -77
           },
           {
             "label": "Vs MA",
-            "value": 7
+            "value": -61
           },
           {
             "label": "Vs MA",
-            "value": 11
+            "value": -82
           }
         ]
       }
     ],
     "regionOportunity": [
       {
-        "department": "lambayeque",
-        "label": "Lambayeque",
-        "coverage": 172,
-        "bdf": "21%",
-        "billing": "S/ 87,122",
-        "oportunity": "bajo"
-      },
-      {
-        "department": "apurimac",
-        "label": "Apurímac",
-        "coverage": 172,
-        "bdf": "21%",
-        "billing": "S/ 87,122",
-        "oportunity": "alto"
+        "department": "lima",
+        "label": "LIMA",
+        "coverage": "10",
+        "bdf": "1%",
+        "billing": "S/ 514,355.19",
+        "opportunity": "BAJO"
       }
     ],
     "provincesTable": {
@@ -712,130 +1142,88 @@
       ],
       "values": [
         {
-          "province": "Desodorantes y antitraspirantes",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "provinceName": "HUAROCHIRI",
+          "salemq": "S/ 213.34",
+          "share": "1%",
+          "distNum": "1%",
+          "distPond": "1%",
+          "vs3um": "-17",
+          "vs6um": "-29",
+          "vsMaa": "0",
+          "cobMq": "1",
+          "vs3umCob": "0",
+          "vs6umCob": "0",
+          "vsMaaCob": "0"
         },
         {
-          "province": "Desodorantes y antitraspirantes",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "provinceName": "BARRANCA",
+          "salemq": "S/ 2,250.96",
+          "share": "2%",
+          "distNum": "1%",
+          "distPond": "2%",
+          "vs3um": "-46",
+          "vs6um": "-65",
+          "vsMaa": "-47",
+          "cobMq": "5",
+          "vs3umCob": "25",
+          "vs6umCob": "67",
+          "vsMaaCob": "0"
         },
         {
-          "province": "Desodorantes y antitraspirantes",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "provinceName": "CAÑETE",
+          "salemq": "S/ 543.30",
+          "share": "0%",
+          "distNum": "0%",
+          "distPond": "0%",
+          "vs3um": "-65",
+          "vs6um": "-59",
+          "vsMaa": "-92",
+          "cobMq": "2",
+          "vs3umCob": "-50",
+          "vs6umCob": "0",
+          "vsMaaCob": "-50"
         },
         {
-          "province": "Desodorantes y antitraspirantes",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "provinceName": "HUARAL",
+          "salemq": "S/ 9,478.06",
+          "share": "8%",
+          "distNum": "1%",
+          "distPond": "8%",
+          "vs3um": "796",
+          "vs6um": "1073",
+          "vsMaa": "574",
+          "cobMq": "6",
+          "vs3umCob": "100",
+          "vs6umCob": "20",
+          "vsMaaCob": "100"
         },
         {
-          "province": "Desodorantes y antitraspirantes",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "provinceName": "LIMA",
+          "salemq": "S/ 496,562.01",
+          "share": "1%",
+          "distNum": "1%",
+          "distPond": "1%",
+          "vs3um": "-67",
+          "vs6um": "-80",
+          "vsMaa": "-80",
+          "cobMq": "129",
+          "vs3umCob": "-12",
+          "vs6umCob": "-15",
+          "vsMaaCob": "18"
         },
         {
-          "province": "Desodorantes y antitraspirantes",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
-        },
-        {
-          "province": "Desodorantes y antitraspirantes",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
-        },
-        {
-          "province": "Desodorantes y antitraspirantes",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
-        },
-        {
-          "province": "Desodorantes y antitraspirantes",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "provinceName": "HUAURA",
+          "salemq": "S/ 5,307.52",
+          "share": "1%",
+          "distNum": "1%",
+          "distPond": "1%",
+          "vs3um": "-68",
+          "vs6um": "68",
+          "vsMaa": "121",
+          "cobMq": "7",
+          "vs3umCob": "-22",
+          "vs6umCob": "0",
+          "vsMaaCob": "75"
         }
       ]
     },
@@ -892,130 +1280,312 @@
       ],
       "values": [
         {
-          "channel": "Farmacia Independiente",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "channelName": "Salud",
+          "salemq": "S/ 52,115.44",
+          "share": "1%",
+          "distNum": "1%",
+          "distPond": "1%",
+          "vs3um": "-72",
+          "vs6um": "-83",
+          "vsMaa": "-86",
+          "cobMq": "8",
+          "vs3umCob": "14",
+          "vs6umCob": "-83",
+          "vsMaaCob": "-86"
         },
         {
-          "channel": "Farmacia Independiente",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "channelName": "Dr Salud",
+          "salemq": "S/ 65,784.53",
+          "share": "2%",
+          "distNum": "1%",
+          "distPond": "2%",
+          "vs3um": "-66",
+          "vs6um": "-79",
+          "vsMaa": "-84",
+          "cobMq": "36",
+          "vs3umCob": "12",
+          "vs6umCob": "-79",
+          "vsMaaCob": "-84"
         },
         {
-          "channel": "Farmacia Independiente",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "channelName": "Empresas",
+          "salemq": "S/ 565.57",
+          "share": "0%",
+          "distNum": "1%",
+          "distPond": "0%",
+          "vs3um": "-72",
+          "vs6um": "-53",
+          "vsMaa": "-89",
+          "cobMq": "3",
+          "vs3umCob": "-40",
+          "vs6umCob": "-53",
+          "vsMaaCob": "-89"
         },
         {
-          "channel": "Farmacia Independiente",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "channelName": "Personal",
+          "salemq": "S/ 15.96",
+          "share": "2%",
+          "distNum": "5%",
+          "distPond": "2%",
+          "vs3um": "-53",
+          "vs6um": "-53",
+          "vsMaa": "0",
+          "cobMq": "1",
+          "vs3umCob": "0",
+          "vs6umCob": "-53",
+          "vsMaaCob": "0"
         },
         {
-          "channel": "Farmacia Independiente",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "channelName": "Detallista",
+          "salemq": "S/ 1,544.93",
+          "share": "3%",
+          "distNum": "0%",
+          "distPond": "3%",
+          "vs3um": "33",
+          "vs6um": "2815",
+          "vsMaa": "0",
+          "cobMq": "1",
+          "vs3umCob": "0",
+          "vs6umCob": "2815",
+          "vsMaaCob": "0"
         },
         {
-          "channel": "Farmacia Independiente",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "channelName": "Mayoristas",
+          "salemq": "S/ 49,515.74",
+          "share": "3%",
+          "distNum": "1%",
+          "distPond": "3%",
+          "vs3um": "-71",
+          "vs6um": "-84",
+          "vsMaa": "-87",
+          "cobMq": "2",
+          "vs3umCob": "0",
+          "vs6umCob": "-84",
+          "vsMaaCob": "-87"
         },
         {
-          "channel": "Farmacia Independiente",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "channelName": "MINI CADENA",
+          "salemq": "S/ 50,642.71",
+          "share": "6%",
+          "distNum": "1%",
+          "distPond": "7%",
+          "vs3um": "-72",
+          "vs6um": "-83",
+          "vsMaa": "2068",
+          "cobMq": "3",
+          "vs3umCob": "50",
+          "vs6umCob": "-83",
+          "vsMaaCob": "2068"
         },
         {
-          "channel": "Farmacia Independiente",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "channelName": "FARMACIAS ORO",
+          "salemq": "S/ 14,081.19",
+          "share": "1%",
+          "distNum": "1%",
+          "distPond": "1%",
+          "vs3um": "-46",
+          "vs6um": "-31",
+          "vsMaa": "-62",
+          "cobMq": "31",
+          "vs3umCob": "7",
+          "vs6umCob": "-31",
+          "vsMaaCob": "-62"
         },
         {
-          "channel": "Farmacia Independiente",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "channelName": "Venta Directa",
+          "salemq": "S/ 428.34",
+          "share": "1%",
+          "distNum": "0%",
+          "distPond": "1%",
+          "vs3um": "-66",
+          "vs6um": "254",
+          "vsMaa": "-87",
+          "cobMq": "2",
+          "vs3umCob": "-33",
+          "vs6umCob": "254",
+          "vsMaaCob": "-87"
+        },
+        {
+          "channelName": "Distribuidores",
+          "salemq": "S/ 768.66",
+          "share": "1%",
+          "distNum": "1%",
+          "distPond": "1%",
+          "vs3um": "-37",
+          "vs6um": "-27",
+          "vsMaa": "-88",
+          "cobMq": "2",
+          "vs3umCob": "100",
+          "vs6umCob": "-27",
+          "vsMaaCob": "-88"
+        },
+        {
+          "channelName": "Grupos Top s",
+          "salemq": "S/ 704.06",
+          "share": "0%",
+          "distNum": "1%",
+          "distPond": "0%",
+          "vs3um": "209",
+          "vs6um": "-396",
+          "vsMaa": "-100",
+          "cobMq": "5",
+          "vs3umCob": "150",
+          "vs6umCob": "-396",
+          "vsMaaCob": "-100"
+        },
+        {
+          "channelName": "TRADICIONAL B2C",
+          "salemq": "S/ 242.18",
+          "share": "0%",
+          "distNum": "0%",
+          "distPond": "0%",
+          "vs3um": "555",
+          "vs6um": "657",
+          "vsMaa": "-37",
+          "cobMq": "1",
+          "vs3umCob": "0",
+          "vs6umCob": "657",
+          "vsMaaCob": "-37"
+        },
+        {
+          "channelName": "FARMACIAS INDEP.",
+          "salemq": "S/ 45,072.77",
+          "share": "2%",
+          "distNum": "1%",
+          "distPond": "2%",
+          "vs3um": "58",
+          "vs6um": "52",
+          "vsMaa": "37",
+          "cobMq": "116",
+          "vs3umCob": "-13",
+          "vs6umCob": "52",
+          "vsMaaCob": "37"
+        },
+        {
+          "channelName": "Instit. Privadas",
+          "salemq": "S/ 61,728.51",
+          "share": "2%",
+          "distNum": "1%",
+          "distPond": "2%",
+          "vs3um": "-66",
+          "vs6um": "-80",
+          "vsMaa": "500",
+          "cobMq": "16",
+          "vs3umCob": "78",
+          "vs6umCob": "-80",
+          "vsMaaCob": "500"
+        },
+        {
+          "channelName": "Cliente Genérico",
+          "salemq": "S/ 50,988.59",
+          "share": "4%",
+          "distNum": "1%",
+          "distPond": "4%",
+          "vs3um": "-71",
+          "vs6um": "-83",
+          "vsMaa": "1439",
+          "cobMq": "5",
+          "vs3umCob": "0",
+          "vs6umCob": "-83",
+          "vsMaaCob": "1439"
+        },
+        {
+          "channelName": "Farmacia independ.",
+          "salemq": "S/ 4,270.52",
+          "share": "1%",
+          "distNum": "0%",
+          "distPond": "1%",
+          "vs3um": "-25",
+          "vs6um": "-55",
+          "vsMaa": "-39",
+          "cobMq": "17",
+          "vs3umCob": "-6",
+          "vs6umCob": "-55",
+          "vsMaaCob": "-39"
+        },
+        {
+          "channelName": "INSTITUT. PRIVADAS",
+          "salemq": "S/ 6,996.56",
+          "share": "0%",
+          "distNum": "1%",
+          "distPond": "0%",
+          "vs3um": "-37",
+          "vs6um": "31",
+          "vsMaa": "73",
+          "cobMq": "5",
+          "vs3umCob": "-29",
+          "vs6umCob": "31",
+          "vsMaaCob": "73"
+        },
+        {
+          "channelName": "Sub-distribuidores",
+          "salemq": "S/ 15.96",
+          "share": "0%",
+          "distNum": "0%",
+          "distPond": "0%",
+          "vs3um": "0",
+          "vs6um": "0",
+          "vsMaa": "0",
+          "cobMq": "1",
+          "vs3umCob": "0",
+          "vs6umCob": "0",
+          "vsMaaCob": "0"
+        },
+        {
+          "channelName": "CAD. FARM. REGIONAL",
+          "salemq": "S/ 49,133.39",
+          "share": "9%",
+          "distNum": "7%",
+          "distPond": "10%",
+          "vs3um": "-71",
+          "vs6um": "-84",
+          "vsMaa": "-87",
+          "cobMq": "1",
+          "vs3umCob": "0",
+          "vs6umCob": "-84",
+          "vsMaaCob": "-87"
+        },
+        {
+          "channelName": "Cadenas de farmacias",
+          "salemq": "S/ 54,867.34",
+          "share": "3%",
+          "distNum": "2%",
+          "distPond": "3%",
+          "vs3um": "-69",
+          "vs6um": "-82",
+          "vsMaa": "1759",
+          "cobMq": "3",
+          "vs3umCob": "-25",
+          "vs6umCob": "-82",
+          "vsMaaCob": "1759"
+        },
+        {
+          "channelName": "FARMAC IND PERIFERIA",
+          "salemq": "S/ 4,765.45",
+          "share": "5%",
+          "distNum": "1%",
+          "distPond": "5%",
+          "vs3um": "294",
+          "vs6um": "240",
+          "vsMaa": "247",
+          "cobMq": "9",
+          "vs3umCob": "50",
+          "vs6umCob": "240",
+          "vsMaaCob": "247"
+        },
+        {
+          "channelName": "Médicos/Centros Méd.",
+          "salemq": "S/ 1,112.61",
+          "share": "0%",
+          "distNum": "1%",
+          "distPond": "0%",
+          "vs3um": "539",
+          "vs6um": "551",
+          "vsMaa": "15",
+          "cobMq": "3",
+          "vs3umCob": "50",
+          "vs6umCob": "551",
+          "vsMaaCob": "15"
         }
       ]
     },
@@ -1072,136 +1642,110 @@
       ],
       "values": [
         {
-          "category": "Desodorantes y antitranspirantes",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "categoryName": "TRACTO ALIMENTARIO Y METABOLISMO",
+          "salemq": "S/ 11,778.17",
+          "share": "0%",
+          "distNum": "0%",
+          "distPond": "0%",
+          "vs3um": "-64",
+          "vs6um": "694",
+          "vsMaa": "0",
+          "cobMq": "2",
+          "vs3umCob": "-50",
+          "vs6umCob": "0",
+          "vsMaaCob": "0"
         },
         {
-          "category": "Desodorantes y antitranspirantes",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "categoryName": "ALIMENTOS",
+          "salemq": "S/ 10,351.68",
+          "share": "8%",
+          "distNum": "28%",
+          "distPond": "7%",
+          "vs3um": "-43",
+          "vs6um": "-15",
+          "vsMaa": "-20",
+          "cobMq": "71",
+          "vs3umCob": "-17",
+          "vs6umCob": "-20",
+          "vsMaaCob": "10"
         },
         {
-          "category": "Desodorantes y antitranspirantes",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "categoryName": "FORMULA LACTEA",
+          "salemq": "S/ 412,169.10",
+          "share": "98%",
+          "distNum": "83%",
+          "distPond": "98%",
+          "vs3um": "0",
+          "vs6um": "4586",
+          "vsMaa": "-14",
+          "cobMq": "24",
+          "vs3umCob": "71",
+          "vs6umCob": "-14",
+          "vsMaaCob": "-27"
         },
         {
-          "category": "Desodorantes y antitranspirantes",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "categoryName": "SUPLEMENTO Y/O COMPLEMENTO PEDIATRICO",
+          "salemq": "S/ 7,920.26",
+          "share": "45%",
+          "distNum": "82%",
+          "distPond": "86%",
+          "vs3um": "-98",
+          "vs6um": "-99",
+          "vsMaa": "-26",
+          "cobMq": "34",
+          "vs3umCob": "-13",
+          "vs6umCob": "-26",
+          "vsMaaCob": "-99"
         },
         {
-          "category": "Desodorantes y antitranspirantes",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
-        },
-        {
-          "category": "Desodorantes y antitranspirantes",
-          "salemq": "S/ 87,122",
-          "share": "80%",
-          "distnum": "14%",
-          "distpond": "16%",
-          "vs3um": "5",
-          "vs6um": "5",
-          "vsmaa": "5",
-          "cobmq": "5",
-          "vs3umcob": "5",
-          "vs6umcob": "5",
-          "vsmaacob": "5"
+          "categoryName": "SUPLEMENTO Y/O COMPLEMENTO ADULTO",
+          "salemq": "S/ 72,135.98",
+          "share": "82%",
+          "distNum": "61%",
+          "distPond": "84%",
+          "vs3um": "-89",
+          "vs6um": "-96",
+          "vsMaa": "-30",
+          "cobMq": "57",
+          "vs3umCob": "-3",
+          "vs6umCob": "-30",
+          "vsMaaCob": "-94"
         }
       ]
     },
     "categoryParticipation": {
-      "doughnut": [
+      "doughnuts": [
         {
-          "label": "Chocope",
-          "value": 30
+          "label": "LIMA",
+          "value": 97
         },
         {
-          "label": "Motupe",
-          "value": 20
+          "label": "BARRANCA",
+          "value": 0
         },
         {
-          "label": "Jayanca",
-          "value": 20
+          "label": "HUAROCHIRI",
+          "value": 0
         },
         {
-          "label": "Mórrope",
-          "value": 10
+          "label": "CAÑETE",
+          "value": 0
         },
         {
-          "label": "Chiclayo",
-          "value": 20
+          "label": "HUAURA",
+          "value": 1
+        },
+        {
+          "label": "HUARAL",
+          "value": 2
         }
-      ],
-      "totalSessions": {
-        "value": 5483,
-        "percentage": 32
-      },
-      "clientsInteraction": {
-        "value": 2987,
-        "percentage": 60
-      },
-      "categoryClicks": {
-        "value": 2874,
-        "percentage": 96
-      },
-      "sales": {
-        "value": 1126,
-        "percentage": 10
-      }
+      ]
     },
     "evolutionMq": {
-      "labels": ["OCT 23", "NOV 23", "DIC 23", "ENE 24", "FEB 24", "MAR 24"],
-      "columns": [27032, 29032, 27032, 28032, 29032, 31454],
-      "sales": [1000, 1010, 1010, 1000, 1010, 1021],
-      "coverage": [780, 810, 800, 810, 820, 808]
+      "labels": ["MAY 2024", "ABR 2024", "MAR 2024", "FEB 2024", "ENE 2024", "DIC 2023"],
+      "columns": [514355.19, 0, 0, 0, 0, 0],
+      "sales": [194, 0, 0, 0, 0, 0],
+      "coverage": [150, 0, 0, 0, 0, 0]
     }
   }
 }

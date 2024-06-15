@@ -176,27 +176,31 @@ export class EvolutionChartComponent implements AfterViewInit {
       },
       yAxis: [
         {
+          gridLineWidth: 0,
+          height: '20%',
+          title: {
+            text: '',
+          },
           labels: {
             format: '',
             enabled: false,
-          },
-          title: {
-            text: '',
           },
           opposite: true,
         },
         {
-          gridLineWidth: 0,
-          title: {
-            text: '',
-          },
           labels: {
             format: '',
             enabled: false,
           },
+          title: {
+            text: '',
+          },
+          top: '20%',
+          height: '80%',
         },
         {
           gridLineWidth: 0,
+          height: '20%',
           title: {
             text: '',
           },
@@ -215,6 +219,10 @@ export class EvolutionChartComponent implements AfterViewInit {
           },
         },
         column: {
+          
+          tooltip: {
+            
+          },
           dataLabels: {
             // enabled: false,
           },
@@ -222,8 +230,24 @@ export class EvolutionChartComponent implements AfterViewInit {
       },
       series: this.series,
       tooltip: {
-        enabled: true
-      }
+        useHTML: true,
+        backgroundColor: 'none',
+        distance: 1,
+        followPointer: false,
+        // shadow: true,
+        // borderColor:  '',
+        // borderWidth: 1,
+        // borderRadius: 2,
+        formatter: function () {
+          const color = this.point.color
+          return `
+          <div class="float-tooltip rounded" 
+            style="padding: 2px 5px; background: ${color === '#B6E7FF' ? '#000' : color}">
+            <p class="m-0" style="font-size:11px; color:#fff">${color === '#B6E7FF' ? 'S/' : ''} ${this.y}</p>
+          </div>
+          `
+        },
+      },
     }
 
     this.onChart.set(true)
