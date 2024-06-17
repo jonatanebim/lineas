@@ -1,4 +1,4 @@
-import { Injectable, Signal, signal } from '@angular/core'
+import { Injectable, signal } from '@angular/core'
 import { toObservable } from '@angular/core/rxjs-interop'
 
 @Injectable({
@@ -8,8 +8,16 @@ export class GlobalStoreService {
   constructor() {}
 
   isLoading = signal(true)
+  isLoading$ = toObservable(this.isLoading)
+
   reloadRegions: any = signal(null)
   reloadRegions$ = toObservable(this.reloadRegions)
+
+  filterCategories: any = signal(null)
+  filterCategories$ = toObservable(this.filterCategories)
+
+  reloadCategories: any = signal(null)
+  reloadCategories$ = toObservable(this.reloadCategories)
 
   showLoading() {
     setTimeout(() => this.isLoading.set(true))

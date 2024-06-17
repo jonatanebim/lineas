@@ -46,13 +46,11 @@ export class RegionComponent implements AfterViewInit {
     values: [],
     tableIndicators: this.tableIndicators,
   }
-
   channelsTable: any = {
     headers: [],
     values: [],
     tableIndicators: this.tableIndicators,
   }
-
   categoriesTable: any = {
     headers: [],
     values: [],
@@ -65,28 +63,31 @@ export class RegionComponent implements AfterViewInit {
     this.globalStore.showLoading()
 
     this.route.queryParamMap.subscribe((params: any) => {
-      this.department = DEPARTMENTS.find((department: any) => department.name === params?.params.department)
-      this.getData().subscribe();
+      const selected = params?.params.department
+      if (selected) {
+        this.department = DEPARTMENTS.find((department: any) => department.name === selected)
+        this.getData().subscribe()
+      }
     })
 
     this.globalStore.reloadRegions$.subscribe(() => {
       this.globalStore.showLoading()
-      this.getData().subscribe();
+      this.getData().subscribe()
     })
   }
 
   getData() {
     return this.service.getRegionReport(this.department?.name).pipe(
       tap((data: any) => {
+        console.log(data)
         this.categories = data.evolutionMq?.labels
         this.series = [
           {
             type: 'column',
-            allowPointSelect: false,
-            enableMouseTracking: false,
             pointWidth: 38,
             color: '#B6E7FF',
             data: data.evolutionMq?.columns,
+            yAxis: 1,
           },
           {
             type: 'spline',
@@ -99,7 +100,6 @@ export class RegionComponent implements AfterViewInit {
             type: 'spline',
             color: '#00B0FF',
             data: data.evolutionMq?.coverage,
-            yAxis: 1,
           },
         ]
 
@@ -112,7 +112,7 @@ export class RegionComponent implements AfterViewInit {
         this.provincesTable.headers = this.transformColumns(data?.provincesTable.columns)
 
         this.provincesTable.values = data?.provincesTable.values
-        this.doughnutData = data?.categoryParticipation?.doughnut
+        this.doughnutData = data?.categoryParticipation?.doughnuts
         this.cards = data?.cards
 
         this.globalStore.hideLoading()
@@ -125,12 +125,12 @@ export class RegionComponent implements AfterViewInit {
     return columns.map((data: any) => {
       if (data.columnName === 'cobmq') activeColor = true
 
-      const tooltip = TABLE_TOOLTIPS[data.label as keyof typeof  TABLE_TOOLTIPS]
+      const tooltip = TABLE_TOOLTIPS[data.label as keyof typeof TABLE_TOOLTIPS]
 
       return {
         ...data,
         color: activeColor && '#00B0FF',
-        tooltip
+        tooltip,
       }
     })
   }

@@ -23,56 +23,58 @@ export class EvolutionLineComponent implements AfterViewInit {
   onChart = signal(false)
 
   ngAfterViewInit(): void {
-    this.chartOptions = {
-      chart: {
-        width: this.chartContainer.nativeElement.clientWidth,
-        height: 200,
-        spacing: [0, 0, 0, 0],
-      },
-      title: {
-        text: '',
-      },
-      legend: {
-        enabled: false,
-      },
-      yAxis: {
-        visible: false,
-        enabled: false,
-        startOnTick: true,
-      },
-      xAxis: {
-        startOnTick: true,
-        gridLineWidth: 1,
-        labels: {
-          distance: 4,
-          rotation: 0,
-          style: {
-            fontSize: '7px',
-            fontWeight: 'bold',
-            color: '#8F959D',
+    setTimeout(() => {
+      this.chartOptions = {
+        chart: {
+          width: this.chartContainer.nativeElement.clientWidth,
+          height: this.chartContainer.nativeElement.clientHeight,
+          spacing: [0, 0, 0, 0],
+        },
+        title: {
+          text: '',
+        },
+        legend: {
+          enabled: false,
+        },
+        yAxis: {
+          visible: false,
+          enabled: false,
+          startOnTick: true,
+        },
+        xAxis: {
+          startOnTick: true,
+          gridLineWidth: 1,
+          labels: {
+            distance: 4,
+            rotation: 0,
+            style: {
+              fontSize: '7px',
+              fontWeight: 'bold',
+              color: '#8F959D',
+            },
+          },
+          categories: this.dataLabels,
+        },
+        plotOptions: {
+          series: {
+            enableMouseTracking: false,
+            lineWidth: 1,
+            pointStart: 0,
+            marker: {
+              enabled: false,
+            },
+            pointPlacement: 'on',
+            stickyTracking: true,
+          },
+          line: {
+            allowPointSelect: false,
+            enableMouseTracking: false,
           },
         },
-        categories: this.dataLabels,
-      },
-      plotOptions: {
-        series: {
-          enableMouseTracking: false,
-          lineWidth: 1,
-          pointStart: 0,
-          marker: {
-            enabled: false,
-          },
-          pointPlacement: 'on',
-          stickyTracking: true,
-        },
-        line: {
-          allowPointSelect: false,
-          enableMouseTracking: false,
-        },
-      },
-      series: this.data,
-    }
+        series: this.data,
+      }
 
-    this.onChart.set(true)
+      this.onChart.set(true)
+    }, 500)
   }
 }

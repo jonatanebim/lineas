@@ -1,12 +1,8 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  Input,
-  ViewChild,
-} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import Chart from 'chart.js/auto';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild, inject } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import Chart from 'chart.js/auto'
+import { GlobalStoreService } from '../../../shared/stores/global.store'
+import { GREY_COLORS } from '../../../shared/constants/globals'
 
 @Component({
   selector: 'app-doughnut-chart',
@@ -16,15 +12,20 @@ import Chart from 'chart.js/auto';
   imports: [CommonModule],
 })
 export class DoughnutChartComponent implements AfterViewInit {
-  @Input() data: any;
+  @Input() data: any
+  @Input() withFilter: boolean = false
+  @Output() selected: EventEmitter<number> = new EventEmitter()
 
-  @ViewChild('graph') graph!: ElementRef<any>;
+  @ViewChild('graph') graph!: ElementRef<any>
 
-  variants = ['#DEF2FF', '#B6E7FF', '#8F959D'];
-  doughnutChart!: any[];
+  globalStore = inject(GlobalStoreService)
+
+  variants = ['#DEF2FF', '#B6E7FF', '#8F959D']
+  doughnutChart!: any[]
 
   ngAfterViewInit(): void {
-    this.doughnutChart = this.data;
+    this.doughnutChart = this.data
+
     new Chart(this.graph.nativeElement, {
       type: 'doughnut',
       data: {
@@ -33,6 +34,7 @@ export class DoughnutChartComponent implements AfterViewInit {
             data: this.values,
             backgroundColor: this.colors,
             borderWidth: 0,
+            label: '',
           },
         ],
       },
@@ -40,48 +42,65 @@ export class DoughnutChartComponent implements AfterViewInit {
       options: {
         maintainAspectRatio: false,
         aspectRatio: 1.8,
-        events: [],
-        onClick :  (evt, item)  => {
-          console.log ('legend onClick', evt);
-          console.log('legd item', item);
-      }
+        events: ['click'],
+        plugins: {
+          legend: {
+            display: false,
+          },
+        },
+        onClick: (evt, item) => {
+          if (this.withFilter && item.length) {
+            this.selected.emit(item[0].index)
+          }
+        },
       },
-    });
+    })
   }
 
   get values() {
-    return this.doughnutChart.map((i) => i.value);
+    return this.doughnutChart.map((i) => i.value)
   }
 
   get colors() {
-    return this.doughnutChart.map((i) => i.color);
+    return this.doughnutChart.map((i, k: number) => {
+      const categoryIndex = this.globalStore.filterCategories()
+      if (categoryIndex != null && k !== this.globalStore.filterCategories()) {
+        return GREY_COLORS[k]
+      }
+
+      return i.color
+    })
   }
 
   get customDataLabelPlugin() {
-    const $this = this;
+    const $this = this
     return {
       id: 'customDatalabels',
       afterDatasetsDraw(chart: any) {
-        const { ctx, data } = chart;
+        const { ctx, data } = chart
         data.datasets[0].data.forEach((dataPoint: any, index: number) => {
-          const { x, y } = chart
-            .getDatasetMeta(0)
-            .data[index].tooltipPosition();
-          const color = $this.colors[index];
+          const { x, y } = chart.getDatasetMeta(0).data[index].tooltipPosition()
+          const color = $this.colors[index]
 
-          ctx.font = '10px "Nunito Sans", Helvetica, Arial, sans-serif';
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
+          ctx.font = '10px "Nunito Sans", Helvetica, Arial, sans-serif'
+          ctx.textAlign = 'center'
+          ctx.textBaseline = 'middle'
 
           if ($this.variants.find((variant: string) => variant === color)) {
-            ctx.fillStyle = '#000';
+            ctx.fillStyle = '#000'
           } else {
-            ctx.fillStyle = '#ffff';
+            ctx.fillStyle = '#ffff'
           }
 
-          ctx.fillText(`${dataPoint}%`, x, y);
-        });
+          let dataValue = ''
+          const categoryIndex = $this.globalStore.filterCategories()
+          if (categoryIndex != null) {
+            if (index === categoryIndex) dataValue = `${dataPoint}%`
+          } else dataValue = `${dataPoint}%`
+
+          ctx.fillText(dataValue, x, y)
+        })
       },
-    };
+    }
   }
 }

@@ -12,12 +12,21 @@ app-table-report  {
 }
 
 .evolution {
-  
   app-evolution-line {
     width: calc(100% - 450px) !important
   }
 
   app-participation {
     width: 450px !important;
+  }
+
+  &.filter__active {
+    app-evolution-line {
+      width: calc(100% - 250px) !important
+    }
+  
+    app-participation {
+      width: 250px !important;
+    }
   }
 }

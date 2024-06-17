@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { environment } from '../../../environments/environment.development';
+import { HttpClient } from '@angular/common/http'
+import { Injectable } from '@angular/core'
+import { environment } from '../../../environments/environment.development'
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +8,11 @@ import { environment } from '../../../environments/environment.development';
 export class CategoriesRequestsService {
   constructor(private httpClient: HttpClient) {}
 
-  getCategoriesReport() {
-    return this.httpClient.get(environment.categories).pipe();
+  getCategoriesReport(params: any) {
+    return this.httpClient
+      .get(environment.categories, {
+        params,
+      })
+      .pipe()
   }
 }

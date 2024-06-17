@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { AfterViewInit, Component, inject } from '@angular/core'
+import { AfterViewInit, Component, OnDestroy, inject } from '@angular/core'
 import { CategoriesRequestsService } from '../../../shared/requests/categories.requests'
 import { TopSku } from '../../../shared/interfaces/topSku.interface'
 import { ParetoSkusParticipation } from '../../../shared/interfaces'
@@ -16,6 +16,7 @@ import {
 import { GlobalStoreService } from '../../../shared/stores/global.store'
 import { tap } from 'rxjs'
 import { TABLE_TOOLTIPS } from '../../../shared/constants/globals'
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-categories',
@@ -33,10 +34,11 @@ import { TABLE_TOOLTIPS } from '../../../shared/constants/globals'
   templateUrl: './Categories.component.html',
   styleUrl: './Categories.component.scss',
 })
-export class CategoriesComponent implements AfterViewInit {
+export class CategoriesComponent implements AfterViewInit, OnDestroy {
   service = inject(CategoriesRequestsService)
   globalStore = inject(GlobalStoreService)
-
+  activateRoute = inject(ActivatedRoute)
+  selectedCategory = null
   cards: any = []
   headers: Array<any> = []
   values: Array<any> = []
@@ -53,35 +55,59 @@ export class CategoriesComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.globalStore.showLoading()
 
-    this.service
-      .getCategoriesReport()
-      .pipe(
-        tap(() => {
-          this.globalStore.hideLoading()
-        })
-      )
-      .subscribe((data: any) => {
+    this.activateRoute.queryParamMap.subscribe((qParams: any) => {
+      const { category, dateAt } = qParams.params
+      if (category) {
+        this.globalStore.showLoading()
+        this.selectedCategory = this.doughnutData[category]
+        this.getData().subscribe()
+      }
+    })
+
+    this.globalStore.reloadCategories$.subscribe(() => {
+      this.globalStore.showLoading()
+      this.globalStore.filterCategories.update(() => null)
+      this.selectedCategory = null
+      this.getData().subscribe()
+    })
+
+    this.getData().subscribe()
+  }
+
+  ngOnDestroy(): void {
+    this.globalStore.filterCategories.update(() => null)
+  }
+
+  getData() {
+    const filterParams = {
+      ...(this.selectedCategory ? { category: this.selectedCategory } : {}),
+    }
+    return this.service.getCategoriesReport(filterParams).pipe(
+      tap((data: any) => {
+        this.globalStore.hideLoading()
+
         this.cards = data?.cards
         this.doughnutData = data?.categoryParticipation?.doughnut
         this.evolutionData = this.fillEvolutionSeries(data?.evolutionMq)
         this.evolutionDataLabels = data?.evolutionMq.labels
-        this.topSku = data?.topSKu
+        this.topSku = data?.topSku
         this.paretoSkus = data?.participationPareto
         this.participationData = data?.principalCategories
 
         let activeColor = false
         this.headers = data.productsTable.columns.map((data: any) => {
           if (data.columnName === 'cobmq') activeColor = true
-          const tooltip = TABLE_TOOLTIPS[data.label as keyof typeof  TABLE_TOOLTIPS]
+          const tooltip = TABLE_TOOLTIPS[data.label as keyof typeof TABLE_TOOLTIPS]
 
           return {
             ...data,
             color: activeColor && '#00B0FF',
-            tooltip
+            tooltip,
           }
         })
         this.values = data.productsTable.values
       })
+    )
   }
 
   fillEvolutionSeries(evolutionData: any) {

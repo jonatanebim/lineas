@@ -8,7 +8,7 @@ import variwide from 'highcharts/modules/variwide'
 import HC_more from 'highcharts/highcharts-more'
 import { TopSku } from '../../../shared/interfaces/topSku.interface'
 import { ParetoSkusParticipation } from '../../../shared/interfaces'
-import { COLORS, DEFAULT_SKU_IMAGE } from '../../../shared/constants/globals'
+import { COLORS, DEFAULT_COLOR, DEFAULT_SKU_IMAGE } from '../../../shared/constants/globals'
 
 variwide(Highcharts)
 HC_more(Highcharts)
@@ -93,12 +93,12 @@ export class DimensionGraphComponent {
           },
           {
             value: 5,
-            color: COLORS[2],
+            color: DEFAULT_COLOR,
             pointPlacement: -10,
           },
           {
             value: 0,
-            color: COLORS[3],
+            color: DEFAULT_COLOR,
             pointPlacement: -10,
           },
         ],

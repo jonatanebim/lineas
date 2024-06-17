@@ -103,7 +103,7 @@ export class CountryGraphComponent implements AfterViewInit {
                 click: (event: any) => {
                   this.router.navigate([`/dashboard/${pathsConstants.dashboard.childrens.regions}`], {
                     queryParams: {
-                      department: event.point.name,
+                      department: event.point.department,
                     },
                   })
                 },

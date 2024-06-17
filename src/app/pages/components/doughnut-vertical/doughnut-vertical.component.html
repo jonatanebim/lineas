@@ -2,7 +2,11 @@
   <h2 class="sectionTitle">% Participación Facturación por categoría</h2>
 
   <div class="position-relative">
-    <app-doughnut-chart [data]="doughnutChart"></app-doughnut-chart>
+    <app-doughnut-chart
+      (selected)="onSelected($event)"
+      [withFilter]="withFilter"
+      [data]="doughnutChart"
+    ></app-doughnut-chart>
     <div class="mt-4 px-3">
       <app-categories [showAll]="true" [data]="doughnutChart"></app-categories>
     </div>
