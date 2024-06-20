@@ -49,6 +49,13 @@ export class DimensionGraphComponent {
         label: {
           enabled: false,
         },
+        states: {
+          hover: {
+              enabled: false
+          }
+      },
+      tooltip: { },
+
         stacking: 'stream',
       },
       packedbubble: {
@@ -56,7 +63,14 @@ export class DimensionGraphComponent {
         maxSize: '100%',
         animation: false,
         stacking: 'stream',
-        tooltip: {},
+        tooltip: {
+          format: ''
+        },
+        states: {
+          hover: {
+              enabled: false
+          }
+      },
         dataLabels: {
           enabled: true,
           format: '{point.value}%',
@@ -74,6 +88,7 @@ export class DimensionGraphComponent {
         type: 'packedbubble',
         animation: false,
         allowPointSelect: false,
+        enableMouseTracking: false,
         draggable: false,
         stacking: 'stream',
         marker: {

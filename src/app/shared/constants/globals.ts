@@ -58,7 +58,7 @@ export const DEPARTMENTS = [
   },
 
   {
-    name: 'San Martín',
+    name: 'San Martin',
     value: 'SM',
     vector: '../../../../assets/images/departments/San Martin.svg',
     lat: -7.365463250676204,

@@ -7,7 +7,7 @@
   </div>
   <div class="chart-labels">
     <div class="d-flex gap-2">
-      @for (label of labels.slice(0,2); track $index) {
+      @for (label of labels; track $index) {
       <app-graph-indicator [label]="label.label" [color]="label.color"></app-graph-indicator>
       }
     </div>

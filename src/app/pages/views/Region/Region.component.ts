@@ -79,7 +79,6 @@ export class RegionComponent implements AfterViewInit {
   getData() {
     return this.service.getRegionReport(this.department?.name).pipe(
       tap((data: any) => {
-        console.log(data)
         this.categories = data.evolutionMq?.labels
         this.series = [
           {

@@ -1,4 +1,4 @@
-<div class="my-table-report" [ngStyle]="{ height: quantity === values.length && '100%' }">
+<div class="my-table-report">
   <div class="my-table-report__wrapper d-flex gap-1" [ngClass]="{ 'w-100': isFullSize }">
     <table class="w-100">
       <thead>
@@ -18,7 +18,13 @@
         </tr>
       </thead>
       <tbody>
-        @for (i of values; track i) { @if($index <= quantity) {
+        @if (!values.length) {
+        <tr>
+          <td [attr.colspan]="headers.length">
+            <p class="w-100 text-center pt-4 pb-5">No pudimos encontrar ningún resultado para tu búsqueda.</p>
+          </td>
+        </tr>
+        } @for (i of values; track i) { @if($index <= quantity) {
         <tr>
           @for (c of headers; track c) {
           <td>
@@ -47,9 +53,9 @@
     </table>
   </div>
 
-  @if (values.length > 4 && quantity < 5) {
+  @if (values.length > 4) {
   <div class="mt-3">
-    <app-see-more [isActive]="quantity === values.length" (click)="seeAll()"></app-see-more>
+    <app-see-more [isActive]="quantity === values.length" (toggle)="seeAll($event)"></app-see-more>
   </div>
   }
 </div>

@@ -1,4 +1,4 @@
-import { ApplicationConfig, LOCALE_ID, isDevMode } from '@angular/core';
+import { ApplicationConfig, LOCALE_ID } from '@angular/core'
 import {
   PreloadAllModules,
   provideRouter,
@@ -7,12 +7,13 @@ import {
   withPreloading,
   withRouterConfig,
   withViewTransitions,
-} from '@angular/router';
+} from '@angular/router'
 
-import { inMemoryScrollingFeature, routes } from './app.routes';
-import { DatePipe } from '@angular/common';
-import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { inMemoryScrollingFeature, routes } from './app.routes'
+import { DatePipe } from '@angular/common'
+import { HTTP_INTERCEPTORS, provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http'
+import { provideAnimations } from '@angular/platform-browser/animations'
+import { ApiInterceptorRequest } from './shared/interceptors/api.interceptor'
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -31,5 +32,10 @@ export const appConfig: ApplicationConfig = {
     { provide: LOCALE_ID, useValue: 'es-PE' },
     provideAnimations(),
     provideHttpClient(withInterceptorsFromDi(), withFetch()),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptorRequest,
+      multi: true,
+    },
   ],
-};
+}

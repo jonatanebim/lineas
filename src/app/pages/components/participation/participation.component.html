@@ -1,7 +1,7 @@
 <div class="my-participation d-flex flex-column">
   <h2 class="sectionTitle">Participación BDF en cuidado facial</h2>
 
-  <div class="my-participation__graph" #chartContainer>
+  <div class="my-participation__graph" [ngClass]="{single: this.data.length === 1}" #chartContainer>
     @if(onChart()) {
     <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"> </highcharts-chart>
     }

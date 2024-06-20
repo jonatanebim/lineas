@@ -33,7 +33,7 @@ export class TableReportComponent {
     return columnName.includes('vs')
   }
 
-  seeAll() {
-    this.quantity = this.values.length
+  seeAll($event: boolean) {
+    this.quantity = $event ? this.values.length : 3
   }
 }

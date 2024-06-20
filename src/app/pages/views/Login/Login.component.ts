@@ -1,13 +1,26 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common'
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms'
+import { Router, RouterModule } from '@angular/router'
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule],
   templateUrl: './Login.component.html',
   styleUrl: './Login.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginComponent {}
+export class LoginComponent {
+  fb = inject(FormBuilder)
+  router = inject(Router)
+
+  fg = this.fb.group({
+    username: ['', [Validators.required]],
+    password: ['', [Validators.required]],
+  })
+
+  doSubmit() {
+    this.router.navigate(['/dashboard'])
+  }
+}

@@ -1,5 +1,14 @@
 import { CommonModule } from '@angular/common'
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChild, inject, signal } from '@angular/core'
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+  inject,
+  signal,
+} from '@angular/core'
 import Highcharts from 'highcharts'
 import { HighchartsChartModule } from 'highcharts-angular'
 import MapModule from 'highcharts/modules/map'
@@ -7,7 +16,7 @@ import { CommonsRequestsService } from '../../../shared/requests/commons.request
 import { DEPARTMENTS } from '../../../shared/constants/globals'
 import { Router } from '@angular/router'
 import pathsConstants from '../../../shared/constants/paths'
-import { COLORS, COLORS_ICONS } from '../../../shared/constants/colors'
+import { COLORS, COLORS_DOTS, COLORS_ICONS } from '../../../shared/constants/colors'
 
 MapModule(Highcharts)
 
@@ -20,6 +29,8 @@ MapModule(Highcharts)
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CountryGraphComponent implements AfterViewInit {
+  @Input() data: any
+
   @ViewChild('chartContainer') chartContainer!: ElementRef<any>
   commonService = inject(CommonsRequestsService)
 
@@ -32,11 +43,6 @@ export class CountryGraphComponent implements AfterViewInit {
           zooming: {
             mouseWheel: false,
             singleTouch: false,
-          },
-          events: {
-            click: (event: any) => {
-              console.log(event.lat, event.lon)
-            },
           },
         },
         title: {
@@ -62,7 +68,7 @@ export class CountryGraphComponent implements AfterViewInit {
           shadow: false,
           formatter: function () {
             const color = this.point.color
-            console.log(color)
+            const current: any = this.point
             const department: string = (this.point as any).department as string
             return `
             <div class="float-tooltip">
@@ -73,9 +79,9 @@ export class CountryGraphComponent implements AfterViewInit {
                 ? COLORS_ICONS['orange']
                 : COLORS_ICONS['red']
             }" alt="" /> </h2>
-              <p>Cobertura: 172</p> 
-              <p>Share cob/Total BDF: 21%</p> 
-              <p>Facturación: S/ 87,122</p>
+              <p>Cobertura: ${current.original.coverage}</p> 
+              <p>Share cob/Total BDF:  ${current.original.bdf}</p> 
+              <p>Facturación:  ${current.original.billing}</p>
             </div>
             `
           },
@@ -119,11 +125,16 @@ export class CountryGraphComponent implements AfterViewInit {
   }
 
   get mapDataPoints() {
-    return DEPARTMENTS.map((d: any) => ({
-      lat: d.lat,
-      lon: d.lon,
-      department: d.name,
-      color: COLORS.Green2,
-    }))
+    return this.data.map((d: any) => {
+      const department = DEPARTMENTS.find((f) => f.name.toUpperCase() === d.label)
+      const color: any = COLORS_DOTS
+      return {
+        lat: department?.lat,
+        lon: department?.lon,
+        department: department?.name,
+        color: color[d.opportunity],
+        original: d,
+      }
+    })
   }
 }

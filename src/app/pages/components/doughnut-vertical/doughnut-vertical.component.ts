@@ -28,7 +28,7 @@ export class DoughnutVerticalComponent implements OnInit {
     this.categories = this.data.map((item: any, key: number) => ({
       label: item.label,
       value: item.value,
-      color: this.current !== null && this.current === key  ? COLORS[key] : GREY_COLORS[key],
+      color: this.current !== null && this.current !== key ? GREY_COLORS[key] : COLORS[key],
     }))
     this.doughnutChart = this.categories.slice(0, 5)
   }

@@ -64,11 +64,13 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
       }
     })
 
-    this.globalStore.reloadCategories$.subscribe(() => {
-      this.globalStore.showLoading()
-      this.globalStore.filterCategories.update(() => null)
-      this.selectedCategory = null
-      this.getData().subscribe()
+    this.globalStore.reloadCategories$.subscribe((state) => {
+      if (state) {
+        this.globalStore.showLoading()
+        this.globalStore.filterCategories.update(() => null)
+        this.selectedCategory = null
+        this.getData().subscribe()
+      }
     })
 
     this.getData().subscribe()
@@ -111,13 +113,20 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
   }
 
   fillEvolutionSeries(evolutionData: any) {
+    this.evolutionLabels = []
+    // 
     const evolutionSeries = []
-    if (evolutionData['totalMarket']) {
+    const totalMarket = evolutionData['totalMarket']
+    const totalBdf = evolutionData['totalBdf']
+    const coverageBdf = evolutionData['coverageBdf']
+    const coverageMdo = evolutionData['coverageMdo']
+
+    if (totalMarket && totalMarket.length) {
       evolutionSeries.push({
         type: 'areaspline',
         color: COLORS.Grey3Stroke,
         fillColor: COLORS.Grey3Fill,
-        data: evolutionData['totalMarket'],
+        data: totalMarket,
       })
 
       this.evolutionLabels.push({
@@ -126,12 +135,12 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
       })
     }
 
-    if (evolutionData['totalBdf']) {
+    if (totalBdf && totalBdf.length) {
       evolutionSeries.push({
         type: 'areaspline',
         color: COLORS.BlueStroke,
         fillColor: COLORS.BlueFill,
-        data: evolutionData['totalBdf'],
+        data: totalBdf,
       })
 
       this.evolutionLabels.push({
@@ -140,11 +149,11 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
       })
     }
 
-    if (evolutionData['coverageBdf']) {
+    if (coverageBdf && coverageBdf.length) {
       evolutionSeries.push({
         type: 'spline',
         color: COLORS.Green2,
-        data: evolutionData['coverageBdf'],
+        data: coverageBdf,
       })
 
       this.evolutionLabels.push({
@@ -153,15 +162,15 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
       })
     }
 
-    if (evolutionData['coverageMdo']) {
+    if (coverageMdo && coverageMdo.length) {
       evolutionSeries.push({
         type: 'spline',
         color: COLORS.Orange1,
-        data: evolutionData['coverageMdo'],
+        data: coverageMdo,
       })
 
       this.evolutionLabels.push({
-        label: 'Cobertura Mdo Digiatl',
+        label: 'Cobertura Mdo Digital',
         color: COLORS.Orange1,
       })
     }

@@ -13,6 +13,8 @@ import {
 } from '../../components'
 import { GlobalStoreService } from '../../../shared/stores/global.store'
 import { tap } from 'rxjs'
+import { FilterStoreService } from '../../../shared/stores/filter.store'
+import { FilterQuery } from '../../../shared/interfaces'
 
 @Component({
   selector: 'app-home',
@@ -35,9 +37,11 @@ import { tap } from 'rxjs'
 export class HomeComponent implements AfterViewInit {
   service = inject(HomeRequestsService)
   globalStore = inject(GlobalStoreService)
+  filterStore = inject(FilterStoreService)
   cards: any = []
   participation: any
   evolution: any
+  regionOportunity: Array<any> = []
   categories: Array<string> = []
   series: Array<any> = []
   headers: Array<any> = []
@@ -64,17 +68,23 @@ export class HomeComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.globalStore.showLoading()
 
-    this.service
-      .getHomeReport()
-      .pipe(
-        tap(() => {
-          this.globalStore.hideLoading()
-        })
-      )
-      .subscribe((data: any) => {
+    this.filterStore.queryParms$.subscribe((data: FilterQuery) => {
+      if (data.untilToday) {
+        this.globalStore.showLoading()
+        this.getData().subscribe()
+      }
+    })
+
+    this.getData().subscribe()
+  }
+
+  getData() {
+    return this.service.getHomeReport().pipe(
+      tap((data: any) => {
         this.cards = data?.cards
         this.participation = data?.categoryParticipation
         this.evolution = data?.evolutionMq
+        this.regionOportunity = data?.regionOportunity
         this.categories = data.evolutionMq?.labels
         this.series = [
           {
@@ -100,6 +110,9 @@ export class HomeComponent implements AfterViewInit {
 
         this.headers = data.categoriesTable.columns
         this.values = data.categoriesTable.values
+
+        this.globalStore.hideLoading()
       })
+    )
   }
 }

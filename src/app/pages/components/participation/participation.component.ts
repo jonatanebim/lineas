@@ -74,7 +74,10 @@ export class ParticipationComponent implements AfterViewInit {
           enableMouseTracking: false,
         },
       },
-      series: [
+    }
+
+    if (this.data.length > 1) {
+      this.chartOptions.series = [
         {
           type: 'column',
           color: COLORS.Grey3,
@@ -89,7 +92,9 @@ export class ParticipationComponent implements AfterViewInit {
               const yData = this.y || 0
               const translate = yData - xData > 100
               return `
-              <div class="text-center" style="width: 50px;height: 100%;position: relative;${!translate && 'top: -30px;'}">
+              <div class="text-center" style="width: 50px;height: 100%;position: relative;${
+                !translate && 'top: -30px;'
+              }">
                 <div class="datalabelInside" style="position: absolute; font-size:10px;color: #606469; font-weight: 400;text-shadow: 0 0 0  #fff;"">
                    S/ ${this.y}  
                 </div>
@@ -111,10 +116,12 @@ export class ParticipationComponent implements AfterViewInit {
               return `
               <div class="text-center" style="width: 50px;position: relative;">
                 <div class="datalabel" style="position: relative; top: 20px">
-                  <p class="percentage text-center" style="text-shadow: 0 0 0  #fff;">30%</p>
+                  <p class="percentage text-center" style="font-size: 12px;text-shadow: 0 0 0  #fff;">${
+                    _selfData.find((i: any) => i.category === this.key)?.totalPercentage
+                  }%</p>
                 </div>
                 <br/>
-                <div class="datalabelInside" style="position: absolute; top: 40px; font-size:10px;color: #606469; font-weight: 400;text-shadow: 0 0 0  #fff;"">
+                <div class="datalabelInside" style="position: absolute; width: 100%; top: 40px; font-size:10px;color: #606469; font-weight: 400;text-shadow: 0 0 0  #fff;"">
                   S/ ${this.y} 
                 </div>
               </div>
@@ -122,7 +129,60 @@ export class ParticipationComponent implements AfterViewInit {
             },
           },
         },
-      ],
+      ]
+    } else {
+      this.chartOptions.series = [
+        {
+          type: 'column',
+          color: COLORS.Grey3,
+          data: this.data.map((e: any) => e.columns[0]),
+          dataLabels: {
+            inside: false,
+            enabled: true,
+            y: -20,
+            useHTML: true,
+            formatter: function () {
+              return `
+              <div class="text-center" style="width: 50px;height: 100%;position: relative;">
+                <div class="datalabelInside" style="position: relative;width: 100%;font-size: 12px;color: rgb(96, 100, 105);font-weight: 400;text-shadow: rgb(255, 255, 255) 0px 0px 0px;">
+                   S/ ${this.y}  
+                </div>
+              </div>
+              `
+            },
+          },
+        },
+        {
+          type: 'column',
+          color: COLORS.Blue,
+          data: this.data.map((e: any) => e.columns[1]),
+          dataLabels: {
+            enabled: true,
+            inside: false,
+            allowOverlap: true,
+            useHTML: true,
+            formatter: function () {
+              return `
+              <div class="text-center" style="width: 50px;position: relative">
+                <div class="datalabel" style="position: relative;">
+                  <p class="percentage text-center" style="text-shadow: 0 0 0  #fff;margin: 0;">${
+                    _selfData.find((i: any) => i.category === this.key)?.totalPercentage
+                  }%</p>
+                </div>
+                <div class="datalabelInside" style="    font-size: 12px;
+    color: rgb(96, 100, 105);
+    font-weight: 400;
+    text-shadow: rgb(255, 255, 255) 0px 0px 0px;
+    position: relative;
+    top: -5px;">
+                  S/ ${this.y} 
+                </div>
+              </div>
+              `
+            },
+          },
+        },
+      ]
     }
 
     this.onChart.set(true)

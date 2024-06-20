@@ -19,3 +19,9 @@ export enum COLORS_ICONS {
   orange = '../../../../assets/icons/orange-dot.svg"',
   red = '../../../../assets/icons/red-dot.svg"',
 }
+
+export enum COLORS_DOTS {
+  BAJO = COLORS.Red2,
+  MEDIO = COLORS.Orange1,
+  ALTO = COLORS.Green2,
+}
