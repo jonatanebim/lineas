@@ -38,7 +38,7 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
   service = inject(CategoriesRequestsService)
   globalStore = inject(GlobalStoreService)
   activateRoute = inject(ActivatedRoute)
-  selectedCategory = null
+  selectedCategory: any = null
   cards: any = []
   headers: Array<any> = []
   values: Array<any> = []
@@ -90,11 +90,17 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
 
         this.cards = data?.cards
         this.doughnutData = data?.categoryParticipation?.doughnut
-        this.evolutionData = this.fillEvolutionSeries(data?.evolutionMq)
-        this.evolutionDataLabels = data?.evolutionMq.labels
+
+        // CAMBIAR
+        this.evolutionData = this.fillEvolutionSeries(
+          !this.selectedCategory ? data?.evolutionMq : data?.evolutionMqFilter
+        )
+        this.evolutionDataLabels = !this.selectedCategory ? data?.evolutionMq.labels : data?.evolutionMqFilter.labels
+        this.participationData = !this.selectedCategory ? data?.principalCategories : data?.principalCategoriesFilter
+        //
+
         this.topSku = data?.topSku
         this.paretoSkus = data?.participationPareto
-        this.participationData = data?.principalCategories
 
         let activeColor = false
         this.headers = data.productsTable.columns.map((data: any) => {
@@ -114,7 +120,7 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
 
   fillEvolutionSeries(evolutionData: any) {
     this.evolutionLabels = []
-    // 
+    //
     const evolutionSeries = []
     const totalMarket = evolutionData['totalMarket']
     const totalBdf = evolutionData['totalBdf']

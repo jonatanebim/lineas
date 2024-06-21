@@ -10,6 +10,6 @@ export class RegionRequestsService {
   constructor(private httpClient: HttpClient) {}
 
   getRegionReport(department: string) {
-    return this.httpClient.get(environment.region).pipe(map((data: any) => data.body))
+    return this.httpClient.get(environment.region).pipe(map((data: any) => data))
   }
 }

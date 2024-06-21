@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common'
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core'
 import { FilterStoreService } from '../../../shared/stores/filter.store'
 import { moment } from '../../../shared/helpers/date'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @Component({
   selector: 'app-card-filter',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule],
   templateUrl: './card-filter.component.html',
   styleUrl: './card-filter.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -14,6 +15,7 @@ import { moment } from '../../../shared/helpers/date'
 export class CardFilterComponent {
   filterService = inject(FilterStoreService)
   showCurrent = signal(false)
+  selected = '06';
 
   get isOnCurrent(): boolean {
     return this.showCurrent()

@@ -17,6 +17,7 @@ import paths from '../../../shared/constants/paths'
 export class DoughnutVerticalComponent implements OnInit {
   @Input() data: any
   @Input() withFilter: boolean = false
+  @Input() title: string = '% Participación Facturación por categoría'
 
   globalStore = inject(GlobalStoreService)
   router = inject(Router)

@@ -21,6 +21,11 @@
       margin: 12px 0 5px;
       padding: 2px 4px;
       width: 170px;
+      &:disabled {
+        opacity: .6;
+        background: rgba(0, 0, 0, 0.125);
+        border-color: rgba(13, 110, 253, 0.25);
+      }
     }
 
     p {

@@ -9,10 +9,22 @@
 
     @if (cards.length) {
     <div class="d-flex w-100 gap-2 my-3">
-      <app-department-graph class="animate__animated animate__fadeInLeft animate__delay" [selected]="this.department?.value"></app-department-graph>
-      <app-evolution-chart class="animate__animated animate__fadeIn animate__delay-1s" [withTopLabels]="false" [categories]="categories" [series]="series"></app-evolution-chart>
+      <app-department-graph
+        class="animate__animated animate__fadeInLeft animate__delay"
+        [selected]="this.department?.value"
+      ></app-department-graph>
+      <app-evolution-chart
+        class="animate__animated animate__fadeIn animate__delay-1s"
+        [withTopLabels]="false"
+        [categories]="categories"
+        [series]="series"
+      ></app-evolution-chart>
       <div class="my-region-page__stacked animate__animated animate__fadeInRight animate__delay">
-        <app-doughnut-vertical [data]="doughnutData" class="d-block"></app-doughnut-vertical>
+        <app-doughnut-vertical
+          title="%Participación por provincias"
+          [data]="doughnutData"
+          class="d-block"
+        ></app-doughnut-vertical>
       </div>
     </div>
     }

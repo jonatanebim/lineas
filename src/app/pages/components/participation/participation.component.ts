@@ -19,6 +19,8 @@ HC_more(Highcharts)
 })
 export class ParticipationComponent implements AfterViewInit {
   @Input() data: any
+  @Input() title!: string
+  @Input() selected!: any
 
   @ViewChild('chartContainer') chartContainer!: ElementRef<any>
 
@@ -27,8 +29,12 @@ export class ParticipationComponent implements AfterViewInit {
 
   onChart = signal(false)
 
+  get graphData() {
+    return this.data
+  }
+
   ngAfterViewInit(): void {
-    const _selfData = this.data
+    const _selfData = this.graphData
     this.chartOptions = {
       chart: {
         width: this.chartContainer.nativeElement.clientWidth,
@@ -61,7 +67,7 @@ export class ParticipationComponent implements AfterViewInit {
             color: '#8F959D',
           },
         },
-        categories: this.data.map((e: any) => e.category),
+        categories: _selfData.map((e: any) => e.category),
       },
       plotOptions: {
         column: {
@@ -81,7 +87,7 @@ export class ParticipationComponent implements AfterViewInit {
         {
           type: 'column',
           color: COLORS.Grey3,
-          data: this.data.map((e: any) => e.columns[0]),
+          data: _selfData.map((e: any) => e.columns[0]),
           dataLabels: {
             inside: false,
             enabled: true,
@@ -106,7 +112,7 @@ export class ParticipationComponent implements AfterViewInit {
         {
           type: 'column',
           color: COLORS.Blue,
-          data: this.data.map((e: any) => e.columns[1]),
+          data: _selfData.map((e: any) => e.columns[1]),
           dataLabels: {
             enabled: true,
             inside: false,
@@ -135,7 +141,7 @@ export class ParticipationComponent implements AfterViewInit {
         {
           type: 'column',
           color: COLORS.Grey3,
-          data: this.data.map((e: any) => e.columns[0]),
+          data: _selfData.map((e: any) => e.columns[0]),
           dataLabels: {
             inside: false,
             enabled: true,
@@ -155,7 +161,7 @@ export class ParticipationComponent implements AfterViewInit {
         {
           type: 'column',
           color: COLORS.Blue,
-          data: this.data.map((e: any) => e.columns[1]),
+          data: _selfData.map((e: any) => e.columns[1]),
           dataLabels: {
             enabled: true,
             inside: false,

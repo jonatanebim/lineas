@@ -1,12 +1,17 @@
 <div class="my-cc-card">
   <div class="my-cc-card__wrapper h-100 d-flex flex-wrap align-content-center px-3">
     <div class="d-flex flex-column">
-      <img src="../../../../assets/images/logo-2.png" alt="" />
-      <select name="" id="">
-        <option value="">Diciembre 2024</option>
+      <img src="../../../../assets/images/logo-2.png" alt="Logo" />
+      <select [(ngModel)]="selected" name="Mes Seleccionado" [disabled]="isOnCurrent">
+        <option value="06">Junio 2024</option>
+        <option value="05">Mayo 2024</option>
+        <option value="04">Abril 2024</option>
+        <option value="03">Marzo 2024</option>
+        <option value="02">Febrero 2024</option>
+        <option value="01">Febrero 2024</option>
       </select>
       @if (isOnCurrent) {
-      <p class="m-0">Información hasta el día {{untilDate}}</p>
+      <p class="m-0">Información hasta el día {{ untilDate }}</p>
       }
     </div>
   </div>

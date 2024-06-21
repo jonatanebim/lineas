@@ -4,7 +4,7 @@
   }
 }
 
-app-table-report  {
+app-table-report {
   width: 60%;
   &.table-small {
     width: 40%;
@@ -13,7 +13,7 @@ app-table-report  {
 
 .evolution {
   app-evolution-line {
-    width: calc(100% - 450px) !important
+    width: calc(100% - 450px) !important;
   }
 
   app-participation {
@@ -22,11 +22,22 @@ app-table-report  {
 
   &.filter__active {
     app-evolution-line {
-      width: calc(100% - 250px) !important
+      width: calc(100% - 250px) !important;
     }
-  
+
     app-participation {
       width: 250px !important;
+    }
+  }
+}
+
+:host {
+  ::ng-deep {
+    .filter__active {
+      .my-participation__indicators {
+        // width: 90% !important;
+        // flex-wrap: nowrap !important;
+      }
     }
   }
 }

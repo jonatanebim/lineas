@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core'
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core'
 import { SeeMoreComponent } from '../see-more/see-more.component'
 import { RankIndicatorComponent } from '../rank-indicator/rank-indicator.component'
 import { RouterModule } from '@angular/router'
@@ -12,14 +12,19 @@ import { RouterModule } from '@angular/router'
   styleUrl: './table-report.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TableReportComponent {
+export class TableReportComponent implements OnInit {
   @Input() combined = true
   @Input() isFullSize = true
+  @Input() showAll = false
   @Input() headers: any
-  @Input() values: any
+  @Input() values: any = []
   @Input() types: any = []
 
   quantity = 3
+
+  ngOnInit() {
+    this.quantity = this.showAll ? this.values.length : 3
+  }
 
   isStatus(columnName: string) {
     return this.types.find((f: any) => f.columnName === columnName)?.type === 'status'

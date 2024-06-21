@@ -497,8 +497,8 @@
           "label": "VS 6UM"
         },
         {
-          "columnName": "vsmaa",
-          "label": "VS MAA"
+          "columnName": "vsaa",
+          "label": "VS AA"
         },
         {
           "columnName": "cobmq",
@@ -517,8 +517,8 @@
           "label": "VS 6um"
         },
         {
-          "columnName": "vsmaacob",
-          "label": "VS maa"
+          "columnName": "vsaacob",
+          "label": "VS AA"
         }
       ],
       "values": [
@@ -531,8 +531,8 @@
           "vs3umcob": "106",
           "vs6um": "-59",
           "vs6umcob": "3",
-          "vsmaa": "1312",
-          "vsmaacob": "3200",
+          "vsaa": "1312",
+          "vsaacob": "3200",
           "cobmq": 33
         },
         {
@@ -544,8 +544,8 @@
           "vs3umcob": "-28",
           "vs6um": "655",
           "vs6umcob": "16",
-          "vsmaa": "114",
-          "vsmaacob": "260",
+          "vsaa": "114",
+          "vsaacob": "260",
           "cobmq": 36
         },
         {
@@ -557,8 +557,8 @@
           "vs3umcob": "-16",
           "vs6um": "-9",
           "vs6umcob": "62",
-          "vsmaa": "105",
-          "vsmaacob": "-58",
+          "vsaa": "105",
+          "vsaacob": "-58",
           "cobmq": 42
         },
         {
@@ -570,8 +570,8 @@
           "vs3umcob": "48",
           "vs6um": "-82",
           "vs6umcob": "95",
-          "vsmaa": "-303",
-          "vsmaacob": "0",
+          "vsaa": "-303",
+          "vsaacob": "0",
           "cobmq": 43
         },
         {
@@ -583,8 +583,8 @@
           "vs3umcob": "187",
           "vs6um": "412",
           "vs6umcob": "95",
-          "vsmaa": "157",
-          "vsmaacob": "291",
+          "vsaa": "157",
+          "vsaacob": "291",
           "cobmq": 43
         },
         {
@@ -596,8 +596,8 @@
           "vs3umcob": "4850",
           "vs6um": "228",
           "vs6umcob": "3200",
-          "vsmaa": "312",
-          "vsmaacob": "9800",
+          "vsaa": "312",
+          "vsaacob": "9800",
           "cobmq": 99
         },
         {
@@ -609,8 +609,8 @@
           "vs3umcob": "-75",
           "vs6um": "-97",
           "vs6umcob": "-75",
-          "vsmaa": "-99",
-          "vsmaacob": "0",
+          "vsaa": "-99",
+          "vsaacob": "0",
           "cobmq": 1
         },
         {
@@ -622,8 +622,8 @@
           "vs3umcob": "-75",
           "vs6um": "-91",
           "vs6umcob": "-75",
-          "vsmaa": "-87",
-          "vsmaacob": "-89",
+          "vsaa": "-87",
+          "vsaacob": "-89",
           "cobmq": 1
         },
         {
@@ -635,8 +635,8 @@
           "vs3umcob": "-75",
           "vs6um": "-144",
           "vs6umcob": "-88",
-          "vsmaa": "-185",
-          "vsmaacob": "-90",
+          "vsaa": "-185",
+          "vsaacob": "-90",
           "cobmq": 1
         },
         {
@@ -648,8 +648,8 @@
           "vs3umcob": "-75",
           "vs6um": "-56",
           "vs6umcob": "-67",
-          "vsmaa": "117",
-          "vsmaacob": "0",
+          "vsaa": "117",
+          "vsaacob": "0",
           "cobmq": 1
         },
         {
@@ -661,8 +661,8 @@
           "vs3umcob": "-80",
           "vs6um": "-94",
           "vs6umcob": "-89",
-          "vsmaa": "-53",
-          "vsmaacob": "-50",
+          "vsaa": "-53",
+          "vsaacob": "-50",
           "cobmq": 1
         },
         {
@@ -674,8 +674,8 @@
           "vs3umcob": "-86",
           "vs6um": "-48",
           "vs6umcob": "-83",
-          "vsmaa": "611",
-          "vsmaacob": "-75",
+          "vsaa": "611",
+          "vsaacob": "-75",
           "cobmq": 1
         },
         {
@@ -687,8 +687,8 @@
           "vs3umcob": "-97",
           "vs6um": "-97",
           "vs6umcob": "-97",
-          "vsmaa": "-87",
-          "vsmaacob": "-97",
+          "vsaa": "-87",
+          "vsaacob": "-97",
           "cobmq": 1
         },
         {
@@ -700,8 +700,8 @@
           "vs3umcob": "-75",
           "vs6um": "-86",
           "vs6umcob": "-83",
-          "vsmaa": "705",
-          "vsmaacob": "-75",
+          "vsaa": "705",
+          "vsaacob": "-75",
           "cobmq": 1
         },
         {
@@ -713,8 +713,8 @@
           "vs3umcob": "-75",
           "vs6um": "-82",
           "vs6umcob": "-80",
-          "vsmaa": "-77",
-          "vsmaacob": "0",
+          "vsaa": "-77",
+          "vsaacob": "0",
           "cobmq": 1
         },
         {
@@ -726,8 +726,8 @@
           "vs3umcob": "-75",
           "vs6um": "-97",
           "vs6umcob": "-67",
-          "vsmaa": "-102",
-          "vsmaacob": "0",
+          "vsaa": "-102",
+          "vsaacob": "0",
           "cobmq": 1
         },
         {
@@ -739,8 +739,8 @@
           "vs3umcob": "-93",
           "vs6um": "-97",
           "vs6umcob": "-92",
-          "vsmaa": "-100",
-          "vsmaacob": "-91",
+          "vsaa": "-100",
+          "vsaacob": "-91",
           "cobmq": 1
         },
         {
@@ -752,8 +752,8 @@
           "vs3umcob": "0",
           "vs6um": "-62",
           "vs6umcob": "-33",
-          "vsmaa": "-84",
-          "vsmaacob": "100",
+          "vsaa": "-84",
+          "vsaacob": "100",
           "cobmq": 2
         },
         {
@@ -765,8 +765,8 @@
           "vs3umcob": "-83",
           "vs6um": "45",
           "vs6umcob": "-78",
-          "vsmaa": "241",
-          "vsmaacob": "100",
+          "vsaa": "241",
+          "vsaacob": "100",
           "cobmq": 2
         },
         {
@@ -778,8 +778,8 @@
           "vs3umcob": "-93",
           "vs6um": "-25",
           "vs6umcob": "-91",
-          "vsmaa": "0",
-          "vsmaacob": "-33",
+          "vsaa": "0",
+          "vsaacob": "-33",
           "cobmq": 2
         },
         {
@@ -791,8 +791,8 @@
           "vs3umcob": "-77",
           "vs6um": "-60",
           "vs6umcob": "-62",
-          "vsmaa": "-92",
-          "vsmaacob": "-73",
+          "vsaa": "-92",
+          "vsaacob": "-73",
           "cobmq": 3
         },
         {
@@ -804,8 +804,8 @@
           "vs3umcob": "-67",
           "vs6um": "-94",
           "vs6umcob": "-57",
-          "vsmaa": "-89",
-          "vsmaacob": "0",
+          "vsaa": "-89",
+          "vsaacob": "0",
           "cobmq": 3
         },
         {
@@ -817,8 +817,8 @@
           "vs3umcob": "-91",
           "vs6um": "-94",
           "vs6umcob": "-89",
-          "vsmaa": "-68",
-          "vsmaacob": "-93",
+          "vsaa": "-68",
+          "vsaacob": "-93",
           "cobmq": 3
         },
         {
@@ -830,8 +830,8 @@
           "vs3umcob": "-43",
           "vs6um": "211",
           "vs6umcob": "-50",
-          "vsmaa": "62",
-          "vsmaacob": "-56",
+          "vsaa": "62",
+          "vsaacob": "-56",
           "cobmq": 4
         },
         {
@@ -843,8 +843,8 @@
           "vs3umcob": "0",
           "vs6um": "-85",
           "vs6umcob": "-33",
-          "vsmaa": "-148",
-          "vsmaacob": "-50",
+          "vsaa": "-148",
+          "vsaacob": "-50",
           "cobmq": 4
         },
         {
@@ -856,8 +856,8 @@
           "vs3umcob": "-44",
           "vs6um": "68",
           "vs6umcob": "-62",
-          "vsmaa": "356",
-          "vsmaacob": "-67",
+          "vsaa": "356",
+          "vsaacob": "-67",
           "cobmq": 5
         },
         {
@@ -869,8 +869,8 @@
           "vs3umcob": "50",
           "vs6um": "-9",
           "vs6umcob": "-67",
-          "vsmaa": "-32",
-          "vsmaacob": "-14",
+          "vsaa": "-32",
+          "vsaacob": "-14",
           "cobmq": 6
         },
         {
@@ -882,8 +882,8 @@
           "vs3umcob": "-30",
           "vs6um": "357",
           "vs6umcob": "0",
-          "vsmaa": "6908",
-          "vsmaacob": "-22",
+          "vsaa": "6908",
+          "vsaacob": "-22",
           "cobmq": 7
         },
         {
@@ -895,8 +895,8 @@
           "vs3umcob": "-56",
           "vs6um": "-85",
           "vs6umcob": "-70",
-          "vsmaa": "141",
-          "vsmaacob": "250",
+          "vsaa": "141",
+          "vsaacob": "250",
           "cobmq": 7
         },
         {
@@ -908,8 +908,8 @@
           "vs3umcob": "33",
           "vs6um": "-144",
           "vs6umcob": "0",
-          "vsmaa": "-148",
-          "vsmaacob": "167",
+          "vsaa": "-148",
+          "vsaacob": "167",
           "cobmq": 8
         },
         {
@@ -921,8 +921,8 @@
           "vs3umcob": "60",
           "vs6um": "91",
           "vs6umcob": "60",
-          "vsmaa": "371",
-          "vsmaacob": "700",
+          "vsaa": "371",
+          "vsaacob": "700",
           "cobmq": 8
         },
         {
@@ -934,8 +934,8 @@
           "vs3umcob": "0",
           "vs6um": "-93",
           "vs6umcob": "50",
-          "vsmaa": "-99",
-          "vsmaacob": "80",
+          "vsaa": "-99",
+          "vsaacob": "80",
           "cobmq": 9
         },
         {
@@ -947,8 +947,8 @@
           "vs3umcob": "800",
           "vs6um": "118",
           "vs6umcob": "200",
-          "vsmaa": "-63",
-          "vsmaacob": "350",
+          "vsaa": "-63",
+          "vsaacob": "350",
           "cobmq": 9
         },
         {
@@ -960,8 +960,8 @@
           "vs3umcob": "80",
           "vs6um": "-10",
           "vs6umcob": "0",
-          "vsmaa": "2012",
-          "vsmaacob": "12",
+          "vsaa": "2012",
+          "vsaacob": "12",
           "cobmq": 9
         },
         {
@@ -973,8 +973,8 @@
           "vs3umcob": "-79",
           "vs6um": "-63",
           "vs6umcob": "-72",
-          "vsmaa": "-38",
-          "vsmaacob": "-76",
+          "vsaa": "-38",
+          "vsaacob": "-76",
           "cobmq": 10
         },
         {
@@ -986,8 +986,8 @@
           "vs3umcob": "900",
           "vs6um": "-78",
           "vs6umcob": "25",
-          "vsmaa": "-79",
-          "vsmaacob": "900",
+          "vsaa": "-79",
+          "vsaacob": "900",
           "cobmq": 10
         },
         {
@@ -999,8 +999,8 @@
           "vs3umcob": "-52",
           "vs6um": "-64",
           "vs6umcob": "-70",
-          "vsmaa": "264",
-          "vsmaacob": "-67",
+          "vsaa": "264",
+          "vsaacob": "-67",
           "cobmq": 11
         },
         {
@@ -1012,8 +1012,8 @@
           "vs3umcob": "22",
           "vs6um": "431",
           "vs6umcob": "57",
-          "vsmaa": "3847",
-          "vsmaacob": "-21",
+          "vsaa": "3847",
+          "vsaacob": "-21",
           "cobmq": 11
         },
         {
@@ -1025,8 +1025,8 @@
           "vs3umcob": "-15",
           "vs6um": "-40",
           "vs6umcob": "0",
-          "vsmaa": "29",
-          "vsmaacob": "-52",
+          "vsaa": "29",
+          "vsaacob": "-52",
           "cobmq": 11
         },
         {
@@ -1038,8 +1038,8 @@
           "vs3umcob": "225",
           "vs6um": "136",
           "vs6umcob": "333",
-          "vsmaa": "-14",
-          "vsmaacob": "1200",
+          "vsaa": "-14",
+          "vsaacob": "1200",
           "cobmq": 13
         },
         {
@@ -1051,8 +1051,8 @@
           "vs3umcob": "180",
           "vs6um": "378",
           "vs6umcob": "180",
-          "vsmaa": "52",
-          "vsmaacob": "8",
+          "vsaa": "52",
+          "vsaacob": "8",
           "cobmq": 14
         },
         {
@@ -1064,8 +1064,8 @@
           "vs3umcob": "200",
           "vs6um": "-58",
           "vs6umcob": "-12",
-          "vsmaa": "-24",
-          "vsmaacob": "150",
+          "vsaa": "-24",
+          "vsaacob": "150",
           "cobmq": 15
         },
         {
@@ -1077,8 +1077,8 @@
           "vs3umcob": "229",
           "vs6um": "-61",
           "vs6umcob": "188",
-          "vsmaa": "-26",
-          "vsmaacob": "229",
+          "vsaa": "-26",
+          "vsaacob": "229",
           "cobmq": 23
         }
       ]
@@ -1117,28 +1117,42 @@
       "totalMarket": [92430.09, 67479.77, 69169.47, 104712.61, 2844126.68, 0],
       "totalBdf": [116, 127, 195, 211, 1845, 0],
       "coverageBdf": [],
-      "coverageMdo": [216, 127, 195, 211, 1845, 0]
+      "coverageMdo": []
+    },
+    "evolutionMqFilter": {
+      "labels": ["MAY 2024", "ABR 2024", "MAR 2024", "FEB 2024", "ENE 2024", "DIC 2023"],
+      "totalMarket": [9230.09, 6479.77, 9169.47, 10471.61, 2844.68, 0],
+      "totalBdf": [1916, 1827, 1795, 2161, 18545, 4342],
+      "coverageBdf": [9240.09, 6749.77, 6869.47, 1712.61, 3848.68, 0],
+      "coverageMdo": [1116, 1227, 1935, 2131, 18445, 4433]
     },
     "principalCategories": [
+      {
+        "category": "ALIMENTOS",
+        "totalPercentage": 10,
+        "columns": [1230, 450]
+      },
       {
         "category": "Categorias",
         "totalPercentage": 10,
         "columns": [1230, 450]
       },
       {
-        "category": "Categorias2",
-        "totalPercentage": 40,
-        "columns": [14320, 7850]
+        "category": "Categorias",
+        "totalPercentage": 10,
+        "columns": [1230, 450]
       },
       {
-        "category": "Categorias3",
-        "totalPercentage": 80,
-        "columns": [1430, 540]
-      },
+        "category": "Categorias",
+        "totalPercentage": 10,
+        "columns": [1230, 450]
+      }
+    ],
+    "principalCategoriesFilter": [
       {
-        "category": "Categorias4",
-        "totalPercentage": 70,
-        "columns": [1220, 3350]
+        "category": "ALIMENTOS",
+        "totalPercentage": 10,
+        "columns": [1230, 450]
       }
     ],
     "participationPareto": {
@@ -1180,250 +1194,274 @@
     "regionOportunity": null
   },
   "region": {
-    "body": {
-      "cards": [
+    "cards": [
+      {
+        "label": "Facturación total \"lima\"",
+        "amount": "S/ 0.00",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 0
+          },
+          {
+            "label": "Vs MA",
+            "value": 0
+          },
+          {
+            "label": "Vs MA",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "label": "Cobertura total \"lima\"",
+        "amount": "S/ 0.00",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 0
+          },
+          {
+            "label": "Vs MA",
+            "value": 0
+          },
+          {
+            "label": "Vs MA",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "label": "Volumen (und) total \"lima\"",
+        "amount": "S/ 0.00",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 0
+          },
+          {
+            "label": "Vs MA",
+            "value": 0
+          },
+          {
+            "label": "Vs MA",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "label": "Ticket promedio total \"lima\"",
+        "amount": "S/ 0.00",
+        "indicators": [
+          {
+            "label": "Vs MA",
+            "value": 0
+          },
+          {
+            "label": "Vs MA",
+            "value": 0
+          },
+          {
+            "label": "Vs MA",
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "regionOportunity": [],
+    "provincesTable": {
+      "columns": [
         {
-          "label": "Facturación total \"lima\"",
-          "amount": "S/ 0.00",
-          "indicators": [
-            {
-              "label": "Vs MA",
-              "value": 0
-            },
-            {
-              "label": "Vs MA",
-              "value": 0
-            },
-            {
-              "label": "Vs MA",
-              "value": 0
-            }
-          ]
+          "columnName": "provinceName",
+          "label": "Dpto/provincias"
         },
         {
-          "label": "Cobertura total \"lima\"",
-          "amount": "S/ 0.00",
-          "indicators": [
-            {
-              "label": "Vs MA",
-              "value": 0
-            },
-            {
-              "label": "Vs MA",
-              "value": 0
-            },
-            {
-              "label": "Vs MA",
-              "value": 0
-            }
-          ]
+          "columnName": "salemq",
+          "label": "VENTA MQ"
         },
         {
-          "label": "Volumen (und) total \"lima\"",
-          "amount": "S/ 0.00",
-          "indicators": [
-            {
-              "label": "Vs MA",
-              "value": 0
-            },
-            {
-              "label": "Vs MA",
-              "value": 0
-            },
-            {
-              "label": "Vs MA",
-              "value": 0
-            }
-          ]
+          "columnName": "share",
+          "label": "%Share"
         },
         {
-          "label": "Ticket promedio total \"lima\"",
-          "amount": "S/ 0.00",
-          "indicators": [
-            {
-              "label": "Vs MA",
-              "value": 0
-            },
-            {
-              "label": "Vs MA",
-              "value": 0
-            },
-            {
-              "label": "Vs MA",
-              "value": 0
-            }
-          ]
+          "columnName": "distnum",
+          "label": "%DIST NUM"
+        },
+        {
+          "columnName": "distpond",
+          "label": "%DIST POND"
+        },
+        {
+          "columnName": "vs3um",
+          "label": "VS 3UM"
+        },
+        {
+          "columnName": "vs6um",
+          "label": "VS 6UM"
+        },
+        {
+          "columnName": "vsaa",
+          "label": "VS AA"
+        },
+        {
+          "columnName": "cobmq",
+          "label": "COB. MQ"
+        },
+        {
+          "columnName": "vs3umcob",
+          "label": "VS 3UM"
+        },
+        {
+          "columnName": "vs6umcob",
+          "label": "VS 6UM"
+        },
+        {
+          "columnName": "vsaacob",
+          "label": "VS AA"
         }
       ],
-      "regionOportunity": [],
-      "provincesTable": {
-        "columns": [
-          {
-            "columnName": "provinceName",
-            "label": "Dpto/provincias"
-          },
-          {
-            "columnName": "salemq",
-            "label": "VENTA MQ"
-          },
-          {
-            "columnName": "share",
-            "label": "%Share"
-          },
-          {
-            "columnName": "distnum",
-            "label": "%DIST NUM"
-          },
-          {
-            "columnName": "distpond",
-            "label": "%DIST POND"
-          },
-          {
-            "columnName": "vs3um",
-            "label": "VS 3UM"
-          },
-          {
-            "columnName": "vs6um",
-            "label": "VS 6UM"
-          },
-          {
-            "columnName": "vsmaa",
-            "label": "VS MAA"
-          },
-          {
-            "columnName": "cobmq",
-            "label": "COB. MQ"
-          },
-          {
-            "columnName": "vs3umcob",
-            "label": "VS 3UM"
-          },
-          {
-            "columnName": "vs6umcob",
-            "label": "VS 6UM"
-          },
-          {
-            "columnName": "vsmaacob",
-            "label": "VS MAA"
-          }
-        ],
-        "values": []
-      },
-      "channelsTable": {
-        "columns": [
-          {
-            "columnName": "channelName",
-            "label": "CANALES"
-          },
-          {
-            "columnName": "salemq",
-            "label": "VENTA MQ"
-          },
-          {
-            "columnName": "share",
-            "label": "%Share"
-          },
-          {
-            "columnName": "distnum",
-            "label": "%DIST NUM"
-          },
-          {
-            "columnName": "distpond",
-            "label": "%DIST POND"
-          },
-          {
-            "columnName": "vs3um",
-            "label": "VS 3UM"
-          },
-          {
-            "columnName": "vs6um",
-            "label": "VS 6UM"
-          },
-          {
-            "columnName": "vsmaa",
-            "label": "VS MAA"
-          },
-          {
-            "columnName": "cobmq",
-            "label": "COB. MQ"
-          },
-          {
-            "columnName": "vs3umcob",
-            "label": "VS 3UM"
-          },
-          {
-            "columnName": "vs6umcob",
-            "label": "VS 6UM"
-          },
-          {
-            "columnName": "vsmaacob",
-            "label": "VS MAA"
-          }
-        ],
-        "values": []
-      },
-      "categoriesTable": {
-        "columns": [
-          {
-            "columnName": "categoryName",
-            "label": "CATEGORÍAS"
-          },
-          {
-            "columnName": "salemq",
-            "label": "VENTA MQ"
-          },
-          {
-            "columnName": "share",
-            "label": "%Share"
-          },
-          {
-            "columnName": "distnum",
-            "label": "%DIST NUM"
-          },
-          {
-            "columnName": "distpond",
-            "label": "%DIST POND"
-          },
-          {
-            "columnName": "vs3um",
-            "label": "VS 3UM"
-          },
-          {
-            "columnName": "vs6um",
-            "label": "VS 6UM"
-          },
-          {
-            "columnName": "vsmaa",
-            "label": "VS MAA"
-          },
-          {
-            "columnName": "cobmq",
-            "label": "COB. MQ"
-          },
-          {
-            "columnName": "vs3umcob",
-            "label": "VS 3UM"
-          },
-          {
-            "columnName": "vs6umcob",
-            "label": "VS 6UM"
-          },
-          {
-            "columnName": "vsmaacob",
-            "label": "VS MAA"
-          }
-        ],
-        "values": []
-      },
-      "categoryParticipation": {
-        "doughnuts": []
-      },
-      "evolutionMq": {
-        "labels": ["MAY 2024", "ABR 2024", "MAR 2024", "FEB 2024", "ENE 2024", "DIC 2023"],
-        "columns": [0, 0, 0, 0, 0, 0],
-        "sales": [0, 0, 0, 0, 0, 0],
-        "coverage": [0, 0, 0, 0, 0, 0]
-      }
+      "values": []
+    },
+    "channelsTable": {
+      "columns": [
+        {
+          "columnName": "channelName",
+          "label": "CANALES"
+        },
+        {
+          "columnName": "salemq",
+          "label": "VENTA MQ"
+        },
+        {
+          "columnName": "share",
+          "label": "%Share"
+        },
+        {
+          "columnName": "distnum",
+          "label": "%DIST NUM"
+        },
+        {
+          "columnName": "distpond",
+          "label": "%DIST POND"
+        },
+        {
+          "columnName": "vs3um",
+          "label": "VS 3UM"
+        },
+        {
+          "columnName": "vs6um",
+          "label": "VS 6UM"
+        },
+        {
+          "columnName": "vsaa",
+          "label": "VS AA"
+        },
+        {
+          "columnName": "cobmq",
+          "label": "COB. MQ"
+        },
+        {
+          "columnName": "vs3umcob",
+          "label": "VS 3UM"
+        },
+        {
+          "columnName": "vs6umcob",
+          "label": "VS 6UM"
+        },
+        {
+          "columnName": "vsaacob",
+          "label": "VS AA"
+        }
+      ],
+      "values": []
+    },
+    "categoriesTable": {
+      "columns": [
+        {
+          "columnName": "categoryName",
+          "label": "CATEGORÍAS"
+        },
+        {
+          "columnName": "salemq",
+          "label": "VENTA MQ"
+        },
+        {
+          "columnName": "share",
+          "label": "%Share"
+        },
+        {
+          "columnName": "distnum",
+          "label": "%DIST NUM"
+        },
+        {
+          "columnName": "distpond",
+          "label": "%DIST POND"
+        },
+        {
+          "columnName": "vs3um",
+          "label": "VS 3UM"
+        },
+        {
+          "columnName": "vs6um",
+          "label": "VS 6UM"
+        },
+        {
+          "columnName": "vsaa",
+          "label": "VS AA"
+        },
+        {
+          "columnName": "cobmq",
+          "label": "COB. MQ"
+        },
+        {
+          "columnName": "vs3umcob",
+          "label": "VS 3UM"
+        },
+        {
+          "columnName": "vs6umcob",
+          "label": "VS 6UM"
+        },
+        {
+          "columnName": "vsaacob",
+          "label": "VS MA"
+        }
+      ],
+      "values": []
+    },
+    "categoryParticipation": {
+      "doughnuts": [
+        {
+          "label": "REG",
+          "value": 30,
+          "percentage": 12
+        },
+        {
+          "label": "REG",
+          "value": 20,
+          "percentage": 34
+        },
+        {
+          "label": "TRACTO ALIMENTARIO Y METABOLISMO",
+          "value": 10,
+          "percentage": 3
+        },
+        {
+          "label": "SUPLEMENTO Y/O COMPLEMENTO ADULTO",
+          "value": 20,
+          "percentage": 31
+        },
+        {
+          "label": "SUPLEMENTO Y/O COMPLEMENTO PEDIATRICO",
+          "value": 20,
+          "percentage": 21
+        }
+      ]
+    },
+    "evolutionMq": {
+      "labels": ["MAY 2024", "ABR 2024", "MAR 2024", "FEB 2024", "ENE 2024", "DIC 2023"],
+      "columns": [0, 0, 0, 0, 0, 0],
+      "sales": [0, 0, 0, 0, 0, 0],
+      "coverage": [0, 0, 0, 0, 0, 0]
     }
   }
 }

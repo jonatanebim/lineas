@@ -189,7 +189,7 @@ export const DEPARTMENTS = [
 export const DEFAULT_SKU_IMAGE = '../../../../assets/images/logo-top.png'
 
 export enum TABLE_TOOLTIPS {
-  'VS MAA' = 'versus mes año anterior',
+  'VS MA' = 'versus año anterior',
   'Vs Ma' = 'versus mes anterior',
   'Vs 3um' = 'Versus tres últimos meses',
   'Vs 6um' = 'Versus seis últimos meses',
