@@ -61,9 +61,30 @@
                 width: 7px;
                 margin-right: 3px;
               }
-              &.alta {
+              &.MEDIA {
+                background: #fff4e4;
+                color: #fc9700 !important;
+                span {
+                  background: #fc9700;
+                }
+              }
+      
+              &.BAJA,
+              &__no {
+                background: #ffedf2;
+                color: #e72e49 !important;
+                span {
+                  background: #e72e49;
+                }
+              }
+      
+              &.ALTA,
+              &__si {
                 background: #e4ffeb;
-                color: var(--Green-2, #43b748);
+                color: #43b748 !important;
+                span {
+                  background: #43b748;
+                }
               }
             }
           }

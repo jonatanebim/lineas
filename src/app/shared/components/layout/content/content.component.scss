@@ -107,7 +107,7 @@
         &.inactive {
           border-bottom: none !important;
           &:hover {
-            span {
+            span, > i {
               color: #b3b8bf;
             }
             span {
@@ -146,6 +146,21 @@
           text-align: center;
           display: flex;
           justify-content: center;
+          text-transform: uppercase;
+          font-size: 10px;
+        }
+
+        &-logout{
+          span {
+            color: #0050f5 !important;
+          }
+          position: absolute !important;
+          bottom: calc(100vh - 700px);
+          width: inherit;
+          border: none !important;
+          display: block;
+          padding-left: 10px;
+          padding-right: 17px;
           text-transform: uppercase;
           font-size: 10px;
         }

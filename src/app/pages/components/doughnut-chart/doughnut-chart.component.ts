@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, View
 import { CommonModule } from '@angular/common'
 import Chart from 'chart.js/auto'
 import { GlobalStoreService } from '../../../shared/stores/global.store'
-import { GREY_COLORS } from '../../../shared/constants/globals'
+import { EMPTY_DOUGHNUT, GREY_COLORS } from '../../../shared/constants/globals'
 
 @Component({
   selector: 'app-doughnut-chart',
@@ -38,7 +38,7 @@ export class DoughnutChartComponent implements AfterViewInit {
           },
         ],
       },
-      plugins: [this.customDataLabelPlugin],
+      plugins: [...(this.isEmpty ? [] : [this.customDataLabelPlugin])],
       options: {
         maintainAspectRatio: false,
         aspectRatio: 1.8,
@@ -61,15 +61,27 @@ export class DoughnutChartComponent implements AfterViewInit {
     return this.doughnutChart.map((i) => i.value)
   }
 
-  get colors() {
-    return this.doughnutChart.map((i, k: number) => {
-      const categoryIndex = this.globalStore.filterCategories()
-      if (categoryIndex != null && k !== this.globalStore.filterCategories()) {
-        return GREY_COLORS[k]
-      }
+  get labels() {
+    return this.doughnutChart.map((i) => i.label)
+  }
 
-      return i.color
-    })
+  get isEmpty() {
+    return this.labels.length === 1 && this.labels[0] === EMPTY_DOUGHNUT[0].label
+  }
+
+  get colors() {
+    if (this.isEmpty) {
+      return GREY_COLORS[3]
+    } else {
+      return this.doughnutChart.map((i, k: number) => {
+        const categoryIndex = this.globalStore.filterCategories()
+        if (categoryIndex != null && k !== this.globalStore.filterCategories()) {
+          return GREY_COLORS[k]
+        }
+
+        return i.color
+      })
+    }
   }
 
   get customDataLabelPlugin() {

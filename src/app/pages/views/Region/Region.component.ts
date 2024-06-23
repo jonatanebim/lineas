@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common'
 import { AfterViewInit, Component, effect, inject } from '@angular/core'
 import { RegionRequestsService } from '../../../shared/requests/region.requests'
 import { ActivatedRoute } from '@angular/router'
-import { DEPARTMENTS, TABLE_TOOLTIPS } from '../../../shared/constants/globals'
+import { DEPARTMENTS, EMPTY_DOUGHNUT, TABLE_TOOLTIPS } from '../../../shared/constants/globals'
 import {
   CardFilterComponent,
   CardReportComponent,
@@ -41,6 +41,7 @@ export class RegionComponent implements AfterViewInit {
   doughnutData: any = []
   tableIndicators = []
   department: any
+  regionOportunity: any;
   provincesTable: any = {
     headers: [],
     values: [],
@@ -79,7 +80,7 @@ export class RegionComponent implements AfterViewInit {
   getData() {
     return this.service.getRegionReport(this.department?.name).pipe(
       tap((data: any) => {
-        this.categories = data.evolutionMq?.labels
+        this.categories = data.evolutionMq?.labels || []
         this.series = [
           {
             type: 'column',
@@ -102,6 +103,8 @@ export class RegionComponent implements AfterViewInit {
           },
         ]
 
+        this.regionOportunity = data?.regionOportunity
+
         this.categoriesTable.headers = this.transformColumns(data?.categoriesTable.columns)
         this.categoriesTable.values = data?.categoriesTable.values
 
@@ -111,10 +114,11 @@ export class RegionComponent implements AfterViewInit {
         this.provincesTable.headers = this.transformColumns(data?.provincesTable.columns)
 
         this.provincesTable.values = data?.provincesTable.values
-        this.doughnutData = data?.categoryParticipation?.doughnuts
+        this.doughnutData = data?.categoryParticipation?.doughnuts || EMPTY_DOUGHNUT
+
         this.cards = data?.cards
 
-        this.globalStore.hideLoading()
+        setTimeout(() => this.globalStore.hideLoading());
       })
     )
   }

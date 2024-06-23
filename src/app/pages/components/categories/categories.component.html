@@ -1,7 +1,6 @@
 <div class="labels">
   <ul class="list-unstyled">
-    @for (i of data; track i.label) { @if ($index <
-    viewQuantity) {
+    @for (i of categories; track i.label) { @if ($index < viewQuantity) {
     <li class="d-flex align-items-center">
       <span [style.backgroundColor]="i.color"></span>
       <p>{{ i.label }}</p>
@@ -9,11 +8,7 @@
     } }
   </ul>
 
-  @if (data.length > viewQuantity && !showAll) {
-  <app-see-more
-    (toggle)="doToggle($event)"
-    [isActive]="isActiveShowAll"
-    [centered]="false"
-  ></app-see-more>
+  @if (categories.length > viewQuantity && !showAll) {
+  <app-see-more (toggle)="doToggle($event)" [isActive]="isActiveShowAll" [centered]="false"></app-see-more>
   }
 </div>

@@ -16,8 +16,9 @@ export class LoginComponent {
   router = inject(Router)
 
   fg = this.fb.group({
-    username: ['', [Validators.required]],
-    password: ['', [Validators.required]],
+    username: ['abbott.linea', [Validators.required]],
+    password: ['10073011341N', [Validators.required]],
+    remember: [true],
   })
 
   doSubmit() {

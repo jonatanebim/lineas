@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges, inject } from '@angular/core'
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges, inject } from '@angular/core'
 import { DEPARTMENTS } from '../../../shared/constants/globals'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { GlobalStoreService } from '../../../shared/stores/global.store'
@@ -13,14 +13,20 @@ import { GlobalStoreService } from '../../../shared/stores/global.store'
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DepartmentGraphComponent implements OnChanges {
+  @Input() data!: any
   @Input() selected!: string
 
+  loaded = true
   globalStore = inject(GlobalStoreService)
   departments: any = DEPARTMENTS
-  department = DEPARTMENTS[0].value
+  department = this.defaultDepartment.value
+
+  get defaultDepartment() {
+    return DEPARTMENTS.find((f) => f.name === 'Lima') || DEPARTMENTS[0]
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
-    const cValue = changes['selected'].currentValue;
+    const cValue = changes['selected'].currentValue
     if (cValue) this.department = cValue
   }
 

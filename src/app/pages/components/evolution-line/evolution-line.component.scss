@@ -16,3 +16,30 @@
     }
   }
 }
+
+:host {
+  ::ng-deep {
+    .float-tooltip {
+      color: #fff;
+      font-family: 'Nunito Sans';
+      h2 {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 22px; /* 137.5% */
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+      }
+      p {
+        margin: 0;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

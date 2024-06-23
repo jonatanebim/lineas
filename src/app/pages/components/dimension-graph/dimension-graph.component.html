@@ -4,11 +4,7 @@
       <div class="col-7 graph">
         <div class="w-100 d-flex justify-content-between h-100">
           <div class="my-dimension-report__bubbles">
-            <highcharts-chart
-              [Highcharts]="Highcharts"
-              [options]="chartOptions"
-            >
-            </highcharts-chart>
+            <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"> </highcharts-chart>
           </div>
           <div class="my-dimension-report__categories">
             <h3 class="sectionTitle">% Participación por SKUs Pareto</h3>
@@ -17,9 +13,12 @@
         </div>
       </div>
       <div class="col-5 ps-3">
-        <h3 class="sectionTitle">Top SKU - Cuidado Facial</h3>
+        <h3 class="sectionTitle">Top SKU - {{ selected ? selected?.label : 'Total Categorías' }}</h3>
         <div class="report-top d-flex">
-          <img [src]="topSkuImage" [attr.alt]="topSku.product" />
+          <img
+            [src]="!topSkuImage ? topSkuImage : '../../../../assets/images/logo-top.png'"
+            [attr.alt]="topSku.product"
+          />
           <div class="report-top__detail w-100">
             <h2 class="d-flex align-items-center gap-1">
               1

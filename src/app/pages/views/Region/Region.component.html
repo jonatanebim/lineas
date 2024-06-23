@@ -12,7 +12,9 @@
       <app-department-graph
         class="animate__animated animate__fadeInLeft animate__delay"
         [selected]="this.department?.value"
+        [data]="regionOportunity"
       ></app-department-graph>
+
       <app-evolution-chart
         class="animate__animated animate__fadeIn animate__delay-1s"
         [withTopLabels]="false"
@@ -27,7 +29,6 @@
         ></app-doughnut-vertical>
       </div>
     </div>
-    }
 
     <div class="d-flex gap-2 mt-2 animate__animated animate__fadeInUp animate__delay-2s">
       <app-table-report
@@ -55,5 +56,6 @@
         [types]="categoriesTable.tableIndicators"
       ></app-table-report>
     </div>
+    }
   </div>
 </div>

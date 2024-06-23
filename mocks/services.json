@@ -1184,7 +1184,7 @@
       "product": "SIMILAC 3 MEZCLA 5HMOS PVO CJA 1.4 Kg",
       "billing": {
         "vsma": 808.65,
-        "vs3um": 650.556666667
+        "vs3um": 650.667
       },
       "ranking": {
         "vsma": 1,
@@ -1268,7 +1268,13 @@
         ]
       }
     ],
-    "regionOportunity": [],
+    "regionOportunity": {
+      "oportunity": "BAJA",
+      "billingParticipation": "20%",
+      "coverageParticipation": "10%",
+      "distribution": "10%",
+      "weightedDistribution": "10%"
+    },
     "provincesTable": {
       "columns": [
         {
@@ -1428,30 +1434,30 @@
       ],
       "values": []
     },
-    "categoryParticipation": {
+    "provinceParticipation": {
       "doughnuts": [
         {
-          "label": "REG",
+          "label": "Chocope",
           "value": 30,
           "percentage": 12
         },
         {
-          "label": "REG",
+          "label": "Motupe",
           "value": 20,
           "percentage": 34
         },
         {
-          "label": "TRACTO ALIMENTARIO Y METABOLISMO",
+          "label": "Jayanca",
           "value": 10,
           "percentage": 3
         },
         {
-          "label": "SUPLEMENTO Y/O COMPLEMENTO ADULTO",
+          "label": "Mórrope",
           "value": 20,
           "percentage": 31
         },
         {
-          "label": "SUPLEMENTO Y/O COMPLEMENTO PEDIATRICO",
+          "label": "Chiclayo",
           "value": 20,
           "percentage": 21
         }
@@ -1459,9 +1465,86 @@
     },
     "evolutionMq": {
       "labels": ["MAY 2024", "ABR 2024", "MAR 2024", "FEB 2024", "ENE 2024", "DIC 2023"],
-      "columns": [0, 0, 0, 0, 0, 0],
-      "sales": [0, 0, 0, 0, 0, 0],
-      "coverage": [0, 0, 0, 0, 0, 0]
+      "columns": [114512.72, 631996.35, 337650.59, 622319.68, 477343.18, 396729.37],
+      "sales": [302, 818, 824, 873, 623, 653],
+      "coverage": [267, 624, 616, 670, 490, 545]
     }
-  }
+  },
+  "departments": [
+    {
+      "departamento": "AMAZONAS"
+    },
+    {
+      "departamento": "ANCASH"
+    },
+    {
+      "departamento": "APURIMAC"
+    },
+    {
+      "departamento": "AREQUIPA"
+    },
+    {
+      "departamento": "AYACUCHO"
+    },
+    {
+      "departamento": "CAJAMARCA"
+    },
+    {
+      "departamento": "CALLAO"
+    },
+    {
+      "departamento": "CUSCO"
+    },
+    {
+      "departamento": "HUANCAVELICA"
+    },
+    {
+      "departamento": "HUANUCO"
+    },
+    {
+      "departamento": "ICA"
+    },
+    {
+      "departamento": "JUNIN"
+    },
+    {
+      "departamento": "LA LIBERTAD"
+    },
+    {
+      "departamento": "LAMBAYEQUE"
+    },
+    {
+      "departamento": "LIMA"
+    },
+    {
+      "departamento": "LORETO"
+    },
+    {
+      "departamento": "MADRE DE DIOS"
+    },
+    {
+      "departamento": "MOQUEGUA"
+    },
+    {
+      "departamento": "PASCO"
+    },
+    {
+      "departamento": "PIURA"
+    },
+    {
+      "departamento": "PUNO"
+    },
+    {
+      "departamento": "SAN MARTIN"
+    },
+    {
+      "departamento": "TACNA"
+    },
+    {
+      "departamento": "TUMBES"
+    },
+    {
+      "departamento": "UCAYALI"
+    }
+  ]
 }

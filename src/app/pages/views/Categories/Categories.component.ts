@@ -57,23 +57,26 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
 
     this.activateRoute.queryParamMap.subscribe((qParams: any) => {
       const { category, dateAt } = qParams.params
+      console.log('qParams', qParams)
+      this.globalStore.showLoading()
       if (category) {
-        this.globalStore.showLoading()
         this.selectedCategory = this.doughnutData[category]
+        this.globalStore.reloadCategories.update(() => false)
         this.getData().subscribe()
-      }
+      } else this.globalStore.reloadCategories.update(() => true)
     })
 
     this.globalStore.reloadCategories$.subscribe((state) => {
+      console.log('state', state)
       if (state) {
-        this.globalStore.showLoading()
+        alert();
         this.globalStore.filterCategories.update(() => null)
+
+        this.globalStore.showLoading()
         this.selectedCategory = null
         this.getData().subscribe()
       }
     })
-
-    this.getData().subscribe()
   }
 
   ngOnDestroy(): void {
@@ -86,6 +89,7 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
     }
     return this.service.getCategoriesReport(filterParams).pipe(
       tap((data: any) => {
+        // console.log(ggg);
         this.globalStore.hideLoading()
 
         this.cards = data?.cards

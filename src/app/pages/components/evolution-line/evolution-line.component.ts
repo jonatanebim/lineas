@@ -14,6 +14,8 @@ import { HighchartsChartModule } from 'highcharts-angular'
 export class EvolutionLineComponent implements AfterViewInit {
   @ViewChild('chartContainer') chartContainer!: ElementRef<any>
 
+  @Input() title: string = 'Evolutivo MQ'
+  @Input() selected: any
   @Input() labels: any
   @Input() dataLabels: any
   @Input() data: any
@@ -23,6 +25,7 @@ export class EvolutionLineComponent implements AfterViewInit {
   onChart = signal(false)
 
   ngAfterViewInit(): void {
+    const _selfData = this
     setTimeout(() => {
       this.chartOptions = {
         chart: {
@@ -55,9 +58,33 @@ export class EvolutionLineComponent implements AfterViewInit {
           },
           categories: this.dataLabels,
         },
+        tooltip: {
+          useHTML: true,
+          backgroundColor: '#000000ab',
+          borderWidth: 0,
+          shadow: false,
+          formatter: function () {
+            return !_selfData?.selected
+              ? `
+            <div class="float-tooltip">
+              <h2>${this.x}</h2>  
+              <p>Facturación Mdo Digital: <span>S/ 2,283,091</span></p> 
+              <p>Categoría top: <span>Jabón/Gel de manos</span></p> 
+            </div>
+            `
+              : `
+            <div class="float-tooltip">
+              <h2>${this.x}</h2>  
+              <p>Facturación Mdo: <span>S/ 2,283,091</span></p> 
+              <p>Cobertura Mdo: <span>Jabón/Gel de manos</span></p> 
+              <p>Nro de pedidos: <span>1,891</span></p> 
+            </div>
+            `
+          },
+        },
         plotOptions: {
           series: {
-            enableMouseTracking: false,
+            enableMouseTracking: true,
             lineWidth: 1,
             pointStart: 0,
             marker: {
@@ -68,7 +95,6 @@ export class EvolutionLineComponent implements AfterViewInit {
           },
           line: {
             allowPointSelect: false,
-            enableMouseTracking: false,
           },
         },
         series: this.data,

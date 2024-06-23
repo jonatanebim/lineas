@@ -1,5 +1,6 @@
 <div class="my-department d-flex flex-column">
   <h2 class="sectionTitle">Penetración por departamento</h2>
+  @if (loaded) {
   <select [(ngModel)]="department" (ngModelChange)="updateView()">
     @for (item of departments; track $index) {
     <option [attr.value]="item.value">{{ item.name }}</option>
@@ -15,9 +16,15 @@
         <div class="labels">
           <p class="level mb-4 gap-1 d-flex align-items-center">
             OPORTUNIDAD
-            <span class="alta">
+            <span [class]="data?.oportunity">
+              @if (data?.oportunity === 'ALTA') {
               <img src="../../../../assets/icons/green-dot.svg" alt="" />
-              ALTA
+              } @else if (data?.oportunity === 'BAJA') {
+              <img src="../../../../assets/icons/red-dot.svg" alt="" />
+              } @else {
+              <img src="../../../../assets/icons/orange-dot.svg" alt="" />
+              }
+              {{ data?.oportunity }}
             </span>
           </p>
 
@@ -25,29 +32,30 @@
             <p class="d-grid w-50">
               % participación <br />
               facturación
-              <span>28%</span>
+              <span>{{ data?.billingParticipation }}</span>
             </p>
 
             <p class="d-grid w-50">
               % participación <br />
               cobertura
-              <span>21%</span>
+              <span>{{ data?.coverageParticipation }}</span>
             </p>
 
             <p class="d-grid w-50">
               % distribución <br />
               númerica
-              <span class="text-black-50">75%</span>
+              <span class="text-black-50">{{ data?.distribution }}</span>
             </p>
 
             <p class="d-grid w-50">
               % distribución <br />
               ponderada
-              <span class="text-black-50">85%</span>
+              <span class="text-black-50">{{ data?.weightedDistribution }}</span>
             </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+  }
 </div>

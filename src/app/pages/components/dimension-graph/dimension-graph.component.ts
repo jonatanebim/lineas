@@ -24,6 +24,7 @@ HC_more(Highcharts)
 export class DimensionGraphComponent {
   @Input() paretoSkus!: ParetoSkusParticipation
   @Input() topSku!: TopSku
+  @Input() selected!: any
 
   Highcharts: typeof Highcharts = Highcharts
 

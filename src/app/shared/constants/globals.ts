@@ -5,6 +5,13 @@ export const DEFAULT_COLOR = '#B6E7FF'
 export const MAX_CATEGORIES_VIEW = 99
 export const MIN_CATEGORIES_VIEW = 4
 
+export const EMPTY_DOUGHNUT = [
+  {
+    value: 100,
+    label: 'Sin Información',
+  },
+]
+
 export const DEPARTMENTS = [
   {
     name: 'Lambayeque',
