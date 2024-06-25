@@ -9,9 +9,9 @@ const TOKEN =
 export const environment = {
   production: true,
   login: `${urlApiMq}/login`,
-  home: `${urlApiReportes2}/home`,
-  categories: `${urlApiReportes2}/categories`,
-  region: `${urlApiReportes2}/region`,
+  home: `${urlApiReportes}/ReporteHome`,
+  categories: `${urlApiReportes}/ReporteCategorias`,
+  region: `${urlApiReportes}/ReportePorRegion`,
   tokenMq,
   config: {
     interceptor: {

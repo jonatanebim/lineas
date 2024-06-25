@@ -23,6 +23,7 @@ export class ApiInterceptorRequest implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<any | HttpEvent<HttpHandler>> {
     const queryParams = this.filterStore.queryParms()
+    console.log(queryParams);
     const request = req.clone({
       headers: req.url.includes('/User')
         ? req.headers
@@ -31,7 +32,7 @@ export class ApiInterceptorRequest implements HttpInterceptor {
         : req.headers,
       params: req.url.includes('/User')
         ? new HttpParams()
-        : new HttpParams()
+        : req.params
             .set('lineCode', `${queryParams.lineCode || ''}`)
             .set('date', `${queryParams.date || ''}`)
             .set('untilToday', `${queryParams.untilToday}`),

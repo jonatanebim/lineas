@@ -87,7 +87,7 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
     this.globalStore.showLoading()
 
     const filterParams = {
-      ...(this.selectedCategory ? { category: this.selectedCategory } : {}),
+      ...(this.selectedCategory ? { category: this.selectedCategory } : {category: ''}),
     }
     return this.service.getCategoriesReport(filterParams).pipe(
       tap((data: any) => {
