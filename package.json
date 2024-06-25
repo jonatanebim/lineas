@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "build-prod": "ng build --configuration production",
     "install2": "npm install --force",
+    "start-mock": "npx json-server ./mocks/services.json",
     "test": "ng test",
     "lint": "ng lint"
   },
@@ -28,6 +29,7 @@
     "chart.js": "^4.4.2",
     "highcharts": "^11.4.1",
     "highcharts-angular": "^4.0.0",
+    "ngrx-store-localstorage": "^17.0.0",
     "normalize.css": "^8.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

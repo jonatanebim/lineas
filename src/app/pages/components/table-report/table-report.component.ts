@@ -16,6 +16,7 @@ export class TableReportComponent implements OnInit {
   @Input() combined = true
   @Input() isFullSize = true
   @Input() showAll = false
+  @Input() withoutButton = false
   @Input() headers: any
   @Input() values: any = []
   @Input() types: any = []

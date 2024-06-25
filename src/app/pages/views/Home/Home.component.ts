@@ -66,8 +66,6 @@ export class HomeComponent implements AfterViewInit {
   ]
 
   ngAfterViewInit(): void {
-    this.globalStore.showLoading()
-
     this.filterStore.queryParms$.subscribe((data: FilterQuery) => {
       if (data.untilToday) {
         this.globalStore.showLoading()
@@ -78,7 +76,13 @@ export class HomeComponent implements AfterViewInit {
     this.getData().subscribe()
   }
 
+  filter() {
+    this.getData().subscribe()
+  }
+
   getData() {
+    this.globalStore.showLoading()
+
     return this.service.getHomeReport().pipe(
       tap((data: any) => {
         this.cards = data?.cards

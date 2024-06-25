@@ -1,7 +1,7 @@
 <div class="my-region-page">
   <div class="my-region-page__header">
     <div class="d-flex gap-2 animate__animated animate__fadeInDown">
-      <app-card-filter></app-card-filter>
+      <app-card-filter (doFilter)="filter()"></app-card-filter>
       @for(card of cards; track card.id) {
       <app-card-report [data]="card"></app-card-report>
       }

@@ -61,8 +61,6 @@ export class RegionComponent implements AfterViewInit {
   constructor(private route: ActivatedRoute) {}
 
   ngAfterViewInit(): void {
-    this.globalStore.showLoading()
-
     this.route.queryParamMap.subscribe((params: any) => {
       const selected = params?.params.department
       if (selected) {
@@ -77,7 +75,13 @@ export class RegionComponent implements AfterViewInit {
     })
   }
 
+  filter() {
+    this.getData().subscribe()
+  }
+
   getData() {
+    this.globalStore.showLoading()
+
     return this.service.getRegionReport(this.department?.name).pipe(
       tap((data: any) => {
         this.categories = data.evolutionMq?.labels || []

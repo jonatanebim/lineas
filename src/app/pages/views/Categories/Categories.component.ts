@@ -53,14 +53,13 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
   evolutionDataLabels: any
 
   ngAfterViewInit(): void {
-    this.globalStore.showLoading()
-
     this.activateRoute.queryParamMap.subscribe((qParams: any) => {
       const { category, dateAt } = qParams.params
-      console.log('qParams', qParams)
+      console.log('qParams', qParams, category !== undefined)
       this.globalStore.showLoading()
-      if (category) {
+      if (category !== undefined) {
         this.selectedCategory = this.doughnutData[category]
+        console.log(this.doughnutData );
         this.globalStore.reloadCategories.update(() => false)
         this.getData().subscribe()
       } else this.globalStore.reloadCategories.update(() => true)
@@ -69,10 +68,7 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
     this.globalStore.reloadCategories$.subscribe((state) => {
       console.log('state', state)
       if (state) {
-        alert();
         this.globalStore.filterCategories.update(() => null)
-
-        this.globalStore.showLoading()
         this.selectedCategory = null
         this.getData().subscribe()
       }
@@ -83,15 +79,18 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
     this.globalStore.filterCategories.update(() => null)
   }
 
+  filter() {
+    this.getData().subscribe()
+  }
+
   getData() {
+    this.globalStore.showLoading()
+
     const filterParams = {
       ...(this.selectedCategory ? { category: this.selectedCategory } : {}),
     }
     return this.service.getCategoriesReport(filterParams).pipe(
       tap((data: any) => {
-        // console.log(ggg);
-        this.globalStore.hideLoading()
-
         this.cards = data?.cards
         this.doughnutData = data?.categoryParticipation?.doughnut
 
@@ -118,6 +117,8 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
           }
         })
         this.values = data.productsTable.values
+
+        this.globalStore.hideLoading()
       })
     )
   }
