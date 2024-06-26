@@ -18,7 +18,7 @@ export class StackedGraphComponent implements OnInit {
   doughnutChart: any
 
   ngOnInit(): void {
-    this.doughnutChart = this.data.doughnut.map((item: any, key: number) => ({
+    this.doughnutChart = this.data.doughnut.slice(0, 5).map((item: any, key: number) => ({
       label: item.label,
       value: item.percentage,
       color: COLORS[key],

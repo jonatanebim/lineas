@@ -26,7 +26,6 @@ export class ParticipationComponent implements AfterViewInit {
 
   Highcharts: typeof Highcharts = Highcharts
   chartOptions!: Highcharts.Options
-
   onChart = signal(false)
 
   get graphData() {
@@ -175,12 +174,7 @@ export class ParticipationComponent implements AfterViewInit {
                     _selfData.find((i: any) => i.category === this.key)?.totalPercentage
                   }%</p>
                 </div>
-                <div class="datalabelInside" style="    font-size: 12px;
-    color: rgb(96, 100, 105);
-    font-weight: 400;
-    text-shadow: rgb(255, 255, 255) 0px 0px 0px;
-    position: relative;
-    top: -5px;">
+                <div class="datalabelInside" style="font-size: 12px;color: rgb(96, 100, 105);font-weight: 400;text-shadow: rgb(255, 255, 255) 0px 0px 0px;position: relative;top: -5px;">
                   S/ ${this.y} 
                 </div>
               </div>

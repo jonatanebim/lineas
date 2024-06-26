@@ -55,23 +55,9 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this.activateRoute.queryParamMap.subscribe((qParams: any) => {
       const { category, dateAt } = qParams.params
-      console.log('qParams', qParams, category !== undefined)
       this.globalStore.showLoading()
-      if (category !== undefined) {
-        this.selectedCategory = this.doughnutData[category]
-        console.log(this.doughnutData );
-        this.globalStore.reloadCategories.update(() => false)
-        this.getData().subscribe()
-      } else this.globalStore.reloadCategories.update(() => true)
-    })
-
-    this.globalStore.reloadCategories$.subscribe((state) => {
-      console.log('state', state)
-      if (state) {
-        this.globalStore.filterCategories.update(() => null)
-        this.selectedCategory = null
-        this.getData().subscribe()
-      }
+      this.selectedCategory = category
+      this.getData().subscribe()
     })
   }
 
@@ -87,20 +73,16 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
     this.globalStore.showLoading()
 
     const filterParams = {
-      ...(this.selectedCategory ? { category: this.selectedCategory } : {category: ''}),
+      ...(this.selectedCategory ? { category: this.selectedCategory } : { category: '' }),
     }
     return this.service.getCategoriesReport(filterParams).pipe(
       tap((data: any) => {
         this.cards = data?.cards
         this.doughnutData = data?.categoryParticipation?.doughnut
 
-        // CAMBIAR
-        this.evolutionData = this.fillEvolutionSeries(
-          !this.selectedCategory ? data?.evolutionMq : data?.evolutionMqFilter
-        )
-        this.evolutionDataLabels = !this.selectedCategory ? data?.evolutionMq.labels : data?.evolutionMqFilter.labels
-        this.participationData = !this.selectedCategory ? data?.principalCategories : data?.principalCategoriesFilter
-        //
+        this.evolutionData = this.fillEvolutionSeries(data?.evolutionMq)
+        this.evolutionDataLabels =  data?.evolutionMq.labels
+        this.participationData = data?.principalCategories
 
         this.topSku = data?.topSku
         this.paretoSkus = data?.participationPareto

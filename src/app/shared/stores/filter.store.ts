@@ -19,7 +19,7 @@ export class FilterStoreService {
 
   get lastMonths(): any {
     const months = []
-    for (let i = 0; i < 6; i++) {
+    for (let i = 1; i < 7; i++) {
       const today = new Date()
       today.setMonth(today.getMonth() - i)
       today.setDate(1)

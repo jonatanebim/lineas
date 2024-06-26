@@ -83,10 +83,14 @@ export class HomeComponent implements AfterViewInit {
   getData() {
     this.globalStore.showLoading()
 
+    // Mover al  RESET STORE
+    this.participation =null
+
     return this.service.getHomeReport().pipe(
       tap((data: any) => {
         this.cards = data?.cards
         this.participation = data?.categoryParticipation
+
         this.evolution = data?.evolutionMq
         this.regionOportunity = data?.regionOportunity
         this.categories = data.evolutionMq?.labels

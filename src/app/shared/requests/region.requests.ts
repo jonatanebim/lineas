@@ -9,7 +9,13 @@ import { map, tap } from 'rxjs'
 export class RegionRequestsService {
   constructor(private httpClient: HttpClient) {}
 
-  getRegionReport(department: string) {
-    return this.httpClient.get(environment.region).pipe(map((data: any) => data.body))
+  getRegionReport(region: string) {
+    return this.httpClient
+      .get(environment.region, {
+        params: {
+          region: region.toUpperCase(),
+        },
+      })
+      .pipe(map((data: any) => data.body))
   }
 }

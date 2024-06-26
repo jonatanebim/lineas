@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common'
 import { AfterViewInit, Component, effect, inject } from '@angular/core'
 import { RegionRequestsService } from '../../../shared/requests/region.requests'
 import { ActivatedRoute } from '@angular/router'
-import { DEPARTMENTS, EMPTY_DOUGHNUT, TABLE_TOOLTIPS } from '../../../shared/constants/globals'
+import { DEFAULT_DEPARTMENT, DEPARTMENTS, EMPTY_DOUGHNUT, TABLE_TOOLTIPS } from '../../../shared/constants/globals'
 import {
   CardFilterComponent,
   CardReportComponent,
@@ -40,8 +40,8 @@ export class RegionComponent implements AfterViewInit {
   series: Array<any> = []
   doughnutData: any = []
   tableIndicators = []
-  department: any
-  regionOportunity: any;
+  department: any = DEFAULT_DEPARTMENT
+  regionOportunity: any
   provincesTable: any = {
     headers: [],
     values: [],
@@ -63,14 +63,7 @@ export class RegionComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.route.queryParamMap.subscribe((params: any) => {
       const selected = params?.params.department
-      if (selected) {
-        this.department = DEPARTMENTS.find((department: any) => department.name === selected)
-        this.getData().subscribe()
-      }
-    })
-
-    this.globalStore.reloadRegions$.subscribe(() => {
-      this.globalStore.showLoading()
+      if (selected) this.department = DEPARTMENTS.find((department: any) => department.name === selected)
       this.getData().subscribe()
     })
   }
@@ -107,7 +100,7 @@ export class RegionComponent implements AfterViewInit {
           },
         ]
 
-        this.regionOportunity = data?.regionOportunity
+        this.regionOportunity = data?.regionOpportunity
 
         this.categoriesTable.headers = this.transformColumns(data?.categoriesTable.columns)
         this.categoriesTable.values = data?.categoriesTable.values
@@ -118,11 +111,11 @@ export class RegionComponent implements AfterViewInit {
         this.provincesTable.headers = this.transformColumns(data?.provincesTable.columns)
 
         this.provincesTable.values = data?.provincesTable.values
-        this.doughnutData = data?.categoryParticipation?.doughnuts || EMPTY_DOUGHNUT
+        this.doughnutData = data?.provinceParticipation?.doughnuts || EMPTY_DOUGHNUT
 
         this.cards = data?.cards
 
-        setTimeout(() => this.globalStore.hideLoading());
+        setTimeout(() => this.globalStore.hideLoading())
       })
     )
   }

@@ -39,9 +39,10 @@ export class DoughnutVerticalComponent implements OnInit {
       if (this.current !== null && this.current === index) {
         this.globalStore.reloadCategories.update(() => true)
       }
+
       this.router.navigate([paths.dashboard.childrens.categoriesPath], {
         queryParams: {
-          ...(this.current !== index && { category: index }),
+          ...(this.current !== index && { category: this.categories[index].label }),
         },
       })
       this.globalStore.filterCategories.update(() => index)

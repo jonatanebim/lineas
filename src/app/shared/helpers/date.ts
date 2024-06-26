@@ -146,23 +146,23 @@ export function moment(date?: any): Moment {
       const year = this.date.getFullYear()
       let month = this.date.getMonth() + 1
       if (month < 10) {
-        month = +`0${month}`
+        month =`0${month}`
       }
       let day = this.date.getDate()
       if (day < 10) {
-        day = +`0${day}`
+        day = `0${day}`
       }
       let hour = this.date.getHours()
       if (hour < 10) {
-        hour = +`0${hour}`
+        hour = `0${hour}`
       }
       let minute = this.date.getMinutes()
       if (minute < 10) {
-        minute = +`0${minute}`
+        minute = `0${minute}`
       }
       let second = this.date.getSeconds()
       if (second < 10) {
-        second = +`0${second}`
+        second = `0${second}`
       }
 
       const dateFormat = format

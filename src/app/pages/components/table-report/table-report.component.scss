@@ -5,7 +5,7 @@
   position: relative;
   padding: 16px 10px;
   width: 100%;
-  height: calc(100% - 45px);
+  // height: calc(100% - 45px);
   table {
     th {
       background-color: #ddf4ff;
@@ -144,4 +144,9 @@
 app-rank-indicator {
   width: max-content;
   display: block;
+}
+
+.see-more {
+  position: absolute;
+  bottom: -35px;
 }

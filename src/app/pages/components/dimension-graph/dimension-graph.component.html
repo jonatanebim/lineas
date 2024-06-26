@@ -4,7 +4,9 @@
       <div class="col-7 graph">
         <div class="w-100 d-flex justify-content-between h-100">
           <div class="my-dimension-report__bubbles">
-            <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"> </highcharts-chart>
+            @if (chartOptions) {
+              <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"> </highcharts-chart>
+            }
           </div>
           <div class="my-dimension-report__categories">
             <h3 class="sectionTitle">% Participación por SKUs Pareto</h3>

@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleCha
 import { DEPARTMENTS } from '../../../shared/constants/globals'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { GlobalStoreService } from '../../../shared/stores/global.store'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-department-graph',
@@ -16,6 +17,7 @@ export class DepartmentGraphComponent implements OnChanges {
   @Input() data!: any
   @Input() selected!: string
 
+  router = inject(Router)
   loaded = true
   globalStore = inject(GlobalStoreService)
   departments: any = DEPARTMENTS
@@ -35,6 +37,11 @@ export class DepartmentGraphComponent implements OnChanges {
   }
 
   updateView() {
+    this.router.navigate(['dashboard/regiones'], {
+      queryParams: {
+        department: this.departments.find((d: any) => d.value == this.department).name,
+      },
+    })
     this.globalStore.reloadRegions.set(this.department)
   }
 }

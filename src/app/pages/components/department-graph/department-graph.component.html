@@ -16,15 +16,15 @@
         <div class="labels">
           <p class="level mb-4 gap-1 d-flex align-items-center">
             OPORTUNIDAD
-            <span [class]="data?.oportunity">
-              @if (data?.oportunity === 'ALTA') {
+            <span [class]="data?.opportunity">
+              @if (data?.opportunity === 'ALTO') {
               <img src="../../../../assets/icons/green-dot.svg" alt="" />
-              } @else if (data?.oportunity === 'BAJA') {
+              } @else if (data?.opportunity === 'BAJO') {
               <img src="../../../../assets/icons/red-dot.svg" alt="" />
               } @else {
               <img src="../../../../assets/icons/orange-dot.svg" alt="" />
               }
-              {{ data?.oportunity }}
+              {{ data?.opportunity }}
             </span>
           </p>
 

@@ -12,7 +12,16 @@ export const EMPTY_DOUGHNUT = [
   },
 ]
 
+export const DEFAULT_DEPARTMENT = {
+  name: 'Lima',
+  value: 'LI',
+  vector: '../../../../assets/images/departments/Lima.svg',
+  lat: -11.435859005164344,
+  lon: -76.97692578655742,
+}
+
 export const DEPARTMENTS = [
+  DEFAULT_DEPARTMENT,
   {
     name: 'Lambayeque',
     value: 'LAM',
@@ -40,13 +49,6 @@ export const DEPARTMENTS = [
     vector: '../../../../assets/images/departments/Loreto.svg',
     lat: -3.9543411880362864,
     lon: -75.16862333095942,
-  },
-  {
-    name: 'Lima',
-    value: 'LI',
-    vector: '../../../../assets/images/departments/Lima.svg',
-    lat: -11.435859005164344,
-    lon: -76.97692578655742,
   },
   {
     name: 'Pasco',

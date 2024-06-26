@@ -1,6 +1,7 @@
 .my-cc-card {
   max-width: 220px;
   height: 109px;
+  overflow: hidden;
   border-radius: 8px;
   border: 1px solid var(--Grey-4, #d9dde3);
   background: var(--White, #fff);
