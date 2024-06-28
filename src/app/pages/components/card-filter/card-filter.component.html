@@ -2,12 +2,8 @@
   <div class="my-cc-card__wrapper h-100 d-flex flex-wrap align-content-center px-3">
     <div class="d-flex flex-column">
       <img src="../../../../assets/images/logo-2.png" alt="Logo" />
-      <select
-        [(ngModel)]="selected"
-        (ngModelChange)="onChange($event)"
-        title="Mes Seleccionado"
-        [disabled]="isOnCurrent"
-      >
+      <select [(ngModel)]="selected" (ngModelChange)="onChange($event)" title="Mes Seleccionado"
+        [disabled]="isOnCurrent">
         @for (i of filterService.lastMonths; track i.value) {
         <option [ngValue]="i.value">{{ i.date | date : 'MMMM yyyy' }}</option>
         }
@@ -18,7 +14,7 @@
     </div>
   </div>
 
-  <div class="toggle" (click)="toggle()" >
+  <div class="toggle" (click)="toggle()">
     Ver al día @if (isOnCurrent) {
     <i class="icon icon-toggle-on"></i>
     } @else {

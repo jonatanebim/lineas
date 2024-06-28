@@ -1,11 +1,10 @@
 <div class="labels">
   <ul class="list-unstyled">
-    @for (i of categories; track i.label) { @if ($index < viewQuantity) {
-    <li class="d-flex align-items-center">
+    @for (i of categories; track i.label) { @if ($index < viewQuantity) { <li class="d-flex align-items-center">
       <span [style.backgroundColor]="i.color"></span>
-      <p [attr.title]="i.label">{{ i.label }}</p>
-    </li>
-    } }
+      <p [attr.title]="i.label">{{ i.label | lowercase }}</p>
+      </li>
+      } }
   </ul>
 
   @if (categories.length > viewQuantity && !showAll) {

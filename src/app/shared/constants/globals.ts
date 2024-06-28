@@ -1,6 +1,6 @@
-export const COLORS = ['#0050F5', '#00B0FF', '#DEF2FF', '#B6E7FF', '#2CC2FF']
-export const GREY_COLORS = ['#606469', '#8F959D', '#B3B8BF', '#D9DDE3', '#E9ECF2']
-export const DEFAULT_COLOR = '#B6E7FF'
+export const COLORS = ['#0E255D', '#0D3B9B', '#00B0FF', '#0050F5', '#0840C5']
+export const GREY_COLORS = ['#8F959D', '#D9DDE3', '#B3B8BF', '#D9DDE3', '#E9ECF2']
+export const DEFAULT_COLOR = '#B3B8BF'
 
 export const MAX_CATEGORIES_VIEW = 99
 export const MIN_CATEGORIES_VIEW = 4

@@ -22,14 +22,14 @@
       padding: 2px 4px;
       width: 170px;
       &:disabled {
-        opacity: .6;
+        opacity: 0.6;
         background: rgba(0, 0, 0, 0.125);
         border-color: rgba(13, 110, 253, 0.25);
       }
     }
 
     p {
-      color: var(--Grey-2, #8F959D);
+      color: var(--Grey-2, #8f959d);
       font-size: 12px;
       font-style: italic;
       font-weight: 400;

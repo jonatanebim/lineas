@@ -105,7 +105,8 @@ export class DimensionGraphComponent implements OnInit {
             if (index < 2) {
               next.push({
                 value: prev.value,
-                color: index > 1 ? DEFAULT_COLOR : COLORS[index],
+                // color: index > 1 ? DEFAULT_COLOR : COLORS[index],
+                color: COLORS[index],
                 pointPlacement: -10,
               })
             } else {
@@ -115,7 +116,8 @@ export class DimensionGraphComponent implements OnInit {
               } else {
                 next.push({
                   value: prev.value,
-                  color: DEFAULT_COLOR,
+                  // color: DEFAULT_COLOR,
+                  color:  COLORS[index],
                   pointPlacement: -10,
                 })
               }
