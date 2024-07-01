@@ -25,7 +25,7 @@ export const DEPARTMENTS = [
   {
     name: 'Lambayeque',
     value: 'LAM',
-    vector: '../../../../assets/images/departments/Lamb.svg',
+    vector: '../../../../assets/images/departments/Lambayeque.svg',
     lat: -6.2096434645689875,
     lon: -80.3864827073368,
   },

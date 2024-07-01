@@ -10,7 +10,7 @@ export class FilterStoreService {
 
   queryParms = signal({
     lineCode: '11',
-    date: this.lastMonths[0].formated,
+    date: this.lastMonths[1].formated,
     untilToday: false,
     region: '',
   })

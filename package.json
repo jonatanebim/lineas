@@ -30,6 +30,7 @@
     "highcharts": "^11.4.1",
     "highcharts-angular": "^4.0.0",
     "ngrx-store-localstorage": "^17.0.0",
+    "ngx-webstorage": "^18.0.0",
     "normalize.css": "^8.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

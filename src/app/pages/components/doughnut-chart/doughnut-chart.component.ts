@@ -19,7 +19,7 @@ export class DoughnutChartComponent implements AfterViewInit {
   @ViewChild('graph') graph!: ElementRef<any>
 
   globalStore = inject(GlobalStoreService)
-
+  current!: number;
   variants = ['#DEF2FF', '#B6E7FF', '#8F959D']
   doughnutChart!: any[]
 
@@ -50,7 +50,9 @@ export class DoughnutChartComponent implements AfterViewInit {
         },
         onClick: (evt, item) => {
           if (this.withFilter && item.length) {
-            this.selected.emit(item[0].index)
+            this.current = item[0].index
+            console.log(this.current);
+            this.selected.emit(this.current)
           }
         },
       },

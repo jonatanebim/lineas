@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common'
 import { Component, inject } from '@angular/core'
-import { RouterModule } from '@angular/router'
+import { Router, RouterModule } from '@angular/router'
 import { LoadingComponent } from '../../loading/loading.component'
 import { GlobalStoreService } from '../../../stores/global.store'
+import { LocalStorageService } from 'ngx-webstorage'
 
 @Component({
   selector: 'app-content',
@@ -12,7 +13,9 @@ import { GlobalStoreService } from '../../../stores/global.store'
   styleUrl: './content.component.scss',
 })
 export class ContentComponent {
+  router = inject(Router)
   globalStore = inject(GlobalStoreService)
+  localSt = inject(LocalStorageService)
 
   isOpen = false
   navBarItems = [
@@ -41,5 +44,10 @@ export class ContentComponent {
 
   toggleSidebar() {
     this.isOpen = !this.isOpen
+  }
+
+  doLogout() {
+    this.localSt.clear()
+    this.router.navigate(['/'])
   }
 }

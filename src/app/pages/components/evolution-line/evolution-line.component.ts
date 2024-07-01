@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, ViewChild, signal } from '@angular/core'
+import { AfterViewInit, Component, ElementRef, Input, KeyValueDiffers, ViewChild, signal } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { GraphIndicatorComponent } from '../graph-indicator/graph-indicator.component'
 import * as Highcharts from 'highcharts'
@@ -39,11 +39,50 @@ export class EvolutionLineComponent implements AfterViewInit {
         legend: {
           enabled: false,
         },
-        yAxis: {
-          visible: false,
-          enabled: false,
-          startOnTick: true,
-        },
+        yAxis: [
+          {
+            gridLineWidth: 0,
+            title: {
+              text: '',
+            },
+            labels: {
+              format: '',
+              enabled: false,
+            },
+            opposite: true,
+          },
+          {
+            labels: {
+              format: '',
+              enabled: false,
+            },
+            title: {
+              text: '',
+            },
+          },
+          {
+            gridLineWidth: 0,
+            title: {
+              text: '',
+            },
+            labels: {
+              format: '',
+              enabled: false,
+            },
+            opposite: true,
+          },
+          {
+            gridLineWidth: 0,
+            title: {
+              text: '',
+            },
+            labels: {
+              format: '',
+              enabled: false,
+            },
+            opposite: true,
+          },
+        ],
         xAxis: {
           startOnTick: true,
           gridLineWidth: 1,
@@ -64,20 +103,21 @@ export class EvolutionLineComponent implements AfterViewInit {
           borderWidth: 0,
           shadow: false,
           formatter: function () {
+            const e = _selfData.getLabel(this.x)
             return !_selfData?.selected
               ? `
             <div class="float-tooltip">
-              <h2>${this.x}</h2>  
-              <p>Facturación Mdo Digital: <span>S/ 2,283,091</span></p> 
-              <p>Categoría top: <span>Jabón/Gel de manos</span></p> 
+              <h2>${this.x}</h2>
+              <p>Facturación Mdo Digital: <span>S/ ${e.mdo}</span></p>
+              <p>Categoría top: <span>Jabón/Gel de manos</span></p>
             </div>
             `
               : `
             <div class="float-tooltip">
-              <h2>${this.x}</h2>  
-              <p>Facturación Mdo: <span>S/ 2,283,091</span></p> 
-              <p>Cobertura Mdo: <span>Jabón/Gel de manos</span></p> 
-              <p>Nro de pedidos: <span>1,891</span></p> 
+              <h2>${this.x}</h2>
+              <p>Facturación Mdo: <span>S/ ${e.mdo}</span></p>
+              <p>Cobertura Mdo: <span>Jabón/Gel de manos</span></p>
+              <p>Nro de pedidos: <span>1,891</span></p>
             </div>
             `
           },
@@ -102,5 +142,20 @@ export class EvolutionLineComponent implements AfterViewInit {
 
       this.onChart.set(true)
     }, 500)
+  }
+
+  getLabel(key: any) {
+    const item = this.dataLabels.map((f: any, k: number) => (f == key ? k : null)).filter((f: any) => f !== null)[0]
+
+    return this.selected
+      ? {
+          mdo: this.data[0].data[item],
+          coverage: this.data[2].data[item],
+          sales: this.data[3].data[item],
+        }
+      : {
+          mdo: this.data[0].data[item],
+          category: this.data[1].data[item],
+        }
   }
 }

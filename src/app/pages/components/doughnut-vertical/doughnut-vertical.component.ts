@@ -21,6 +21,7 @@ export class DoughnutVerticalComponent implements OnInit {
 
   globalStore = inject(GlobalStoreService)
   router = inject(Router)
+  activeIndex!: number
   current = this.globalStore.filterCategories()
   doughnutChart: any
   categories: any
@@ -36,10 +37,10 @@ export class DoughnutVerticalComponent implements OnInit {
 
   onSelected(index: number) {
     if (this.withFilter) {
+      this.activeIndex = index
       if (this.current !== null && this.current === index) {
         this.globalStore.reloadCategories.update(() => true)
       }
-
       this.router.navigate([paths.dashboard.childrens.categoriesPath], {
         queryParams: {
           ...(this.current !== index && { category: this.categories[index].label }),

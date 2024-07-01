@@ -21,105 +21,9 @@ export class EvolutionChartComponent implements AfterViewInit {
   @ViewChild('chartContainer') chartContainer!: ElementRef<any>
 
   onChart = signal(false)
-  indicators = [
-    {
-      label: 'Far indep periferia',
-      value: 60,
-    },
-    {
-      label: 'Far indep',
-      value: 7,
-    },
-    {
-      label: 'Far oro',
-      value: 20,
-    },
-    {
-      label: 'MAyorista consum',
-      value: 25,
-    },
-  ]
-  headers = [
-    {
-      label: 'Canales',
-      type: '',
-    },
-    {
-      label: 'Vs Ma',
-      type: '',
-    },
-    {
-      label: 'Vs 3um',
-      type: '',
-    },
-  ]
-
-  values = [
-    {
-      columns: [
-        {
-          value: 'Farm. Ind. Periferia',
-          type: '',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-      ],
-    },
-    {
-      columns: [
-        {
-          value: 'Farm. Ind. Periferia',
-          type: '',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-      ],
-    },
-    {
-      columns: [
-        {
-          value: 'Farm. Ind. Periferia',
-          type: '',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-      ],
-    },
-    {
-      columns: [
-        {
-          value: 'Farm. Ind. Periferia',
-          type: '',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-        {
-          value: '',
-          type: 'indicator',
-        },
-      ],
-    },
-  ]
+  indicators: any[] = []
+  headers: any[] = []
+  values: any[] = []
 
   Highcharts: typeof Highcharts = Highcharts
   chartOptions: Highcharts.Options = {}
@@ -131,14 +35,12 @@ export class EvolutionChartComponent implements AfterViewInit {
         height: this.chartContainer.nativeElement.clientHeight - 10,
         spacing: [0, 0, 0, 0],
       },
-
       title: {
         text: '',
       },
       legend: {
         enabled: false,
       },
-
       responsive: {
         rules: [
           {
@@ -178,6 +80,7 @@ export class EvolutionChartComponent implements AfterViewInit {
         {
           gridLineWidth: 0,
           height: '20%',
+          top: '10%',
           title: {
             text: '',
           },
@@ -219,10 +122,7 @@ export class EvolutionChartComponent implements AfterViewInit {
           },
         },
         column: {
-          
-          tooltip: {
-            
-          },
+          tooltip: {},
           dataLabels: {
             // enabled: false,
           },
@@ -241,7 +141,7 @@ export class EvolutionChartComponent implements AfterViewInit {
         formatter: function () {
           const color = this.point.color
           return `
-          <div class="float-tooltip rounded" 
+          <div class="float-tooltip rounded"
             style="padding: 2px 5px; background: ${color === '#B6E7FF' ? '#000' : color}">
             <p class="m-0" style="font-size:11px; color:#fff">${color === '#B6E7FF' ? 'S/' : ''} ${this.y}</p>
           </div>

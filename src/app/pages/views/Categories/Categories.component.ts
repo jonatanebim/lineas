@@ -56,6 +56,11 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
     this.activateRoute.queryParamMap.subscribe((qParams: any) => {
       const { category, dateAt } = qParams.params
       this.globalStore.showLoading()
+
+      if (!category) {
+        this.globalStore.filterCategories.update(() => null)
+      }
+
       this.selectedCategory = category
       this.getData().subscribe()
     })
@@ -78,7 +83,9 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
     return this.service.getCategoriesReport(filterParams).pipe(
       tap((data: any) => {
         this.cards = data?.cards
-        this.doughnutData = data?.categoryParticipation?.doughnut
+        if (!this.selectedCategory) {
+          this.doughnutData = data?.categoryParticipation?.doughnut
+        }
 
         this.evolutionData = this.fillEvolutionSeries(data?.evolutionMq)
         this.evolutionDataLabels =  data?.evolutionMq.labels
@@ -120,6 +127,8 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
         color: COLORS.Grey3Stroke,
         fillColor: COLORS.Grey3Fill,
         data: totalMarket,
+        original: totalMarket,
+        yAxis: 1,
       })
 
       this.evolutionLabels.push({
@@ -134,6 +143,7 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
         color: COLORS.BlueStroke,
         fillColor: COLORS.BlueFill,
         data: totalBdf,
+        yAxis: 2,
       })
 
       this.evolutionLabels.push({
@@ -147,6 +157,7 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
         type: 'spline',
         color: COLORS.Green2,
         data: coverageBdf,
+        yAxis: 3,
       })
 
       this.evolutionLabels.push({
