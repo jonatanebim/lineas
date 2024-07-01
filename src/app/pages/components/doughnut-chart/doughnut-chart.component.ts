@@ -51,7 +51,6 @@ export class DoughnutChartComponent implements AfterViewInit {
         onClick: (evt, item) => {
           if (this.withFilter && item.length) {
             this.current = item[0].index
-            console.log(this.current);
             this.selected.emit(this.current)
           }
         },
@@ -108,9 +107,11 @@ export class DoughnutChartComponent implements AfterViewInit {
 
           let dataValue = ''
           const categoryIndex = $this.globalStore.filterCategories()
-          if (categoryIndex != null) {
-            if (index === categoryIndex) dataValue = `${dataPoint}%`
-          } else dataValue = `${dataPoint}%`
+          if (dataPoint) {
+            if (categoryIndex != null) {
+              if (index === categoryIndex) dataValue = `${dataPoint}%`
+            } else dataValue = `${dataPoint}%`
+          }
 
           ctx.fillText(dataValue, x, y)
         })

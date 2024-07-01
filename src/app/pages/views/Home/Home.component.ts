@@ -67,10 +67,7 @@ export class HomeComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.filterStore.queryParms$.subscribe((data: FilterQuery) => {
-      if (data.untilToday) {
-        this.globalStore.showLoading()
-        this.getData().subscribe()
-      }
+      if (data.untilToday) this.getData().subscribe()
     })
 
     this.getData().subscribe()
@@ -83,8 +80,7 @@ export class HomeComponent implements AfterViewInit {
   getData() {
     this.globalStore.showLoading()
 
-    // Mover al  RESET STORE
-    this.participation =null
+    this.participation = null
 
     return this.service.getHomeReport().pipe(
       tap((data: any) => {

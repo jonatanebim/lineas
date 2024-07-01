@@ -1,5 +1,6 @@
 <div class="my-home-page">
   <div class="my-home-page__header">
+    @if (!globalStore.isLoading()) {
     <div class="d-flex gap-2 animate__animated animate__fadeInDown">
       <app-card-filter (doFilter)="filter()"></app-card-filter>
       @for(card of cards; track card.id) {
@@ -7,7 +8,6 @@
       }
     </div>
 
-    @if (participation) {
     <div class="d-flex w-100 gap-2 my-3">
       <app-evolution-chart class="animate__animated animate__fadeInLeft animate__delay" [withTopLabels]="false"
         [categories]="categories" [series]="series"></app-evolution-chart>

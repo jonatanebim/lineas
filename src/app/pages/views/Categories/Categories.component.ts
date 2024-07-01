@@ -54,14 +54,11 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.activateRoute.queryParamMap.subscribe((qParams: any) => {
-      const { category, dateAt } = qParams.params
-      this.globalStore.showLoading()
-
-      if (!category) {
+      if (!qParams.params?.category) {
         this.globalStore.filterCategories.update(() => null)
       }
 
-      this.selectedCategory = category
+      this.selectedCategory = qParams.params?.category
       this.getData().subscribe()
     })
   }
@@ -88,7 +85,7 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
         }
 
         this.evolutionData = this.fillEvolutionSeries(data?.evolutionMq)
-        this.evolutionDataLabels =  data?.evolutionMq.labels
+        this.evolutionDataLabels = data?.evolutionMq.labels
         this.participationData = data?.principalCategories
 
         this.topSku = data?.topSku

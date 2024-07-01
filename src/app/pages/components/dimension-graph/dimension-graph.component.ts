@@ -31,8 +31,6 @@ export class DimensionGraphComponent implements OnInit {
   chartOptions!: Highcharts.Options
 
   ngOnInit(): void {
-    console.log(this.paretoSkus.categories)
-
     this.chartOptions = {
       title: {
         text: '',

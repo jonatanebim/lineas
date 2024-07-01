@@ -20,10 +20,10 @@ export class GlobalStoreService {
   reloadCategories$ = toObservable(this.reloadCategories)
 
   showLoading() {
-    setTimeout(() => this.isLoading.set(true))
+    this.isLoading.set(true)
   }
 
   hideLoading() {
-    this.isLoading.set(false)
+    setTimeout(() => this.isLoading.set(false))
   }
 }

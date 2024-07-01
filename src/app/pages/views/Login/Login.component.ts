@@ -21,8 +21,8 @@ export class LoginComponent implements AfterViewInit {
   localSt = inject(LocalStorageService)
 
   fg = this.fb.group({
-    username: ['abbott.linea', [Validators.required]],
-    password: ['10073011341N', [Validators.required]],
+    username: ['usuario.unilever', [Validators.required]],
+    password: ['usuario.unilever', [Validators.required]],
     remember: [true],
   })
 
@@ -45,7 +45,6 @@ export class LoginComponent implements AfterViewInit {
       .login(this.u, this.pwd)
       .pipe(
         catchError((error: any) => {
-          console.error(error)
           return of(error)
         })
       )

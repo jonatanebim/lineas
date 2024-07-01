@@ -1,5 +1,5 @@
 <div class="my-categories-page">
-  @if (cards?.length) {
+  @if (!globalStore.isLoading()) {
   <div class="my-categories-page__header">
     <div class="d-flex gap-2 animate__animated animate__fadeInDown">
       <app-card-filter (doFilter)="filter()"></app-card-filter>
@@ -9,7 +9,6 @@
     </div>
 
     <div class="d-flex gap-2 mt-2">
-      @if(!globalStore.isLoading()) {
       <div class="my-categories-page__stacked">
         <app-doughnut-vertical [withFilter]="true" [data]="doughnutData"
           class="d-block animate__animated animate__fadeInLeft animate__delay"></app-doughnut-vertical>
@@ -33,7 +32,6 @@
         <app-dimension-graph class="animate__animated animate__fadeInUp animate__delay-3s" [paretoSkus]="paretoSkus"
           [selected]="selectedCategory" [topSku]="topSku"></app-dimension-graph>
       </div>
-      }
     </div>
 
     <div class="d-flex mt-2 animate__animated animate__fadeInUp animate__delay-2s">

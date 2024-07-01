@@ -9,7 +9,11 @@ export class CommonsRequestsService {
 
   login(u: string, pwd: string) {
     return this.httpClient
-      .get(`https://apiqa.quimicasuiza.com:8587/User/GetUserInfo/v1?ruc=${u}&password=${pwd}`)
+      .post(`https://apiqa.quimicasuiza.com:8587/User/Login/v1`, {
+        userName: u,
+        password: pwd,
+        organization: '',
+      })
       .pipe()
   }
 
