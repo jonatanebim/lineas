@@ -24,6 +24,6 @@ export class GlobalStoreService {
   }
 
   hideLoading() {
-    setTimeout(() => this.isLoading.set(false))
+    setTimeout(() => this.isLoading.set(false), 1500)
   }
 }

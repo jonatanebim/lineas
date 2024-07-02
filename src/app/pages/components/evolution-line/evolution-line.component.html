@@ -1,6 +1,6 @@
 <div class="my-evolution-line">
   <h2 class="sectionTitle m-0">{{ title }}</h2>
-  <div class="chart" #chartContainer>
+  <div class="chart" #chartContainerLine>
     @if(onChart()) {
     <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"> </highcharts-chart>
     }

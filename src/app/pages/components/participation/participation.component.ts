@@ -38,7 +38,7 @@ export class ParticipationComponent implements AfterViewInit {
       chart: {
         width: this.chartContainer.nativeElement.clientWidth,
         height: 187,
-        spacing: [0, 0, 0, 0],
+        spacing: [20, 0, 0, 0],
       },
       title: {
         text: '',
@@ -47,6 +47,7 @@ export class ParticipationComponent implements AfterViewInit {
         enabled: false,
       },
       yAxis: {
+        opposite: true,
         labels: {
           enabled: false,
         },
@@ -58,7 +59,6 @@ export class ParticipationComponent implements AfterViewInit {
         type: 'category',
         startOnTick: true,
         labels: {
-          distance: 4,
           rotation: 0,
           style: {
             fontSize: '10px',
@@ -90,6 +90,7 @@ export class ParticipationComponent implements AfterViewInit {
           dataLabels: {
             inside: false,
             enabled: true,
+            zIndex: 6,
             y: -20,
             useHTML: true,
             formatter: function () {
@@ -115,6 +116,7 @@ export class ParticipationComponent implements AfterViewInit {
           dataLabels: {
             enabled: true,
             inside: false,
+            overflow: 'allow',
             allowOverlap: true,
             useHTML: true,
             formatter: function () {
@@ -145,6 +147,7 @@ export class ParticipationComponent implements AfterViewInit {
             inside: false,
             enabled: true,
             y: -20,
+            x: -10,
             useHTML: true,
             formatter: function () {
               return `
@@ -166,9 +169,10 @@ export class ParticipationComponent implements AfterViewInit {
             inside: false,
             allowOverlap: true,
             useHTML: true,
+            x: -10,
             formatter: function () {
               return `
-              <div class="text-center" style="width: 50px;position: relative">
+              <div class="text-center" style="width: 50px;left: 13px;position: relative">
                 <div class="datalabel" style="position: relative;">
                   <p class="percentage text-center" style="text-shadow: 0 0 0  #fff;margin: 0;">${
                     _selfData.find((i: any) => i.category === this.key)?.totalPercentage
@@ -185,6 +189,8 @@ export class ParticipationComponent implements AfterViewInit {
       ]
     }
 
-    this.onChart.set(true)
+    setTimeout(() => {
+      this.onChart.set(true)
+    }, 500)
   }
 }

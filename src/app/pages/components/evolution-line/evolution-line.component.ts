@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, KeyValueDiffers, ViewChild, signal } from '@angular/core'
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild, signal } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { GraphIndicatorComponent } from '../graph-indicator/graph-indicator.component'
 import * as Highcharts from 'highcharts'
@@ -11,8 +11,8 @@ import { HighchartsChartModule } from 'highcharts-angular'
   templateUrl: './evolution-line.component.html',
   styleUrls: ['./evolution-line.component.scss'],
 })
-export class EvolutionLineComponent implements AfterViewInit {
-  @ViewChild('chartContainer') chartContainer!: ElementRef<any>
+export class EvolutionLineComponent implements OnInit {
+  @ViewChild('chartContainerLine') chartContainer!: ElementRef<any>
 
   @Input() title: string = 'Evolutivo MQ'
   @Input() selected: any
@@ -24,13 +24,17 @@ export class EvolutionLineComponent implements AfterViewInit {
   chartOptions: Highcharts.Options = {}
   onChart = signal(false)
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     const _selfData = this
+    this.onChart.set(false)
+
+    console.log(555555)
+
     setTimeout(() => {
       this.chartOptions = {
         chart: {
-          width: this.chartContainer.nativeElement.clientWidth,
-          height: this.chartContainer.nativeElement.clientHeight,
+          width: this.chartContainer?.nativeElement.clientWidth,
+          height: this.chartContainer?.nativeElement.clientHeight,
           spacing: [0, 0, 0, 0],
         },
         title: {
@@ -45,11 +49,11 @@ export class EvolutionLineComponent implements AfterViewInit {
             title: {
               text: '',
             },
+            top: 0,
             labels: {
               format: '',
               enabled: false,
             },
-            opposite: true,
           },
           {
             labels: {
@@ -69,7 +73,6 @@ export class EvolutionLineComponent implements AfterViewInit {
               format: '',
               enabled: false,
             },
-            opposite: true,
           },
           {
             gridLineWidth: 0,
@@ -80,7 +83,6 @@ export class EvolutionLineComponent implements AfterViewInit {
               format: '',
               enabled: false,
             },
-            opposite: true,
           },
         ],
         xAxis: {
@@ -139,9 +141,8 @@ export class EvolutionLineComponent implements AfterViewInit {
         },
         series: this.data,
       }
-
       this.onChart.set(true)
-    }, 500)
+    }, 1000)
   }
 
   getLabel(key: any) {

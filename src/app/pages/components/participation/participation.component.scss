@@ -14,7 +14,6 @@
 
 :host {
   ::ng-deep {
-
     .single {
       .highcharts-series-1 {
         .highcharts-data-label {
@@ -32,6 +31,26 @@
         line-height: 22px; /* 137.5% */
         letter-spacing: 0.4px;
         text-transform: uppercase;
+      }
+    }
+
+    .my-participation__indicators {
+      &.single {
+        .graph__indicator {
+          width: 105px;
+          padding: 4px 3px !important;
+        }
+  
+        .graph__indicator p {
+          text-overflow: ellipsis !important;
+          white-space: pre-wrap !important;
+          gap: 0px !important;
+          line-height: 1;
+        }
+        .graph__indicator p span {
+          position: relative;
+          margin-right: 5px;
+        }
       }
     }
   }

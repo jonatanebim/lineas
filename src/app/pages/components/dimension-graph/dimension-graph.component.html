@@ -5,7 +5,7 @@
         <div class="w-100 d-flex justify-content-between h-100">
           <div class="my-dimension-report__bubbles">
             @if (chartOptions) {
-              <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"> </highcharts-chart>
+            <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"> </highcharts-chart>
             }
           </div>
           <div class="my-dimension-report__categories">
@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="col-5 ps-3">
-        <h3 class="sectionTitle">Top SKU - {{ selected ? selected?.label : 'Total Categorías' }}</h3>
+        <h3 class="sectionTitle text-capitalize">Top SKU - {{ selected ? (selected | lowercase) : 'Total Categorías' }}</h3>
         <div class="report-top d-flex">
           <img
             [src]="!topSkuImage ? topSkuImage : '../../../../assets/images/logo-top.png'"

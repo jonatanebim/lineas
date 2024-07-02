@@ -1,12 +1,15 @@
 <div class="my-participation d-flex flex-column">
-  <h2 class="sectionTitle">{{ title }}</h2>
+  <h2 class="sectionTitle text-capitalize">{{ title }}</h2>
 
   <div class="my-participation__graph" [ngClass]="{ single: this.data.length === 1 }" #chartContainer>
     @if(onChart()) {
     <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"> </highcharts-chart>
     }
   </div>
-  <div class="my-participation__indicators d-flex gap-2 pt-2 pb-0 justify-content-center flex-wrap">
+  <div
+    class="my-participation__indicators d-flex gap-2 pt-2 pb-0 justify-content-center"
+    [ngClass]="{ single: this.data.length === 1 }"
+  >
     <app-graph-indicator label="Facturación Total Mdo Digital" color="#B3B8BF"></app-graph-indicator>
     <app-graph-indicator label="Facturación BDF" color="#0050F5"></app-graph-indicator>
   </div>

@@ -1,4 +1,5 @@
 <div class="wrapper">
+  @if(!globalStore.isLoading()) {
   <div class="my-sidebar" [ngClass]="{ open: isOpen }" (mouseenter)="toggleSidebar()" (mouseleave)="toggleSidebar()">
     <div class="my-sidebar__logo">
       <img src="../../../../../assets/images/logo.png" alt="Mi quimica" />
@@ -7,9 +8,14 @@
     <div class="my-sidebar__navbar d-flex flex-column justify-content-between pt-5 mt-3">
       <ul class="list-unstyled m-0">
         @for ( i of navBarItems; track i) {
-        <li class="action d-flex gap-1 mb-3 pb-1 align-items-center position-relative" [ngClass]="{ inactive: i.pro }"
-          [routerLink]="['/dashboard/' + i.path]" routerLinkActive="router-link-active"
-          [routerLinkActiveOptions]="{ exact: true }">
+        <li
+          class="action d-flex gap-1 mb-3 pb-1 align-items-center position-relative"
+          [ngClass]="{ inactive: i.pro }"
+          [routerLink]="['/dashboard/' + i.path]"
+          routerLinkActive="router-link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="toggleSidebar()"
+        >
           <!-- <img [src]="'../../../../../assets/icons/' + i.icon" alt="" /> -->
           <i [attr.class]="'icon ' + i.icon"></i>
           <ng-container *ngIf="isOpen">
@@ -27,8 +33,10 @@
           <span class="fs-x2"> exportar data </span>
         </li>
 
-        <li class="action action-logout d-flex gap-1 mt-5 mb-3 pb-1 align-items-center position-relative"
-          (click)="doLogout()">
+        <li
+          class="action action-logout d-flex gap-1 mt-5 mb-3 pb-1 align-items-center position-relative"
+          (click)="doLogout()"
+        >
           <img src="../../../../../assets/icons/logout-icon.svg" alt="" />
           <span class="fs-x2"> Cerrar sesión </span>
         </li>
@@ -47,6 +55,7 @@
       }
     </div>
   </div>
+  }
 
   <div class="my-content py-4">
     <div class="wrapper">
