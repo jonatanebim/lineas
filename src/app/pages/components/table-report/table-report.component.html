@@ -53,7 +53,7 @@
     </table>
   </div>
 
-  @if (values.length > 4 && !withoutButton) {
+  @if (values.length > 4 && values.length !== 5 && !withoutButton) {
   <div class="see-more w-100 text-center">
     <app-see-more [isActive]="quantity === values.length" (toggle)="seeAll($event)"></app-see-more>
   </div>

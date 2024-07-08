@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/views/Home/Home.component'
 import { RegionComponent } from './pages/views/Region/Region.component'
 import { CategoriesComponent } from './pages/views/Categories/Categories.component'
 import { canActiveGuard } from './shared/guards/can-active.guard'
+import { CompetenciesComponent } from './pages/views/Competencies/Competencies.component'
 
 const scrollConfig: InMemoryScrollingOptions = {
   scrollPositionRestoration: 'top',
@@ -40,6 +41,10 @@ export const routes: Routes = [
       {
         path: Paths.dashboard.childrens.regions,
         component: RegionComponent,
+      },
+      {
+        path: Paths.dashboard.childrens.competencies,
+        component: CompetenciesComponent,
       },
     ],
   },

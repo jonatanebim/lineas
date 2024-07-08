@@ -36,7 +36,7 @@ export class ContentComponent {
     },
     {
       icon: 'icon-pro',
-      path: '',
+      path: 'competencias',
       label: 'Oportunidad de Competencia',
       pro: true,
     },

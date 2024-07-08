@@ -20,11 +20,10 @@ export class TableReportComponent implements OnInit {
   @Input() headers: any
   @Input() values: any = []
   @Input() types: any = []
-
-  quantity = 3
+  @Input() quantity = 4
 
   ngOnInit() {
-    this.quantity = this.showAll ? this.values.length : 3
+    this.quantity = this.showAll ? this.values.length : 4
   }
 
   isStatus(columnName: string) {
@@ -40,6 +39,6 @@ export class TableReportComponent implements OnInit {
   }
 
   seeAll($event: boolean) {
-    this.quantity = $event ? this.values.length : 3
+    this.quantity = $event ? this.values.length : 4
   }
 }

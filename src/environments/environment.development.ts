@@ -12,6 +12,7 @@ export const environment = {
   home: `${urlApiReportes}/ReporteHome`,
   categories: `${urlApiReportes}/ReporteCategorias`,
   region: `${urlApiReportes}/ReportePorRegion`,
+  competencies: `${urlApiReportes2}/competencies`,
   tokenMq,
   config: {
     interceptor: {

@@ -1,0 +1,13 @@
+<div class="my-categories-page">
+  @if (!globalStore.isLoading()) {
+  <div class="my-categories-page__header">
+    <div class="d-flex gap-2 animate__animated animate__fadeInDown">
+      <app-card-filter (doFilter)="filter()"></app-card-filter>
+      @for(card of cards; track card.id) {
+      <app-card-report [data]="card"></app-card-report>
+      }
+    </div>
+
+  </div>
+  }
+</div>
