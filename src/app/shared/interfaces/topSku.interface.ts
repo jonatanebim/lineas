@@ -1,5 +1,6 @@
 export interface TopSku {
   productLogo: string;
+  productLogoDefault: string;
   product: string;
   billing: SkuBilling;
   ranking: SkuRanking;

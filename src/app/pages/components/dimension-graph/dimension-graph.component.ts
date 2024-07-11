@@ -136,6 +136,6 @@ export class DimensionGraphComponent implements OnInit {
   }
 
   get topSkuImage() {
-    return this.topSku.productLogo || DEFAULT_SKU_IMAGE
+    return this.topSku.productLogo || this.topSku.productLogoDefault
   }
 }

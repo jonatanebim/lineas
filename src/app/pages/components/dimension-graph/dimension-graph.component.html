@@ -18,7 +18,7 @@
         <h3 class="sectionTitle text-capitalize">Top SKU - {{ selected ? (selected | lowercase) : 'Total Categorías' }}</h3>
         <div class="report-top d-flex">
           <img
-            [src]="!topSkuImage ? topSkuImage : '../../../../assets/images/logo-top.png'"
+            [src]="topSkuImage ? topSkuImage : '../../../../assets/images/logo-top.png'"
             [attr.alt]="topSku.product"
             [attr.title]="topSku.product"
           />
