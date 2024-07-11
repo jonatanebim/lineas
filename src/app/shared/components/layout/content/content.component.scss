@@ -22,7 +22,6 @@
             position: inherit;
           }
         }
-
         &__navbar {
           ul {
             align-items: start;
@@ -30,13 +29,8 @@
               display: block;
             }
           }
-
           .action {
             &-download {
-              i,
-              span {
-                color: #0050f5 !important;
-              }
               span {
                 position: relative;
                 top: 1px;
@@ -50,6 +44,13 @@
               padding-bottom: 0 !important;
               text-transform: uppercase;
               font-size: 10px;
+              &.process {
+                width: 100%;
+                border: 1px solid var(--Dark-Blue-4, #1e2a3a);
+                span {
+                  color: var(--Dark-Blue-4, #1e2a3a) !important;
+                }
+              }
             }
           }
         }
@@ -91,7 +92,7 @@
         }
         em {
           border-radius: 16px;
-          background: #0050f5;
+          background: #00b0ff;
           color: #fff;
           font-size: 10px;
           font-weight: 800;
@@ -112,7 +113,8 @@
         &.inactive {
           border-bottom: none !important;
           &:hover {
-            span, > i {
+            span,
+            > i {
               color: #b3b8bf;
             }
             span {
@@ -145,6 +147,9 @@
           span {
             display: none;
           }
+          img {
+            animation: rotating 1s linear infinite;
+          }
           border: 1px solid #0050f5;
           border-radius: 20px;
           width: 40px;
@@ -153,9 +158,12 @@
           justify-content: center;
           text-transform: uppercase;
           font-size: 10px;
+          &.process {
+            border: 1px solid var(--Dark-Blue-4, #1e2a3a);
+          }
         }
 
-        &-logout{
+        &-logout {
           span {
             color: #0050f5 !important;
           }
@@ -206,6 +214,28 @@
     .wrapper {
       max-width: 1185px;
       margin: 0 auto;
+    }
+  }
+}
+
+.download {
+  &__success {
+    border-radius: 6px;
+    background: #0e255d;
+    box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+    padding: 7px;
+    p {
+      color: #fff;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 20px; /* 160% */
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      padding: 0 22px 0 8px;
+    }
+    .pointer {
+      cursor: pointer;
     }
   }
 }

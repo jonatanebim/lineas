@@ -53,6 +53,9 @@
     }
 
     tr {
+      &.row-odd {
+        background: #f7fcff;
+      }
       &:hover {
         td {
           p {
@@ -66,6 +69,18 @@
       font-size: 12px;
       color: var(--Grey-2, #8f959d);
       padding: 4px 5px;
+
+      &.parent {
+        p {
+          font-weight: 600;
+          color: #00b0ff !important;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 20px;
+          letter-spacing: 0.2px;
+        }
+      }
 
       a {
         color: #8f959d;
@@ -134,6 +149,22 @@
           color: #43b748 !important;
           span {
             background: #43b748;
+          }
+        }
+      }
+    }
+
+    .children {
+      td:nth-child(1) {
+        padding-left: 1rem;
+        p {
+          display: list-item;
+          &::marker {
+            content: '•';
+            font: 1.2em/1 sans-serif;
+          }
+          span {
+            padding-left: 5px;
           }
         }
       }

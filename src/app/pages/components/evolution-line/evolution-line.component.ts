@@ -15,6 +15,7 @@ export class EvolutionLineComponent implements OnInit {
   @ViewChild('chartContainerLine') chartContainer!: ElementRef<any>
 
   @Input() title: string = 'Evolutivo MQ'
+  @Input() withoutFilter!: boolean
   @Input() selected: any
   @Input() labels: any
   @Input() dataLabels: any
@@ -27,8 +28,6 @@ export class EvolutionLineComponent implements OnInit {
   ngOnInit(): void {
     const _selfData = this
     this.onChart.set(false)
-
-    console.log(555555)
 
     setTimeout(() => {
       this.chartOptions = {
@@ -106,7 +105,7 @@ export class EvolutionLineComponent implements OnInit {
           shadow: false,
           formatter: function () {
             const e = _selfData.getLabel(this.x)
-            return !_selfData?.selected
+            return !_selfData?.selected && _selfData.withoutFilter
               ? `
             <div class="float-tooltip">
               <h2>${this.x}</h2>
@@ -148,7 +147,7 @@ export class EvolutionLineComponent implements OnInit {
   getLabel(key: any) {
     const item = this.dataLabels.map((f: any, k: number) => (f == key ? k : null)).filter((f: any) => f !== null)[0]
 
-    return this.selected
+    return this.selected && !this.withoutFilter
       ? {
           mdo: this.data[0].data[item],
           coverage: this.data[2].data[item],

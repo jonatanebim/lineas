@@ -78,6 +78,15 @@
                 }
               }
 
+              &.EMPTY,
+              &__empty {
+                background: var(--Grey-5, #e9ecf2);
+                color: var(--Grey-2, #8f959d) !important;
+                span {
+                  background: var(--Grey-5, #e9ecf2);
+                }
+              }
+
               &.ALTA,
               &__si {
                 background: #e4ffeb;

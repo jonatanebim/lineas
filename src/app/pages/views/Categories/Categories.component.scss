@@ -1,6 +1,7 @@
 .my-categories-page {
   &__stacked {
     width: 220px;
+    min-width: 220px;
   }
 }
 
@@ -12,6 +13,7 @@ app-table-report {
 }
 
 .evolution {
+  height: 280px;
   app-evolution-line {
     width: calc(100% - 450px) !important;
   }

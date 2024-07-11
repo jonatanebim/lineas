@@ -10,6 +10,7 @@ export default {
       categories: 'categorias',
       categoriesPath: `${BASE}/categorias`,
       competencies: 'competencias',
+      competenciesPath: `${BASE}/competencias`,
       regions: 'regiones',
       regionsPath: `${BASE}/regiones`,
     },

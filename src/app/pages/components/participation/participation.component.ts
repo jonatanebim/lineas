@@ -21,6 +21,7 @@ export class ParticipationComponent implements AfterViewInit {
   @Input() data: any
   @Input() title!: string
   @Input() selected!: any
+  @Input() fullSize!: boolean
 
   @ViewChild('chartContainer') chartContainer!: ElementRef<any>
 
@@ -34,10 +35,11 @@ export class ParticipationComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const _selfData = this.graphData
+    const _self = this
     this.chartOptions = {
       chart: {
-        width: this.chartContainer.nativeElement.clientWidth,
-        height: 187,
+        width: this.chartContainer?.nativeElement.clientWidth,
+        height: this.fullSize ? this.chartContainer?.nativeElement.clientHeight : 187,
         spacing: [20, 0, 0, 0],
       },
       title: {
@@ -97,12 +99,26 @@ export class ParticipationComponent implements AfterViewInit {
               const xData = _selfData[this.point.index].columns[1]
               const yData = this.y || 0
               const translate = yData - xData > 100
-              return `
+              return _self.fullSize
+                ? `
+              <div class="text-center" style="width: 50px;position: relative;top: -7px;">
+                <div class="datalabel" style="position: relative; top: 5px">
+                  <p class="percentage gray text-center" style="font-size: 12px;text-shadow: 0 0 0  #fff;">${
+                    _selfData.find((i: any) => i.category === this.key)?.bdfPercentage || 0
+                  }%</p>
+                </div>
+                <br/>
+                <div class="datalabelInside" style="position: absolute; bottom:15px; font-size:10px;color: #606469; font-weight: 400;text-shadow: 0 0 0  #fff;">
+                   S/ ${this.y}
+                </div>
+              </div>
+              `
+                : `
               <div class="text-center" style="width: 50px;height: 100%;position: relative;${
                 !translate && 'top: -30px;'
               }">
-                <div class="datalabelInside" style="position: absolute; font-size:10px;color: #606469; font-weight: 400;text-shadow: 0 0 0  #fff;"">
-                   S/ ${this.y}  
+                <div class="datalabelInside" style="position: absolute; font-size:10px;color: #606469; font-weight: 400;text-shadow: 0 0 0  #fff;">
+                   S/ ${this.y}
                 </div>
               </div>
               `
@@ -129,7 +145,7 @@ export class ParticipationComponent implements AfterViewInit {
                 </div>
                 <br/>
                 <div class="datalabelInside" style="position: absolute; width: 100%; top: 40px; font-size:10px;color: #606469; font-weight: 400;text-shadow: 0 0 0  #fff;"">
-                  S/ ${this.y} 
+                  S/ ${this.y}
                 </div>
               </div>
               `
@@ -153,7 +169,7 @@ export class ParticipationComponent implements AfterViewInit {
               return `
               <div class="text-center" style="width: 50px;height: 100%;position: relative;">
                 <div class="datalabelInside" style="position: relative;width: 100%;font-size: 12px;color: rgb(96, 100, 105);font-weight: 400;text-shadow: rgb(255, 255, 255) 0px 0px 0px;">
-                   S/ ${this.y}  
+                   S/ ${this.y}
                 </div>
               </div>
               `
@@ -179,7 +195,7 @@ export class ParticipationComponent implements AfterViewInit {
                   }%</p>
                 </div>
                 <div class="datalabelInside" style="font-size: 12px;color: rgb(96, 100, 105);font-weight: 400;text-shadow: rgb(255, 255, 255) 0px 0px 0px;position: relative;top: -5px;">
-                  S/ ${this.y} 
+                  S/ ${this.y}
                 </div>
               </div>
               `

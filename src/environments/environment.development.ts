@@ -1,5 +1,4 @@
 const urlApiReportes = 'https://apimqp-quimicasuiza.farmaciasperuanas.pe/mqclient/v1/Report'
-const urlApiReportes2 = 'http://localhost:3000'
 const urlApiMq = 'https://apiqa.quimicasuiza.com:8587'
 const tokenMq = '#tokenMq'
 
@@ -12,7 +11,8 @@ export const environment = {
   home: `${urlApiReportes}/ReporteHome`,
   categories: `${urlApiReportes}/ReporteCategorias`,
   region: `${urlApiReportes}/ReportePorRegion`,
-  competencies: `${urlApiReportes2}/competencies`,
+  competencies: `${urlApiReportes}/ReportePremiun`,
+  report: `${urlApiReportes}/ReporteDescarga`,
   tokenMq,
   config: {
     interceptor: {

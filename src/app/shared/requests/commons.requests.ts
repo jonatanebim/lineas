@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
+import { environment } from '../../../environments/environment.development'
+import { map } from 'rxjs'
 
 @Injectable({
   providedIn: 'root',
@@ -19,5 +21,9 @@ export class CommonsRequestsService {
 
   getMapVector() {
     return this.httpClient.get('https://code.highcharts.com/mapdata/countries/pe/pe-all.topo.json').pipe()
+  }
+
+  downloadReport() {
+    return this.httpClient.get(environment.report).pipe(map((data: any) => data.body))
   }
 }

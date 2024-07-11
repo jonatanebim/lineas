@@ -4,8 +4,9 @@
       <img src="../../../../assets/images/logo-2.png" alt="Logo" />
       <select [(ngModel)]="selected" (ngModelChange)="onChange($event)" title="Mes Seleccionado"
         [disabled]="isOnCurrent">
-        @for (i of filterService.lastMonths; track i.value) {
-        <option [ngValue]="i.value">{{ i.date | date : 'MMMM yyyy' }}</option>
+        <option [ngValue]="null">--</option>
+        @for (i of filterService.getLastMonths(); track i.value) {
+        <option [value]="i.value" [attr.selected]="i.value === selected">{{ i.date | date : 'MMMM yyyy' }}</option>
         }
       </select>
       @if (isOnCurrent) {

@@ -22,6 +22,9 @@
       color: var(--Grey-2, #8f959d);
       font-size: 12px;
       font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
     }
 
     .indicators {

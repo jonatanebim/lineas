@@ -1,13 +1,13 @@
 <div class="my-region-page">
   <div class="my-region-page__header">
-    <div class="d-flex gap-2 animate__animated animate__fadeInDown">
-      <app-card-filter (doFilter)="filter()"></app-card-filter>
-      @for(card of cards; track card.id) {
-      <app-card-report [data]="card"></app-card-report>
-      }
-    </div>
-
     @if (!globalStore.isLoading()) {
+      <div class="d-flex gap-2 animate__animated animate__fadeInDown">
+        <app-card-filter (doFilter)="filter()"></app-card-filter>
+        @for(card of cards; track card.id) {
+        <app-card-report [data]="card"></app-card-report>
+        }
+      </div>
+
     <div class="d-flex w-100 gap-2 my-3">
       <app-department-graph
         class="animate__animated animate__fadeInLeft animate__delay"

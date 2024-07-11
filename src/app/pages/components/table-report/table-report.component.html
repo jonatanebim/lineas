@@ -4,14 +4,10 @@
       <thead>
         <tr>
           @for (h of headers; track h) {
-          <th
-            [ngStyle]="{
+          <th [ngStyle]="{
               backgroundColor: h.color,
               color: h.color && 'white'
-            }"
-            [ngClass]="{ 'w-label': h.tooltip }"
-            [attr.data-label]="h.tooltip"
-          >
+            }" [ngClass]="{ 'w-label': h.tooltip }" [attr.data-label]="h.tooltip">
             {{ h.label }}
           </th>
           }
@@ -24,31 +20,51 @@
             <p class="w-100 text-center pt-4">No pudimos encontrar ningún resultado para tu búsqueda.</p>
           </td>
         </tr>
-        } @for (i of values; track i) { @if($index <= quantity) {
-        <tr>
+        } @for (i of values; track i; let index = $index;) {
+
+        @if(index <= quantity) { <tr [ngClass]="{'row-odd': i.brands?.length && index%2}">
           @for (c of headers; track c) {
-          <td>
+          <td [ngClass]="{parent: i.brands?.length}">
             @if (isIndicator(c.columnName)) {
             <app-rank-indicator [data]="{ value: i[c.columnName] }" [withHeader]="false"></app-rank-indicator>
             } @else { @if (c.columnName === 'skus') {
             <a [routerLink]="['/path']">Ver detalle de SKU <i class="icon icon-right"></i> </a>
             } @else {
-            <p
-              class="m-0"
-              [class]="'item__' + i[c.columnName]"
-              [ngClass]="{
-                item__status: isStatus(c.columnName),
-                item__badge: isBadge(c.columnName)
-              }"
-            >
+            <p class="m-0" [class]="'item__' + i[c.columnName]" [ngClass]="{
+                    item__status: isStatus(c.columnName),
+                    item__badge: isBadge(c.columnName)
+                  }">
               <span></span>
               {{ i[c.columnName] }}
             </p>
             } }
           </td>
           }
-        </tr>
-        } }
+          </tr>
+          }
+
+          @for(brand of i.brands; track brand) {
+          <tr class="children" [ngClass]="{'row-odd': i.brands?.length && index%2}">
+            @for (c of headers; track c) {
+            <td>
+              @if (isIndicator(c.columnName)) {
+              <app-rank-indicator [data]="{ value: brand[c.columnName] }" [withHeader]="false"></app-rank-indicator>
+              } @else { @if (c.columnName === 'skus') {
+              <a [routerLink]="['/path']">Ver detalle de SKU <i class="icon icon-right"></i> </a>
+              } @else {
+              <p class="m-0" [class]="'item__' + brand[c.columnName]" [ngClass]="{
+                      item__status: isStatus(c.columnName),
+                      item__badge: isBadge(c.columnName)
+                    }">
+                <span></span>
+                {{ brand[c.columnName] }}
+              </p>
+              } }
+            </td>
+            }
+          </tr>
+          }
+          }
       </tbody>
     </table>
   </div>

@@ -12,6 +12,7 @@ import { Observable, of, tap } from 'rxjs'
 import { FilterStoreService } from '../stores/filter.store'
 import { environment } from '../../../environments/environment.development'
 import { LocalStorageService } from 'ngx-webstorage'
+import { GlobalStoreService } from '../stores/global.store'
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +21,7 @@ export class ApiInterceptorRequest implements HttpInterceptor {
   haveError!: boolean
   filterStore = inject(FilterStoreService)
   localSt = inject(LocalStorageService)
+  globalStore = inject(GlobalStoreService)
 
   constructor() {}
 
@@ -40,7 +42,7 @@ export class ApiInterceptorRequest implements HttpInterceptor {
             .set('untilToday', `${queryParams.untilToday}`),
     })
     const urlWithParams = request.urlWithParams
-    const exists = this.localSt.retrieve(urlWithParams);
+    const exists = this.localSt.retrieve(urlWithParams)
 
     if (exists) {
       return of(new HttpResponse(exists)).pipe()
@@ -57,12 +59,12 @@ export class ApiInterceptorRequest implements HttpInterceptor {
           },
           (_e: any) => {
             if (_e instanceof HttpErrorResponse) {
+              this.globalStore.hideLoading()
               if (_e.status === 400) {
                 this.haveError = true
               }
               if (_e.status === 401) {
                 this.haveError = true
-                //this.storageService.closeSesion();
               }
             }
           }

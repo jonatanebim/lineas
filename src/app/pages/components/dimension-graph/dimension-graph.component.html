@@ -10,7 +10,7 @@
           </div>
           <div class="my-dimension-report__categories">
             <h3 class="sectionTitle">% Participación por SKUs Pareto</h3>
-            <app-categories [data]="paretoCategories"></app-categories>
+            <app-categories [showAll]="true" [data]="paretoCategories"></app-categories>
           </div>
         </div>
       </div>
@@ -20,6 +20,7 @@
           <img
             [src]="!topSkuImage ? topSkuImage : '../../../../assets/images/logo-top.png'"
             [attr.alt]="topSku.product"
+            [attr.title]="topSku.product"
           />
           <div class="report-top__detail w-100">
             <h2 class="d-flex align-items-center gap-1">

@@ -1,14 +1,16 @@
 <div class="my-doughnut-vertical">
   <h2 class="sectionTitle">{{ title }}</h2>
-
   <div class="position-relative">
-    <app-doughnut-chart
-      (selected)="onSelected($event)"
-      [withFilter]="withFilter"
-      [data]="doughnutChart"
-    ></app-doughnut-chart>
+    @if (doughnutChart.length) {
+    <app-doughnut-chart (selected)="onSelected($event)" [withFilter]="withFilter"
+      [data]="doughnutChart"></app-doughnut-chart>
     <div class="mt-4 px-3">
-      <app-categories [showAll]="true" [data]="doughnutChart"></app-categories>
+      <app-categories [showAll]="true" [data]="categories"></app-categories>
     </div>
+    }@else {
+    <div class="empty mt-5 pt-3">
+      <p class="w-100 text-center pt-5">No pudimos encontrar ningún resultado para tu búsqueda.</p>
+    </div>
+    }
   </div>
 </div>

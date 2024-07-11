@@ -1,8 +1,8 @@
 import { CommonModule, DatePipe } from '@angular/common'
-import { ChangeDetectionStrategy, Component, EventEmitter, Output, inject, signal } from '@angular/core'
+import { ChangeDetectionStrategy, Component, EventEmitter, Output, inject } from '@angular/core'
 import { FilterStoreService } from '../../../shared/stores/filter.store'
 import { moment } from '../../../shared/helpers/date'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @Component({
   selector: 'app-card-filter',
@@ -15,12 +15,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 export class CardFilterComponent {
   @Output() doFilter = new EventEmitter()
 
+  fb = inject(FormBuilder)
   filterService = inject(FilterStoreService)
-  showCurrent = signal(false)
-  selected = ''
+  showCurrent = this.filterService.queryParms().untilToday
+  selected = this.filterService.queryParms().datetime
 
   get isOnCurrent(): boolean {
-    return this.showCurrent()
+    return this.showCurrent
   }
 
   get untilDate() {
@@ -29,25 +30,28 @@ export class CardFilterComponent {
     return moment(new Date(yesterday.setDate(today.getDate() - 1))).format('DD-MM-YYYY')
   }
 
-  onChange(m: number) {
+  onChange(m: any) {
     const date = new Date(+m)
     this.filterService.queryParms.update(() => ({
       ...this.filterService.queryParms(),
       untilToday: false,
+      datetime: m,
       date: moment(date).format('YYYY-MM-DD'),
     }))
-    //
     this.doFilter.emit(true)
   }
 
   toggle() {
-    this.showCurrent.update(() => !this.isOnCurrent)
     this.filterService.queryParms.update(() => ({
       ...this.filterService.queryParms(),
-      date: this.filterService.lastMonths[0].formated,
-      untilToday: this.isOnCurrent,
+      date: this.filterService.getLastMonths()[0].formated,
+      datetime: null,
+      untilToday: !this.isOnCurrent,
     }))
-    //
     this.doFilter.emit(true)
+  }
+
+  update($e: any) {
+    console.log($e)
   }
 }

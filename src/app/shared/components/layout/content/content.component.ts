@@ -1,9 +1,14 @@
 import { CommonModule } from '@angular/common'
-import { Component, inject } from '@angular/core'
+import { Component, inject, signal } from '@angular/core'
 import { Router, RouterModule } from '@angular/router'
 import { LoadingComponent } from '../../loading/loading.component'
 import { GlobalStoreService } from '../../../stores/global.store'
 import { LocalStorageService } from 'ngx-webstorage'
+import { FilterStoreService } from '../../../stores/filter.store'
+import { FILE_SAVER } from '../../../constants/globals'
+import * as ExcelJS from 'exceljs'
+import { saveAs } from 'file-saver'
+import { CommonsRequestsService } from '../../../requests/commons.requests'
 
 @Component({
   selector: 'app-content',
@@ -16,6 +21,11 @@ export class ContentComponent {
   router = inject(Router)
   globalStore = inject(GlobalStoreService)
   localSt = inject(LocalStorageService)
+  filterService = inject(FilterStoreService)
+  commonService = inject(CommonsRequestsService)
+
+  isDownloading = signal(false)
+  showSuccess = signal(false)
 
   isOpen = false
   navBarItems = [
@@ -42,12 +52,49 @@ export class ContentComponent {
     },
   ]
 
+  downloadReport() {
+    this.isDownloading.update(() => true)
+    this.showSuccess.update(() => false)
+    //
+    this.commonService.downloadReport().subscribe((data: any) => {
+      setTimeout(() => {
+        const workbook = new ExcelJS.Workbook()
+        const worksheet = workbook.addWorksheet(FILE_SAVER.name)
+
+        const headers = data.columns.map((f: any) => f.label)
+        worksheet.addRow(headers)
+
+        data.values.forEach((item: any) => {
+          const row: any = []
+          data.columns.forEach((h: any, index: number) => {
+            row.push(item[h.columnName])
+            worksheet.getColumn(index + 1).width = h.label.length + FILE_SAVER.size
+          })
+          worksheet.addRow(row)
+        })
+
+        workbook.xlsx.writeBuffer().then((buffer: any) => {
+          const blob = new Blob([buffer], { type: FILE_SAVER.type })
+          saveAs(blob, `${FILE_SAVER.name}.xlsx`)
+        })
+
+        this.isDownloading.update(() => false)
+        this.showSuccess.update(() => true)
+      }, 1000)
+    })
+  }
+
   toggleSidebar() {
     this.isOpen = !this.isOpen
+    // this.filterService.resetParams()
   }
 
   doLogout() {
     this.localSt.clear()
     this.router.navigate(['/'])
+  }
+
+  closeSuccess() {
+    this.showSuccess.update(() => false)
   }
 }

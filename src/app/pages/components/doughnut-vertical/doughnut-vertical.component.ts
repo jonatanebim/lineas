@@ -26,6 +26,10 @@ export class DoughnutVerticalComponent implements OnInit {
   doughnutChart: any
   categories: any
 
+  get isCategories() {
+    return this.router.url.includes(paths.dashboard.childrens.categoriesPath)
+  }
+
   ngOnInit(): void {
     this.categories = this.data.map((item: any, key: number) => ({
       label: item.label,
@@ -41,11 +45,14 @@ export class DoughnutVerticalComponent implements OnInit {
       if (this.current !== null && this.current === index) {
         this.globalStore.reloadCategories.update(() => true)
       }
-      this.router.navigate([paths.dashboard.childrens.categoriesPath], {
-        queryParams: {
-          ...(this.current !== index && { category: this.categories[index].label }),
-        },
-      })
+      this.router.navigate(
+        [this.isCategories ? paths.dashboard.childrens.categoriesPath : paths.dashboard.childrens.competenciesPath],
+        {
+          queryParams: {
+            ...(this.current !== index && { category: this.categories[index].label }),
+          },
+        }
+      )
       this.globalStore.filterCategories.update(() => index)
     }
   }

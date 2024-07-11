@@ -12,6 +12,19 @@ export const EMPTY_DOUGHNUT = [
   },
 ]
 
+export const FILE_SAVER = {
+  name: 'PlataformaLineasMQ',
+  size: 15,
+  type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+}
+
+export const DEFAULT_STORE: any = {
+  lineCode: '11',
+  untilToday: false,
+  region: '',
+  datetime: null,
+}
+
 export const DEFAULT_DEPARTMENT = {
   name: 'Lima',
   value: 'LI',

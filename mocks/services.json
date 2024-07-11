@@ -126,27 +126,211 @@
           "category": "Desodorantes y antitranspirantes",
           "total": "S/846,450",
           "share": "100%",
-          "vs3um": "",
-          "vs6um": "",
-          "vsaa": "",
-          "coverage": "",
-          "sharebrand": "",
-          "vs3umbrand": "",
-          "vs6umbrand": "",
-          "vsaabrand": "",
+          "vs3um": "40",
+          "vs6um": "32",
+          "vsaa": "100",
+          "coverage": "1,603",
+          "sharebrand": "100%",
+          "vs3umbrand": "19",
+          "vs6umbrand": "100",
+          "vsaabrand": "43",
           "brands": [
             {
               "category": "Beiersdorf - Nivea",
               "total": "S/110,868",
-              "share": "18%",
-              "vs3um": "",
-              "vs6um": "",
-              "vsaa": "",
-              "coverage": "",
-              "sharebrand": "",
-              "vs3umbrand": "",
-              "vs6umbrand": "",
-              "vsaabrand": ""
+              "share": "50%",
+              "vs3um": "60",
+              "vs6um": "82",
+              "vsaa": "100",
+              "coverage": "603",
+              "sharebrand": "70%",
+              "vs3umbrand": "40",
+              "vs6umbrand": "100",
+              "vsaabrand": "50"
+            },
+            {
+              "category": "Marca 2 ",
+              "total": "S/110,868",
+              "share": "50%",
+              "vs3um": "60",
+              "vs6um": "82",
+              "vsaa": "100",
+              "coverage": "603",
+              "sharebrand": "70%",
+              "vs3umbrand": "40",
+              "vs6umbrand": "100",
+              "vsaabrand": "50"
+            },
+            {
+              "category": "Marca 3 ",
+              "total": "S/110,868",
+              "share": "50%",
+              "vs3um": "60",
+              "vs6um": "82",
+              "vsaa": "100",
+              "coverage": "603",
+              "sharebrand": "70%",
+              "vs3umbrand": "40",
+              "vs6umbrand": "100",
+              "vsaabrand": "50"
+            }
+          ]
+        },
+        {
+          "category": "Cuidado facial",
+          "total": "S/332,222",
+          "share": "100%",
+          "vs3um": "40",
+          "vs6um": "32",
+          "vsaa": "100",
+          "coverage": "1,603",
+          "sharebrand": "100%",
+          "vs3umbrand": "19",
+          "vs6umbrand": "100",
+          "vsaabrand": "43",
+          "brands": [
+            {
+              "category": "Beiersdorf - Nivea",
+              "total": "S/70,868",
+              "share": "50%",
+              "vs3um": "60",
+              "vs6um": "82",
+              "vsaa": "100",
+              "coverage": "603",
+              "sharebrand": "70%",
+              "vs3umbrand": "40",
+              "vs6umbrand": "100",
+              "vsaabrand": "50"
+            },
+            {
+              "category": "Marca 2 ",
+              "total": "S/110,868",
+              "share": "50%",
+              "vs3um": "60",
+              "vs6um": "82",
+              "vsaa": "100",
+              "coverage": "603",
+              "sharebrand": "70%",
+              "vs3umbrand": "40",
+              "vs6umbrand": "100",
+              "vsaabrand": "50"
+            },
+            {
+              "category": "Marca 3 ",
+              "total": "S/110,868",
+              "share": "50%",
+              "vs3um": "60",
+              "vs6um": "82",
+              "vsaa": "100",
+              "coverage": "603",
+              "sharebrand": "70%",
+              "vs3umbrand": "40",
+              "vs6umbrand": "100",
+              "vsaabrand": "50"
+            }
+          ]
+        }
+      ]
+    },
+    "brandCategoriesTableFilter": {
+      "columns": [
+        {
+          "columnName": "category",
+          "label": "CATEGORIA por MARCA"
+        },
+        {
+          "columnName": "total",
+          "label": "Venta"
+        },
+        {
+          "columnName": "share",
+          "label": "%Share"
+        },
+        {
+          "columnName": "vs3um",
+          "label": "Vs 3UM"
+        },
+        {
+          "columnName": "vs6um",
+          "label": "vs 6UM"
+        },
+        {
+          "columnName": "vsaa",
+          "label": "vs aa"
+        },
+        {
+          "columnName": "coverage",
+          "label": "COBERT."
+        },
+        {
+          "columnName": "sharebrand",
+          "label": "%Share"
+        },
+        {
+          "columnName": "vs3umbrand",
+          "label": "Vs 3UM"
+        },
+        {
+          "columnName": "vs6umbrand",
+          "label": "vs 6UM"
+        },
+        {
+          "columnName": "vsaabrand",
+          "label": "vs aa"
+        }
+      ],
+      "values": [
+        {
+          "category": "Cuidado facial",
+          "total": "S/332,222",
+          "share": "100%",
+          "vs3um": "40",
+          "vs6um": "32",
+          "vsaa": "100",
+          "coverage": "1,603",
+          "sharebrand": "100%",
+          "vs3umbrand": "19",
+          "vs6umbrand": "100",
+          "vsaabrand": "43",
+          "brands": [
+            {
+              "category": "Beiersdorf - Nivea",
+              "total": "S/70,868",
+              "share": "50%",
+              "vs3um": "60",
+              "vs6um": "82",
+              "vsaa": "100",
+              "coverage": "603",
+              "sharebrand": "70%",
+              "vs3umbrand": "40",
+              "vs6umbrand": "100",
+              "vsaabrand": "50"
+            },
+            {
+              "category": "Marca 2 ",
+              "total": "S/110,868",
+              "share": "50%",
+              "vs3um": "60",
+              "vs6um": "82",
+              "vsaa": "100",
+              "coverage": "603",
+              "sharebrand": "70%",
+              "vs3umbrand": "40",
+              "vs6umbrand": "100",
+              "vsaabrand": "50"
+            },
+            {
+              "category": "Marca 3 ",
+              "total": "S/110,868",
+              "share": "50%",
+              "vs3um": "60",
+              "vs6um": "82",
+              "vsaa": "100",
+              "coverage": "603",
+              "sharebrand": "70%",
+              "vs3umbrand": "40",
+              "vs6umbrand": "100",
+              "vsaabrand": "50"
             }
           ]
         }
@@ -156,58 +340,70 @@
       "doughnut": [
         {
           "label": "ALIMENTOS",
-          "value": 0.1151,
-          "percentage": 0.1151
+          "value": 50,
+          "percentage": 50
         },
         {
           "label": "FORMULA LACTEA",
-          "value": 0.3419,
-          "percentage": 0.3419
+          "value": 10,
+          "percentage": 10
         },
         {
           "label": "TRACTO ALIMENTARIO Y METABOLISMO",
-          "value": 0.0279,
-          "percentage": 0.0279
+          "value": 15,
+          "percentage": 15
         },
         {
           "label": "SUPLEMENTO Y/O COMPLEMENTO ADULTO",
-          "value": 0.3082,
-          "percentage": 0.3082
+          "value": 25,
+          "percentage": 25
         },
         {
           "label": "SUPLEMENTO Y/O COMPLEMENTO PEDIATRICO",
-          "value": 0.207,
-          "percentage": 0.207
+          "value": 12,
+          "percentage": 12
+        },
+        {
+          "label": "TRACTO ALIMENTARIO Y METABOLISMO",
+          "value": 15,
+          "percentage": 15
+        },
+        {
+          "label": "OTROS",
+          "value": 25,
+          "percentage": 25
         }
       ]
     },
     "evolutionMq": {
-      "labels": ["MAY 2024", "ABR 2024", "MAR 2024", "FEB 2024", "ENE 2024", "DIC 2023"],
+      "labels": ["MAY 24", "ABR 24", "MAR 24", "FEB 24", "ENE 24", "DIC 23"],
       "totalMarket": [92430.09, 67479.77, 69169.47, 104712.61, 2844126.68, 0],
-      "totalBdf": [116, 127, 195, 211, 1845, 0],
-      "coverageBdf": [],
-      "coverageMdo": []
+      "totalBdf": [116, 127, 195, 211, 1845, 0]
     },
     "principalCategories": [
       {
         "category": "ALIMENTOS",
-        "totalPercentage": 10,
-        "columns": [1230, 450]
+        "totalPercentage": 23,
+        "bdfPercentage": 13,
+        "columns": [884.873, 104.057]
       },
       {
-        "category": "Categorias",
-        "totalPercentage": 10,
-        "columns": [1230, 450]
+        "category": "Cuidado facial",
+        "totalPercentage": 42,
+        "bdfPercentage": 14,
+        "columns": [773.057, 304.057]
       },
       {
-        "category": "Categorias",
-        "totalPercentage": 10,
-        "columns": [1230, 450]
+        "category": "Jabón y gel de manos",
+        "totalPercentage": 32,
+        "bdfPercentage": 10,
+        "columns": [884.057, 189.057]
       },
       {
-        "category": "Categorias",
-        "totalPercentage": 10,
-        "columns": [1230, 450]
+        "category": "cuidado corporal",
+        "totalPercentage": 134,
+        "bdfPercentage": 15,
+        "columns": [630.057, 104.057]
       }
     ]
   }

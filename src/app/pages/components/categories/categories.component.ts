@@ -21,7 +21,7 @@ export class CategoriesComponent {
   @Input() showAll = false
 
   isActiveShowAll = false
-  viewQuantity = MIN_CATEGORIES_VIEW
+  viewQuantity = this.showAll ? 99 : MIN_CATEGORIES_VIEW
   empty = EMPTY_DOUGHNUT[0]
 
   get categories() {
