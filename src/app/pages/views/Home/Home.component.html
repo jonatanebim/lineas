@@ -1,0 +1,30 @@
+<div class="my-home-page">
+  <div class="my-home-page__header">
+    @if (!globalStore.isLoading()) {
+    <div class="d-flex gap-2 animate__animated animate__fadeInDown">
+      <app-card-filter (doFilter)="filter()"></app-card-filter>
+      @for(card of cards; track card.id) {
+      <app-card-report [data]="card"></app-card-report>
+      }
+    </div>
+
+    <div class="d-flex w-100 gap-2 my-3">
+      <app-evolution-chart class="animate__animated animate__fadeInLeft animate__delay" [withTopLabels]="false"
+        [categories]="categories" [series]="series"></app-evolution-chart>
+      <div class="my-home-page__stacked d-flex flex-column gap-2">
+        <app-stacked-graph class="animate__animated animate__fadeIn animate__delay-1s"
+          [data]="participation"></app-stacked-graph>
+        <app-funnel-graph class="animate__animated animate__fadeIn animate__delay-1s"
+          [data]="participation"></app-funnel-graph>
+      </div>
+      <app-country-graph [data]="regionOportunity"
+        class="animate__animated animate__fadeInRight animate__delay"></app-country-graph>
+    </div>
+
+    <div class="d-flex w-100 gap-2 animate__animated animate__fadeInUp animate__delay-2s">
+      <app-table-report class="w-100" [showAll]="true" [withoutButton]="true" [headers]="headers" [values]="values"
+        [types]="tableIndicators"></app-table-report>
+    </div>
+    }
+  </div>
+</div>

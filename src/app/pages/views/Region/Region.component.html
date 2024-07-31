@@ -1,0 +1,62 @@
+<div class="my-region-page">
+  <div class="my-region-page__header">
+    @if (!globalStore.isLoading()) {
+      <div class="d-flex gap-2 animate__animated animate__fadeInDown">
+        <app-card-filter (doFilter)="filter()"></app-card-filter>
+        @for(card of cards; track card.id) {
+        <app-card-report [data]="card"></app-card-report>
+        }
+      </div>
+
+    <div class="d-flex w-100 gap-2 my-3">
+      <app-department-graph
+        class="animate__animated animate__fadeInLeft animate__delay"
+        [selected]="this.department?.value"
+        [data]="regionOportunity"
+      ></app-department-graph>
+
+      <app-evolution-chart
+        class="animate__animated animate__fadeIn animate__delay-1s"
+        [withTopLabels]="false"
+        [categories]="categories"
+        [series]="series"
+      ></app-evolution-chart>
+
+      <div class="my-region-page__stacked animate__animated animate__fadeInRight animate__delay">
+        <app-doughnut-vertical
+          title="%Participación por provincias"
+          [data]="doughnutData"
+          class="d-block"
+        ></app-doughnut-vertical>
+      </div>
+    </div>
+
+    <div class="d-flex gap-2 mt-2 animate__animated animate__fadeInUp animate__delay-2s">
+      <app-table-report
+        class="w-100"
+        [headers]="provincesTable.headers"
+        [values]="provincesTable.values"
+        [types]="provincesTable.tableIndicators"
+      ></app-table-report>
+    </div>
+
+    <div class="d-flex gap-2 mt-2 animate__animated animate__fadeInUp animate__delay-2s">
+      <app-table-report
+        class="w-100"
+        [headers]="channelsTable.headers"
+        [values]="channelsTable.values"
+        [types]="channelsTable.tableIndicators"
+      ></app-table-report>
+    </div>
+
+    <div class="d-flex gap-2 mt-2 animate__animated animate__fadeInUp animate__delay-2s">
+      <app-table-report
+        class="w-100"
+        [headers]="categoriesTable.headers"
+        [values]="categoriesTable.values"
+        [types]="categoriesTable.tableIndicators"
+      ></app-table-report>
+    </div>
+    }
+  </div>
+</div>

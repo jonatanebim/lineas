@@ -1,0 +1,65 @@
+<div class="my-categories-page">
+  @if (!globalStore.isLoading()) {
+  <div class="my-categories-page__header">
+    <div class="d-flex gap-2 animate__animated animate__fadeInDown">
+      <app-card-filter (doFilter)="filter()"></app-card-filter>
+      @for(card of cards; track card.id) {
+      <app-card-report [data]="card"></app-card-report>
+      }
+    </div>
+
+    <div class="d-flex gap-2 mt-2">
+      <div class="my-categories-page__stacked">
+        <app-doughnut-vertical
+          [withFilter]="true"
+          [data]="doughnutData"
+          class="d-block animate__animated animate__fadeInLeft animate__delay"
+        ></app-doughnut-vertical>
+      </div>
+
+      <div class="w-100">
+        <div class="evolution d-flex mb-2 gap-2" [ngClass]="{ filter__active: this.selectedCategory }">
+          <app-evolution-line
+            class="animate__animated animate__fadeIn animate__delay-1s"
+            [title]="
+              selectedCategory
+                ? 'Evolutivo MQ ' + selectedCategory?.label + ' (BDF + Mercado total)'
+                : 'Evolutivo MQ Total Categorías'
+            "
+            [labels]="evolutionLabels"
+            [selected]="selectedCategory"
+            [dataLabels]="evolutionDataLabels"
+            [data]="evolutionData"
+          ></app-evolution-line>
+          <app-participation
+            [title]="
+              selectedCategory
+                ? 'Participación BDF en ' + (selectedCategory | lowercase)
+                : 'Participación BDF en principales categorías'
+            "
+            class="animate__animated animate__fadeIn animate__delay-2s"
+            [selected]="selectedCategory"
+            [data]="participationData"
+          ></app-participation>
+        </div>
+        <app-dimension-graph
+          class="animate__animated animate__fadeInUp animate__delay-3s"
+          [paretoSkus]="paretoSkus"
+          [selected]="selectedCategory"
+          [topSku]="topSku"
+        ></app-dimension-graph>
+      </div>
+    </div>
+
+    <div class="d-flex mt-2 animate__animated animate__fadeInUp animate__delay-2s">
+      <app-table-report
+        class="w-100"
+        [showAll]="true"
+        [combined]="true"
+        [headers]="headers"
+        [values]="values"
+      ></app-table-report>
+    </div>
+  </div>
+  }
+</div>

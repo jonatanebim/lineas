@@ -1,0 +1,34 @@
+.my-cc-card {
+  max-width: 220px;
+  height: 109px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--Grey-4, #d9dde3);
+  background: var(--White, #fff);
+  &__wrapper {
+    > div {
+      line-height: 1;
+    }
+  }
+  h2 {
+    color: #0050f5;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  > div {
+    span {
+      color: var(--Grey-2, #8f959d);
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
+    }
+
+    .indicators {
+
+    }
+  }
+}

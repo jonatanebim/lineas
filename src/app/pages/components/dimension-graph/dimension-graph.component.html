@@ -1,0 +1,92 @@
+<div class="my-dimension-report">
+  <div class="my-dimension-report__wrapper">
+    <div class="row">
+      <div class="col-7 graph">
+        <div class="w-100 d-flex justify-content-between h-100">
+          <div class="my-dimension-report__bubbles">
+            @if (chartOptions) {
+            <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"> </highcharts-chart>
+            }
+          </div>
+          <div class="my-dimension-report__categories">
+            <h3 class="sectionTitle">% Participación por SKUs Pareto</h3>
+            <app-categories [showAll]="true" [data]="paretoCategories"></app-categories>
+          </div>
+        </div>
+      </div>
+      <div class="col-5 ps-3">
+        <h3 class="sectionTitle text-capitalize">Top SKU - {{ selected ? (selected | lowercase) : 'Total Categorías' }}</h3>
+        <div class="report-top d-flex">
+          <img
+            [src]="topSkuImage ? topSkuImage : '../../../../assets/images/logo-top.png'"
+            [attr.alt]="topSku.product"
+            [attr.title]="topSku.product"
+          />
+          <div class="report-top__detail w-100">
+            <h2 class="d-flex align-items-center gap-1">
+              1
+              <span>en ranking</span>
+            </h2>
+            <p class="product m-0 text-capitalize">{{ topSku.product | lowercase }}</p>
+            <div class="report-top__table">
+              <div class="item w-100">
+                <div></div>
+                <div class="indicators">
+                  <div>
+                    <span>Vs MA</span>
+                  </div>
+                  <div>
+                    <span>Vs 3uM</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item w-100">
+                <div>
+                  <span>Facturación</span>
+                </div>
+                <div class="indicators">
+                  <div>
+                    <app-rank-indicator
+                      [withHeader]="false"
+                      [clear]="true"
+                      [data]="{ value: topSku.billing.vsma }"
+                    ></app-rank-indicator>
+                  </div>
+                  <div>
+                    <app-rank-indicator
+                      [withHeader]="false"
+                      [clear]="true"
+                      [data]="{ value: topSku.billing.vs3um }"
+                    ></app-rank-indicator>
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+              <div class="item w-100">
+                <div>
+                  <span>Ranking</span>
+                </div>
+                <div class="indicators">
+                  <div>
+                    <app-rank-indicator
+                      [withHeader]="false"
+                      [clear]="true"
+                      [data]="{ value: topSku.ranking.vsma }"
+                    ></app-rank-indicator>
+                  </div>
+                  <div>
+                    <app-rank-indicator
+                      [withHeader]="false"
+                      [clear]="true"
+                      [data]="{ value: topSku.ranking.vs3um }"
+                    ></app-rank-indicator>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

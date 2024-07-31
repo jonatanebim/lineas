@@ -1,0 +1,15 @@
+<div class="my-stacked-graph d-flex flex-wrap h-100">
+  <h2 class="sectionTitle m-0">% Participación Facturación por categoría</h2>
+  @if (doughnutChart.length) {
+  <div class="d-flex flex-column justify-content-center w-100 align-items-center">
+    <div class="doughnut-graph d-flex">
+      <app-doughnut-chart [data]="doughnutChart"></app-doughnut-chart>
+      <app-categories [showAll]="true" [data]="doughnutChart"></app-categories>
+    </div>
+  </div>
+  } @else {
+  <div class="empty px-5">
+    <p class="w-100 text-center pt-4">No pudimos encontrar ningún resultado para tu búsqueda.</p>
+  </div>
+  }
+</div>

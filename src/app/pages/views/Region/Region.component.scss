@@ -1,0 +1,47 @@
+.my-region-page {
+  &__stacked {
+    width: 220px;
+    min-width: 220px;
+  }
+}
+
+app-evolution-chart {
+  min-width: 400px;
+}
+
+app-table-report {
+  width: 60%;
+  &.table-small {
+    width: 40%;
+  }
+}
+
+app-department-graph {
+  width: 100%;
+}
+
+:host {
+  ::ng-deep {
+    .my-evolution-chart__chart {
+      height: 320px !important;
+      .chart {
+        height: 270px !important;
+      }
+      .indicators {
+        margin-top: 26px;
+      }
+    }
+  }
+
+  ::ng-deep {
+    tr {
+      td {
+        &:nth-child(1) {
+          p {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+}

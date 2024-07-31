@@ -1,0 +1,60 @@
+.container {
+  height: 100vh;
+  .form-login {
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    h1 {
+      color: var(--Blue, #0050f5);
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 600;
+    }
+    form {
+      width: 360px;
+      .powered {
+        width: 150px;
+      }
+      .form-check {
+        input:checked {
+          background-color: var(--Blue, #0050f5);
+          border-color: var(--Blue, #0050f5);
+        }
+        label {
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+        }
+      }
+      .form-floating {
+        input,
+        label {
+          padding-right: 1.3rem;
+          padding-left: 1.3rem;
+        }
+        input {
+          border-radius: 28px;
+          border: 1px solid var(--Grey_3, #b3b8bf);
+          background: var(--White_QS, #fff);
+        }
+        label {
+          color: var(--Grey_2, #8f959d);
+        }
+      }
+      button {
+        border-radius: 28px;
+        padding: 20px 40px;
+        height: 56px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+        font-style: normal;
+        background: var(--Blue, #0050f5);
+        &:disabled {
+          background: var(--Grey_3, #b3b8bf);
+          border-color: var(--Grey_3, #b3b8bf);
+        }
+      }
+    }
+  }
+}

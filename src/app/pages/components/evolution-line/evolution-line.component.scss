@@ -1,0 +1,45 @@
+.my-evolution-line {
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--Grey-4, #d9dde3);
+  background: var(--White, #fff);
+  position: relative;
+  padding: 16px 10px;
+  width: 100%;
+
+  .chart {
+    height: calc(100% - 43px);
+    &-labels {
+      padding: 4px;
+      position: relative;
+      top: 7px;
+    }
+  }
+}
+
+:host {
+  ::ng-deep {
+    .float-tooltip {
+      color: #fff;
+      font-family: 'Nunito Sans';
+      h2 {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 22px; /* 137.5% */
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+      }
+      p {
+        margin: 0;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

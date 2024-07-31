@@ -1,0 +1,67 @@
+<div class="my-evolution-chart">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="sectionTitle m-0">Evolución MQ</h2>
+    <div class="d-flex gap-2">
+      @if (withTopLabels) {
+      <app-graph-indicator></app-graph-indicator>
+      <app-graph-indicator></app-graph-indicator>
+      }
+    </div>
+  </div>
+  <div
+    class="my-evolution-chart__chart"
+    [ngClass]="{ 'border-0': !withFooter }"
+    #chartContainer
+  >
+    <div class="chart w-100">
+      @if(onChart()) {
+      <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions">
+      </highcharts-chart>
+      }
+    </div>
+
+    <div class="d-flex gap-2 pt-4 indicators">
+      @if (!withTopLabels) {
+      <app-graph-indicator label="Facturación total(S/MM)" color="#B6E7FF"></app-graph-indicator>
+      <app-graph-indicator label="Cobertura total" type="line" color="#00B0FF"></app-graph-indicator>
+      <app-graph-indicator label="Pedidos" type="spiline" color="#0D3B9B"></app-graph-indicator>
+      }
+    </div>
+  </div>
+
+  @if (withFooter) {
+  <div
+    class="my-evolution-chart__table d-flex justify-content-between gap-3 w-100"
+  >
+    <div class="stacked">
+      <h2 class="sectionTitle">% Participación facturación</h2>
+      <div class="stacked__indicators">
+        @for (indicator of indicators; track indicator.value) {
+        <div
+          class="stacked__indicator d-flex align-items-center justify-content-between"
+        >
+          <p class="m-0">{{ indicator.label }}</p>
+          <div class="stacked__value h-100">
+            <div
+              class="stacked__content position-relative h-100"
+              [ngStyle]="{ width: indicator.value + '%' }"
+              [ngClass]="{
+                'bg-primary': indicator.value > 50,
+                'bg-info-subtle': indicator.value < 50 && indicator.value >= 25,
+                'bg-dark-subtle': indicator.value < 30
+              }"
+              [attr.data-value]="indicator.value + '%'"
+            ></div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <app-table-report
+      class="table-small"
+      [headers]="headers"
+      [values]="values"
+    ></app-table-report>
+  </div>
+  }
+</div>

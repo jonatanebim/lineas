@@ -1,0 +1,79 @@
+.my-stacked-graph {
+  min-height: 244px;
+  border-radius: 8px;
+  border: 1px solid var(--Grey-4, #d9dde3);
+  background: var(--White, #fff);
+  position: relative;
+  padding: 16px 10px 0;
+  width: 100%;
+
+  app-categories {
+    width: 120px;
+  }
+
+  .doughnut-graph {
+    height: 145px;
+  }
+  
+  .stacked-graph {
+    &__item {
+      display: none;
+      &:nth-child(1) {
+        .stack {
+          padding: 0;
+          &__value {
+            width: 100%;
+            &::after {
+              right: -4px;
+            }
+            &::before {
+              left: -6px;
+            }
+          }
+        }
+      }
+      &:nth-child(2) {
+        .stack {
+          &__value {
+            width: 90%;
+            &::after {
+              right: -14px;
+              transform: rotate(16deg);
+            }
+            &::before {
+              left: -14px;
+              transform: rotate(-16deg);
+            }
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        .stack {
+          &__value {
+            width: 80%;
+            &::after {
+              right: -10px;
+            }
+            &::before {
+              left: -10px;
+            }
+          }
+        }
+      }
+      &:last-child {
+        .stack {
+          &__value {
+            width: 55%;
+            &::after,
+            &::before {
+              display: none;
+              width: 0px;
+              height: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

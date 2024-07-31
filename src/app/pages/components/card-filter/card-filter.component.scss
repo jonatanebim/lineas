@@ -1,0 +1,88 @@
+.my-cc-card {
+  width: 308px;
+  height: 109px;
+  border-radius: 8px;
+  border: 1px solid var(--Grey-4, #d9dde3);
+  background: var(--White, #fff);
+  position: relative;
+  &__wrapper {
+    img {
+      width: 170px;
+    }
+    select {
+      border-radius: 12px;
+      border: 1px solid var(--Blue, #0050f5);
+      color: var(--Grey-2, #343a40);
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      margin: 12px 0 5px;
+      padding: 2px 4px;
+      width: 170px;
+      &:disabled {
+        opacity: 0.6;
+        background: rgba(0, 0, 0, 0.125);
+        border-color: rgba(13, 110, 253, 0.25);
+      }
+    }
+
+    p {
+      color: var(--Grey-2, #8f959d);
+      font-size: 12px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.3px;
+    }
+  }
+
+  .toggle {
+    border-radius: 20px;
+    background-color: #ddf4ff;
+    border: 1px solid #ddf4ff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 3px 7px;
+    color: var(--Blue, #0050f5);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    i {
+      margin-left: 5px;
+    }
+    .control {
+      width: 23px;
+      height: 8px;
+      border: 2px solid;
+      border-radius: 20px;
+      position: relative;
+      margin-left: 3px;
+      cursor: pointer;
+      > div {
+        .dot {
+          width: 12px;
+          height: 12px;
+          border: 2px solid;
+          border-radius: 20px;
+          position: relative;
+          top: -3.7px;
+          background: #ddf4ff;
+          left: -2px;
+        }
+      }
+    }
+
+    &:hover {
+      border-color: #0050f5;
+      background-color: transparent;
+      font-weight: 500;
+    }
+  }
+}

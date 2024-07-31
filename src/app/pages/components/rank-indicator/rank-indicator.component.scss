@@ -1,0 +1,34 @@
+div {
+  span {
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  p {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    min-width: 59px;
+    margin: 4px 0 0;
+    padding: 4px 6px;
+    color: #43b748;
+    background-color: #e4ffeb;
+    border-radius: 14px;
+    &.isYellow {
+      color: #fc9700;
+      background-color: #fef4e2;
+    }
+    &.isRed {
+      color: #e72e49;
+      background-color: #ffedf2;
+    }
+  }
+
+  &.clear {
+    p {
+      padding: 0;
+      background-color: white;
+      justify-content: normal !important;
+    }
+  }
+}

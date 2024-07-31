@@ -1,0 +1,36 @@
+:host {
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: var(--Grey-6, #f4f5f6);
+  z-index: 9;
+  > div {
+    width: 420px;
+  }
+  h3 {
+    color: var(--Blue, #0050f5);
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: -0.2px;
+  }
+  p {
+    color: var(--Grey-2, #8f959d);
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+}
+
+
+img {
+  animation: rotating 1s linear infinite;
+}

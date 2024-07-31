@@ -1,0 +1,14 @@
+<div class="my-cc-card">
+  <div class="my-cc-card__wrapper h-100 d-flex flex-wrap align-content-center px-2">
+    <div>
+      <span>{{ data.label }}</span>
+      <h2 class="m-0 pt-2">{{ data.amount }}</h2>
+    </div>
+
+    <div class="indicators d-flex w-100 justify-content-between">
+      @for (i of data.indicators; track i.value) {
+      <app-rank-indicator [data]="i"></app-rank-indicator>
+      }
+    </div>
+  </div>
+</div>

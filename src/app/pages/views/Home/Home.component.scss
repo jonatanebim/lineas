@@ -1,0 +1,22 @@
+:host {
+  display: block;
+
+  ::ng-deep {
+    .my-evolution-chart__chart {
+      height: 370px !important;
+    }
+  }
+}
+
+app-evolution-chart,
+app-country-graph {
+  width: 35%;
+}
+
+.my-home-page {
+  &__stacked {
+    width: 30%;
+    height: 200px;
+    margin-bottom: 1rem;
+  }
+}

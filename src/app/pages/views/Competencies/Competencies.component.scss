@@ -1,0 +1,22 @@
+:host {
+  display: block;
+
+  ::ng-deep {
+    app-doughnut-vertical {
+      width: 220px;
+      min-width: 220px;
+    }
+    app-evolution-line, app-participation {
+      // height: 100%;
+    }
+  }
+}
+
+
+.my-competencies {
+  &-page {
+    &__stacked {
+      width: 270px;
+    }
+  }
+}

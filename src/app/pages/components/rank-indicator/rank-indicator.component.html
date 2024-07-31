@@ -1,0 +1,17 @@
+<div [ngClass]="{ clear: clear }">
+  @if (withHeader) {
+  <span>{{ data?.label }}</span>
+  }
+  <p
+    class="d-flex justify-content-center align-items-center"
+    [ngClass]="{ isYellow: data?.value == 0, isRed: data?.value < 0 }"
+  >
+    {{ data?.value }}% @if(data?.value > 0) {
+    <i class="icon icon-flecha-verde"></i>
+    } @else if(data?.value === 0) {
+    <i class="icon icon-flecha-anaranjada"></i>
+    }@else {
+    <i class="icon icon-flecha-roja"></i>
+    }
+  </p>
+</div>

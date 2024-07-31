@@ -1,0 +1,22 @@
+.my-doughnut-vertical {
+  min-height: 400px;
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--Grey-4, #d9dde3);
+  background: var(--White, #fff);
+  position: relative;
+  padding: 16px 10px;
+  width: 100%;
+}
+
+
+::ng-deep{
+  app-doughnut-chart {
+    .graph {
+      max-width: 100% !important;
+      width: auto !important;
+      top: 0px !important;
+      margin-left: 0 !important;
+    }
+  }
+}

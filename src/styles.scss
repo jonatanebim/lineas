@@ -1,0 +1,31 @@
+@import '../node_modules/animate.css/animate.min.css';
+@import './assets/fonts/nunito.scss';
+@import './assets/scss/globals';
+@import './assets/scss/variables';
+@import './assets/scss/typography';
+
+:root {
+  --animate-delay: 0.5s;
+}
+
+* {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.fs-x2 {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.highcharts-credits {
+  display: none !important;
+}
+
+.empty {
+  p{
+    font-size: 12px;
+    color: var(--Grey-2, #8f959d);
+    padding: 4px 5px;
+  }
+}

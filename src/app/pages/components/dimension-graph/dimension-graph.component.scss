@@ -1,0 +1,100 @@
+.my-dimension-report {
+  border-radius: 8px;
+  border: 1px solid var(--Grey-4, #d9dde3);
+  background: var(--White, #fff);
+  position: relative;
+  padding: 16px 10px 12px;
+  width: 100%;
+  height: auto;
+
+  .graph {
+    border-right: 1px solid #d9dde3;
+  }
+
+  &__bubbles {
+    width: 250px;
+    min-width: 250px;
+    overflow: hidden;
+  }
+
+  &__categories {
+    width: 100%;
+  }
+
+  .report-top {
+    padding-top: 17px;
+    img {
+      max-width: 90px;
+      max-height: 90px;
+    }
+
+    &__table {
+      .item {
+        width: 100%;
+        display: flex;
+        &:nth-child(2) {
+          border-bottom: 1px solid #b3b8bf;
+        }
+        > div {
+          &:nth-child(1) {
+            min-width: 100px;
+            > span {
+              color: #314561;
+              font-size: 11px;
+              text-transform: uppercase;
+              font-weight: 700;
+              letter-spacing: 0.6px;
+            }
+          }
+        }
+
+        .indicators {
+          width: 100%;
+          display: flex;
+          div {
+            width: 50%;
+          }
+          span {
+            color: #8f959d;
+            font-size: 8px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    &__detail {
+      padding: 0 18px 0 10px;
+      h2 {
+        color: #0050f5;
+        font-size: 28px;
+        font-weight: 400;
+        span {
+          color: #b3b8bf;
+          font-size: 10px;
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+      }
+      .product {
+        color: #314561;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+:host {
+  ::ng-deep {
+    app-categories {
+      .labels {
+        li {
+          p {
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+}
