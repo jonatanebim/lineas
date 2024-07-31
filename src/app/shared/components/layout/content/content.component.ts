@@ -6,8 +6,7 @@ import { GlobalStoreService } from '../../../stores/global.store'
 import { LocalStorageService } from 'ngx-webstorage'
 import { FilterStoreService } from '../../../stores/filter.store'
 import { FILE_SAVER } from '../../../constants/globals'
-import * as ExcelJS from 'exceljs'
-import { saveAs } from 'file-saver'
+import * as ExcelJS from 'exceljs' 
 import { CommonsRequestsService } from '../../../requests/commons.requests'
 
 @Component({
@@ -74,8 +73,12 @@ export class ContentComponent {
         })
 
         workbook.xlsx.writeBuffer().then((buffer: any) => {
-          const blob = new Blob([buffer], { type: FILE_SAVER.type })
-          saveAs(blob, `${FILE_SAVER.name}.xlsx`)
+          const blob = new Blob([buffer], { type: FILE_SAVER.type }) 
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = `${FILE_SAVER.name}.xlsx`;
+          link.click();
+          URL.revokeObjectURL(link.href);
         })
 
         this.isDownloading.update(() => false)
