@@ -15,8 +15,14 @@
   >
     <div class="chart w-100">
       @if(onChart()) {
-      <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions">
-      </highcharts-chart>
+       @if (series.length) {
+        <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions">
+        </highcharts-chart>
+       } @else {
+        <div class="empty h-100 w-100 d-flex align-items-center px-5 text-center">
+          <p class="px-5">No pudimos encontrar ningún resultado para tu búsqueda.</p>
+        </div>
+       }
       }
     </div>
 

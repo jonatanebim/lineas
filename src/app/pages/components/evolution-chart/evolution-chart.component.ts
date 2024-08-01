@@ -29,6 +29,8 @@ export class EvolutionChartComponent implements AfterViewInit {
   chartOptions: Highcharts.Options = {}
 
   ngAfterViewInit(): void {
+
+    console.log(this.series);
     this.chartOptions = {
       chart: {
         width: this.chartContainer.nativeElement.clientWidth,
@@ -116,7 +118,6 @@ export class EvolutionChartComponent implements AfterViewInit {
       ],
       plotOptions: {
         series: {
-          // enableMouseTracking: false,
           marker: {
             enabled: false,
           },
@@ -134,10 +135,6 @@ export class EvolutionChartComponent implements AfterViewInit {
         backgroundColor: 'none',
         distance: 1,
         followPointer: false,
-        // shadow: true,
-        // borderColor:  '',
-        // borderWidth: 1,
-        // borderRadius: 2,
         formatter: function () {
           const color = this.point.color
           return `

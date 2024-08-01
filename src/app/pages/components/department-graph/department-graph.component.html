@@ -34,25 +34,25 @@
             <p class="d-grid w-50">
               % participación <br />
               facturación
-              <span>{{ data?.billingParticipation }}</span>
+              <span>{{ data?.billingParticipation || '-' }}</span>
             </p>
 
             <p class="d-grid w-50">
               % participación <br />
               cobertura
-              <span>{{ data?.coverageParticipation }}</span>
+              <span>{{ data?.coverageParticipation || '-' }}</span>
             </p>
 
             <p class="d-grid w-50">
               % distribución <br />
               númerica
-              <span class="text-black-50">{{ data?.distribution }}</span>
+              <span class="text-black-50">{{ data?.distribution || '-' }}</span>
             </p>
 
             <p class="d-grid w-50">
               % distribución <br />
               ponderada
-              <span class="text-black-50">{{ data?.weightedDistribution }}</span>
+              <span class="text-black-50">{{ data?.weightedDistribution || '-' }}</span>
             </p>
           </div>
         </div>
