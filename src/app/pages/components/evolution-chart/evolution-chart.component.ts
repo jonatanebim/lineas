@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, ElementRef, Input, ViewChild, signal } from '@angular/core'
-import { CommonModule } from '@angular/common'
+import { AfterViewInit, Component, ElementRef, Input, ViewChild, inject, signal } from '@angular/core'
+import { CommonModule, CurrencyPipe } from '@angular/common'
 import { TableReportComponent } from '../table-report/table-report.component'
 import { HighchartsChartModule } from 'highcharts-angular'
 import * as Highcharts from 'highcharts'
@@ -11,6 +11,7 @@ import { GraphIndicatorComponent } from '../graph-indicator/graph-indicator.comp
   styleUrls: ['./evolution-chart.component.scss'],
   standalone: true,
   imports: [CommonModule, TableReportComponent, HighchartsChartModule, GraphIndicatorComponent],
+  providers: [CurrencyPipe]
 })
 export class EvolutionChartComponent implements AfterViewInit {
   @Input() withFooter = false
@@ -24,13 +25,13 @@ export class EvolutionChartComponent implements AfterViewInit {
   indicators: any[] = []
   headers: any[] = []
   values: any[] = []
+  cp = inject(CurrencyPipe)
 
   Highcharts: typeof Highcharts = Highcharts
   chartOptions: Highcharts.Options = {}
 
   ngAfterViewInit(): void {
-
-    console.log(this.series);
+    let _self = this;
     this.chartOptions = {
       chart: {
         width: this.chartContainer.nativeElement.clientWidth,
@@ -137,10 +138,11 @@ export class EvolutionChartComponent implements AfterViewInit {
         followPointer: false,
         formatter: function () {
           const color = this.point.color
+          const cValue = _self.cp.transform(color  === '#B6E7FF' ? this.y : 0, 'S/', 'symbol', '1.2-2');
           return `
           <div class="float-tooltip rounded"
             style="padding: 2px 5px; background: ${color === '#B6E7FF' ? '#000' : color}">
-            <p class="m-0" style="font-size:11px; color:#fff">${color === '#B6E7FF' ? 'S/' : ''} ${this.y}</p>
+            <p class="m-0" style="font-size:11px; color:#fff">${color === '#B6E7FF' ? cValue : this.y}</p>
           </div>
           `
         },

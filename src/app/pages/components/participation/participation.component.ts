@@ -1,5 +1,14 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild, signal } from '@angular/core'
-import { CommonModule } from '@angular/common'
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+  inject,
+  signal,
+} from '@angular/core'
+import { CommonModule, CurrencyPipe } from '@angular/common'
 import { GraphIndicatorComponent } from '../graph-indicator/graph-indicator.component'
 import { HighchartsChartModule } from 'highcharts-angular'
 import * as Highcharts from 'highcharts'
@@ -13,6 +22,7 @@ HC_more(Highcharts)
   selector: 'app-participation',
   standalone: true,
   imports: [CommonModule, GraphIndicatorComponent, HighchartsChartModule],
+  providers: [CurrencyPipe],
   templateUrl: './participation.component.html',
   styleUrls: ['./participation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -28,6 +38,7 @@ export class ParticipationComponent implements AfterViewInit {
   Highcharts: typeof Highcharts = Highcharts
   chartOptions!: Highcharts.Options
   onChart = signal(false)
+  cp = inject(CurrencyPipe)
 
   get graphData() {
     return this.data
@@ -99,6 +110,8 @@ export class ParticipationComponent implements AfterViewInit {
               const xData = _selfData[this.point.index].columns[1]
               const yData = this.y || 0
               const translate = yData - xData > 100
+              const cValue = _self.cp.transform(this.y, 'S/', 'symbol', '1.2-2')
+
               return _self.fullSize
                 ? `
               <div class="text-center" style="width: 50px;position: relative;top: -7px;">
@@ -109,7 +122,7 @@ export class ParticipationComponent implements AfterViewInit {
                 </div>
                 <br/>
                 <div class="datalabelInside" style="position: absolute; bottom:15px; font-size:10px;color: #606469; font-weight: 400;text-shadow: 0 0 0  #fff;">
-                   S/ ${this.y}
+                 ${cValue}
                 </div>
               </div>
               `
@@ -118,7 +131,7 @@ export class ParticipationComponent implements AfterViewInit {
                 !translate && 'top: -30px;'
               }">
                 <div class="datalabelInside" style="position: absolute; font-size:10px;color: #606469; font-weight: 400;text-shadow: 0 0 0  #fff;">
-                   S/ ${this.y}
+                 ${cValue}
                 </div>
               </div>
               `
@@ -136,6 +149,8 @@ export class ParticipationComponent implements AfterViewInit {
             allowOverlap: true,
             useHTML: true,
             formatter: function () {
+              const cValue = _self.cp.transform(this.y, 'S/', 'symbol', '1.2-2')
+
               return `
               <div class="text-center" style="width: 50px;position: relative;">
                 <div class="datalabel" style="position: relative; top: 20px">
@@ -145,7 +160,7 @@ export class ParticipationComponent implements AfterViewInit {
                 </div>
                 <br/>
                 <div class="datalabelInside" style="position: absolute; width: 100%; top: 40px; font-size:10px;color: #606469; font-weight: 400;text-shadow: 0 0 0  #fff;"">
-                  S/ ${this.y}
+                  ${cValue}
                 </div>
               </div>
               `
@@ -166,10 +181,12 @@ export class ParticipationComponent implements AfterViewInit {
             x: -10,
             useHTML: true,
             formatter: function () {
+              const cValue = _self.cp.transform(this.y, 'S/', 'symbol', '1.2-2')
+
               return `
               <div class="text-center" style="width: 50px;height: 100%;position: relative;">
                 <div class="datalabelInside" style="position: relative;width: 100%;font-size: 12px;color: rgb(96, 100, 105);font-weight: 400;text-shadow: rgb(255, 255, 255) 0px 0px 0px;">
-                   S/ ${this.y}
+                  ${cValue}
                 </div>
               </div>
               `
@@ -187,6 +204,8 @@ export class ParticipationComponent implements AfterViewInit {
             useHTML: true,
             x: -10,
             formatter: function () {
+              const cValue = _self.cp.transform(this.y, 'S/', 'symbol', '1.2-2')
+
               return `
               <div class="text-center" style="width: 50px;left: 13px;position: relative">
                 <div class="datalabel" style="position: relative;">
@@ -195,7 +214,7 @@ export class ParticipationComponent implements AfterViewInit {
                   }%</p>
                 </div>
                 <div class="datalabelInside" style="font-size: 12px;color: rgb(96, 100, 105);font-weight: 400;text-shadow: rgb(255, 255, 255) 0px 0px 0px;position: relative;top: -5px;">
-                  S/ ${this.y}
+                  ${cValue}
                 </div>
               </div>
               `

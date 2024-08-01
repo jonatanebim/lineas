@@ -21,8 +21,8 @@ export class LoginComponent implements AfterViewInit {
   localSt = inject(LocalStorageService)
 
   fg = this.fb.group({
-    username: ['usuario.unilever', [Validators.required]],
-    password: ['usuario.unilever', [Validators.required]],
+    username: ['', [Validators.required]],
+    password: ['', [Validators.required]],
     remember: [true],
   })
 
