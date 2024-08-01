@@ -35,6 +35,9 @@
           border-radius: 28px;
           border: 1px solid var(--Grey_3, #b3b8bf);
           background: var(--White_QS, #fff);
+          &.error {
+            border-color : red;
+          }
         }
         label {
           color: var(--Grey_2, #8f959d);
