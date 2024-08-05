@@ -13,19 +13,21 @@ import { EMPTY_DOUGHNUT, GREY_COLORS } from '../../../shared/constants/globals'
 })
 export class DoughnutChartComponent implements AfterViewInit {
   @Input() data: any
+  @Input() dataLabels: any
   @Input() withFilter: boolean = false
   @Output() selected: EventEmitter<number> = new EventEmitter()
 
   @ViewChild('graph') graph!: ElementRef<any>
 
   globalStore = inject(GlobalStoreService)
-  current!: number;
+  current!: number
   variants = ['#DEF2FF', '#B6E7FF', '#8F959D']
   doughnutChart!: any[]
 
   ngAfterViewInit(): void {
+    const _self = this
+    // 
     this.doughnutChart = this.data
-
     new Chart(this.graph.nativeElement, {
       type: 'doughnut',
       data: {
@@ -40,12 +42,27 @@ export class DoughnutChartComponent implements AfterViewInit {
       },
       plugins: [...(this.isEmpty ? [] : [this.customDataLabelPlugin])],
       options: {
+        cutout: 35,
         maintainAspectRatio: false,
         aspectRatio: 1.8,
-        events: ['click'],
+        events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
+        interaction: {
+          intersect: true
+        },
         plugins: {
           legend: {
             display: false,
+          },
+          tooltip: {
+            enabled: true,
+            callbacks: {
+              label: function (data: any) {
+                return _self.labels[data.dataIndex]
+              },
+            },
+            bodyFont: { weight: 'bold', size: 9 },
+            padding: 5,
+            cornerRadius: 5,
           },
         },
         onClick: (evt, item) => {
@@ -55,7 +72,6 @@ export class DoughnutChartComponent implements AfterViewInit {
           }
         },
       },
-      
     })
   }
 

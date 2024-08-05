@@ -29,7 +29,7 @@ export class FunnelGraphComponent implements OnInit {
       },
       {
         label: 'Click en mercado digital',
-        value: `${this.data.categoryClicks.value} (${this.data.categoryClicks.percentage}%)`,
+        value: `${this.data.digitalMarkets.value} (${this.data.digitalMarkets.percentage}%)`,
         color: COLORS[1],
       },
       {
