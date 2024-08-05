@@ -34,6 +34,19 @@ app-department-graph {
   }
 
   ::ng-deep {
+    .department-table {
+      tbody {
+        tr{
+          &:first-child {
+            p {
+              color: #212529d1;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+    
     tr {
       td {
         &:nth-child(1) {

@@ -19,7 +19,7 @@ export const FILE_SAVER = {
 }
 
 export const DEFAULT_STORE: any = {
-  lineCode: '11',
+  lineCode: '305',
   untilToday: false,
   region: '',
   datetime: null,

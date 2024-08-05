@@ -86,7 +86,7 @@ export class CategoriesComponent implements AfterViewInit, OnDestroy {
 
         this.evolutionData = this.fillEvolutionSeries(data?.evolutionMq)
         this.evolutionDataLabels = data?.evolutionMq.labels
-        this.participationData = data?.principalCategories
+        this.participationData = this.selectedCategory ? data?.principalCategories : data?.principalCategories?.slice(0,5)
 
         this.topSku = data?.topSku
         this.paretoSkus = data?.participationPareto

@@ -55,6 +55,7 @@ export class DoughnutChartComponent implements AfterViewInit {
           }
         },
       },
+      
     })
   }
 

@@ -79,7 +79,7 @@ export class CompetenciesComponent implements AfterViewInit {
         console.log(data?.evolutionMq);
         this.evolutionData = this.fillEvolutionSeries(data?.evolutionMq)
         this.evolutionDataLabels = data?.evolutionMq.labels
-        this.participationData = data?.principalCategories
+        this.participationData = this.selectedCategory ? data?.principalCategories : data?.principalCategories?.slice(0,5)
         this.headers = data.brandCategoriesTable.columns.map((data: any) => {
           const tooltip = TABLE_TOOLTIPS[data.label as keyof typeof TABLE_TOOLTIPS]
 
