@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1722870768478,
+  "timestamp": 1722871460608,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -88,6 +88,7 @@
         "/assets/images/departments/Junin.svg",
         "/assets/images/departments/La Libertad.svg",
         "/assets/images/departments/Lamb.svg",
+        "/assets/images/departments/Lambayeque.svg",
         "/assets/images/departments/Lima.svg",
         "/assets/images/departments/Loreto.svg",
         "/assets/images/departments/Madre de dios.svg",
@@ -99,7 +100,6 @@
         "/assets/images/departments/Tacna.svg",
         "/assets/images/departments/Tumbes.svg",
         "/assets/images/departments/Ucayali.svg",
-        "/assets/images/departments/lambayeque.svg",
         "/assets/images/lines.png",
         "/assets/images/logo-2.png",
         "/assets/images/logo-home.png",
@@ -184,6 +184,7 @@
     "/assets/images/departments/Junin.svg": "a1898d719f3c58e4d7acb49e45b781bc17f75d3c",
     "/assets/images/departments/La Libertad.svg": "67dceffed99d25bd165282f9c30cf051c719bfdd",
     "/assets/images/departments/Lamb.svg": "3269d99d53b1ea358c2648969b04740bca728185",
+    "/assets/images/departments/Lambayeque.svg": "e904e939842e886368cba64e410abf5bfedbdd47",
     "/assets/images/departments/Lima.svg": "5ad40c61d15b2af54f787a80fde3b557f66f4a36",
     "/assets/images/departments/Loreto.svg": "ae5dc862eabade9d9fc1ab0540ed17facbf652ee",
     "/assets/images/departments/Madre de dios.svg": "1461066273f523b9bf7f81eb12247fd42cfb6b09",
@@ -195,7 +196,6 @@
     "/assets/images/departments/Tacna.svg": "848821ada4cca7e6ea57f96dfc378e5b9068a02d",
     "/assets/images/departments/Tumbes.svg": "07b11fd07fa09a106e7eed1b3c8f41d2baa92118",
     "/assets/images/departments/Ucayali.svg": "43b6857c0b0213796a97937a890cde3b2bf63477",
-    "/assets/images/departments/lambayeque.svg": "e904e939842e886368cba64e410abf5bfedbdd47",
     "/assets/images/lines.png": "72fec2fc35ad1acfa1a11239fa4920d7b40088db",
     "/assets/images/logo-2.png": "c291588aa860585f86106a0811feefb2c2d25989",
     "/assets/images/logo-home.png": "e2ef4e6ecf40eb18550b6b4317faee8b54d76fb7",
