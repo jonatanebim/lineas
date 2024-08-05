@@ -1,5 +1,5 @@
 <div class="my-participation d-flex flex-column">
-  <h2 class="sectionTitle text-capitalize">{{ title }}</h2>
+  <h2 class="sectionTitle text-capitalize" [ngClass]="{ single: this.data.length === 1 }">{{ title }}</h2>
   @if (this.data.length) {
   <div class="my-participation__graph" [ngClass]="{ single: this.data.length === 1 }" #chartContainer>
     @if(onChart()) {

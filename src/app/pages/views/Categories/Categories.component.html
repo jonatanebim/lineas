@@ -23,7 +23,7 @@
             class="animate__animated animate__fadeIn animate__delay-1s"
             [title]="
               selectedCategory
-                ? 'Evolutivo MQ ' + selectedCategory?.label + ' (BDF + Mercado total)'
+                ? 'Evolutivo MQ ' + (selectedCategory | lowercase) + ' (BDF + Mercado total)'
                 : 'Evolutivo MQ Total Categorías'
             "
             [labels]="evolutionLabels"
