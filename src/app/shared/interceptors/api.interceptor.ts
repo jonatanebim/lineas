@@ -42,7 +42,8 @@ export class ApiInterceptorRequest implements HttpInterceptor {
             .set('untilToday', `${queryParams.untilToday}`),
     })
     const urlWithParams = request.urlWithParams
-    const exists = this.localSt.retrieve(urlWithParams)
+    // const exists = this.localSt.retrieve(urlWithParams)
+    const exists = false
 
     if (exists) {
       return of(new HttpResponse(exists)).pipe()
