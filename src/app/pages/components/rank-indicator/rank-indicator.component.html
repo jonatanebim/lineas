@@ -4,7 +4,7 @@
   }
   <p
     class="d-flex justify-content-center align-items-center"
-    [ngClass]="{ isYellow: data?.value == 0, isRed: data?.value < 0 }"
+    [ngClass]="{ isYellow: data?.value === 0, isRed: data?.value < 0 }"
   >
     {{ data?.value }}% @if(data?.value > 0) {
     <i class="icon icon-flecha-verde"></i>
